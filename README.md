@@ -1,6 +1,6 @@
 # my-nixos-config
 
-个人 NixOS 配置（flake + home-manager + niri）。
+无桌面环境，使用显示管理器greetd的tuigreet+窗口管理器niri
 
 ## 一键安装
 1.  Live ISO 启动 → 分区挂载到 `/mnt`
