@@ -6,6 +6,9 @@
     packages = with pkgs; [
       microsoft-edge
       fuzzel
+      (prismlauncher.override {
+        jdks = [ zulu21 ];
+      })
     ];
   };
 
