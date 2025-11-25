@@ -1,11 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   home = {
+    stateVersion = "25.11";
     username = "zxcfdcmv";
     homeDirectory = "/home/zxcfdcmv";
     packages = with pkgs; [
       microsoft-edge
-      fuzzel
       (prismlauncher.override {
         jdks = [ zulu21 ];
       })
@@ -20,6 +20,7 @@
         waylandFrontend = true;
         addons = with pkgs; [
           fcitx5-gtk
+          fcitx5-rime
           qt6Packages.fcitx5-chinese-addons
           qt6Packages.fcitx5-configtool
         ];
@@ -40,7 +41,7 @@
       '';
       shellAliases = {
         delete = "sudo nix-collect-garbage -d";
-        hx = "sudo -E hx";
+        # hx = "sudo -E hx";
       };
     };
     helix = {
@@ -54,17 +55,24 @@
         };
       };
     };
-    alacritty = {
+    # alacritty = {
+    #   enable = true;
+    #   settings = {
+    #     env.TERM = "xterm-256color";
+    #     font = {
+    #       size = 14;
+    #     };
+    #     colors.draw_bold_text_with_bright_colors = true;
+    #     scrolling.multiplier = 5;
+    #     selection.save_to_clipboard = true;
+    #   };
+    # };
+    foot = {
       enable = true;
-      settings = {
-        env.TERM = "xterm-256color";
-        font = {
-          size = 14;
-        };
-        colors.draw_bold_text_with_bright_colors = true;
-        scrolling.multiplier = 5;
-        selection.save_to_clipboard = true;
-      };
+      server.enable = true;
+    };
+    fuzzel = {
+      enable = true;
     };
     starship = {
       enable = true;
@@ -79,12 +87,26 @@
 
   xdg = {
     configFile = {
-      # "niri/config.kdl".source = ./niri/config.kdl;
-      "niri/config.kdl".text = ''
-        ${builtins.readFile ./niri/config.kdl}
-        spawn-sh-at-startup "export GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS=@im=fcitx SDL_IM_MODULE=fcitx GLFW_IM_MODULE=fcitx GLYPH_IM_MODULE=fcitx && fcitx5 -d"
-      '';
+      "niri/config.kdl".source = ./niri/config.kdl;
+      "foot/foot.ini".source = ./foot/foot.ini;
+    };
+    dataFile = {
+      "fcitx5/rime" = {
+        source = pkgs.fetchFromGitHub {  
+          owner = "iDvel";  
+          repo = "rime-ice";  
+          # 如果有问题请将 sha256 替换为 lib.fakeSha256，运行重建命令获取最新的 hash 值。  
+          rev = "main";   
+          sha256 = "sha256-Ei8qeo5Misu0J/yZ894c0EbUFz/8EmqWqiEy8O9TD30=";   
+        };       
+        recursive = true;
+      };
+      "fcitx5/rime/default.custom.yaml".text = ''
+         patch:  
+          "menu/page_size": 5  # 候选词数量  
+          schema_list:  
+            - schema: rime_ice_double_pinyin_flypy   # 雾凇拼音（全拼）  
+      '';         
     };
   };
-  home.stateVersion = "25.11";
 }
