@@ -232,7 +232,7 @@ layout {
 }
 
 // spawn-at-startup "waybar"
-spawn-at-startup "foot --server"
+spawn-sh-at-startup "foot --server &"
 spawn-sh-at-startup "export GTK_IM_MODULE=fcitx5 QT_IM_MODULE=fcitx5 XMODIFIERS=@im=fcitx5 SDL_IM_MODULE=fcitx5 GLFW_IM_MODULE=fcitx5 GLYPH_IM_MODULE=fcitx5 && fcitx5 -d"
 
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -312,7 +312,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     // Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+T hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
+    Mod+T hotkey-overlay-title="Open a Terminal: footclient" { spawn "footclient"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 

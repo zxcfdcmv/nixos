@@ -117,7 +117,7 @@ in
   fonts.packages = with pkgs; [
     # noto-fonts-cjk-sans
     # sarasa-gothic
-    nerd-fonts.jetbrains-mono
+    # nerd-fonts.jetbrains-mono
     maple-mono.NF-CN
   ];
   system.stateVersion = "25.11";
