@@ -56,6 +56,7 @@
         find = "fd";
         cat  = "bat -pp";
         ls   = "eza --group-directories-first --git";
+        ll   = "eza --group-directories-first --git --long --icons";
         l   = "eza --group-directories-first --git --long --icons";
         du   = "dust";
         ps   = "procs";
