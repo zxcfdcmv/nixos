@@ -56,11 +56,12 @@
         find = "fd";
         cat  = "bat -pp";
         ls   = "eza --group-directories-first --git";
-        l   = "eza --group-directories-first --git --long --icons"
+        l   = "eza --group-directories-first --git --long --icons";
         du   = "dust";
         ps   = "procs";
         top  = "btm";
-        cd   = "z";
+        cd   = "zoxide";
+        z    = "zoxide";
         delete = "sudo nix-collect-garbage -d";
         build  = "sudo nixos-rebuild build --flake ~/nixos#nixos";
         switch = "sudo nixos-rebuild switch --flake ~/nixos#nixos";
