@@ -61,7 +61,6 @@
         du   = "dust";
         ps   = "procs";
         top  = "btm";
-        cd   = "zoxide cd";
         z    = "zoxide query --interactive";
         delete = "sudo nix-collect-garbage -d";
         build  = "sudo nixos-rebuild build --flake ~/nixos#nixos";
