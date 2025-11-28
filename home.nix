@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   home = {
-    stateVersion = "25.11";
+    stateVersion = "26.05";
     username = "zxcfdcmv";
     homeDirectory = "/home/zxcfdcmv";
     packages = with pkgs; [
@@ -14,6 +14,7 @@
       procs
       bottom
       microsoft-edge
+      teamspeak6-client
       (prismlauncher.override {
         jdks = [ zulu21 ];
       })

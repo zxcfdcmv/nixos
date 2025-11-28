@@ -3,7 +3,7 @@ let
   # 下载并清理 GitHub 加速 hosts  
   githubHostsRaw = builtins.readFile (pkgs.fetchurl {  
     url = "https://hosts.gitcdn.top/hosts.txt";  
-    sha256 = "sha256-Jq5oppddSfJ/vDaqeAKcmcGtBP8D8pggsPy7HFptBbs=";  # ← 替换为真实 hash 后稳定  
+    sha256 = "sha256-YLGbkLxFIbd3YGlQSh2Ykfarbr5sCoBkKavCFQ2T+qg=";  # ← 替换为真实 hash 后稳定  
   });  
   
   # 过滤注释和空行，生成纯 hosts 条目  

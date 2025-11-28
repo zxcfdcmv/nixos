@@ -5,7 +5,7 @@
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
     home-manager = {
-      url = "git+https://gh-proxy.com/github.com/nix-community/home-manager/?ref=release-25.11";
+      url = "git+https://gh-proxy.com/github.com/nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # rime-ice = {
