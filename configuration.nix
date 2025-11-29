@@ -20,10 +20,14 @@ in
     ];
   nixpkgs.config.allowUnfree = true;
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [ "nvidia-drm.modeset=1" ];
+  };
 
   networking = {
     hostName = "nixos";
@@ -38,14 +42,24 @@ in
     supportedLocales = [ "en_US.UTF-8/UTF-8" "zh_CN.UTF-8/UTF-8" ];
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        user = "zxcfdcmv";
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd '${pkgs.niri}/bin/niri --session'";
+  services = {
+    xserver = {
+      enable = true;
+      videoDrivers = [ "nvidia" ];
+    };
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          user = "zxcfdcmv";
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd '${pkgs.niri}/bin/niri --session'";
+        };
       };
     };
   };
@@ -71,13 +85,6 @@ in
         };
       };
     };
-  };
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
   };
   
   environment = {
