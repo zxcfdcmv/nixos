@@ -4,6 +4,17 @@
     stateVersion = "26.05";
     username = "zxcfdcmv";
     homeDirectory = "/home/zxcfdcmv";
+    pointerCursor = {
+      gtk.enable = true;
+      x11.enable = true;
+      name = "Bibata-Modern-Ice";
+      size = 32;
+      package = pkgs.bibata-cursors;
+    };
+    sessionVariables = {
+      XCURSOR_SIZE = "24";
+      XCURSOR_THEME = "Bibata-Modern-Ice";
+    };
     packages = with pkgs; [
       unzip
       ripgrep
@@ -15,6 +26,7 @@
       bottom
       microsoft-edge
       teamspeak6-client
+      pkgs.bibata-cursors
       (prismlauncher.override {
         jdks = [ zulu21 ];
       })
@@ -34,10 +46,6 @@
         ];
       };
     };
-  };
-
-  xresources.properties = {
-    "Xcursor.size" = 12;
   };
 
   programs = {
