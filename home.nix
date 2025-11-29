@@ -16,7 +16,7 @@
       XCURSOR_THEME = "Bibata-Modern-Ice";
     };
     packages = with pkgs; [
-      unzip
+      p7zip
       ripgrep
       bat
       eza
@@ -24,6 +24,9 @@
       dust
       procs
       bottom
+      poppler
+      imagemagick
+      ffmpegthumbnailer
       microsoft-edge
       teamspeak6-client
       pkgs.bibata-cursors
@@ -117,6 +120,7 @@
     };
     zoxide.enable = true;
     fzf.enable = true;
+    yazi.enable = true;
   };
 
   xdg = {

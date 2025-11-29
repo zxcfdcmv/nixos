@@ -90,6 +90,8 @@ in
   environment = {
     sessionVariables = {
       LC_ALL = "en_US.UTF-8";
+      EDITOR = "hx";
+      VISUAL = "hx";
     };
     systemPackages = with pkgs; [
       helix
