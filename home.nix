@@ -27,7 +27,6 @@
       poppler
       imagemagick
       ffmpegthumbnailer
-      gamescope
       microsoft-edge
       teamspeak6-client
       pkgs.bibata-cursors

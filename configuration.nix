@@ -118,9 +118,11 @@ in
     extraGroups = [ "wheel" ];
   };
 
-  security.sudo = {
-    enable = true;
-    wheelNeedsPassword = false;
+  security = {
+    sudo = {
+      enable = true;
+      wheelNeedsPassword = false;
+    };
   };
 
   fonts.packages = with pkgs; [
