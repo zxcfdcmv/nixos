@@ -44,8 +44,8 @@
         waylandFrontend = true;
         addons = with pkgs; [
           fcitx5-gtk
-          qt6Packages.fcitx5-chinese-addons
-          qt6Packages.fcitx5-configtool
+          fcitx5-rime
+          fcitx5-nord
         ];
       };
     };
@@ -127,6 +127,51 @@
     configFile = {
       "niri/config.kdl".source = ./niri/config.kdl;
       "foot/foot.ini".source = ./foot/foot.ini;
+      "fcitx5/conf/classicui.conf".text = ''
+        Theme=Nord-Dark
+        Font=Maple Mono NF CN 14
+      '';
+    };
+    dataFile = let
+      flypy-src = pkgs.fetchFromGitHub {
+        owner = "jqtmviyu";
+        repo = "flypy";
+        rev = "main";
+        sha256 = "sha256-GKB9lqV1uJCpCgDzFbchHYO2kW6mV8Sq2kBy0bropXQ="; # 替换为实际hash
+      };      
+    in {
+      "fcitx5/rime/flypy.schema.yaml".source = "${flypy-src}/flypy.schema.yaml";
+      "fcitx5/rime/flypy.dict.yaml".source = "${flypy-src}/flypy.dict.yaml";
+      "fcitx5/rime/flypy".source = "${flypy-src}/flypy";      
+      "fcitx5/rime/lua".source = "${flypy-src}/lua";      
+      "fcitx5/rime/flypydz.schema.yaml".source = "${flypy-src}/flypydz.schema.yaml";      
+      "fcitx5/rime/flypydz.dict.yaml".source = "${flypy-src}/flypydz.dict.yaml";      
+      "fcitx5/rime/default.custom.yaml".text = ''
+        patch:
+          schema_list:
+            - schema: flypy # 添加小鹤音形
+          switcher/hotkeys: false # 定製喚出方案選單的快捷鍵, 默认是ctrl + `或者f4
+
+          ascii_composer/good_old_caps_lock: true
+          ascii_composer/switch_key:
+            Caps_Lock: noop
+            Shift_L: commit_code
+            Shift_R: commit_code
+            Control_L: noop
+            Control_R: noop
+
+          key_binder/bindings:
+            - when: paging
+              accept: bracketleft
+              send: Page_Up
+            - when: has_menu
+              accept: bracketright
+              send: Page_Down
+            - when: always
+              accept: "Shift+space"
+              send: "Shift+space"
+      '';
+
     };
   };
 }
