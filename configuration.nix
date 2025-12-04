@@ -48,6 +48,19 @@
     };
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
+    ];
+    config = {
+      common = {
+        default-session = [ "wlr" "gtk" ];
+      };
+    };
+  };
+
   hardware.nvidia = {
     modesetting.enable = true;
     nvidiaSettings = true;
@@ -57,6 +70,10 @@
   hardware.graphics = {
     enable = true;
   };
+
+  systemd.user.extraConfig = ''
+    DefaultEnvironment="XDG_CURRENT_DESKTOP=niri"
+  '';
 
   programs = {
     niri.enable = true;
@@ -107,6 +124,8 @@
       enable = true;
       wheelNeedsPassword = false;
     };
+    pam.services.greetd.enableGnomeKeyring = true;
+    rtkit.enable = true;
   };
 
   fonts.packages = with pkgs; [

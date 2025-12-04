@@ -14,6 +14,7 @@
     sessionVariables = {
       XCURSOR_SIZE = "24";
       XCURSOR_THEME = "Bibata-Modern-Ice";
+      XDG_CURRENT_DESKTOP = "niri";
     };
     packages = with pkgs; [
       p7zip
