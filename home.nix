@@ -2,7 +2,6 @@
 {
   imports = [
     ./modules/foot.nix
-    ./modules/niri.nix
     ./modules/input-method.nix   # 框架
     ./inputs/sbsrf.nix           # 输入方案
   ];
@@ -111,4 +110,7 @@
     fzf.enable = true;
     yazi.enable = true;
   };
+
+  xdg.configFile."niri/config.kdl".source = ./assets/niri.kdl;
+
 }
