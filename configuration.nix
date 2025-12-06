@@ -76,7 +76,6 @@
   '';
 
   programs = {
-    niri.enable = true;
     git = {
       enable = true;
       config = {
