@@ -8,12 +8,8 @@
       url = "git+https://gh-proxy.com/github.com/nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    sbsrf-plum = {
-      url = "git+https://gh-proxy.com/github.com/sbsrf/sbsrf";
-      flake = false;
-    };
-    # rime-ice = {
-    #   url = "git+https://hub.gitmirror.com/https://github.com/iDvel/rime-ice";
+    # sbsrf-plum = {
+    #   url = "git+https://gh-proxy.com/github.com/sbsrf/sbsrf";
     #   flake = false;
     # };
   };

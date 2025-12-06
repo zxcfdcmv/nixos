@@ -2,8 +2,8 @@
 {
   imports = [
     ./modules/foot.nix
-    ./modules/input-method.nix   # 框架
-    ./inputs/sbsrf.nix           # 输入方案
+    ./modules/input-method.nix    # 框架
+    ./inputs/xiaohe.nix           # 输入方案
   ];
 
   home = {

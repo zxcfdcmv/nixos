@@ -52,8 +52,7 @@
       enable = true;
       settings = {
         default_session = {
-          user = "zxcfdcmv";
-          command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd '${pkgs.niri}/bin/niri --session'";
+          command = "${pkgs.tuigreet}/bin/tuigreet --user zxcfdcmv --time --cmd '${pkgs.niri}/bin/niri --session'";
         };
       };
     };
@@ -143,6 +142,7 @@
       enable = true;
       wheelNeedsPassword = false;
     };
+    pam.services.greetd.enableGnomeKeyring = true;
   };
 
   fonts.packages = with pkgs; [
