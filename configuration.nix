@@ -52,7 +52,8 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet --user zxcfdcmv --time --cmd '${pkgs.niri}/bin/niri --session'";
+          user = "greeter";
+          command = "${pkgs.tuigreet}/bin/tuigreet --remember --remember-session --time --cmd '${pkgs.niri}/bin/niri --session'";
         };
       };
     };
