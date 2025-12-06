@@ -8,34 +8,34 @@
       url = "git+https://gh-proxy.com/github.com/nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sbsrf-plum = {
+      url = "git+https://gh-proxy.com/github.com/sbsrf/sbsrf";
+      flake = false;
+    };
     # rime-ice = {
     #   url = "git+https://hub.gitmirror.com/https://github.com/iDvel/rime-ice";
     #   flake = false;
     # };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:{
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.zxcfdcmv = { config, pkgs, ... }: {
-                imports = [ ./home.nix ];
-                _module.args = {
-                  inherit inputs;
-                };
+              users.zxcfdcmv = import ./home.nix;
+              extraSpecialArgs = {
+                sbsrf-plum = inputs.sbsrf-plum;
               };
             };
           }
         ];
-        specialArgs = { inherit inputs; };
       };
     };
   };

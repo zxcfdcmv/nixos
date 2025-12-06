@@ -10,6 +10,8 @@
     stateVersion = "26.05";
     username = "zxcfdcmv";
     homeDirectory = "/home/zxcfdcmv";
+
+    # 指针主题
     pointerCursor = {
       gtk.enable = true;
       x11.enable = true;
@@ -22,24 +24,21 @@
       XCURSOR_THEME = "Bibata-Modern-Ice";
       XDG_CURRENT_DESKTOP = "niri";
     };
+    
+    # 用户包
     packages = with pkgs; [
-      p7zip
-      ripgrep
-      bat
-      eza
-      fd
-      dust
-      procs
-      bottom
-      poppler
-      imagemagick
-      ffmpegthumbnailer
+      # 基础
+      ripgrep bat eza fd dust procs bottom
+      p7zip poppler imagemagick ffmpegthumbnailer
+      wl-clipboard xwayland-satellite
+
+      # 浏览器 / 游戏
       microsoft-edge
-      teamspeak6-client
-      pkgs.bibata-cursors
       (prismlauncher.override {
         jdks = [ zulu21 ];
       })
+      teamspeak6-client
+      # pkgs.bibata-cursors
     ];
   };
 
@@ -55,13 +54,11 @@
         eval "$(fzf --bash)" 2>/dev/null || true
       '';
       shellAliases = {
-        grep = "rg --hidden --smart-case";
         rg   = "rg --hidden --smart-case";
-        find = "fd";
         cat  = "bat -pp";
         ls   = "eza --group-directories-first --git";
         ll   = "eza --group-directories-first --git --long --icons";
-        l   = "eza --group-directories-first --git --long --icons";
+        l    = "eza --group-directories-first --git --long --icons";
         du   = "dust";
         ps   = "procs";
         top  = "btm";

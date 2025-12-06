@@ -23,7 +23,17 @@
   time.timeZone = "Asia/Shanghai";
   i18n = {
     defaultLocale = "zh_CN.UTF-8";
-    supportedLocales = [ "en_US.UTF-8/UTF-8" "zh_CN.UTF-8/UTF-8" ];
+    extraLocaleSettings = {
+      LC_ADDRESS = "zh_CN.UTF-8";
+      LC_IDENTIFICATION = "zh_CN.UTF-8";
+      LC_MEASUREMENT = "zh_CN.UTF-8";
+      LC_MONETARY = "zh_CN.UTF-8";
+      LC_NAME = "zh_CN.UTF-8";
+      LC_NUMERIC = "zh_CN.UTF-8";
+      LC_PAPER = "zh_CN.UTF-8";
+      LC_TELEPHONE = "zh_CN.UTF-8";
+      LC_TIME = "zh_CN.UTF-8";
+    };
   };
 
   services = {
@@ -46,6 +56,7 @@
         };
       };
     };
+    gnome.gnome-keyring.enable = true;
   };
 
   xdg.portal = {
@@ -61,19 +72,21 @@
     };
   };
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    nvidiaSettings = true;
-    open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-  hardware.graphics = {
-    enable = true;
+  hardware = {
+    nvidia = {
+      modesetting.enable = true;
+      nvidiaSettings = true;
+      open = false;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
+    graphics.enable = true;
   };
 
-  systemd.user.extraConfig = ''
-    DefaultEnvironment="XDG_CURRENT_DESKTOP=niri"
-  '';
+  systemd.user = {
+    extraConfig = ''
+      DefaultEnvironment="XDG_CURRENT_DESKTOP=niri"
+    '';
+  };
 
   programs = {
     niri.enable = true;
@@ -90,7 +103,6 @@
   
   environment = {
     sessionVariables = {
-      LC_ALL = "en_US.UTF-8";
       EDITOR = "hx";
       VISUAL = "hx";
     };
@@ -98,8 +110,6 @@
       helix
       wget
       curl
-      xwayland-satellite
-      wl-clipboard
     ];
   };
 
@@ -110,7 +120,15 @@
         "flakes"
       ];
       auto-optimise-store = true;
-      substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
+      substituters = [
+        "https://mirror.sjtu.edu.cn/nix-channels/store"
+        "https://cache.nixos.org"
+      ];
+    };
+    gc = {
+      automatic    = true;
+      dates        = "weekly";
+      options      = "--delete-older-than 7d";
     };
   };
 
@@ -124,8 +142,6 @@
       enable = true;
       wheelNeedsPassword = false;
     };
-    pam.services.greetd.enableGnomeKeyring = true;
-    rtkit.enable = true;
   };
 
   fonts.packages = with pkgs; [
