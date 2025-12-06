@@ -11,7 +11,6 @@ in
     activation = {
       linkSbxlm = lib.hm.dag.entryBefore ["linkGeneration"] ''
         echo "Linking sbxlm files ..."
-        rm -rf "$HOME/.local/share/fcitx5/rime/build"
         ${linkScript} ${sbsrf-plum}/sbxlm "$HOME/.local/share/fcitx5/rime"
       '';
     };
@@ -37,8 +36,8 @@ in
         ascii_composer:
           good_old_caps_lock: true
           switch_key:
-            Shift_L: inline_ascii
-            Shift_R: inline_ascii
+            Shift_L: commit_code
+            Shift_R: noop
             Control_L: commit_code
             Control_R: noop
             Caps_Lock: clear
