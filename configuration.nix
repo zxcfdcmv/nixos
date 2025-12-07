@@ -114,7 +114,6 @@
       helix
       wget
       curl
-      papirus-icon-theme
     ];
   };
 

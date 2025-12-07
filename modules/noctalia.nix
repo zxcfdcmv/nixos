@@ -86,17 +86,11 @@
         panelBackgroundOpacity = 0;
       };
       wallpaper = {
-        useWallhaven = true;
-        wallhavenQuery = "";        # 搜索关键字，可改成你喜欢的
-        wallhavenSorting = "toplist";       # 排序方式
-        wallhavenOrder = "desc";              # 顺序
-        wallhavenCategories = "110";          # 1: general, 2: anime, 3: people
-        wallhavenPurity = "111";              # 1: sfw, 0: sketchy, 0: nsfw
-        wallhavenResolutionMode = "atleast";  
-        wallhavenResolutionWidth = "1920";    # 最低宽度
-        wallhavenResolutionHeight = "1080";   # 最低高度
-        randomEnabled = false;                 # 随机切换壁纸
-        randomIntervalSec = 300;            
+        enabled = true;
+        directory = "/home/zxcfdcmv/nixos/assets/pictures";
+        randomEnabled = true;
+        hideWallpaperFilenames = true;
+        transitionType = "none";
       };
       dock.enabled = false;
       templates = {
