@@ -70,7 +70,7 @@
         name = "jinan";
       };
       general = {
-        avatarImage = null;
+        avatarImage = "/home/zxcfdcmv/nixos/assets/pictures/.face";
         radiusRatio = 0.2;
         animationDisabled = true;  # 跳过所有动画
         animationSpeed = 2;        # 动画速度, 数值越大动画越快
