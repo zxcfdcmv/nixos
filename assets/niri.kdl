@@ -3,6 +3,8 @@ input {
         xkb {
         }
         numlock
+        repeat-delay 200
+        repeat-rate 35
     }
     touchpad {
         // off
@@ -80,7 +82,7 @@ output "eDP-1" {
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 5
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -128,7 +130,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
+        width 1.5
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -136,7 +138,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#6c7086"
+        active-color "#7fc8ff"
 
         // Color of the ring on inactive monitors.
         //
@@ -232,6 +234,7 @@ layout {
 }
 
 // spawn-at-startup "waybar"
+spawn-at-startup "noctalia-shell"
 spawn-sh-at-startup "foot --server &"
 spawn-sh-at-startup "export GTK_IM_MODULE=fcitx5 QT_IM_MODULE=fcitx5 XMODIFIERS=@im=fcitx5 SDL_IM_MODULE=fcitx5 GLFW_IM_MODULE=fcitx5 GLYPH_IM_MODULE=fcitx5 && fcitx5 -d"
 
@@ -263,8 +266,12 @@ window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
     // You can get away with just app-id="wezterm" if you want.
+    opacity 0.85
+
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
+    geometry-corner-radius 4
+    clip-to-geometry true
 }
 
 // Open the Firefox picture-in-picture player as floating by default.

@@ -1,0 +1,113 @@
+{ pkgs, noctalia, ... }:
+{
+  imports = [
+    noctalia.homeModules.default
+  ];
+  programs.noctalia-shell = {
+    enable = true;
+    settings = {
+      # configure noctalia here; defaults will
+      # be deep merged with these attributes.
+      bar = {
+        density = "comfortable";
+        position = "top";
+        showCapsule = true;
+        floating = true;
+        capsuleOpacity = 0.6;
+        backgroundOpacity = 0;
+        widgets = {
+          left = [
+            {
+              id = "SystemMonitor";
+              showCpuTemp = true;
+              showCpuUsage = true;
+              showMemeoryUsage = true;
+            }
+            {
+              id = "ActiveWindow";
+              showIcon = true;
+              maxWidth = 145;
+            }
+            {
+              id = "MediaMini";
+              maxWidth = 145;
+            }
+          ];
+          center = [
+            {
+              hideUnoccupied = false;
+              id = "Workspace";
+              labelMode = "name";
+            }
+          ];
+          right = [
+            { id = "Tray"; }
+            { id = "Volume"; }
+            {
+              alwaysShowPercentage = false;
+              id = "Battery";
+              warningThreshold = 30;
+            }
+            {
+              formatHorizontal = "HH:mm ddd, MMM dd";
+              id = "Clock";
+              useMonospacedFont = true;
+              usePrimaryColor = true;
+            }
+            {
+              id = "ControlCenter";
+              useDistroLogo = true;
+            }
+          ];
+        };
+      };
+      colorSchemes = {
+        darkMode = true;
+        predefinedScheme = "Ayu";
+        
+      };
+      location = {
+        name = "jinan";
+      };
+      general = {
+        avatarImage = null;
+        radiusRatio = 0.2;
+        animationDisabled = true;  # 跳过所有动画
+        animationSpeed = 2;        # 动画速度, 数值越大动画越快
+        language = "zh-CN";
+        enableShadows = false;
+      };
+      ui = {
+        fontDefault = "Maple Mono NF CN";
+        fontFixed = "Maple Mono NF CN";
+        backgroundOpacity = 0.60;   # Noctalia 半透明
+        blurEnabled = false;        # Niri 不支持模糊
+        panelRadius = 18;        
+        panelBackgroundOpacity = 0;
+      };
+      wallpaper = {
+        useWallhaven = true;
+        wallhavenQuery = "";        # 搜索关键字，可改成你喜欢的
+        wallhavenSorting = "toplist";       # 排序方式
+        wallhavenOrder = "desc";              # 顺序
+        wallhavenCategories = "110";          # 1: general, 2: anime, 3: people
+        wallhavenPurity = "111";              # 1: sfw, 0: sketchy, 0: nsfw
+        wallhavenResolutionMode = "atleast";  
+        wallhavenResolutionWidth = "1920";    # 最低宽度
+        wallhavenResolutionHeight = "1080";   # 最低高度
+        randomEnabled = false;                 # 随机切换壁纸
+        randomIntervalSec = 300;            
+      };
+      dock.enabled = false;
+      templates = {
+        gtk = true;
+        qt = true;
+        kcolorscheme = true;
+        foot = true;
+        fuzzel = true;
+        niri = true;
+      };
+      nightLight.enabled = true;
+    };
+  };
+}

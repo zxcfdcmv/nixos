@@ -48,6 +48,8 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+    power-profiles-daemon.enable = true;
+    upower.enable = true;
     greetd = {
       enable = true;
       settings = {
@@ -81,6 +83,7 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
     graphics.enable = true;
+    bluetooth.enable = true;
   };
 
   systemd.user = {
@@ -111,6 +114,7 @@
       helix
       wget
       curl
+      papirus-icon-theme
     ];
   };
 

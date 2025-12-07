@@ -2,6 +2,7 @@
 {
   imports = [
     ./modules/foot.nix
+    ./modules/noctalia.nix
     ./modules/input-method.nix    # 框架
     ./inputs/xiaohe.nix           # 输入方案
   ];
@@ -23,6 +24,7 @@
       XCURSOR_SIZE = "24";
       XCURSOR_THEME = "Bibata-Modern-Ice";
       XDG_CURRENT_DESKTOP = "niri";
+      QT_QPA_PLATFORM = "wayland";
     };
     
     # 用户包
@@ -109,5 +111,4 @@
   };
 
   xdg.configFile."niri/config.kdl".source = ./assets/niri.kdl;
-
 }
