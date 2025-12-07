@@ -19,7 +19,6 @@
           left = [
             {
               id = "SystemMonitor";
-              showCpuTemp = true;
               showCpuUsage = true;
               showMemoryUsage = true;
               showMemoryAsPercentage = true;
