@@ -21,7 +21,8 @@
               id = "SystemMonitor";
               showCpuTemp = true;
               showCpuUsage = true;
-              showMemeoryUsage = true;
+              showMemoryUsage = true;
+              showMemoryAsPercentage = true;
             }
             {
               id = "ActiveWindow";
