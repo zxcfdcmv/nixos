@@ -30,7 +30,12 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.zxcfdcmv = import ./home.nix;
+              users.zxcfdcmv = {
+                imports = [
+                  # inputs.noctalia.homeModules.default
+                  ./home.nix
+                ];
+              };
               extraSpecialArgs = {
                 noctalia = inputs.noctalia;
               };

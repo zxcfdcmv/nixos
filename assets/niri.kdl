@@ -234,9 +234,9 @@ layout {
 }
 
 // spawn-at-startup "waybar"
-spawn-at-startup "noctalia-shell"
+spawn-sh-at-startup "export QT_IM_MODULE=fcitx5 XMODIFIERS=@im=fcitx5 SDL_IM_MODULE=fcitx5 GLFW_IM_MODULE=fcitx5 GLYPH_IM_MODULE=fcitx5 && fcitx5 -d &"
 spawn-sh-at-startup "foot --server &"
-spawn-sh-at-startup "export QT_IM_MODULE=fcitx5 XMODIFIERS=@im=fcitx5 SDL_IM_MODULE=fcitx5 GLFW_IM_MODULE=fcitx5 GLYPH_IM_MODULE=fcitx5 && fcitx5 -d"
+spawn-at-startup "noctalia-shell"
 
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 

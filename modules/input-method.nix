@@ -14,9 +14,26 @@
     };
   };
 
-  # 统一外观
-  xdg.configFile."fcitx5/conf/classicui.conf".text = ''
-    Theme=Nord-Dark
-    Font=Maple Mono NF CN 14
-  '';
+  xdg.configFile = {
+    "fcitx5/profile" = {
+      text = ''
+        [Groups/0]
+        Name=Default
+        Default Layout=us
+        DefaultIM=keyboard-us
+
+        [Groups/0/Items/0]
+        Name=rime
+        Layout=
+
+        [GroupOrder]
+        0=Default      
+      '';
+      force = true;
+    };
+    "fcitx5/conf/classicui.conf".text = ''
+      Theme=Nord-Dark
+      Font=Maple Mono NF CN 14
+    '';
+  };
 }
