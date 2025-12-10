@@ -18,6 +18,10 @@
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
+    firewall = {
+      allowedTCPPorts = [ 53317 ];
+      allowedUDPPorts = [ 53317 ];
+    };
   };
 
   time.timeZone = "Asia/Shanghai";
@@ -138,7 +142,7 @@
 
   users.users.zxcfdcmv = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" ];
   };
 
   security = {

@@ -33,11 +33,12 @@
       ripgrep bat eza fd dust procs bottom
       p7zip poppler imagemagick ffmpegthumbnailer
       wl-clipboard xwayland-satellite
+      localsend
 
       # 浏览器 / 游戏
       microsoft-edge
       (prismlauncher.override {
-        jdks = [ zulu21 ];
+        jdks = [ zulu17 zulu21 ];
       })
       teamspeak6-client
       # pkgs.bibata-cursors
