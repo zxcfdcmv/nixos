@@ -42,6 +42,7 @@
       })
       teamspeak6-client
       # pkgs.bibata-cursors
+      sparkle
     ];
   };
 
@@ -63,7 +64,7 @@
         ll   = "eza --group-directories-first --git --long --icons";
         l    = "eza --group-directories-first --git --long --icons";
         du   = "dust";
-        ps   = "procs";
+        # ps   = "procs";
         top  = "btm";
         z    = "zoxide query --interactive";
         delete = "sudo nix-collect-garbage -d";

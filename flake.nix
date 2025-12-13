@@ -11,11 +11,6 @@
       url = "git+https://gh-proxy.com/github.com/noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # sbsrf-plum = {
-    #   url = "git+https://gh-proxy.com/github.com/sbsrf/sbsrf";
-    #   flake = false;
-    # };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:{
@@ -32,7 +27,6 @@
               useUserPackages = true;
               users.zxcfdcmv = {
                 imports = [
-                  # inputs.noctalia.homeModules.default
                   ./home.nix
                 ];
               };

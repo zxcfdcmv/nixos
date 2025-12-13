@@ -54,16 +54,26 @@
     };
     power-profiles-daemon.enable = true;
     upower.enable = true;
+    gnome.gnome-keyring.enable = true;
     greetd = {
       enable = true;
       settings = {
         default_session = {
           user = "greeter";
-          command = "${pkgs.tuigreet}/bin/tuigreet --remember --remember-session --time --cmd '${pkgs.niri}/bin/niri --session'";
+          command = ''
+            ${pkgs.tuigreet}/bin/tuigreet \
+              --cmd "${pkgs.niri}/bin/niri --session" \
+              --theme "dark" \
+              --greeting "Welcome to NixOS!" \
+              --greet-align center \
+              --time \
+              --time-format "%A, %d %B %Y %H:%M:%S" \
+              --remember \
+              --remember-session \
+          '';
         };
       };
     };
-    gnome.gnome-keyring.enable = true;
   };
 
   xdg.portal = {
@@ -93,6 +103,7 @@
   systemd.user = {
     extraConfig = ''
       DefaultEnvironment="XDG_CURRENT_DESKTOP=niri"
+      DefaultEnvironment="XDG_SESSION_TYPE=wayland"
     '';
   };
 
@@ -142,7 +153,7 @@
 
   users.users.zxcfdcmv = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "input" ];
   };
 
   security = {
@@ -150,7 +161,10 @@
       enable = true;
       wheelNeedsPassword = false;
     };
-    pam.services.greetd.enableGnomeKeyring = true;
+    pam.services.greetd = {
+      enableGnomeKeyring = true;
+      startSession = true;
+    };
   };
 
   fonts.packages = with pkgs; [
