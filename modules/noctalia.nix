@@ -19,9 +19,6 @@
           left = [
             {
               id = "SystemMonitor";
-              showCpuUsage = true;
-              showMemoryUsage = true;
-              showMemoryAsPercentage = true;
             }
             {
               id = "ActiveWindow";
@@ -30,7 +27,6 @@
             }
             {
               id = "MediaMini";
-              maxWidth = 145;
             }
           ];
           center = [
@@ -100,6 +96,7 @@
         foot = true;
         fuzzel = true;
         niri = true;
+        yazi = true;
       };
       nightLight.enabled = true;
     };
