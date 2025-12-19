@@ -38,7 +38,7 @@
       # 浏览器 / 游戏
       microsoft-edge
       (prismlauncher.override {
-        jdks = [ zulu17 zulu25 ];
+        jdks = [ zulu17 zulu21 zulu25 ];
       })
       teamspeak6-client
       sparkle
@@ -69,6 +69,7 @@
         delete = "sudo nix-collect-garbage -d";
         build  = "sudo nixos-rebuild build --flake ~/nixos#nixos";
         switch = "sudo nixos-rebuild switch --flake ~/nixos#nixos";
+        switch-proxy = "sudo -E bash -c 'export http_proxy=http://127.0.0.1:7890 && export https_proxy=$http_proxy && nixos-rebuild switch --flake /home/zxcfdcmv/nixos#nixos'";
       };
     };
     helix = {
