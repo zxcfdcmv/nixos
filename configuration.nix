@@ -43,7 +43,6 @@
 
   services = {
     xserver = {
-      enable = true;
       videoDrivers = [ "nvidia" ];
     };
     pipewire = {
@@ -92,7 +91,7 @@
   hardware = {
     nvidia = {
       modesetting.enable = true;
-      nvidiaSettings = true;
+      nvidiaSettings = false;
       open = false;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };

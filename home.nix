@@ -38,7 +38,7 @@
       # 浏览器 / 游戏
       microsoft-edge
       (prismlauncher.override {
-        jdks = [ zulu17 zulu21 ];
+        jdks = [ zulu17 zulu25 ];
       })
       teamspeak6-client
       sparkle
