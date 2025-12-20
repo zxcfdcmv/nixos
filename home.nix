@@ -75,7 +75,7 @@
     helix = {
       enable = true;
       settings = {
-        theme = "bogster";
+        theme = "base16_transparent";
         editor = {
           soft-wrap = {
             enable = true;
