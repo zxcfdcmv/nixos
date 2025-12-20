@@ -128,6 +128,8 @@
       helix
       wget
       curl
+      rustc
+      cargo
     ];
   };
 

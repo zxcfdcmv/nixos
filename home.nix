@@ -34,6 +34,7 @@
       p7zip poppler imagemagick ffmpegthumbnailer
       wl-clipboard xwayland-satellite
       localsend
+      rust-analyzer
 
       # 浏览器 / 游戏
       microsoft-edge
