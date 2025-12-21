@@ -3,8 +3,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      mango.nixosModules.mango
-      # ./modules/nixos/mango.nix
+      ./modules/nixos/niri.nix
     ];
   nixpkgs.config.allowUnfree = true;
 
@@ -59,24 +58,6 @@
     greetd.enable = true;
   };
 
-  services.greetd.settings.default_session.command = ''
-    ${pkgs.tuigreet}/bin/tuigreet \
-      --cmd "${mango.packages.${pkgs.stdenv.hostPlatform.system}.mango}/bin/mango" \
-      --theme "dark" \
-      --greet-align center \
-      --time \
-      --time-format "%A, %d %B %Y %H:%M:%S" \
-      --remember \
-      --remember-session
-  '';
-
-  systemd.user = {
-    extraConfig = ''
-      DefaultEnvironment="XDG_CURRENT_DESKTOP=mango"
-      DefaultEnvironment="XDG_SESSION_TYPE=wayland"
-    '';
-  };
-
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
@@ -102,7 +83,6 @@
   };
 
   programs = {
-    mango.enable = true;
     git = {
       enable = true;
       config = {

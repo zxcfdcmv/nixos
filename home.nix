@@ -1,8 +1,7 @@
-{ config, pkgs, lib, mango, ... }:
+{ config, pkgs, lib, ... }:
 {
   imports = [
-    mango.hmModules.mango
-    ./modules/hm/mango.nix
+    ./modules/hm/niri.nix
     ./modules/hm/foot.nix
     ./modules/hm/noctalia.nix
     ./modules/hm/zed-editor.nix
@@ -101,6 +100,4 @@
     fzf.enable = true;
     yazi.enable = true;
   };
-
-  # xdg.configFile."niri/config.kdl".source = ./assets/niri.kdl;
 }
