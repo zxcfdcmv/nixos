@@ -95,7 +95,6 @@
         kcolorscheme = true;
         foot = true;
         fuzzel = true;
-        mango = true;
         niri = true;
         yazi = true;
         zeditor = true;
