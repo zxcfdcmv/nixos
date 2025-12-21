@@ -1,8 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, mango, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      mango.nixosModules.mango
+      # ./modules/nixos/mango.nix
     ];
   nixpkgs.config.allowUnfree = true;
 
@@ -54,25 +56,25 @@
     power-profiles-daemon.enable = true;
     upower.enable = true;
     gnome.gnome-keyring.enable = true;
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-          user = "greeter";
-          command = ''
-            ${pkgs.tuigreet}/bin/tuigreet \
-              --cmd "${pkgs.niri}/bin/niri --session" \
-              --theme "dark" \
-              --greeting "Welcome to NixOS!" \
-              --greet-align center \
-              --time \
-              --time-format "%A, %d %B %Y %H:%M:%S" \
-              --remember \
-              --remember-session \
-          '';
-        };
-      };
-    };
+    greetd.enable = true;
+  };
+
+  services.greetd.settings.default_session.command = ''
+    ${pkgs.tuigreet}/bin/tuigreet \
+      --cmd "${mango.packages.${pkgs.stdenv.hostPlatform.system}.mango}/bin/mango" \
+      --theme "dark" \
+      --greet-align center \
+      --time \
+      --time-format "%A, %d %B %Y %H:%M:%S" \
+      --remember \
+      --remember-session
+  '';
+
+  systemd.user = {
+    extraConfig = ''
+      DefaultEnvironment="XDG_CURRENT_DESKTOP=mango"
+      DefaultEnvironment="XDG_SESSION_TYPE=wayland"
+    '';
   };
 
   xdg.portal = {
@@ -99,15 +101,8 @@
     bluetooth.enable = true;
   };
 
-  systemd.user = {
-    extraConfig = ''
-      DefaultEnvironment="XDG_CURRENT_DESKTOP=niri"
-      DefaultEnvironment="XDG_SESSION_TYPE=wayland"
-    '';
-  };
-
   programs = {
-    niri.enable = true;
+    mango.enable = true;
     git = {
       enable = true;
       config = {

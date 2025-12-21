@@ -11,13 +11,17 @@
       url = "git+https://gh-proxy.com/github.com/noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mango = {
+      url = "git+https://gh-proxy.com/github.com/DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:{
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit (inputs) mango noctalia; };
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
@@ -31,7 +35,9 @@
                 ];
               };
               extraSpecialArgs = {
-                noctalia = inputs.noctalia;
+                inherit (inputs) mango noctalia;
+                # noctalia = inputs.noctalia;
+                # mango = inputs.mango;
               };
             };
           }

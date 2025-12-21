@@ -97,6 +97,7 @@
         fuzzel = true;
         niri = true;
         yazi = true;
+        zeditor = true;
       };
       nightLight.enabled = true;
     };

@@ -1,10 +1,13 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, mango, ... }:
 {
   imports = [
-    ./modules/foot.nix
-    ./modules/noctalia.nix
-    ./modules/input-method.nix    # 框架
-    ./inputs/xiaohe.nix           # 输入方案
+    mango.hmModules.mango
+    ./modules/hm/mango.nix
+    ./modules/hm/foot.nix
+    ./modules/hm/noctalia.nix
+    ./modules/hm/zed-editor.nix
+    ./modules/hm/input.nix              # 框架
+    ./modules/hm/input-xiaohe.nix       # 输入方案
   ];
 
   home = {
@@ -23,7 +26,6 @@
     sessionVariables = {
       XCURSOR_SIZE = "24";
       XCURSOR_THEME = "Bibata-Modern-Ice";
-      XDG_CURRENT_DESKTOP = "niri";
       QT_QPA_PLATFORM = "wayland";
     };
     
@@ -34,7 +36,6 @@
       p7zip poppler imagemagick ffmpegthumbnailer
       wl-clipboard xwayland-satellite
       localsend
-      rust-analyzer
 
       # 浏览器 / 游戏
       microsoft-edge
@@ -101,5 +102,5 @@
     yazi.enable = true;
   };
 
-  xdg.configFile."niri/config.kdl".source = ./assets/niri.kdl;
+  # xdg.configFile."niri/config.kdl".source = ./assets/niri.kdl;
 }
