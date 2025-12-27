@@ -6,8 +6,6 @@
   programs.noctalia-shell = {
     enable = true;
     settings = {
-      # configure noctalia here; defaults will
-      # be deep merged with these attributes.
       bar = {
         density = "comfortable";
         position = "top";
@@ -69,7 +67,6 @@
         avatarImage = "/home/zxcfdcmv/nixos/assets/pictures/.face";
         radiusRatio = 0.2;
         animationDisabled = true;  # 跳过所有动画
-        animationSpeed = 2;        # 动画速度, 数值越大动画越快
         language = "zh-CN";
         enableShadows = false;
       };
@@ -101,6 +98,65 @@
         helix = true;
       };
       nightLight.enabled = true;
+      controlCenter = {
+        position = "close_to_bar_button";
+        shortcuts = {
+          left = [
+            {
+              id = "WiFi";
+            }
+            {
+              id = "Bluetooth";
+            }
+            {
+              id = "ScreenRecorder";
+            }
+            {
+              id = "WallpaperSelector";
+            }
+          ];
+          right = [
+            {
+              id = "Notifications";
+            }
+            {
+              id = "PowerProfile";
+            }
+            {
+              id = "KeepAwake";
+            }
+            {
+              id = "NightLight";
+            }
+          ];
+        };
+        cards = [
+          {
+            enabled = true;
+            id = "profile-card";
+          }
+          {
+            enabled = true;
+            id = "shortcuts-card";
+          }
+          {
+            enabled = false;
+            id = "audio-card";
+          }
+          {
+            enabled = true;
+            id = "brightness-card";
+          }
+          {
+            enabled = true;
+            id = "weather-card";
+          }
+          {
+            enabled = true;
+            id = "media-sysmon-card";
+          }
+        ];
+      };
     };
   };
 }
