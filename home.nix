@@ -37,7 +37,18 @@
       localsend
       rust-analyzer
 
-      # 浏览器 / 游戏
+
+      # 脚本
+      # fuzzel-toggle
+      (writeShellScriptBin "fuzzel-toggle" ''
+        if pgrep -x "fuzzel" > /dev/null; then
+          pkill -x "fuzzel"
+        else
+          ${pkgs.fuzzel}/bin/fuzzel
+        fi
+      '')
+
+      # 应用
       microsoft-edge
       (prismlauncher.override {
         jdks = [ zulu17 zulu21 zulu25 ];
@@ -59,9 +70,6 @@
         };
       };
     };
-    fuzzel = {
-      enable = true;
-    };
     starship = {
       enable = true;
       settings = {
@@ -71,6 +79,7 @@
         line_break.disabled = true;
       };
     };
+    fuzzel.enable = true;
     zoxide.enable = true;
     fzf.enable = true;
     yazi.enable = true;
