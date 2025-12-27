@@ -2,7 +2,7 @@
 {
   programs.zed-editor = {
     enable = true;
-    extensions = [ "nix" "toml" "rust" "json" ];
+    extensions = [ "rust" "json" ];
     userSettings = {
       ui_font_family = "Maple Mono NF CN";
       ui_font_size = 16;
