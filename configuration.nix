@@ -54,7 +54,6 @@
     };
     power-profiles-daemon.enable = true;
     upower.enable = true;
-    gnome.gnome-keyring.enable = true;
     greetd.enable = true;
   };
 
@@ -66,7 +65,7 @@
     ];
     config = {
       common = {
-        default-session = [ "wlr" "gtk" ];
+        default = "wlr";
       };
     };
   };
@@ -139,7 +138,6 @@
       wheelNeedsPassword = false;
     };
     pam.services.greetd = {
-      enableGnomeKeyring = true;
       startSession = true;
     };
   };

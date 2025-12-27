@@ -59,11 +59,6 @@ layout {
     }
 }
 
-spawn-at-startup "noctalia-shell"
-spawn-at-startup "systemctl --user start graphical-session.target"
-spawn-sh-at-startup "foot --server &"
-spawn-sh-at-startup "export QT_IM_MODULE=fcitx5 XMODIFIERS=@im=fcitx5 SDL_IM_MODULE=fcitx5 GLFW_IM_MODULE=fcitx5 GLYPH_IM_MODULE=fcitx5 && fcitx5 -d &"
-
 hotkey-overlay {
     skip-at-startup
 }
@@ -73,6 +68,7 @@ prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 animations {
+    off
 }
 
 window-rule {
