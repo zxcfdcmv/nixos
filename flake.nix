@@ -25,6 +25,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
+              backupFileExtension = "backup";
               users.zxcfdcmv = {
                 imports = [
                   ./home.nix

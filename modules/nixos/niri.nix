@@ -17,6 +17,17 @@
       DefaultEnvironment="XDG_CURRENT_DESKTOP=niri"
       DefaultEnvironment="XDG_SESSION_TYPE=wayland"
     '';
-  };
 
+    targets.graphical-session = {
+      unitConfig = {
+        RefuseManualStart = lib.mkForce false;
+        StopWhenUnneeded = lib.mkForce false;
+      };
+
+      after = [
+        # "niri.service"
+        # "noctalia-shell.service"
+      ];
+    };
+  };
 }

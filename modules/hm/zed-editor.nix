@@ -2,12 +2,11 @@
 {
   programs.zed-editor = {
     enable = true;
-    extensions = [ "nix" "toml" "rust" ];
+    extensions = [ "nix" "toml" "rust" "json" ];
     userSettings = {
       terminal = {
         shell = "system";
       };
-      show_whitespaces = "all";
     };
   };
 }
