@@ -36,7 +36,7 @@
       wl-clipboard xwayland-satellite
 
       # 开发
-      rustc cargo gcc gnumake pkg-config
+      rustc cargo rustfmt gcc gnumake pkg-config
       rust-analyzer
 
 
