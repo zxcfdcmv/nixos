@@ -20,10 +20,14 @@
         [Groups/0]
         Name=Default
         Default Layout=us
-        DefaultIM=keyboard-us
+        DefaultIM=rime
 
         [Groups/0/Items/0]
         Name=rime
+        Layout=
+
+        [Groups/0/Items/1]
+        Name=keyboard-us
         Layout=
 
         [GroupOrder]

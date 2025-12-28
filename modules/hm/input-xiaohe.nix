@@ -25,7 +25,7 @@ in
         ascii_composer/switch_key:
           Caps_Lock: noop
           Shift_L: commit_code
-          Shift_R: commit_code
+          Shift_R: noop
           Control_L: noop
           Control_R: noop
 

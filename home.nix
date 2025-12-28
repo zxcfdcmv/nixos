@@ -44,6 +44,7 @@
       teamspeak6-client
       sparkle
       localsend
+      heroic
     ];
   };
 

@@ -1,9 +1,9 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, noctalia, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/nixos/niri.nix
+      noctalia.nixosModules.default
     ];
   nixpkgs.config.allowUnfree = true;
 
@@ -54,7 +54,19 @@
     };
     power-profiles-daemon.enable = true;
     upower.enable = true;
-    greetd.enable = true;
+    greetd = {
+      enable = true;
+      settings.default_session.command = ''
+        ${pkgs.tuigreet}/bin/tuigreet \
+          --cmd "${pkgs.niri}/bin/niri-session" \
+          --theme "dark" \
+          --greet-align center \
+          --time \
+          --time-format "%A, %d %B %Y %H:%M:%S" \
+          --remember \
+      '';
+    };
+    noctalia-shell.enable = true;
   };
 
   xdg.portal = {
@@ -78,7 +90,10 @@
       open = false;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
     bluetooth.enable = true;
   };
 
@@ -91,6 +106,16 @@
           email = "zxcfdcmv@foxmail.com";
         };
       };
+    };
+
+    niri.enable = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+
+      extraCompatPackages = with pkgs; [ proton-ge-bin ];
     };
   };
   
