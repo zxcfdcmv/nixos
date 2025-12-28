@@ -20,10 +20,9 @@
       # ps   = "procs";
       top  = "btm";
       z    = "zoxide query --interactive";
-      delete = "sudo nix-collect-garbage -d";
-      build  = "sudo nixos-rebuild build --flake ~/nixos#nixos";
-      switch = "sudo nixos-rebuild switch --flake ~/nixos#nixos";
-      switch-proxy = "sudo -E bash -c 'export http_proxy=http://127.0.0.1:7890 && export https_proxy=$http_proxy && nixos-rebuild switch --flake /home/zxcfdcmv/nixos#nixos'";
+      my-delete = "sudo nix-collect-garbage -d";
+      my-build  = "sudo nixos-rebuild build --flake ~/nixos#nixos";
+      my-switch = "sudo nixos-rebuild switch --flake ~/nixos#nixos";
     };
   };
 }

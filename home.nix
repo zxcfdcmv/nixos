@@ -8,6 +8,7 @@
     ./modules/hm/input.nix              # 框架
     ./modules/hm/input-xiaohe.nix       # 输入方案
     ./modules/hm/bash.nix
+    ./modules/hm/scripts.nix
     ./modules/hm/proxy.nix
   ];
 
@@ -34,21 +35,6 @@
       ripgrep bat eza fd dust procs bottom
       p7zip poppler imagemagick ffmpegthumbnailer
       wl-clipboard xwayland-satellite
-
-      # 开发
-      rustc cargo rustfmt gcc gnumake pkg-config
-      rust-analyzer
-
-
-      # 脚本
-      # fuzzel-toggle
-      (writeShellScriptBin "fuzzel-toggle" ''
-        if pgrep -x "fuzzel" > /dev/null; then
-          pkill -x "fuzzel"
-        else
-          ${pkgs.fuzzel}/bin/fuzzel
-        fi
-      '')
 
       # 应用
       microsoft-edge
