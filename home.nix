@@ -8,6 +8,7 @@
     ./modules/hm/input.nix              # 框架
     ./modules/hm/input-xiaohe.nix       # 输入方案
     ./modules/hm/bash.nix
+    ./modules/hm/proxy.nix
   ];
 
   home = {
@@ -28,13 +29,14 @@
       XCURSOR_THEME = "Bibata-Modern-Ice";
     };
     
-    # 用户包
     packages = with pkgs; [
       # 基础
       ripgrep bat eza fd dust procs bottom
       p7zip poppler imagemagick ffmpegthumbnailer
       wl-clipboard xwayland-satellite
-      localsend
+
+      # 开发
+      rustc cargo gcc gnumake pkg-config
       rust-analyzer
 
 
@@ -55,6 +57,7 @@
       })
       teamspeak6-client
       sparkle
+      localsend
     ];
   };
 
