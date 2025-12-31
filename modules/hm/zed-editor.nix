@@ -10,8 +10,8 @@
       buffer_font_size = 16;
       theme = {
         mode = "system";
-        # dark = "Noctalia Dark";
-        # light = "Noctalia Light";
+        dark = "one Dark";
+        light = "one Light";
       };
       terminal = {
         env = { TERM = "footclient"; };
