@@ -94,7 +94,6 @@
         fuzzel = true;
         niri = true;
         yazi = true;
-        zed = true;
         helix = true;
       };
       nightLight.enabled = true;
