@@ -2,13 +2,13 @@
 {
   imports = [
     ./modules/hm/niri.nix
-    ./modules/hm/foot.nix
     ./modules/hm/noctalia.nix
-    ./modules/hm/zed-editor.nix
-    ./modules/hm/input.nix              # 框架
-    ./modules/hm/input-xiaohe.nix       # 输入方案
     ./modules/hm/bash.nix
     ./modules/hm/scripts.nix
+    ./modules/hm/foot.nix
+    ./modules/hm/input.nix              # 框架
+    ./modules/hm/input-xiaohe.nix       # 输入方案
+    ./modules/hm/zed-editor.nix
     ./modules/hm/proxy.nix
   ];
 
