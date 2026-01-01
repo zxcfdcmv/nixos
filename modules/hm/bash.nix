@@ -23,6 +23,7 @@
       my-delete = "sudo nix-collect-garbage -d";
       my-build  = "sudo nixos-rebuild build --flake ~/nixos#nixos";
       my-switch = "sudo nixos-rebuild switch --flake ~/nixos#nixos";
+      my-proxy = "export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890";
     };
   };
 }
