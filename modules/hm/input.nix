@@ -26,10 +26,6 @@
         Name=rime
         Layout=
 
-        [Groups/0/Items/1]
-        Name=keyboard-us
-        Layout=
-
         [GroupOrder]
         0=Default      
       '';
