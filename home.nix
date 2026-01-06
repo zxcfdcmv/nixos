@@ -42,7 +42,6 @@
         jdks = [ zulu17 zulu21 zulu25 ];
       })
       teamspeak6-client
-      sparkle
       localsend
       heroic
     ];

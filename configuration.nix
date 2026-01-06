@@ -67,6 +67,35 @@
       '';
     };
     noctalia-shell.enable = true;
+    dae = {
+      enable = true;
+
+      config = ''
+        global {
+          lan_interface: auto
+          wan_interface: auto
+          log_level: info
+        }
+
+        subscription {
+          'https://gh-proxy.com/https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.meta.yml'
+          'https://proxy.v2gh.com/https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub'
+          'https://gh-proxy.com/raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta.yaml'
+        }
+
+        group {
+          proxy {
+            policy: min_moving_avg
+          }
+        }
+
+        routing {
+          dip(geoip:private) -> direct
+          dip(geoip:cn) -> direct
+          fallback: proxy
+        }
+      '';
+    };
   };
 
   xdg.portal = {
