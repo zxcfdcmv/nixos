@@ -13,7 +13,7 @@
   ];
 
   home = {
-    stateVersion = "26.05";
+    stateVersion = "25.11";
     username = "zxcfdcmv";
     homeDirectory = "/home/zxcfdcmv";
 

@@ -116,6 +116,7 @@
       modesetting.enable = true;
       nvidiaSettings = false;
       powerManagement.enable = true;
+      nvidiaPersistenced = true;
       open = false;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
@@ -150,6 +151,9 @@
   
   environment = {
     sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      _GL_GSYNC_ALLOWED = "0";
+      _GL_VRR_ALLOWED = "0";
       EDITOR = "hx";
       VISUAL = "hx";
     };
