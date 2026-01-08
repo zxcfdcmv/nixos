@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, userSettings, ... }:
 {
   imports = [
     ./modules/hm/niri.nix
@@ -14,8 +14,8 @@
 
   home = {
     stateVersion = "25.11";
-    username = "zxcfdcmv";
-    homeDirectory = "/home/zxcfdcmv";
+    username = userSettings.username;
+    homeDirectory = "/home/${userSettings.username}";
 
     # 指针主题
     pointerCursor = {

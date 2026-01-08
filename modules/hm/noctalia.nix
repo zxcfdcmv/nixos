@@ -1,4 +1,4 @@
-{ pkgs, noctalia, ... }:
+{ pkgs, noctalia, userSettings, ... }:
 {
   imports = [
     noctalia.homeModules.default
@@ -64,7 +64,7 @@
         name = "jinan";
       };
       general = {
-        avatarImage = "/home/zxcfdcmv/nixos/assets/pictures/.face";
+        avatarImage = "${userSettings.dotfilesDir}/assets/pictures/.face";
         radiusRatio = 0.2;
         animationDisabled = true;  # 跳过所有动画
         language = "zh-CN";
@@ -80,7 +80,7 @@
       };
       wallpaper = {
         enabled = true;
-        directory = "/home/zxcfdcmv/nixos/assets/pictures";
+        directory = "${userSettings.dotfilesDir}/assets/pictures";
         randomEnabled = true;
         hideWallpaperFilenames = true;
         transitionType = "none";

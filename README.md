@@ -34,7 +34,7 @@
   然后打开 GitHub → Settings → SSH and GPG keys → New SSH key → 粘贴进去
 1. 将本地仓库推送到github
   ```bash
-    git remote add origin git@github.com:zxcfdcmv/nixos.git
+    git remote add origin git@github.com:username/nixos.git
     git branch -M main
     git push origin main
   ```
