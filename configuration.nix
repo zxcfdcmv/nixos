@@ -67,9 +67,6 @@
       enable = true;
       wheelNeedsPassword = false;
     };
-    # pam.services.greetd = {
-    #   startSession = true;
-    # };
   };
 
   system.stateVersion = "25.11";
