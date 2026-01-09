@@ -39,7 +39,7 @@
       # 应用
       microsoft-edge
       (prismlauncher.override {
-        jdks = [ zulu17 zulu21 zulu25 ];
+        jdks = [ zulu25 ];
       })
       teamspeak6-client
       localsend

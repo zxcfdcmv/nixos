@@ -88,6 +88,32 @@
       wget
       curl
     ];
+    etc = {
+      "opt/edge/policies/managed/policies.json".text = ''
+        {
+          "HubsSidebarEnabled": false,
+          "EdgeShoppingAssistantEnabled": false,
+          "AllowGamesMenu": false,
+          "SearchSuggestEnabled": false,
+          "PromotionalTabsEnabled": false,
+          "NewTabPageContentEnabled": false,
+          "NewTabPageQuickLinksEnabled": false,
+          "NewTabPageAllowedBackgroundTypes": 3,
+          "EdgeCollectionsEnabled": false,
+          "UserFeedbackAllowed": false,
+          "EdgeAssetDeliveryServiceEnabled": false,
+          "ConfigureDoNotTrack": true,
+    
+          "HideFirstRunExperience": true,
+          "AlternateErrorPagesEnabled": false,
+          "PaymentMethodQueryEnabled": false,
+
+          "PasswordManagerEnabled": false,
+          "AutofillAddressEnabled": false,
+          "AutofillCreditCardEnabled": false
+        }
+      '';
+    };
   };
 
   users.users.${userSettings.username} = {
