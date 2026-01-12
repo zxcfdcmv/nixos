@@ -3,6 +3,7 @@
   imports = [
     ./modules/hm/niri.nix
     ./modules/hm/noctalia.nix
+    ./modules/hm/swayidle.nix
     ./modules/hm/bash.nix
     ./modules/hm/scripts.nix
     ./modules/hm/foot.nix
@@ -32,14 +33,14 @@
     
     packages = with pkgs; [
       # 基础
-      ripgrep bat eza fd dust procs bottom
+      ripgrep bat eza fd dust bottom
       p7zip poppler imagemagick ffmpegthumbnailer
       wl-clipboard xwayland-satellite
 
       # 应用
       microsoft-edge
       (prismlauncher.override {
-        jdks = [ zulu25 ];
+        jdks = [ zulu21 zulu25 ];
       })
       teamspeak6-client
       localsend
@@ -53,24 +54,54 @@
       settings = {
         theme = "base16_transparent";
         editor = {
-          soft-wrap = {
-            enable = true;
-          };
+          soft-wrap.enable = true;
+          line-number = "relative";
         };
       };
     };
     starship = {
       enable = true;
       settings = {
+        directory = {
+          truncation_length = 3;
+          truncate_to_repo = true;
+        };
         add_newline = false;
         aws.disabled = true;
         gcloud.disabled = true;
         line_break.disabled = true;
       };
     };
-    fuzzel.enable = true;
-    zoxide.enable = true;
-    fzf.enable = true;
-    yazi.enable = true;
+    fuzzel = {
+      enable = true;
+      settings = {
+        main = {
+          terminal = "${pkgs.foot}/bin/footclient";
+          layer = "overlay";
+          include = "~/.config/fuzzel/themes/noctalia";
+        };
+      };
+      
+    };
+    zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+    };
+    fzf = {
+      enable = true;
+      enableBashIntegration = true;
+      defaultCommand = "fd --type f --strip-cwd-prefix --hidden --exclude .git";
+    };
+    yazi = {
+      enable = true;
+      enableBashIntegration = true;
+      settings = {
+        manager = {
+          show_hidden = true;
+          sort_by = "mtime";
+          sort_reverse = true;
+        };
+      };
+    };
   };
 }

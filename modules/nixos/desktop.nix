@@ -37,7 +37,6 @@
       '';
     };
     noctalia-shell.enable = true;
-    
   };
 
   xdg.portal = {

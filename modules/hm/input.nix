@@ -1,6 +1,5 @@
 { config, pkgs, lib, ... }:
 {
-  # 输入法框架只装一次，方案由 inputs/*.nix 提供
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
