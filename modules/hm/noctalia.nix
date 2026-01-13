@@ -12,6 +12,7 @@
         showCapsule = true;
         floating = true;
         capsuleOpacity = 0.6;
+        useSeparateOpacity = true;
         backgroundOpacity = 0;
         widgets = {
           left = [
@@ -55,6 +56,7 @@
           ];
         };
       };
+      osd.enabled = false;
       colorSchemes = {
         darkMode = true;
         predefinedScheme = "Ayu";
@@ -91,12 +93,31 @@
         qt = true;
         kcolorscheme = true;
         foot = true;
-        fuzzel = true;
+        # fuzzel = true;
         niri = true;
         yazi = true;
         helix = true;
       };
       nightLight.enabled = true;
+      appLauncher = {
+        enableClipboardHistory = false;
+        autoPasteClipboard = false;
+        enableClipPreview = true;
+        clipboardWrapText = true;
+        position = "center";
+        pinnedApps = [ ];
+        useApp2Unit = false;
+        sortByMostUsed = true;
+        terminalCommand = "footclient";
+        customLaunchPrefixEnabled = false;
+        customLaunchPrefix = "";
+        viewMode = "list";
+        showCategories = true;
+        iconMode = "tabler";
+        showIconBackground = false;
+        ignoreMouseInput = false;
+        screenshotAnnotationTool = "";
+      };
       controlCenter = {
         position = "close_to_bar_button";
         shortcuts = {

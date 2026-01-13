@@ -72,17 +72,6 @@
         line_break.disabled = true;
       };
     };
-    fuzzel = {
-      enable = true;
-      settings = {
-        main = {
-          terminal = "${pkgs.foot}/bin/footclient";
-          layer = "overlay";
-          include = "~/.config/fuzzel/themes/noctalia";
-        };
-      };
-      
-    };
     zoxide = {
       enable = true;
       enableBashIntegration = true;
