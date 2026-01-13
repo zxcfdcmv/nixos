@@ -10,4 +10,6 @@
       };
     };
   };
+
+  xdg.configFile."fuzzel/fuzzel.ini".force = true;
 }

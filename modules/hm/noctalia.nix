@@ -93,7 +93,7 @@
         qt = true;
         kcolorscheme = true;
         foot = true;
-        # fuzzel = true;
+        fuzzel = true;
         niri = true;
         yazi = true;
         helix = true;

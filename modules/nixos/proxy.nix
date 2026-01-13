@@ -2,7 +2,6 @@
 {
   services.dae = {
     enable = true;
-
     config = ''
       global {
         lan_interface: auto
@@ -58,4 +57,30 @@
       }
     '';
   };
+
+  systemd.services.dae.wantedBy = lib.mkForce [ ];
+  systemd.services.dae.requiredBy = lib.mkForce [ ];
+
+  systemd.user.services.start-dae-after-niri = {
+    description = "Start system-wide dae after Niri session starts";
+    wantedBy = [ "graphical-session.target" ];
+    partOf   = [ "graphical-session.target" ];
+    after    = [ "graphical-session.target" ];
+
+    serviceConfig = {
+      ExecStart = "${pkgs.systemd}/bin/systemctl start dae";
+      Type = "oneshot"; # 执行完即退出
+    };
+  };
+
+  security.polkit.extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if (action.id == "org.freedesktop.systemd1.manage-units" &&
+          action.lookup("unit") == "dae.service" &&
+          subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
+      }
+    });
+  '';
+
 }
