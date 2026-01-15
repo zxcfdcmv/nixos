@@ -36,7 +36,8 @@
       # 基础
       ripgrep bat eza fd dust bottom
       p7zip poppler imagemagick ffmpegthumbnailer
-      wl-clipboard xwayland-satellite
+      xwayland-satellite
+      wl-clipboard
 
       # 应用
       microsoft-edge
