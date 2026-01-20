@@ -37,6 +37,16 @@
       '';
     };
     noctalia-shell.enable = true;
+
+    sunshine = {
+      enable = true;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
+    udev.extraRules = ''
+      KERNEL=="uinput", MODE="0660", GROUP="input", SYMLINK+="uinput"
+    '';
   };
 
   xdg.portal = {
