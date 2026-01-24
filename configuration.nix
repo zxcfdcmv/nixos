@@ -6,6 +6,7 @@
       ./modules/nixos/nvidia.nix
       ./modules/nixos/desktop.nix
       ./modules/nixos/proxy.nix
+      ./modules/nixos/input-remapper.nix
     ];
 
   nixpkgs.config.allowUnfree = true;

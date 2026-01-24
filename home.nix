@@ -12,6 +12,7 @@
     ./modules/hm/input-xiaohe.nix       # 输入方案
     ./modules/hm/zed-editor.nix
     ./modules/hm/proxy.nix
+    ./modules/hm/input-remapper.nix     # 按键映射
   ];
 
   home = {
