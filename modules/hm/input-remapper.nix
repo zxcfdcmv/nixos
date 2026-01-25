@@ -11,7 +11,7 @@
                 }
             ],
             "target_uinput": "keyboard + mouse",
-            "output_symbol": "key_down(BTN_RIGHT).\nkey_down(BTN_LEFT).\nhold(key_down(e).wait(10).key_up(e).wait(50)).\nkey_up(BTN_LEFT).\nkey_up(BTN_RIGHT)",
+            "output_symbol": "key_down(BTN_RIGHT).\nkey_down(BTN_LEFT).\nhold(key_down(v).wait(10).key_up(v).wait(50)).\nkey_up(BTN_LEFT).\nkey_up(BTN_RIGHT)",
             "mapping_type": "key_macro"
         }
     ]
