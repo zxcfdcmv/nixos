@@ -1,20 +1,35 @@
 { config, lib, pkgs, ... }:
 let
   flypy-src = pkgs.fetchFromGitHub {
-    owner  = "jqtmviyu";
-    repo   = "flypy";
-    rev    = "main";
-    sha256 = "sha256-GKB9lqV1uJCpCgDzFbchHYO2kW6mV8Sq2kBy0bropXQ=";
+    owner  = "cubercsl";
+    repo   = "rime-flypy";
+    rev    = "master";
+    sha256 = "sha256-Lw54pNXUzsVv9OFp7c5Bf+pCCA0DWTslSTrN/raX9CM=";
+  };
+
+  cleanedFlypySrc = pkgs.lib.cleanSourceWith {
+    src = flypy-src;
+    filter = (path: type:
+      let
+        name = baseNameOf path;
+      in
+        !(name == "flypy.schema.yaml") &&
+        !(name == ".github") &&
+        !(name == ".gitignore") &&
+        !(name == "Makefile") &&
+        !(name == "README.md") &&
+        !(name == ".git") &&
+        (type == "directory" -> name != "build")
+    );
   };
 in
 {
   xdg.dataFile = {
-    "fcitx5/rime/flypy.schema.yaml".source = "${flypy-src}/flypy.schema.yaml";
-    "fcitx5/rime/flypy.dict.yaml".source = "${flypy-src}/flypy.dict.yaml";
-    "fcitx5/rime/flypy".source = "${flypy-src}/flypy";      
-    "fcitx5/rime/lua".source = "${flypy-src}/lua";      
-    "fcitx5/rime/flypydz.schema.yaml".source = "${flypy-src}/flypydz.schema.yaml";      
-    "fcitx5/rime/flypydz.dict.yaml".source = "${flypy-src}/flypydz.dict.yaml";      
+    "fcitx5/rime" = {
+      source = "${cleanedFlypySrc}";
+      recursive = true;
+    };
+
     "fcitx5/rime/default.custom.yaml".text = ''
       patch:
         schema_list:
@@ -39,6 +54,132 @@ in
           - when: always
             accept: "Shift+space"
             send: "Shift+space"
+    '';
+    "fcitx5/rime/flypy.schema.yaml".text = ''
+      # Rime schema settings
+      # encoding: utf-8
+
+      schema:
+        schema_id: flypy
+        name: 小鹤音形
+        version: "10.13.11"
+        author:
+          - 方案设计：何海峰 flypy.cc
+        description: |
+          小鹤音形输入法
+        dependencies:
+          - flypydz
+
+      punctuator:
+        import_preset: default
+
+      switches:
+        - name: ascii_mode
+          reset: 0
+          states: [ 中文, 英文 ]
+        - name: full_shape
+          states: [ 半角, 全角 ]
+        - name: simplification
+          states: [ 简, 繁 ]
+          reset: 0
+        - name: ascii_punct
+          states: [ 。，, ．， ]
+          reset: 0
+
+      engine:
+        processors:
+          - ascii_composer
+          - recognizer
+          - key_binder
+          - speller
+          - punctuator
+          - selector
+          - navigator
+          - express_editor
+        segmentors:
+          - ascii_segmentor
+          - matcher
+          - abc_segmentor
+          - punct_segmentor
+          - fallback_segmentor
+        translators:
+          - punct_translator
+          - table_translator
+          - lua_translator@*flypy_date_translator
+          - lua_translator@*flypy_time_translator
+          - reverse_lookup_translator
+          - history_translator@history
+          - lua_translator@*calculator_translator
+        filters:
+          - simplifier
+          - simplifier@simplification
+          - uniquifier
+
+      speller:
+        alphabet: "abcdefghijklmnopqrstuvwxyz;'"
+        initials: ';abcdefghijklmnopqrstuvwxyz'
+        finals: "'"
+        #delimiter: " '"
+        max_code_length: 4
+        auto_select: true   #顶字上屏
+        auto_select_pattern: ^;.$|^\w{4}$
+        auto_clear: max_length #manual|auto|max_length 空码按下一键确认清屏|空码自动清|达到最长码时后码顶上清屏
+
+      translator:
+        dictionary: flypy
+        enable_charset_filter: false
+        enable_sentence: false
+        enable_completion: false # 编码提示开关
+        enable_user_dict: false
+        disable_user_dict_for_patterns:
+          - "^z.*$"
+
+      history:
+         input: ;f
+         size: 1 #重复前几次上屏
+         initial_quality: 1 #首选
+   
+      simplification:
+        opencc_config: s2tw.json
+        option_name: simplification
+        tips: all #简繁对照
+
+      reverse_lookup:
+        dictionary: flypydz
+        comment_format:
+         # - xform/^/〔/
+         # - xform/$/〕/
+          - xform/ / /
+
+
+      key_binder:
+        import_preset: default #方案切换相关
+        bindings:
+          - {accept: bracketleft, send: Page_Up, when: paging} # [上翻页
+          - {accept: bracketright, send: Page_Down, when: has_menu} # ]下翻页
+          - {accept: comma, send: comma, when: paging} #注销逗号翻页
+          - {accept: period, send: period, when: has_menu} #注销句号翻页
+          - {accept: semicolon, send: 2, when: has_menu} #分号次选
+          - {accept: Release+period, send: period, when: composing} #句号顶屏
+          - {accept: Release+comma, send: comma, when: composing} #逗号顶屏
+          - {accept: "Tab", send: Escape, when: composing}
+          - {accept: "Shift_R", send: Escape, when: composing}
+
+      recognizer:
+        import_preset: default
+        patterns:
+          #uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+          uppercase: "" #中文状态大写锁定直接上屏
+          reverse_lookup: "[a-z`]*`+[a-z`]*"
+          punct: ""
+          expression: "^=.*$"
+
+      menu:
+        page_size: 5 #候选项数
+  
+      style:
+        text_orientation: horizontal
+        candidate_list_layout: linear
     '';
   };
 }
