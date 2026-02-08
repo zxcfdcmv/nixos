@@ -15,7 +15,7 @@
       du   = "dust";
       top  = "btm";
       my-delete = "sudo nix-collect-garbage -d && nix-store --optimise";
-      my-switch = "cd ${userSettings.dotfilesDir} && nix flake update && sudo nixos-rebuild switch --flake ${userSettings.dotfilesDir}#${userSettings.hostName}";
+      my-switch = "cd ${userSettings.dotfilesDir} && nix flake update && sudo nice -n 19 ionice -c 3 nixos-rebuild switch --flake .#${userSettings.hostName}";
     };
   };
 }
