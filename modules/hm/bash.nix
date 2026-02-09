@@ -13,7 +13,6 @@
       ll   = "eza --group-directories-first --git --long --icons";
       l    = "eza --group-directories-first --git --long --icons";
       du   = "dust";
-      top  = "btm";
       my-delete = "sudo nix-collect-garbage -d && nix-store --optimise";
       my-switch = "cd ${userSettings.dotfilesDir} && nix flake update && sudo nice -n 19 ionice -c 3 nixos-rebuild switch --flake .#${userSettings.hostName}";
     };

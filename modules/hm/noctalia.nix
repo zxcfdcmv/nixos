@@ -97,6 +97,7 @@
         niri = true;
         yazi = true;
         helix = true;
+        btop = true;
       };
       nightLight.enabled = true;
       appLauncher = {

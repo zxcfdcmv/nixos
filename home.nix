@@ -25,7 +25,7 @@
       gtk.enable = true;
       x11.enable = true;
       name = "Bibata-Modern-Ice";
-      size = 32;
+      size = 24;
       package = pkgs.bibata-cursors;
     };
     sessionVariables = {
@@ -35,7 +35,7 @@
     
     packages = with pkgs; [
       # 基础
-      ripgrep bat eza fd dust bottom
+      ripgrep bat eza fd dust
       p7zip poppler imagemagick ffmpegthumbnailer
       xwayland-satellite
       wl-clipboard
@@ -93,6 +93,21 @@
           sort_by = "mtime";
           sort_reverse = true;
         };
+      };
+    };
+    btop = {
+      enable = true;
+      settings = {
+        color_theme = "TTY";
+        vim_keys = true;
+        update_ms = 2000;
+        rounded_corners = true;
+
+        proc_tree = true;
+        proc_gradient = true;
+
+        show_cpu_freq = true;
+        show_coretemp = true;
       };
     };
   };
