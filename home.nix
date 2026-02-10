@@ -102,10 +102,7 @@
         vim_keys = true;
         update_ms = 2000;
         rounded_corners = true;
-
-        proc_tree = true;
         proc_gradient = true;
-
         show_cpu_freq = true;
         show_coretemp = true;
       };
