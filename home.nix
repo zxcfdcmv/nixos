@@ -87,6 +87,7 @@
     yazi = {
       enable = true;
       enableBashIntegration = true;
+      shellWrapperName = "y";
       settings = {
         manager = {
           show_hidden = true;

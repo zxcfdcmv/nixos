@@ -72,6 +72,7 @@
 
       extraCompatPackages = with pkgs; [ proton-ge-bin ];
     };
+    gamemode.enable = true;
   };
 
   environment = {

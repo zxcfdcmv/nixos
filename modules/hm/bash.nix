@@ -15,6 +15,8 @@
       du   = "dust";
       my-delete = "sudo nix-collect-garbage -d && nix-store --optimise";
       my-switch = "cd ${userSettings.dotfilesDir} && nix flake update && sudo nice -n 19 ionice -c 3 nixos-rebuild switch --flake .#${userSettings.hostName}";
+      proxy-on = "sudo systemctl start dae.service";
+      proxy-off = "sudo systemctl stop dae.service";
     };
   };
 }

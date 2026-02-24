@@ -5,7 +5,7 @@
       ./hardware-configuration.nix
       ./modules/nixos/nvidia.nix
       ./modules/nixos/desktop.nix
-      ./modules/nixos/sunshine.nix
+      # ./modules/nixos/sunshine.nix
       ./modules/nixos/proxy.nix
       ./modules/nixos/input-remapper.nix
     ];
@@ -17,7 +17,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
   };
 
   time.timeZone = "Asia/Shanghai";

@@ -17,8 +17,9 @@
         # 'https://proxy.v2gh.com/https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub'
         # 'https://gh-proxy.com/raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta.yaml'
         # 'https://gh-proxy.com/raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta-2.yaml'
-        # 'https://ghfast.top/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt'
-        'https://gh-proxy.com/raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt'
+        'https://ghfast.top/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt'
+        # 'https://gh-proxy.com/raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt'
+        # 'https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/nodev2ray.txt'
       }
 
       dns {
@@ -62,28 +63,31 @@
   systemd.services.dae.wantedBy = lib.mkForce [ ];
   systemd.services.dae.requiredBy = lib.mkForce [ ];
 
-  systemd.user.services.start-dae-after-niri = {
-    description = "Start system-wide dae after Niri session starts";
-    partOf = [ "graphical-session.target" ];
-    wantedBy = [ "graphical-session.target" ];
-    after    = [ "graphical-session.target" ];
 
-    serviceConfig = {
-      ExecStart = "${pkgs.systemd}/bin/systemctl --no-block start dae";
-      ExecStop = "${pkgs.systemd}/bin/systemctl stop dae";
+  # 登录后自启dae
 
-      Type = "oneshot";
-      RemainAfterExit = "yes";
-    };
-  };
+  # systemd.user.services.start-dae-after-niri = {
+  #   description = "Start system-wide dae after Niri session starts";
+  #   partOf = [ "graphical-session.target" ];
+  #   wantedBy = [ "graphical-session.target" ];
+  #   after    = [ "graphical-session.target" ];
 
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-      if (action.id == "org.freedesktop.systemd1.manage-units" &&
-          action.lookup("unit") == "dae.service" &&
-          subject.isInGroup("wheel")) {
-        return polkit.Result.YES;
-      }
-    });
-  '';
+  #   serviceConfig = {
+  #     ExecStart = "${pkgs.systemd}/bin/systemctl --no-block start dae";
+  #     ExecStop = "${pkgs.systemd}/bin/systemctl stop dae";
+
+  #     Type = "oneshot";
+  #     RemainAfterExit = "yes";
+  #   };
+  # };
+
+  # security.polkit.extraConfig = ''
+  #   polkit.addRule(function(action, subject) {
+  #     if (action.id == "org.freedesktop.systemd1.manage-units" &&
+  #         action.lookup("unit") == "dae.service" &&
+  #         subject.isInGroup("wheel")) {
+  #       return polkit.Result.YES;
+  #     }
+  #   });
+  # '';
 }
