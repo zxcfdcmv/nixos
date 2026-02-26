@@ -31,6 +31,8 @@
     sessionVariables = {
       XCURSOR_SIZE = "24";
       XCURSOR_THEME = "Bibata-Modern-Ice";
+      # nh需要
+      NH_FLAKE = "${userSettings.dotfilesDir}";
     };
     
     packages = with pkgs; [
@@ -39,6 +41,7 @@
       p7zip poppler imagemagick ffmpegthumbnailer
       xwayland-satellite
       wl-clipboard
+      nh nvd nix-output-monitor
 
       # 应用
       microsoft-edge

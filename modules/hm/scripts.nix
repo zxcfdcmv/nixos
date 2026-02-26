@@ -11,15 +11,24 @@
       fi
     '')
 
-     # rust-project-gui
+    # rust-project-gui
     (writeShellScriptBin "rust-project-gui" ''
       exec nix-shell ~/nixos/modules/project/rust-gui.nix
     '') 
 
-     # rust-project-cli
+    # rust-project-cli
     (writeShellScriptBin "rust-project-cli" ''
       exec nix-shell ~/nixos/modules/project/rust-cli.nix
     '') 
   
+    # cs2-cn
+    (writeShellScriptBin "cs2-cn" ''
+      gamemoderun steam -applaunch 730 -novid -perfectworld +exec autoexec.cfg
+    '') 
+    # cs2-global
+    (writeShellScriptBin "cs2-global" ''
+      gamemoderun steam -applaunch 730 -novid +exec autoexec.cfg
+    '') 
+
   ];
 }

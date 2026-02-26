@@ -11,7 +11,7 @@ pkgs.mkShell {
     pkg-config
     
     # 图形界面依赖
-    xorg.libxcb
+    libxcb
     libxkbcommon
     xorg.libX11
     xorg.libXcursor

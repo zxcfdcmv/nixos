@@ -6,6 +6,7 @@
       url = "git+https://gh-proxy.com/github.com/nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     noctalia = {
       url = "git+https://gh-proxy.com/github.com/noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +27,7 @@
       ${userSettings.hostName} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          inherit (inputs) noctalia;
+          inherit (inputs) noctalia nix-cachyos-kernel;
           inherit userSettings;
         };
         modules = [

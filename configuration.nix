@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, nix-cachyos-kernel, ... }:
 {
   imports =
     [
@@ -10,14 +10,18 @@
       ./modules/nixos/input-remapper.nix
     ];
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [ nix-cachyos-kernel.overlays.pinned ]; 
+  };
 
   boot = {
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_zen;
+    # kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
   };
 
   time.timeZone = "Asia/Shanghai";
@@ -47,6 +51,8 @@
 
   nix = {
     settings = {
+      trusted-users = [ "zxcfdcmv" ];
+      builders-use-substitutes = true;
       experimental-features = [
         "nix-command"
         "flakes"
@@ -55,6 +61,12 @@
       substituters = [
         "https://mirror.sjtu.edu.cn/nix-channels/store"
         "https://cache.nixos.org"
+        "https://attic.xuyh0120.win/lantian"
+        "https://cache.garnix.io"
+      ];
+      trusted-public-keys = [
+        "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+        "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       ];
     };
     gc = {
