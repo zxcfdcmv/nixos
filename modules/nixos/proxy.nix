@@ -13,24 +13,20 @@
       }
 
       subscription {
-        # 'https://gh-proxy.com/raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.meta.yml'
         # 'https://proxy.v2gh.com/https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub'
-        # 'https://gh-proxy.com/raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta.yaml'
-        # 'https://gh-proxy.com/raw.githubusercontent.com/snakem982/proxypool/main/source/clash-meta-2.yaml'
-        'https://ghfast.top/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt'
+        'https://gh-proxy.com/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt'
         # 'https://gh-proxy.com/raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt'
         # 'https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/nodev2ray.txt'
       }
 
       dns {
         upstream {
-          alidns: 'udp://223.5.5.5:53'
-          tencentdns: 'udp://119.29.29.29:53'
+          googledns: 'tcp+udp://8.8.8.8:53'
         }
         routing {
           request {
-            qname(geosite:cn) -> alidns
-            fallback: tencentdns
+            qname(geosite:cn) -> asis
+            fallback: googledns
           }
           response {
             fallback: accept
