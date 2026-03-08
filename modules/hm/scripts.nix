@@ -1,9 +1,46 @@
 { config, pkgs, ... }:
-{
-  home.packages = with pkgs; [
+let
+  customCommands = [
+    "toggle-dae"
+    "toggle-kanata"
+    "cs2-cn"
+    "cs2-global"
+  ];
 
-    # fuzzel-toggle
-    (writeShellScriptBin "fuzzel-toggle" ''
+  mkDesktop = cmd: pkgs.makeDesktopItem {
+    name = cmd;
+    desktopName = cmd;
+    exec = cmd;
+    terminal = false;
+    categories = [ "Utility" ];
+  };
+
+  mkToggleService = name: service: pkgs.writeShellScriptBin name ''
+    SERVICE="${service}.service"
+    STATUS=$(systemctl is-active "$SERVICE" 2>/dev/null || echo "inactive")
+
+    notify() {
+      local title="$1"
+      local type="$2"
+      noctalia-shell ipc call toast send "{\"title\":\"$title\",\"type\":\"$type\"}"
+    }
+
+    case "$STATUS" in
+      active)
+        sudo systemctl stop "$SERVICE"
+        notify "$SERVICE Disabled" "warning"
+        ;;
+      *)
+        sudo systemctl start "$SERVICE"
+        notify "$SERVICE Enabled" "success"
+        ;;
+    esac
+  '';
+in
+{
+  home.packages = (with pkgs; [
+    # toggle-fuzzel
+    (writeShellScriptBin "toggle-fuzzel" ''
       if pgrep -x "fuzzel" > /dev/null; then
         pkill -x "fuzzel"
       else
@@ -11,29 +48,11 @@
       fi
     '')
 
-    # dae-toggle
-    (writeShellScriptBin "dae-toggle" ''
-      SERVICE="dae.service"
-      STATUS=$(systemctl is-active "$SERVICE" 2>/dev/null || echo "inactive")
+    # toggle-dae
+    (mkToggleService "toggle-dae" "dae")   
 
-      notify() {
-        local title="$1"
-        local body="$2"
-        local type="$3"
-        noctalia-shell ipc call toast send "{\"title\":\"$title\",\"body\":\"$body\",\"type\":\"$type\"}"
-      }
-
-      case "$STATUS" in
-        active)
-          sudo systemctl stop "$SERVICE"
-          notify "Proxy Disabled" "Connection is now direct\nDaemon: $SERVICE" "warning"
-          ;;
-        *)
-          sudo systemctl start "$SERVICE"
-          notify "Proxy Enabled" "Traffic routing active\nDaemon: $SERVICE" "notice"
-          ;;
-      esac
-    '')
+    # toggle-kanata
+    (mkToggleService "toggle-kanata" "kanata-default")
 
     # rust-project-gui
     (writeShellScriptBin "rust-project-gui" ''
@@ -53,6 +72,6 @@
     (writeShellScriptBin "cs2-global" ''
       gamemoderun steam -applaunch 730 -novid +exec autoexec.cfg
     '') 
-
-  ];
+  ])
+  ++ builtins.map mkDesktop customCommands;  
 }

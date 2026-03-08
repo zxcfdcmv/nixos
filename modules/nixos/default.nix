@@ -39,6 +39,17 @@
     noctalia-shell.enable = true;
   };
 
+  systemd.services.rfkill-unblock-bluetooth = {
+    description = "Unblock Bluetooth on boot";
+    after = [ "basic.target" ];
+    before = [ "bluetooth.service" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.util-linux}/bin/rfkill unblock bluetooth";
+    };
+  };
+
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [

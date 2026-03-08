@@ -8,6 +8,7 @@
       # ./modules/nixos/sunshine.nix
       ./modules/nixos/proxy.nix
       ./modules/nixos/input-remapper.nix
+      ./modules/nixos/kanata.nix
     ];
 
   nixpkgs = {
@@ -46,7 +47,11 @@
       enable = true;
       enable32Bit = true;
     };
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;      
+      powerOnBoot = false;
+    };
+    uinput.enable = true;
   };
 
   nix = {
