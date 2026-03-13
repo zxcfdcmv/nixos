@@ -84,10 +84,34 @@
       extraCompatPackages = with pkgs; [ proton-ge-bin ];
     };
     gamemode.enable = true;
+
+    gamescope = {
+      enable = true;
+      capSysNice = false;
+    };
+
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        stdenv.cc.cc.lib
+        freetype
+        SDL2
+        SDL2_image
+        SDL2_ttf
+        SDL2_mixer
+        libGL
+        zlib
+        glib
+      ];
+    };   
   };
 
   environment = {
     sessionVariables = {
+      WLR_NO_HARDWARE_CURSORS= "1";
+      GDK_BACKEND = "wayland,x11";
+      QT_QPA_PLATFORM = "wayland;xcb";
+      __GL_MaxFramesAllowed = "1";
       NIXOS_OZONE_WL = "1";
       _GL_GSYNC_ALLOWED = "0";
       _GL_VRR_ALLOWED = "0";

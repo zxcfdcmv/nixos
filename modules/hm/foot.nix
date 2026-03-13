@@ -19,7 +19,7 @@
         lines = "10000";
         multiplier = "3.0";
       };
-      colors = {
+      "colors-dark" = {
         alpha = "0.80";
       };
     };

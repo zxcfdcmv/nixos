@@ -1,4 +1,4 @@
-{ config, lib, pkgs, nix-cachyos-kernel, ... }:
+{ config, lib, pkgs, ... }:
 {
   imports =
     [
@@ -13,7 +13,6 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [ nix-cachyos-kernel.overlays.pinned ]; 
   };
 
   boot = {
@@ -21,7 +20,6 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    # kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
   };
 

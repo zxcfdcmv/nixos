@@ -5,6 +5,7 @@ let
     "toggle-kanata"
     "cs2-cn"
     "cs2-global"
+    "cataclysm-tiles"
   ];
 
   mkDesktop = cmd: pkgs.makeDesktopItem {

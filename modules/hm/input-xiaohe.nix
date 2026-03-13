@@ -1,9 +1,7 @@
 { config, lib, pkgs, ... }:
 let
-  flypy-src = pkgs.fetchFromGitHub {
-    owner  = "cubercsl";
-    repo   = "rime-flypy";
-    rev    = "master";
+  flypy-src = pkgs.fetchzip {
+    url = "https://gh-proxy.com/https://github.com/cubercsl/rime-flypy/archive/refs/heads/master.tar.gz";
     sha256 = "sha256-Lw54pNXUzsVv9OFp7c5Bf+pCCA0DWTslSTrN/raX9CM=";
   };
 
