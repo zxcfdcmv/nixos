@@ -9,6 +9,7 @@
       ./modules/nixos/proxy.nix
       ./modules/nixos/input-remapper.nix
       ./modules/nixos/kanata.nix
+      ./modules/nixos/tailscale.nix
     ];
 
   nixpkgs = {

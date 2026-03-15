@@ -1,12 +1,10 @@
 { pkgs, ... }:
 let
-  cdda-version = "2026-03-13-0525";
-  cdda-hash = "sha256-emhCmsXBNH7q61SBgxjny4L3CpT3MXBsRU9ZuHzofKY=";
+  cdda-version = "2026-03-15-0540";
+  cdda-hash = "sha256-rQpm8VWJEs+lHPEiAUUarjZKRj6lIScoNBj062T+V/Y=";
 
   # cdda设置
   mySettings = {
-    # 自动保存
-    AUTOSAVE = "false";
     # 自动备注
     AUTO_NOTES = "true";
     AUTO_NOTES_STAIRS = "true";
@@ -23,11 +21,13 @@ let
     VOLUME_UNITS = "l";
     DISTANCE_UNITS = "metric";
     "24_HOUR" = "12h";
+    # 快捷操作
+    USE_PINYIN_SEARCH = "true";
     # 字体设置
     FONT_BLENDING = "true";
-    FONT_WIDTH = 10;
-    FONT_HEIGHT = 20;
-    FONT_SIZE = 20;
+    FONT_WIDTH = 12;
+    FONT_HEIGHT = 24;
+    FONT_SIZE = 24;
     # 贴图包
     TILESET = "UltimateCataclysm";
     OVERMAP_TILES = "UltimateCataclysm";
