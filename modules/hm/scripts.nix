@@ -1,11 +1,12 @@
 { config, pkgs, ... }:
 let
   customCommands = [
+    "toggle-fcitx"
     "toggle-dae"
     "toggle-kanata"
     "cs2-cn"
     "cs2-global"
-    "cataclysm-tiles"
+    "cdda"
   ];
 
   mkDesktop = cmd: pkgs.makeDesktopItem {
@@ -16,9 +17,11 @@ let
     categories = [ "Utility" ];
   };
 
-  mkToggleService = name: service: pkgs.writeShellScriptBin name ''
+  mkSystemToggleService = name: service: pkgs.writeShellScriptBin name ''
     SERVICE="${service}.service"
-    STATUS=$(systemctl is-active "$SERVICE" 2>/dev/null || echo "inactive")
+    CMD="sudo systemctl"
+    
+    STATUS=$($CMD is-active "$SERVICE" 2>/dev/null || echo "inactive")
 
     notify() {
       local title="$1"
@@ -28,14 +31,34 @@ let
 
     case "$STATUS" in
       active)
-        sudo systemctl stop "$SERVICE"
+        $CMD stop "$SERVICE"
         notify "$SERVICE Disabled" "warning"
         ;;
       *)
-        sudo systemctl start "$SERVICE"
+        $CMD start "$SERVICE"
         notify "$SERVICE Enabled" "success"
         ;;
     esac
+  '';
+
+  mkFcitx5ToggleService = pkgs.writeShellScriptBin "toggle-fcitx" ''
+      notify() {
+        local title="$1"
+        local type="$2"
+        noctalia-shell ipc call toast send "{\"title\":\"$title\",\"type\":\"$type\"}"
+      }
+
+      if pidof fcitx5 >/dev/null 2>&1; then
+          pkill fcitx5
+          sleep 0.5
+          if pidof fcitx5 >/dev/null 2>&1; then
+              pkill -9 fcitx5
+          fi
+          notify "Fcitx5 Disabled" "warning"
+      else
+          fcitx5 -d
+          notify "Fcitx5 Enabled" "success"
+      fi
   '';
 in
 {
@@ -49,27 +72,25 @@ in
       fi
     '')
 
-    # toggle-dae
-    (mkToggleService "toggle-dae" "dae")   
+    mkFcitx5ToggleService
 
-    # toggle-kanata
-    (mkToggleService "toggle-kanata" "kanata-default")
+    # toggle-dae - 系统服务
+    (mkSystemToggleService "toggle-dae" "dae")
 
-    # rust-project-gui
+    # toggle-kanata - 系统服务
+    (mkSystemToggleService "toggle-kanata" "kanata-default")
+
     (writeShellScriptBin "rust-project-gui" ''
       exec nix-shell ~/nixos/modules/project/rust-gui.nix
     '') 
 
-    # rust-project-cli
     (writeShellScriptBin "rust-project-cli" ''
       exec nix-shell ~/nixos/modules/project/rust-cli.nix
     '') 
   
-    # cs2-cn
     (writeShellScriptBin "cs2-cn" ''
       gamemoderun steam -applaunch 730 -novid -perfectworld +exec autoexec.cfg
     '') 
-    # cs2-global
     (writeShellScriptBin "cs2-global" ''
       gamemoderun steam -applaunch 730 -novid +exec autoexec.cfg
     '') 
