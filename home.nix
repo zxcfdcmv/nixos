@@ -14,6 +14,7 @@
     ./modules/hm/proxy.nix
     ./modules/hm/input-remapper.nix     # 按键映射
     ./modules/hm/games.nix
+    ./modules/hm/qutebrowser.nix
   ];
 
   home = {
@@ -51,7 +52,8 @@
       })
       teamspeak6-client
       localsend
-      heroic
+      # heroic
+      ayugram-desktop
     ];
   };
 
