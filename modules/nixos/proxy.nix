@@ -21,14 +21,17 @@
 
       dns {
         upstream {
+          alidns: 'udp://223.5.5.5:53'
           googledns: 'tcp+udp://8.8.8.8:53'
         }
         routing {
           request {
-            qname(geosite:cn) -> asis
-            fallback: googledns
+            qname(geosite:cn) -> alidns
+            qname(geosite:google,geosite:telegram,geosite:github) -> googledns
+            fallback: alidns
           }
           response {
+            upstream(alidns) && !ip(geoip:cn) -> googledns
             fallback: accept
           }
         }
@@ -42,14 +45,14 @@
 
       routing {
         pname(NetworkManager, systemd, dhclient) -> direct
-        domain(keyword:gh-proxy) -> direct
-
-        domain(keyword:steamcommunity,steampowered) -> proxy
-        domain(keyword:steamstatic) -> direct
-
         domain(geosite:cn) -> direct
+        domain(keyword:gh-proxy) -> direct
+        domain(keyword:steamstatic) -> direct
         dip(geoip:private) -> direct
         dip(geoip:cn) -> direct
+
+        domain(keyword:steamcommunity,steampowered) -> proxy
+        domain(geosite:telegram,geosite:google,geosite:github) -> proxy
 
         fallback: proxy
       }

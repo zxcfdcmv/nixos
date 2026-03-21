@@ -14,6 +14,7 @@
       c.fonts.default_family = "Maple Mono NF CN"
       c.tabs.position = "left"
       c.tabs.width = "8%"
+      c.content.javascript.clipboard = "access"
 
       # 隐私与安全
       c.content.webgl = False

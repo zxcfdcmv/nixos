@@ -1,10 +1,5 @@
-{ config, lib, pkgs, noctalia, userSettings, ... }:
+{ config, lib, pkgs, userSettings, ... }:
 {
-  imports =
-    [
-      noctalia.nixosModules.default
-    ];
-
   networking = {
     hostName = userSettings.hostName;
     networkmanager.enable = true;
@@ -36,7 +31,6 @@
           --remember \
       '';
     };
-    noctalia-shell.enable = true;
   };
 
   systemd.services.rfkill-unblock-bluetooth = {
@@ -158,5 +152,6 @@
 
   fonts.packages = with pkgs; [
     maple-mono.NF-CN
+    noto-fonts-color-emoji
   ];
 }

@@ -13,8 +13,8 @@
     };
   };
 
-  xdg.configFile = {
-    "fcitx5/profile" = {
+  home.file = {
+    ".config/fcitx5/profile" = {
       text = ''
         [Groups/0]
         Name=Default
@@ -26,11 +26,11 @@
         Layout=
 
         [GroupOrder]
-        0=Default      
+        0=Default
       '';
       force = true;
     };
-    "fcitx5/conf/classicui.conf".text = ''
+    ".config/fcitx5/conf/classicui.conf".text = ''
       Theme=Nord-Dark
       Font=Maple Mono NF CN 14
     '';

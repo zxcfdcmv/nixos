@@ -5,24 +5,27 @@
     server.enable = true;
     settings = {
       main = {
-        dpi-aware = "yes";
+        # dpi-aware = "yes";
         term = "xterm-256color";
-        font = "Maple Mono NF CN:size=12";
+        # font = "Maple Mono NF CN:size=12";
+
+        # font = "${config.stylix.fonts.serif.name}:size=${toString config.stylix.fonts.sizes.terminal}";
+
         pad = "5x5 center";
         selection-target = "both";
       };
-      mouse = {
-        hide-when-typing = "yes";
+      mouse = { hide-when-typing = "yes";
       };
       scrollback = {
         indicator-position = "none";
         lines = "10000";
         multiplier = "3.0";
       };
-      "colors-dark" = {
-        alpha = "0.80";
-      };
+      # "colors-dark" = {
+      #   # alpha = "0.80";
+      #   alpha = config.stylix.opacity.terminal;
+      # };
     };
   };
-  xdg.configFile."foot/foot.ini".force = true;
+  # xdg.configFile."foot/foot.ini".force = true;
 }

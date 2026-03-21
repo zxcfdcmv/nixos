@@ -25,18 +25,19 @@ let
 
     notify() {
       local title="$1"
-      local type="$2"
-      noctalia-shell ipc call toast send "{\"title\":\"$title\",\"type\":\"$type\"}"
+      local urgency="$2"
+      # noctalia-shell ipc call toast send "{\"title\":\"$title\",\"type\":\"$type\"}"
+      ${pkgs.libnotify}/bin/notify-send -u "$urgency" -i input-keyboard "$title"
     }
 
     case "$STATUS" in
       active)
         $CMD stop "$SERVICE"
-        notify "$SERVICE Disabled" "warning"
+        notify "$SERVICE Disabled" "normal"
         ;;
       *)
         $CMD start "$SERVICE"
-        notify "$SERVICE Enabled" "success"
+        notify "$SERVICE Enabled" "low"
         ;;
     esac
   '';
@@ -44,8 +45,9 @@ let
   mkFcitx5ToggleService = pkgs.writeShellScriptBin "toggle-fcitx" ''
       notify() {
         local title="$1"
-        local type="$2"
-        noctalia-shell ipc call toast send "{\"title\":\"$title\",\"type\":\"$type\"}"
+        local urgency="$2"
+        # noctalia-shell ipc call toast send "{\"title\":\"$title\",\"type\":\"$type\"}"
+        ${pkgs.libnotify}/bin/notify-send -u "$urgency" -i input-keyboard "$title"
       }
 
       if pidof fcitx5 >/dev/null 2>&1; then
@@ -54,10 +56,10 @@ let
           if pidof fcitx5 >/dev/null 2>&1; then
               pkill -9 fcitx5
           fi
-          notify "Fcitx5 Disabled" "warning"
+          notify "Fcitx5 Disabled" "normal"
       else
           fcitx5 -d
-          notify "Fcitx5 Enabled" "success"
+          notify "Fcitx5 Enabled" "low"
       fi
   '';
 in

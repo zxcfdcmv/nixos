@@ -2,7 +2,8 @@
 {
   imports = [
     ./modules/hm/niri.nix
-    ./modules/hm/noctalia.nix
+    ./modules/hm/gui.nix
+    # ./modules/hm/noctalia.nix
     ./modules/hm/swayidle.nix
     ./modules/hm/bash.nix
     ./modules/hm/scripts.nix
@@ -61,7 +62,6 @@
     helix = {
       enable = true;
       settings = {
-        theme = "base16_transparent";
         editor = {
           soft-wrap.enable = true;
           line-number = "relative";
@@ -105,7 +105,6 @@
     btop = {
       enable = true;
       settings = {
-        color_theme = "TTY";
         vim_keys = true;
         update_ms = 2000;
         rounded_corners = true;

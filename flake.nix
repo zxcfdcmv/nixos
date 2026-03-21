@@ -10,6 +10,10 @@
       url = "git+https://gh-proxy.com/github.com/noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "git+https://gh-proxy.com/github.com/danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
@@ -26,7 +30,7 @@
       ${userSettings.hostName} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          inherit (inputs) noctalia;
+          inherit (inputs) noctalia stylix;
           inherit userSettings;
         };
         modules = [

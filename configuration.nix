@@ -10,6 +10,7 @@
       ./modules/nixos/input-remapper.nix
       ./modules/nixos/kanata.nix
       ./modules/nixos/tailscale.nix
+      ./modules/nixos/stylix.nix
     ];
 
   nixpkgs = {

@@ -6,7 +6,7 @@
       main = {
         terminal = "${pkgs.foot}/bin/footclient";
         layer = "overlay";
-        include = "~/.config/fuzzel/themes/noctalia";
+        # include = "~/.config/fuzzel/themes/noctalia";
       };
     };
   };
