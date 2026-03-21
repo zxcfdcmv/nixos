@@ -138,7 +138,6 @@
         format-disconnected = "⚠";
         tooltip-format = "{essid} | {ipaddr}/{cidr}";
         on-click = "footclient -e nmtui";
-        on-click-right = "nmcli networking off";
         interval = 5;
       };
 

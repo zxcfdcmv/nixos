@@ -1,31 +1,47 @@
 { pkgs, ... }: {
   programs.qutebrowser = {
     enable = true;
-    extraConfig = ''
-      # 搜索引擎
-      c.url.searchengines = {
-        "DEFAULT": "https://cn.bing.com/search?q={}",
-        "g": "https://www.google.com/search?q={}",
-      }
 
-      c.completion.open_categories = ["searchengines", "bookmarks", "history"]
+    searchEngines = {
+      DEFAULT = "https://cn.bing.com/search?q={}";
+      g = "https://www.google.com/search?q={}";
+      gh = "https://github.com/search?q={}";
+    };      
+    settings = {
+      url.start_pages = ["qute://start/"];
 
-      c.url.start_pages = ["about:blank"]
-      c.fonts.default_family = "Maple Mono NF CN"
-      c.tabs.position = "left"
-      c.tabs.width = "8%"
-      c.content.javascript.clipboard = "access"
-
-      # 隐私与安全
-      c.content.webgl = False
-      c.content.canvas_reading = False
-      c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0"
-      c.content.cookies.accept = "no-3rdparty"
-      c.content.headers.do_not_track = True      
-    '';
+      tabs = {
+        position = "left";
+        width = "8%";
+      };
+      content = {
+        javascript.clipboard = "access";
+        webgl = false;
+        canvas_reading = false;
+        headers = {
+          do_not_track = true;
+        };
+        cookies.accept = "no-3rdparty";
+        blocking = {
+          enabled = true;
+          method = "both";
+          hosts.lists = [
+            "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+          ];
+          adblock.lists = [
+            "https://easylist.to/easylist/easylist.txt"
+            "https://easylist.to/easylist/easyprivacy.txt"
+            "https://easylist-downloads.adblockplus.org/easylistchina.txt"
+          ];
+        };
+      };
+    };
   };
 
   xdg.configFile."qutebrowser/quickmarks".text = ''
     github https://github.com
   '';
+
+  # xdg.configFile."qutebrowser/bookmarks/urls".text = ''
+  # '';
 }
