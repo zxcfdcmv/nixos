@@ -18,11 +18,18 @@
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
   let
+    proxySettings = {
+      githubProxy = "https://gh-proxy.com";
+      # 未来可以轻松切换，比如：
+      # githubProxy = "https://mirror.ghproxy.com";
+      # githubProxy = "";  # 直接访问
+    };
     userSettings = {
       username = "zxcfdcmv";
       email = "zxcfdcmv@foxmail.com";
       hostName = "nixos";
       dotfilesDir = "/home/zxcfdcmv/nixos";
+      inherit (proxySettings) githubProxy;
     };
   in
   {

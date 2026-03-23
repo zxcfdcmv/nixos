@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, userSettings,  ... }:
 let
-  cdda-version = "2026-03-15-0540";
-  cdda-hash = "sha256-rQpm8VWJEs+lHPEiAUUarjZKRj6lIScoNBj062T+V/Y=";
+  cdda-version = "2026-03-22-0510";
+  cdda-hash = "sha256-watJQfFgspSr4h7udVTPxy29o2WZq5bmwYJfQAWV1Bs=";
 
   # cdda设置
   mySettings = {
@@ -31,10 +31,13 @@ let
     # 贴图包
     TILESET = "UltimateCataclysm";
     OVERMAP_TILES = "UltimateCataclysm";
+
+    # 侧边栏小地图设置
+    PIXEL_MINIMAP_MODE = "squares";
+    PIXEL_MINIMAP_SCALE_TO_FIT = "true";
   };  
 
-
-  cdda-url = "https://gh-proxy.com/https://github.com/CleverRaven/Cataclysm-DDA/releases/download/cdda-experimental-${cdda-version}/cdda-linux-with-graphics-and-sounds-x64-${cdda-version}.tar.gz";
+  cdda-url = "${userSettings.githubProxy}/https://github.com/CleverRaven/Cataclysm-DDA/releases/download/cdda-experimental-${cdda-version}/cdda-linux-with-graphics-and-sounds-x64-${cdda-version}.tar.gz";
 
   cdda-bin = pkgs.stdenv.mkDerivation {
     pname = "cataclysm-dda-experimental";
@@ -65,7 +68,7 @@ let
 
   # 音效包
   cc-sounds = pkgs.fetchzip {
-    url = "https://gh-proxy.com/github.com/Fris0uman/CDDA-Soundpacks/releases/download/2025-11-15/CC-Sounds.zip";
+    url = "${userSettings.githubProxy}/github.com/Fris0uman/CDDA-Soundpacks/releases/download/2025-11-15/CC-Sounds.zip";
     hash = "sha256-qzD4T/Xg4y6+cix7W1by86xMC/1Oy2I7NECylDVFBHo=";
     stripRoot = false;
   };

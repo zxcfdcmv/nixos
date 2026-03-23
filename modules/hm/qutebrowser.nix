@@ -14,8 +14,13 @@
         position = "left";
         width = "8%";
       };
+      session.lazy_restore = true;
       content = {
-        javascript.clipboard = "access";
+        autoplay = false;
+        javascript = {
+          enabled = true;
+          clipboard = "access";         
+        };
         webgl = false;
         canvas_reading = false;
         headers = {
@@ -36,6 +41,27 @@
         };
       };
     };
+
+    greasemonkey = [
+      (pkgs.writeText "github-redirect.user.js" ''
+        // ==UserScript==
+        // @name         GitHub to bgithub Redirect
+        // @match        https://github.com/*
+        // @match        https://gist.github.com/*
+        // @run-at       document-start
+        // ==/UserScript==
+        
+        (function() {
+            'use strict';
+            const newHost = 'bgithub.xyz';
+            if (window.location.hostname !== newHost) {
+                window.location.replace(
+                    window.location.href.replace(window.location.hostname, newHost)
+                );
+            }
+        })();
+      '')
+    ];
   };
 
   xdg.configFile."qutebrowser/quickmarks".text = ''

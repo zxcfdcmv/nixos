@@ -86,6 +86,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+T hotkey-overlay-title="Open a Terminal: footclient" { spawn "footclient"; }
     Alt+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "toggle-fuzzel"; }
+    Mod+grave { spawn "toggle-central-hub"; }
     // Alt+Space hotkey-overlay-title="Run an Application: Noctalia Launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: Noctalia" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }

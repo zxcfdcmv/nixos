@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, userSettings, ... }:
 {
   services.dae = {
     enable = true;
@@ -14,7 +14,7 @@
 
       subscription {
         # 'https://proxy.v2gh.com/https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub'
-        'https://gh-proxy.com/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt'
+        "${userSettings.githubProxy}/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt"
         # 'https://gh-proxy.com/raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt'
         # 'https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/nodev2ray.txt'
       }

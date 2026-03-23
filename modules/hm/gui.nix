@@ -2,9 +2,6 @@
 {
   home.packages = with pkgs; [
     swaybg
-    # pwvucontrol
-    # blueman
-    # networkmanagerapplet
     pulsemixer
     bluetuith
     brightnessctl
@@ -59,6 +56,12 @@
         background-image: none;
       } 
 
+      #custom-media.empty {
+        background: transparent;
+        padding: 0;
+        margin: 0;
+      }
+
       /* ========== 其他模块保持原有样式 ========== */
       /* 胶囊形按钮 */
       #hardware,
@@ -100,6 +103,7 @@
         "custom/power"
       ];
 
+      /* ========== hardware 系统资源监控组 ========== */
       "group/hardware" = {
         orientation = "horizontal";
         modules = [
@@ -108,51 +112,29 @@
           "temperature"
         ];
         drawer = {
-          transition-duration = 500;
+          transition-duration = 0;
           children-class = "hardware-child";
           transition-left-to-right = true;
         };
       };
 
+      "custom/media" = {
+        hide-empty = true;
+      };
+
+      /* ========== system 系统工具组 ========== */
       "group/system" = {
         orientation = "horizontal";
         modules = [
           "clock"
-          "pulseaudio"
-          "backlight"
-          "network"
-          "bluetooth"
           "battery"
           "custom/notification"
         ];
         drawer = {
-          transition-duration = 500;
+          transition-duration = 0;
           children-class = "hardware-child";
           transition-left-to-right = false;
         };
-      };
-
-      network = {
-        format-wifi = " {signalStrength}%";
-        format-ethernet = " {ifname}";
-        format-disconnected = "⚠";
-        tooltip-format = "{essid} | {ipaddr}/{cidr}";
-        on-click = "footclient -e nmtui";
-        interval = 5;
-      };
-
-      bluetooth = {
-        format = "{icon}";
-        format-icons = {
-          enabled = "";
-          disabled = "";
-          connected = " {num_connections}";
-        };
-        format-disabled = "";
-        tooltip-format = "{controller_alias}\n{num_connections} devices";
-        on-click = "footclient -e bluetuith";
-        on-click-right = "bluetooth toggle";
-        interval = 5;
       };
 
       "custom/notification" = {
@@ -168,31 +150,13 @@
         tooltip = false;
       };
 
-       pulseaudio = {
-        format = "{icon} {volume}%";
-        format-muted = "";
-        format-icons = ["" "" ""];
-        on-click = "footclient -e pulsemixer";      # ← TUI 音频控制
-        on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-        on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
-        on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
-      };     
-
-      backlight = {
-        format = "{icon} {percent}%";
-        format-icons = ["" ""];
-        on-scroll-up = "brightnessctl set +5%";
-        on-scroll-down = "brightnessctl set 5%-";
-        tooltip = false;
-      };      
-
       clock = {
         format = "{:%Y-%m-%d %H:%M}";
         tooltip = false;
       };
 
       "custom/power" = {
-        format = "⏻";
+        format = "⏻ ";
         on-click = "wlogout";  # 或自定义脚本
         tooltip = false;
       };
