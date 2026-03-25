@@ -37,24 +37,25 @@ layout {
     }
     default-column-width { proportion 0.5; }
     focus-ring {
-        width 1.5
-        active-color "#7fc8ff"
+        // width 1.5
+        // active-color "#7fc8ff"
+        active-color "#505050"
         inactive-color "#505050"
     }
     border {
         off
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
-        urgent-color "#9b0000"
+        // width 4
+        // active-color "#ffc87f"
+        // inactive-color "#505050"
+        // urgent-color "#9b0000"
     }
 
-    shadow {
-        softness 30
-        spread 5
-        offset x=0 y=5
-        color "#0007"
-    }
+    // shadow {
+    //     softness 30
+    //     spread 5
+    //     offset x=0 y=5
+    //     color "#0007"
+    // }
     struts {
     }
 }
@@ -72,7 +73,7 @@ animations {
 }
 
 window-rule {
-    opacity 0.85
+    opacity 0.80
     open-floating false
     geometry-corner-radius 6
     clip-to-geometry true

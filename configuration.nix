@@ -64,7 +64,7 @@
       ];
       auto-optimise-store = true;
       substituters = [
-        "https://mirror.sjtu.edu.cn/nix-channels/store"
+        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
         "https://cache.nixos.org"
         "https://attic.xuyh0120.win/lantian"
         "https://cache.garnix.io"

@@ -17,6 +17,7 @@
     ./modules/hm/games.nix
     ./modules/hm/qutebrowser.nix
     ./modules/hm/waybar-central.nix
+    ./modules/hm/email.nix
   ];
 
   home = {
@@ -46,6 +47,7 @@
       xwayland-satellite
       wl-clipboard
       nh nvd nix-output-monitor
+      age sops
 
       # 应用
       microsoft-edge
@@ -115,4 +117,9 @@
       };
     };
   };
+
+  xdg.configFile."Kvantum/kvantum.kvconfig".source = lib.mkForce (pkgs.writeText "kvantum.kvconfig" ''
+    [General]
+    theme=Base16Kvantum
+  '');
 }
