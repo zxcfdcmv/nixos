@@ -1,7 +1,5 @@
 { pkgs, userSettings,  ... }:
 let
-  # cdda-version = "2026-03-22-0510";
-  # cdda-hash = "sha256-watJQfFgspSr4h7udVTPxy29o2WZq5bmwYJfQAWV1Bs=";
   cdda-version = "2026-03-25-0904";
   cdda-hash = "sha256-G7D3jFdCsw8taOctWBqehMT4EN8Z0UxOMKTmTZIcPF0=";
 

@@ -1,7 +1,7 @@
 { config, pkgs, userSettings, sops-nix, ... }:
 
 let
-  runtimeDir = "/run/user/${toString config.home.uid}";
+  runtimeDir = "/run/user/1000"; 
 in
 {
   imports = [
@@ -72,7 +72,7 @@ in
           folders-archive = "[Gmail]/All Mail";          
 
           default = "INBOX";
-          signature-cmd = "echo '-- \n${userSettings.username}'";
+          signature-cmd = "echo '-- ${userSettings.username}'";
         };
       };
     };
@@ -99,7 +99,7 @@ in
           folders-archive = "Archive";         
           
           default = "INBOX";
-          signature-cmd = "echo '-- \n${userSettings.username}'";
+          signature-cmd = "echo '-- ${userSettings.username}'";
         };
       };
     };
@@ -125,7 +125,7 @@ in
           folders-draft = "Drafts";         
 
           default = "INBOX";
-          signature-cmd = "echo '-- \n${userSettings.username}'";
+          signature-cmd = "echo '-- ${userSettings.username}'";
         };
       };
     };
@@ -152,7 +152,7 @@ in
           folders-draft = "Drafts";          
 
           default = "INBOX";
-          signature-cmd = "echo '-- \n${userSettings.username}'";
+          signature-cmd = "echo '-- ${userSettings.username}'";
         };
       };
     };

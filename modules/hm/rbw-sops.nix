@@ -1,7 +1,7 @@
 { config, pkgs, lib, userSettings, ... }:
 
 let
-  runtimeDir = "/run/user/${toString config.home.uid}";
+  runtimeDir = "/run/user/1000";  # 或者 "${toString config.home.uid}" 如果可用
   ageKeyPath = "${runtimeDir}/sops-age-key";
 in
 {
@@ -27,24 +27,26 @@ in
       (writeShellScriptBin "sops-unlock" ''
         set -e
         
-        mkdir -p "${runtimeDir}"
-        chmod 700 "${runtimeDir}"
-        
-        if ! rbw unlocked 2>/dev/null; then
-          echo "Unlocking Bitwarden..."
-          rbw unlock
+        if [ ! -d "${runtimeDir}" ]; then
+          echo "Error: ${runtimeDir} does not exist"
+          exit 1
         fi
         
-        rbw get "${config.bitwardenSops.keyName}" > "${ageKeyPath}.tmp"
+        if ! ${pkgs.rbw}/bin/rbw unlocked 2>/dev/null; then
+          echo "Unlocking Bitwarden..."
+          ${pkgs.rbw}/bin/rbw unlock
+        fi
+        
+        ${pkgs.rbw}/bin/rbw get "${config.bitwardenSops.keyName}" > "${ageKeyPath}.tmp"
         chmod 600 "${ageKeyPath}.tmp"
         mv "${ageKeyPath}.tmp" "${ageKeyPath}"
         
-        echo "SOPS age key ready"
+        echo "SOPS age key ready at ${ageKeyPath}"
       '')
       
       (writeShellScriptBin "sops-lock" ''
         rm -f "${ageKeyPath}"
-        rbw lock 2>/dev/null || true
+        ${pkgs.rbw}/bin/rbw lock 2>/dev/null || true
         echo "Locked"
       '')
     ];
