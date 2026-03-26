@@ -1,27 +1,14 @@
-{ config, pkgs, userSettings, sops-nix, ... }:
+{ config, pkgs, userSettings, ... }:
 
 let
-  runtimeDir = "/run/user/1000"; 
+  rbwGet = name: "${pkgs.rbw}/bin/rbw get ${name} | ${pkgs.coreutils}/bin/tr -d '\\n'";
 in
 {
-  imports = [
-    sops-nix.homeManagerModules.sops 
-    ./rbw-sops.nix
-  ];
-
-  bitwardenSops = {
+  programs.rbw = {
     enable = true;
-    keyName = "sops-age-key";
-  };
-
-  sops = {
-    age.keyFile = "${runtimeDir}/sops-age-key";
-    defaultSopsFile = ../../assets/secrets.yml;
-    secrets = {
-      "email/gmail_password" = { };
-      "email/outlook_password" = { };
-      "email/foxmail_password" = { };
-      "email/netease_password" = { };
+    settings = {
+      email = "${userSettings.username}@outlook.com";
+      pinentry = pkgs.pinentry-tty;
     };
   };
 
@@ -60,11 +47,10 @@ in
         enable = true;
         extraAccounts = {
           source = "imaps://${userSettings.username}%40gmail.com@imap.gmail.com:993";
-          source-cred-cmd = "cat ${config.sops.secrets."email/gmail_password".path}";
-          
+          source-cred-cmd = rbwGet "mail_gmail";
           outgoing = "smtps+plain://${userSettings.username}%40gmail.com@smtp.gmail.com:465";
-          outgoing-cred-cmd = "cat ${config.sops.secrets."email/gmail_password".path}";
-          
+          outgoing-cred-cmd = rbwGet "mail_gmail";
+
           folders-inbox = "INBOX";
           folders-sent = "[Gmail]/Sent Mail";
           folders-trash = "[Gmail]/Trash";
@@ -87,10 +73,11 @@ in
         enable = true;
         extraAccounts = {
           source = "imaps://${userSettings.username}%40outlook.com@outlook.office365.com:993";
-          source-cred-cmd = "cat ${config.sops.secrets."email/outlook_password".path}";
-          
-          outgoing = "smtps+plain://${userSettings.username}%40outlook.com@smtp.office365.com:587";
-          outgoing-cred-cmd = "cat ${config.sops.secrets."email/outlook_password".path}";
+          source-cred-cmd = rbwGet "mail_outlook";
+          # outgoing = "smtps+plain://${userSettings.username}%40outlook.com@smtp.office365.com:587";
+          # outgoing = "smtp+starttls://${userSettings.username}%40outlook.com@smtp.office365.com:587";
+          outgoing = "smtp+starttls://${userSettings.username}%40outlook.com@smtp.office365.com:587?auth=login";
+          outgoing-cred-cmd = rbwGet "mail_outlook";
 
           folders-inbox = "INBOX";
           folders-sent = "Sent";
@@ -114,10 +101,9 @@ in
         enable = true;
         extraAccounts = {
           source = "imaps://${userSettings.username}%40foxmail.com@imap.qq.com:993";
-          source-cred-cmd = "cat ${config.sops.secrets."email/foxmail_password".path}";
-          
+          source-cred-cmd = rbwGet "mail_foxmail";
           outgoing = "smtps+plain://${userSettings.username}%40foxmail.com@smtp.qq.com:465";
-          outgoing-cred-cmd = "cat ${config.sops.secrets."email/foxmail_password".path}";
+          outgoing-cred-cmd = rbwGet "mail_foxmail";
 
           folders-inbox = "INBOX";
           folders-sent = "Sent Messages";
@@ -140,12 +126,11 @@ in
         enable = true;
         extraAccounts = {
           source = "imaps://${userSettings.username}%40163.com@imap.163.com:993";
-          source-cred-cmd = "cat ${config.sops.secrets."email/netease_password".path}";
-          
+          source-cred-cmd = rbwGet "mail_netease";
           # 163 SMTP 端口 465 或 994
           outgoing = "smtps+plain://${userSettings.username}%40163.com@smtp.163.com:465";
-          outgoing-cred-cmd = "cat ${config.sops.secrets."email/netease_password".path}";
-          
+          outgoing-cred-cmd = rbwGet "mail_netease";
+
           folders-inbox = "INBOX";
           folders-sent = "Sent Messages";
           folders-trash = "Deleted Messages";

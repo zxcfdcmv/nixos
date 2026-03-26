@@ -13,7 +13,6 @@
     ./modules/hm/input-xiaohe.nix       # 输入方案
     ./modules/hm/zed-editor.nix
     ./modules/hm/proxy.nix
-    # ./modules/hm/input-remapper.nix     # 按键映射
     ./modules/hm/games.nix
     ./modules/hm/qutebrowser.nix
     ./modules/hm/waybar-central.nix
@@ -47,7 +46,7 @@
       xwayland-satellite
       wl-clipboard
       nh nvd nix-output-monitor
-      age sops
+      openssl
 
       # 应用
       microsoft-edge

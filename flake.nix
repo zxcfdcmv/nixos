@@ -10,11 +10,6 @@
     #   url = "git+https://gh-proxy.com/github.com/noctalia-dev/noctalia-shell";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-
-    sops-nix = {
-      url = "git+https://gh-proxy.com/github.com/Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };   
     stylix = {
       url = "git+https://gh-proxy.com/github.com/danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -59,7 +54,7 @@
                 ];
               };
               extraSpecialArgs = {
-                inherit (inputs) sops-nix;
+                inherit (inputs);
                 inherit userSettings;
               };
             };

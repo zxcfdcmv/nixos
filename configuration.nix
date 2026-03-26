@@ -7,7 +7,6 @@
       ./modules/nixos/default.nix
       # ./modules/nixos/sunshine.nix
       ./modules/nixos/proxy.nix
-      # ./modules/nixos/input-remapper.nix
       ./modules/nixos/kanata.nix
       ./modules/nixos/tailscale.nix
       ./modules/nixos/stylix.nix
