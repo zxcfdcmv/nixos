@@ -10,6 +10,7 @@
       ./modules/nixos/kanata.nix
       ./modules/nixos/tailscale.nix
       ./modules/nixos/stylix.nix
+      ./modules/nixos/games.nix
     ];
 
   nixpkgs = {

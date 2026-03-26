@@ -55,7 +55,7 @@
       })
       teamspeak6-client
       localsend
-      # heroic
+      heroic
       ayugram-desktop
     ];
   };
