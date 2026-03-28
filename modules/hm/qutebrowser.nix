@@ -14,7 +14,6 @@
         position = "left";
         width = "8%";
       };
-      session.lazy_restore = true;
       content = {
         autoplay = false;
         javascript = {
