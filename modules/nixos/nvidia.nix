@@ -1,6 +1,8 @@
 { config, lib, pkgs, ... }:
 {
-  boot.kernelParams = [ "nvidia-drm.modeset=1" ];
+  boot.kernelParams = [
+    "nvidia-drm.modeset=1"
+  ];
   
   services = {
     xserver = {

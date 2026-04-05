@@ -19,18 +19,18 @@
     power-profiles-daemon.enable = true;
     upower.enable = true;
 
-    greetd = {
-      enable = true;
-      settings.default_session.command = ''
-        ${pkgs.tuigreet}/bin/tuigreet \
-          --cmd "${pkgs.niri}/bin/niri-session" \
-          --theme "dark" \
-          --greet-align center \
-          --time \
-          --time-format "%A, %d %B %Y %H:%M:%S" \
-          --remember \
-      '';
-    };
+    # greetd = {
+    #   enable = true;
+    #   settings.default_session.command = ''
+    #     ${pkgs.tuigreet}/bin/tuigreet \
+    #       --cmd "${pkgs.niri}/bin/niri-session" \
+    #       --theme "dark" \
+    #       --greet-align center \
+    #       --time \
+    #       --time-format "%A, %d %B %Y %H:%M:%S" \
+    #       --remember \
+    #   '';
+    # };
   };
 
   systemd.services.rfkill-unblock-bluetooth = {
@@ -44,18 +44,18 @@
     };
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gtk
-    ];
-    config = {
-      common = {
-        default = "wlr";
-      };
-    };
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = with pkgs; [
+  #     xdg-desktop-portal-wlr
+  #     xdg-desktop-portal-gtk
+  #   ];
+  #   config = {
+  #     common = {
+  #       default = "wlr";
+  #     };
+  #   };
+  # };
 
   programs = {
     git = {
@@ -68,7 +68,7 @@
       };
     };
 
-    niri.enable = true;
+    # niri.enable = true;
     nix-ld = {
       enable = true;
       libraries = with pkgs; [

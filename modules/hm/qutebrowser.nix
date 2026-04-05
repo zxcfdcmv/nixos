@@ -21,9 +21,9 @@
           clipboard = "access";         
         };
         webgl = false;
-        canvas_reading = false;
+        canvas_reading = true;
         headers = {
-          do_not_track = true;
+          do_not_track = false;
         };
         cookies.accept = "no-3rdparty";
         blocking = {

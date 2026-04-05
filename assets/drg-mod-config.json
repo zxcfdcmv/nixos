@@ -1,0 +1,876 @@
+{
+  "version": "0.1.0",
+  "active_profile": "default",
+  "profiles": {
+    "default": {
+      "mods": [
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/platform-placement-preview#1674997"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/sbhsn#5576912"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/customizable-ally-outlines#1533299"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/reduced-terrain-destruction-particles#3294041"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/lok-1-smtos-by-stark12#4375643"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/boss-hp-bar-for-big-enemies#3074337"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/auto-build-sentry#4056516"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/auto-recall-sentry#3796501"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/lbs-base-kit#2986917"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/brighter-objects#1179441"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/azusas-weapon-sound-pack#1888355"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/fast-forging-continued#3350207"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/remove-all-particles#1034587"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/better-spectator-reloaded#1877135"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/slighty-more-visible-stalker#4079107"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/drill-any-terrain#4531787"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/pit-jaw-warning#5693342"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/projectile-prediction-line-hotkey-z#3818129"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/radio-voice#4568504"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/better-explosion-range-indicator#1831206"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/platform-effect-indicator#1824234"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/rig-hud-no-mission-view#3698399"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/shredder-swarm-watcher#4459175"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/no-walk-only-sprint#4051264"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/brighter-objects-add-on#1720132"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/more-flares#1164708"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/remove-sludge-pump-goo#3278433"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/smart-hurricane#4483171"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/customizable-weapon-fov#2334132"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/closer-promotion-terminal-updated#2092879"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/reduced-cloud-opacity-remake#2145331"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/aichis-indicator-ui-pt1-class-tools#2932283"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/enemy-perf#5242198"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/frozen-impact-particles-fps-fix#2285617"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/deep-scan-crystal-better-visibility#4061614"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/weapons-in-space-rig#1533287"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/combined-resources#1863656"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/crossbow-bolt-indicator#4649771"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/stock-and-bosco-weapon-paintjob-unlocker#1807375"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/show-materials-on-terrain-scanner#5569437"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/priority-target#3853057"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/no-ragdolls#2121639"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/remove-jump-and-sprint-weapon-bobbing-fixed#3076498"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/shield-expiration-colors#4196154"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/sgg-framework-files#3096846"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/quick-reload#3827985"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/combined-presets#2814623"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/displays-deep-scan-crystal-on-the-terrain-scanner#4078277"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/fast-deposit#3848288"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/brighter-deep-scan#4144632"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/grappling-when-okay#4183414"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/death-marker#3035859"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/clutterbegone#2434441"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/cave-leech-loudencer#3451090"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/weapon-heat-crosshair#1634437"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/hold-to-jump-bhop#2585212"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/glowing-cave-leech#5266336"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/cave-resources#4486978"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/low-poly-model-enemies#4189145"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/blue-flamethrower#1230219"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/pose-while-resupplying#4516892"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/deep-dive-information#4485354"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/disruptive-audio-removal-pack-plus#1372030"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/all-previous-campaigns-available#3484419"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/one-hit-gold#2492690"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/quick-pickaxe#4119541"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/ammo-percentage-indicator#2613099"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/remove-season-5-particles#4085161"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/garbage-cleanup#3374855"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/auto-reload-sentry#4537990"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/plasma-charger-helper#3820806"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/flashlight-40m#2459595"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/cosmetic-restriction-remover#1158356"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/barrage-infector-range-indicator#4170925"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/more-hp-bars#3148183"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/simpler-azure-weald#1166441"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/enemy-radar#2442215"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/removed-frozen-death-fire-death-particles#2133905"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/mk4c#4815820"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/goldchunksbegone#2424882"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/better-bolt-indicator#2100272"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/lowpoly#2434442"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/temperature-number#3425979"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/no-pickaxe-movement-penalty#1328395"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/hp-bar-scaling#4294042"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/mod-hub#1792770"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/light-beam-beacon#4146053"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/brighter-aquarqs#3169650"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/googly#2101850"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/custom-vanity-framework#2432311"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/display-events3#4236326"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/less-cooldown-of-pickaxe-power-attack#3126204"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/glowing#2168403"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/ashless-radioactive-exclusion-zone#1034161"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/remove-septic-spreader-goo#3230781"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/refinery-pipe-qol#4050930"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/monster-quantity-display#3363051"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/boost-fps-fix-visual-glitches-remove-even-more#3122144"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/class-icons-default#1158538"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/automatic-flare-cleanup#4068453"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/born-ready-hud-popup#2905192"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/more-fov#1150682"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/status-effect-duration-indicator#3788505"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/simpler-hollow-bough#1564609"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/skip-start-screen#3431533"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/build-inspector#2101319"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/remove-flares#1123715"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/10-waypoints#1159464"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/more-transparent-shield-and-blood-overlays#1251558"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/no-camera-shake#1158572"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/battlefield-v-kill-feed#4157205"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/axe-locator#4691697"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/no-web-no-problem#2939176"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/better-unknown-horror-indicator#2503544"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/hubmod#3816024"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/player-nameplates#3992175"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/drglib#1034237"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/air-control-updated#3031183"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/remove-decals#1138668"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/damage-meter-friendlyfire-meter#4099368"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/shield-life-display#4269797"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/exploder-reminder#4187663"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/glowing-equipment#1751567"
+          },
+          "required": false,
+          "enabled": true
+        }
+      ]
+    }
+  },
+  "groups": {
+    "default": {
+      "mods": []
+    }
+  }
+}

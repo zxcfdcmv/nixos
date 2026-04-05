@@ -6,7 +6,11 @@
       main = {
         terminal = "${pkgs.foot}/bin/footclient";
         layer = "overlay";
-        # include = "~/.config/fuzzel/themes/noctalia";
+        lines = 0;
+        width = "30";
+
+        icons-enabled = false;
+        hide-before-typing = true;
       };
     };
   };

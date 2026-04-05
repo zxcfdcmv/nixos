@@ -1,7 +1,7 @@
 { config, pkgs, lib, userSettings, ... }:
 {
   imports = [
-    ./modules/hm/niri.nix
+    # ./modules/hm/niri.nix
     ./modules/hm/gui.nix
     # ./modules/hm/noctalia.nix
     ./modules/hm/swayidle.nix
@@ -17,6 +17,9 @@
     ./modules/hm/qutebrowser.nix
     ./modules/hm/waybar-central.nix
     ./modules/hm/email.nix
+    # ./modules/hm/mintcat.nix
+    ./modules/hm/tofi.nix
+    ./modules/hm/mint.nix
   ];
 
   home = {
@@ -42,9 +45,9 @@
     packages = with pkgs; [
       # 基础
       ripgrep bat eza fd dust
-      p7zip poppler imagemagick ffmpegthumbnailer
+      p7zip unzip unrar poppler imagemagick ffmpegthumbnailer
       xwayland-satellite
-      wl-clipboard
+      wl-clipboard-rs
       nh nvd nix-output-monitor
       openssl
 

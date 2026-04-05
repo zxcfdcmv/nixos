@@ -65,15 +65,6 @@ let
 in
 {
   home.packages = (with pkgs; [
-    # toggle-fuzzel
-    (writeShellScriptBin "toggle-fuzzel" ''
-      if pgrep -x "fuzzel" > /dev/null; then
-        pkill -x "fuzzel"
-      else
-        ${pkgs.fuzzel}/bin/fuzzel
-      fi
-    '')
-
     mkFcitx5ToggleService
 
     # toggle-dae - 系统服务

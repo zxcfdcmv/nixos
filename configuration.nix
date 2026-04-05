@@ -5,16 +5,24 @@
       ./hardware-configuration.nix
       ./modules/nixos/nvidia.nix
       ./modules/nixos/default.nix
+      # ./modules/nixos/niri.nix
+      ./modules/nixos/river.nix
       # ./modules/nixos/sunshine.nix
       ./modules/nixos/proxy.nix
       ./modules/nixos/kanata.nix
       ./modules/nixos/tailscale.nix
       ./modules/nixos/stylix.nix
-      ./modules/nixos/games.nix
+      ./modules/nixos/steam.nix
+      ./modules/nixos/flatpak.nix
     ];
 
   nixpkgs = {
-    config.allowUnfree = true;
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "openssl-1.1.1w"
+      ];      
+    };
   };
 
   boot = {
@@ -73,6 +81,8 @@
         "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
         "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       ];
+      sandbox = false;
+      extra-sandbox-paths = [ "/etc/resolv.conf" ];
     };
     gc = {
       automatic    = true;

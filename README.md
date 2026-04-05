@@ -1,4 +1,7 @@
-无桌面环境，使用显示管理器greetd的tuigreet+窗口管理器niri
+# zxcfdcmv's nixos dotfiles
+登录管理器: greetd+tuigreet
+合成器: river
+窗口管理器: kwm
 
 # 一键安装
 1.  Live ISO 启动 → 分区挂载到 `/mnt`

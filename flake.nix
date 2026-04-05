@@ -14,12 +14,15 @@
       url = "git+https://gh-proxy.com/github.com/danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak = {
+      url = "git+https://gh-proxy.com/github.com/gmodena/nix-flatpak";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
   let
     proxySettings = {
-      githubProxy = "https://gh-proxy.com";
+      githubProxy = "https://gh-proxy.org";
       # 未来可以轻松切换，比如：
       # githubProxy = "https://mirror.ghproxy.com";
       # githubProxy = "";  # 直接访问
@@ -31,13 +34,14 @@
       dotfilesDir = "/home/zxcfdcmv/nixos";
       inherit (proxySettings) githubProxy;
     };
+    system = "x86_64-linux";
   in
   {
     nixosConfigurations = {
       ${userSettings.hostName} = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = {
-          inherit (inputs) stylix;
+          inherit (inputs) stylix nix-flatpak;
           inherit userSettings;
         };
         modules = [
