@@ -14,6 +14,7 @@
       ./modules/nixos/stylix.nix
       ./modules/nixos/steam.nix
       ./modules/nixos/flatpak.nix
+      ./modules/nixos/k3s.nix
     ];
 
   nixpkgs = {

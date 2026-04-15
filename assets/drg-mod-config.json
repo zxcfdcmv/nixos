@@ -1,19 +1,180 @@
 {
   "version": "0.1.0",
-  "active_profile": "default",
+  "active_profile": "test_crash",
   "profiles": {
-    "default": {
+    "test_crash": {
       "mods": [
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/platform-placement-preview#1674997"
+            "url": "https://mod.io/g/drg/m/better-cracking-boots#3096163"
           },
           "required": false,
           "enabled": true
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/sbhsn#5576912"
+            "url": "https://mod.io/g/drg/m/customizable-weapon-fov#2334132"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/minigun-bullet-hell-100-ricochet-rate100#4693639"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/better-lok-indicator#4012965"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/disable-molly-bet-c-collision#3853141"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/quick-pickaxe#4119541"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/helldivers-2-killstreak-counter#4500283"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/detonator-range-indicator#4867090"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/dreadnought-attack-indicator#5019103"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/holding-reload-aint-it#4772490"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/driller-vision#5025878"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/pink-sugar#2463053"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/show-teammate-shield-above-healthbar#4755796"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/custom-hitmarker#4385778"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/fms-mod-kit#5098896"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/dancer#2233686"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/customizable#2478655"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/autofire-platformgun#4159790"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/quick-enemy-ping3#4855526"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/clutterbegone#2434441"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/sandbox-utilities#1897251"
+          },
+          "required": true,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/alternate-player-ui-pd2#4315675"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/blight-one-wireframe-camo#3851820"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/all-previous-campaigns-available#3484419"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/platform-placement-preview#1674997"
           },
           "required": false,
           "enabled": true
@@ -27,17 +188,10 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/reduced-terrain-destruction-particles#3294041"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/lok-1-smtos-by-stark12#4375643"
           },
           "required": false,
-          "enabled": true
+          "enabled": false
         },
         {
           "spec": {
@@ -51,14 +205,7 @@
             "url": "https://mod.io/g/drg/m/auto-build-sentry#4056516"
           },
           "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/auto-recall-sentry#3796501"
-          },
-          "required": false,
-          "enabled": true
+          "enabled": false
         },
         {
           "spec": {
@@ -90,13 +237,6 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/remove-all-particles#1034587"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/better-spectator-reloaded#1877135"
           },
           "required": false,
@@ -105,13 +245,6 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/slighty-more-visible-stalker#4079107"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/drill-any-terrain#4531787"
           },
           "required": false,
           "enabled": true
@@ -135,7 +268,7 @@
             "url": "https://mod.io/g/drg/m/radio-voice#4568504"
           },
           "required": false,
-          "enabled": true
+          "enabled": false
         },
         {
           "spec": {
@@ -156,7 +289,7 @@
             "url": "https://mod.io/g/drg/m/rig-hud-no-mission-view#3698399"
           },
           "required": false,
-          "enabled": true
+          "enabled": false
         },
         {
           "spec": {
@@ -181,13 +314,6 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/more-flares#1164708"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/remove-sludge-pump-goo#3278433"
           },
           "required": false,
@@ -195,35 +321,7 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/smart-hurricane#4483171"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/customizable-weapon-fov#2334132"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/closer-promotion-terminal-updated#2092879"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/reduced-cloud-opacity-remake#2145331"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/aichis-indicator-ui-pt1-class-tools#2932283"
           },
           "required": false,
           "enabled": true
@@ -251,13 +349,6 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/weapons-in-space-rig#1533287"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/combined-resources#1863656"
           },
           "required": false,
@@ -266,13 +357,6 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/crossbow-bolt-indicator#4649771"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/stock-and-bosco-weapon-paintjob-unlocker#1807375"
           },
           "required": false,
           "enabled": true
@@ -317,7 +401,7 @@
             "url": "https://mod.io/g/drg/m/sgg-framework-files#3096846"
           },
           "required": false,
-          "enabled": true
+          "enabled": false
         },
         {
           "spec": {
@@ -329,13 +413,6 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/combined-presets#2814623"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/displays-deep-scan-crystal-on-the-terrain-scanner#4078277"
           },
           "required": false,
           "enabled": true
@@ -364,13 +441,6 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/death-marker#3035859"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/clutterbegone#2434441"
           },
           "required": false,
           "enabled": true
@@ -433,13 +503,6 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/deep-dive-information#4485354"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/disruptive-audio-removal-pack-plus#1372030"
           },
           "required": false,
@@ -447,35 +510,7 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/all-previous-campaigns-available#3484419"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/one-hit-gold#2492690"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/quick-pickaxe#4119541"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/ammo-percentage-indicator#2613099"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/remove-season-5-particles#4085161"
           },
           "required": false,
           "enabled": true
@@ -504,13 +539,6 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/flashlight-40m#2459595"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/cosmetic-restriction-remover#1158356"
           },
           "required": false,
           "enabled": true
@@ -573,13 +601,6 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/lowpoly#2434442"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/temperature-number#3425979"
           },
           "required": false,
@@ -595,13 +616,6 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/hp-bar-scaling#4294042"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/mod-hub#1792770"
           },
           "required": false,
           "enabled": true
@@ -636,28 +650,7 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/display-events3#4236326"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/less-cooldown-of-pickaxe-power-attack#3126204"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/glowing#2168403"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/ashless-radioactive-exclusion-zone#1034161"
           },
           "required": false,
           "enabled": true
@@ -741,27 +734,6 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/build-inspector#2101319"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/remove-flares#1123715"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/10-waypoints#1159464"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/more-transparent-shield-and-blood-overlays#1251558"
           },
           "required": false,
@@ -783,13 +755,6 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/axe-locator#4691697"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/no-web-no-problem#2939176"
           },
           "required": false,
@@ -804,28 +769,7 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/hubmod#3816024"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/player-nameplates#3992175"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/drglib#1034237"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/air-control-updated#3031183"
           },
           "required": false,
           "enabled": true
@@ -846,13 +790,6 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/shield-life-display#4269797"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/exploder-reminder#4187663"
           },
           "required": false,
@@ -861,6 +798,41 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/glowing-equipment#1751567"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/air-control-updated#3031183"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/shield-life-display#4269797"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/unified-ui#3813360"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/mod-hub#1792770"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/drglib#1034237"
           },
           "required": false,
           "enabled": true

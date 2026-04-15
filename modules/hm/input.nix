@@ -10,29 +10,28 @@
         fcitx5-rime
         fcitx5-nord
       ];
+
+      settings = {
+        inputMethod = {
+          "Groups/0" = {
+            Name = "Default";
+            "Default Layout" = "us";
+            DefaultIM = "rime";
+          };
+          "Groups/0/Items/0" = {
+            Name = "rime";
+            Layout = "";
+          };
+          "GroupOrder"."0" = "Default";
+        };
+        
+        # 可以在这里添加其他配置
+        globalOptions = { };
+        
+        addons = {
+          # Rime 或其他插件的特定配置
+        };
+      };
     };
-  };
-
-  home.file = {
-    ".config/fcitx5/profile" = {
-      text = ''
-        [Groups/0]
-        Name=Default
-        Default Layout=us
-        DefaultIM=rime
-
-        [Groups/0/Items/0]
-        Name=rime
-        Layout=
-
-        [GroupOrder]
-        0=Default
-      '';
-      force = true;
-    };
-    ".config/fcitx5/conf/classicui.conf".text = ''
-      Theme=Nord-Dark
-      Font=Maple Mono NF CN 14
-    '';
   };
 }

@@ -17,7 +17,6 @@
     ./modules/hm/qutebrowser.nix
     ./modules/hm/waybar-central.nix
     ./modules/hm/email.nix
-    # ./modules/hm/mintcat.nix
     ./modules/hm/tofi.nix
     ./modules/hm/mint.nix
   ];
