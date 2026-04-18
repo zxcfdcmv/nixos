@@ -25,7 +25,7 @@ let
     version = "master";
     src = pkgs.fetchzip {
       url = "${userSettings.githubProxy}/https://github.com/kewuaa/kwm/archive/refs/heads/master.zip";
-      sha256 = "sha256-hqG+8CRGEZKB8z9Y7UcfRdpr32c7ltbyVedQK4ALCrQ=";
+      sha256 = "sha256-vNluQgaabf/MPQiPivEN+4iqo7w/tEziZptktbs2gdQ=";
       stripRoot = true;
     };
 
@@ -134,21 +134,5 @@ in {
         --time-format "%A, %d %B %Y %H:%M:%S" \
         --remember \
     '';
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gtk
-    ];
-    config = {
-      river = {
-        default = [ "wlr" "gtk" ];
-      };
-      common = {
-        default = [ "wlr" "gtk" ];
-      };
-    };
   };
 }

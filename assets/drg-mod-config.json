@@ -6,6 +6,104 @@
       "mods": [
         {
           "spec": {
+            "url": "https://mod.io/g/drg/m/driller-vision#5025878"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/power-attack-100-stun-chance#4525895"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/buy-oc#5783481"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/no-cluster-munitions-carve#4078807"
+          },
+          "required": true,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/minigun-rotary-overdrive-200-coolant#4704096"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/minigun-rotary-overdrive-heats-up-fast#4738247"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/hook-ready#4968755"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/recoilless-weapon#4203253"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/the-third-eye#5777473"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/oc-rw#2916256"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/instant-equipment-switch#3484975"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/let-there-be-light#1034830"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/100-chance-good-event#4389313"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/oc-reroll#4307350"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
             "url": "https://mod.io/g/drg/m/better-cracking-boots#3096163"
           },
           "required": false,
@@ -70,13 +168,6 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/holding-reload-aint-it#4772490"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/driller-vision#5025878"
           },
           "required": false,
           "enabled": true
@@ -560,13 +651,6 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/simpler-azure-weald#1166441"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/enemy-radar#2442215"
           },
           "required": false,
           "enabled": true

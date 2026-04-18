@@ -3,7 +3,8 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./modules/nixos/nvidia.nix
+      ./modules/nixos/optimize.nix
+      ./modules/nixos/amd_nvidia.nix
       ./modules/nixos/default.nix
       # ./modules/nixos/niri.nix
       ./modules/nixos/river.nix
@@ -31,7 +32,6 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_xanmod_latest;
   };
 
   time.timeZone = "Asia/Shanghai";

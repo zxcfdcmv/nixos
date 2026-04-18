@@ -16,21 +16,7 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    power-profiles-daemon.enable = true;
     upower.enable = true;
-
-    # greetd = {
-    #   enable = true;
-    #   settings.default_session.command = ''
-    #     ${pkgs.tuigreet}/bin/tuigreet \
-    #       --cmd "${pkgs.niri}/bin/niri-session" \
-    #       --theme "dark" \
-    #       --greet-align center \
-    #       --time \
-    #       --time-format "%A, %d %B %Y %H:%M:%S" \
-    #       --remember \
-    #   '';
-    # };
   };
 
   systemd.services.rfkill-unblock-bluetooth = {
@@ -44,18 +30,21 @@
     };
   };
 
-  # xdg.portal = {
-  #   enable = true;
-  #   extraPortals = with pkgs; [
-  #     xdg-desktop-portal-wlr
-  #     xdg-desktop-portal-gtk
-  #   ];
-  #   config = {
-  #     common = {
-  #       default = "wlr";
-  #     };
-  #   };
-  # };
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
+    ];
+    config = {
+      river = {
+        default = [ "wlr" "gtk" ];
+      };
+      common = {
+        default = [ "wlr" "gtk" ];
+      };
+    };
+  };
 
   programs = {
     git = {
@@ -67,8 +56,6 @@
         };
       };
     };
-
-    # niri.enable = true;
     nix-ld = {
       enable = true;
       libraries = with pkgs; [

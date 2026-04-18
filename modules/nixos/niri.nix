@@ -1,8 +1,6 @@
 { config, pkgs, lib, userSettings, ... }:
 
 {
-  # boot.kernelParams = [ "video=eDP-1:1280x960@144" ];
-  
   programs.niri.enable = true;
   
   services.greetd = {
@@ -18,19 +16,7 @@
     '';
   };
   
-  # xdg.portal = {
-  #   enable = true;
-  #   extraPortals = with pkgs; [
-  #     xdg-desktop-portal-wlr
-  #     xdg-desktop-portal-gtk
-  #   ];
-  #   config = { common = {
-  #       default = "wlr";
-  #     };
-  #   };
-  # };
-
-    # --- 2. 用户级配置 (通过 home-manager.users 注入) ---
+  # --- 2. 用户级配置 (通过 home-manager.users 注入) ---
   home-manager.users.${userSettings.username} = { osConfig, ... }: {
     home.file.".config/niri/config.kdl".text = ''
       ${builtins.readFile ../../assets/niri.kdl}

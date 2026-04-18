@@ -3,19 +3,22 @@
   inputs = {
     nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
     home-manager = {
-      url = "git+https://gh-proxy.com/github.com/nix-community/home-manager/";
+      url = "git+https://gh-proxy.org/github.com/nix-community/home-manager/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # noctalia = {
-    #   url = "git+https://gh-proxy.com/github.com/noctalia-dev/noctalia-shell";
+    #   url = "git+https://gh-proxy.org/github.com/noctalia-dev/noctalia-shell";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
     stylix = {
-      url = "git+https://gh-proxy.com/github.com/danth/stylix";
+      url = "git+https://gh-proxy.org/github.com/danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak = {
-      url = "git+https://gh-proxy.com/github.com/gmodena/nix-flatpak";
+      url = "git+https://gh-proxy.org/github.com/gmodena/nix-flatpak";
+    };
+    nix-cachyos-kernel = {
+      url = "git+https://gh-proxy.org/github.com/xddxdd/nix-cachyos-kernel.git?ref=release";
     };
   };
 
@@ -41,7 +44,7 @@
       ${userSettings.hostName} = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit (inputs) stylix nix-flatpak;
+          inherit (inputs) stylix nix-flatpak nix-cachyos-kernel;
           inherit userSettings;
         };
         modules = [

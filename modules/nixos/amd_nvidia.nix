@@ -2,6 +2,8 @@
 {
   boot.kernelParams = [
     "nvidia-drm.modeset=1"
+    # "initcall_blacklist=acpi_cpufreq_init"
+    # "amd_pstate=active"
   ];
   
   services = {
@@ -18,8 +20,9 @@
         enable = true;
         finegrained = false;
       };
-      open = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      open = false;
+      # package = config.boot.kernelPackages.nvidiaPackages.stable;
+      package = config.boot.kernelPackages.nvidia_x11;
     };
   };
 
