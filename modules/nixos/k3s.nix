@@ -57,7 +57,8 @@
     home.packages = with pkgs; [
       kubectl
       k9s
-      helm
+      kubernetes-helm
+      argocd
     ];
 
     home.sessionVariables = {

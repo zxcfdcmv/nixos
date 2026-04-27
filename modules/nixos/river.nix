@@ -25,12 +25,12 @@ let
     version = "master";
     src = pkgs.fetchzip {
       url = "${userSettings.githubProxy}/https://github.com/kewuaa/kwm/archive/refs/heads/master.zip";
-      sha256 = "sha256-vNluQgaabf/MPQiPivEN+4iqo7w/tEziZptktbs2gdQ=";
+      sha256 = "sha256-+5iwQowxxbUSvVx29r7QOG63ssnBxmn4BeMLynlO0Gw=";
       stripRoot = true;
     };
 
     nativeBuildInputs = [
-      pkgs.zig
+      pkgs.zig_0_15
       pkgs.pkg-config
       pkgs.wayland-scanner
       pkgs.makeWrapper

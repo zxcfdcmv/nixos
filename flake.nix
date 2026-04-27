@@ -20,6 +20,10 @@
     nix-cachyos-kernel = {
       url = "git+https://gh-proxy.org/github.com/xddxdd/nix-cachyos-kernel.git?ref=release";
     };
+    steam-config-nix = {
+      url = "git+https://gh-proxy.org/github.com/different-name/steam-config-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
@@ -61,7 +65,7 @@
                 ];
               };
               extraSpecialArgs = {
-                inherit (inputs);
+                inherit (inputs) steam-config-nix;
                 inherit userSettings;
               };
             };

@@ -49,6 +49,7 @@
       wl-clipboard-rs
       nh nvd nix-output-monitor
       openssl
+      glow
 
       # 应用
       microsoft-edge
@@ -59,6 +60,7 @@
       localsend
       heroic
       ayugram-desktop
+      piliplus
     ];
   };
 

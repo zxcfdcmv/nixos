@@ -6,6 +6,258 @@
       "mods": [
         {
           "spec": {
+            "url": "https://mod.io/g/drg/m/consumables-and-collectibles-on-terrain-scanner#4704425"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/reduced-hold-for-hell#4056424"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/weapon-skin-transfer#3418474"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/equippable-hospital-gown#2435073"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/simple-circle-for-conductor-add-on#5292722"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/rsh-12#5991956"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/electrics-hyper-weapon-skin-pack#5551759"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/heavy-object-throw-animation-skipcancel#4937311"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/beer-vip#5311493"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/no-gravity-of-scorching-tide#5206171"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/sightinformation#5835440"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/fixed-drop-pod-collision#5194088"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/bhop-but-for-poors#4941177"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/resinite-locator#5746654"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/overcharger-indicator#3513258"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/build-inspector#2101319"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/simpleqol#1956173"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/na89101#3993892"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/skin-transfer-to-grenades#4005366"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/using-monitor#4291811"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/deep-dive-information#4485354"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/skin-transfer-to-class-traversal-tools#3978099"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/modified-gunner-shield-effect#3029397"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/ghost-ship#1928574"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/accurate-autocannon1#4112529"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/autocannon-neurotoxin-100-poisons100#4693724"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/mineral-radar#4879207"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/mission-objective-marker#5182044"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/shield-preview#4205463"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/one-click-promotion#3831807"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/more-flares#1164708"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/simplemissiontimer#1605951"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/clearer-laser-pointer#4141804"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/ping-longer#1146573"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/visible-weapon-ranges#4190463"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/fat-boy-sphere#4704370"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
             "url": "https://mod.io/g/drg/m/driller-vision#5025878"
           },
           "required": false,
@@ -84,13 +336,6 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/let-there-be-light#1034830"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/100-chance-good-event#4389313"
           },
           "required": false,
           "enabled": true
