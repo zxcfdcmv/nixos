@@ -6,7 +6,6 @@
       ./modules/nixos/optimize.nix
       ./modules/nixos/amd_nvidia.nix
       ./modules/nixos/default.nix
-      # ./modules/nixos/niri.nix
       ./modules/nixos/river.nix
       # ./modules/nixos/sunshine.nix
       ./modules/nixos/proxy.nix

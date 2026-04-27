@@ -1,10 +1,6 @@
 { config, pkgs, lib, userSettings, ... }:
 {
   imports = [
-    # ./modules/hm/niri.nix
-    ./modules/hm/gui.nix
-    # ./modules/hm/noctalia.nix
-    ./modules/hm/swayidle.nix
     ./modules/hm/bash.nix
     ./modules/hm/scripts.nix
     ./modules/hm/foot.nix
@@ -15,9 +11,7 @@
     ./modules/hm/proxy.nix
     ./modules/hm/games.nix
     ./modules/hm/qutebrowser.nix
-    ./modules/hm/waybar-central.nix
     ./modules/hm/email.nix
-    ./modules/hm/tofi.nix
     ./modules/hm/mint.nix
   ];
 

@@ -135,4 +135,34 @@ in {
         --remember \
     '';
   };
+
+  home-manager.users.${userSettings.username} = { pkgs, config, ...}: {
+    home.packages = with pkgs; [
+      swaybg
+      pulsemixer
+      bluetuith
+      brightnessctl
+    ];
+
+    services.mako = {
+      enable = true;
+      settings = {
+        anchor = "top-right";
+        width = 350;
+        height = 150;
+        margin = "10,10";
+        padding = "10";
+    
+        default-timeout = 5000;
+        ignore-timeout = false;
+        max-visible = 5;
+    
+        icons = true;
+        max-icon-size = 48;
+    
+        on-button-left = "dismiss";
+        on-button-right = "dismiss-all";
+      };
+    };
+  };
 }
