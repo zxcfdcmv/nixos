@@ -1,4 +1,4 @@
-{ pkgs, userSettings, ... }:
+{ pkgs, config, userSettings, ... }:
 
 let
   drg-version = "0.2.10";
@@ -42,7 +42,7 @@ in {
   home = {
     packages = [ drg ];    
     file.".config/drg-mod-integration/mod_data.json" = {
-      source = ../../assets/drg-mod-config.json;
+      source = config.lib.file.mkOutOfStoreSymlink "/home/${userSettings.username}/nixos/assets/drg-mod-config.json";
     };
   };
 }

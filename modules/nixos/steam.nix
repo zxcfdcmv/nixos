@@ -28,11 +28,41 @@
           id = 548430;
           launchOptions = {
             args = [
-              "-disablemodding"  # 禁用 MOD 支持，提高兼容性和性能
+              "-disablemodding"
+            ];
+          };
+        };
+        project-zomboid = {
+          id = 108600;
+          launchOptions = {
+            args = [
+              "-Xms6G"
+              "-Xmx6G"
+            ];
+          };
+        };
+        left-4-dead-2 = {
+          id = 550;
+          launchOptions = {
+            args = [
+              "-language" "schinese"
+              "+cc_lang" "schinese"
+              "-lv"
+              "-novid"
+              "-nojoy"
+              "-noaafonts"
+              "-noforcemspd"
+              "-high"
+              "-heapsize" "1572864"
             ];
           };
         };
       };
+    };
+
+    home.file = {
+      ".local/share/Steam/steamapps/common/Left 4 Dead 2/left4dead2/cfg/autoexec.cfg".source = ../../assets/l4d2/autoexec.cfg;
+      ".local/share/Steam/steamapps/common/Left 4 Dead 2/left4dead2/ems/lxc/inspect_weapon/settings.txt".source = ../../assets/l4d2/inspect_settings.txt;
     };
   };
 }

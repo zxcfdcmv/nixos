@@ -43,6 +43,16 @@
     allowedUDPPorts = [ 8472 51820 51821 ];
   };
 
+  systemd.tmpfiles.rules = [
+    "C /home/${userSettings.username}/.kube/config 0600 ${userSettings.username} users - /etc/rancher/k3s/k3s.yaml"
+  ];
+
+  # 同时建 .kube 目录
+  system.activationScripts.kubeconfig = ''
+    mkdir -p /home/${userSettings.username}/.kube
+    chown ${userSettings.username}:users /home/${userSettings.username}/.kube
+  '';
+
   security.sudo.extraRules = [{
     users = [ userSettings.username ];
     commands = [{
@@ -62,7 +72,7 @@
     ];
 
     home.sessionVariables = {
-      KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
+      KUBECONFIG = "/home/${userSettings.username}/.kube/config";
     };
   };
 }

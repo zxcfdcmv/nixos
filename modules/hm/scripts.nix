@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 let
   customCommands = [
     "toggle-fcitx"
@@ -27,40 +27,40 @@ let
       local title="$1"
       local urgency="$2"
       # noctalia-shell ipc call toast send "{\"title\":\"$title\",\"type\":\"$type\"}"
-      ${pkgs.libnotify}/bin/notify-send -u "$urgency" -i input-keyboard "$title"
+      ${pkgs.libnotify}/bin/notify-send -u "$urgency" "$title"
     }
 
     case "$STATUS" in
       active)
         $CMD stop "$SERVICE"
-        notify "$SERVICE Disabled" "normal"
+        notify "⚫ $SERVICE Disabled" "low"
         ;;
       *)
         $CMD start "$SERVICE"
-        notify "$SERVICE Enabled" "low"
+        notify "🟢 $SERVICE Enabled" "normal"
         ;;
     esac
   '';
 
   mkFcitx5ToggleService = pkgs.writeShellScriptBin "toggle-fcitx" ''
-      notify() {
-        local title="$1"
-        local urgency="$2"
-        # noctalia-shell ipc call toast send "{\"title\":\"$title\",\"type\":\"$type\"}"
-        ${pkgs.libnotify}/bin/notify-send -u "$urgency" -i input-keyboard "$title"
-      }
+    notify() {
+      local title="$1"
+      local urgency="$2"
+      # noctalia-shell ipc call toast send "{\"title\":\"$title\",\"type\":\"$type\"}"
+      ${pkgs.libnotify}/bin/notify-send -u "$urgency" "$title"
+    }
 
-      if pidof fcitx5 >/dev/null 2>&1; then
-          pkill fcitx5
-          sleep 0.5
-          if pidof fcitx5 >/dev/null 2>&1; then
-              pkill -9 fcitx5
-          fi
-          notify "Fcitx5 Disabled" "normal"
-      else
-          fcitx5 -d
-          notify "Fcitx5 Enabled" "low"
-      fi
+    if pidof fcitx5 >/dev/null 2>&1; then
+        pkill fcitx5
+        sleep 0.5
+        if pidof fcitx5 >/dev/null 2>&1; then
+            pkill -9 fcitx5
+        fi
+        notify "⚫ Fcitx5 Disabled" "low"
+    else
+        fcitx5 -d
+        notify "🟢 Fcitx5 Enabled" "normal"
+    fi
   '';
 in
 {
@@ -82,10 +82,23 @@ in
     '') 
   
     (writeShellScriptBin "cs2-cn" ''
-      gamemoderun steam -applaunch 730 -novid -perfectworld +exec autoexec.cfg
+      steam -applaunch 730 -novid -perfectworld +exec autoexec.cfg
     '') 
     (writeShellScriptBin "cs2-global" ''
-      gamemoderun steam -applaunch 730 -novid +exec autoexec.cfg
+      steam -applaunch 730 -novid +exec autoexec.cfg
+    '') 
+
+    (writeShellScriptBin "my-switch" ''
+      cd ${userSettings.dotfilesDir}
+      git add .
+      nh os switch --update
+    '') 
+
+    (writeShellScriptBin "my-switch-bak" ''
+      cd ${userSettings.dotfilesDir}
+      git add .
+      nix flake update
+      sudo nice -n 19 ionice -c 3 nixos-rebuild switch --flake .#${userSettings.hostName}
     '') 
   ])
   ++ builtins.map mkDesktop customCommands;  

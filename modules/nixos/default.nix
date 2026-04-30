@@ -60,14 +60,14 @@
       enable = true;
       libraries = with pkgs; [
         stdenv.cc.cc.lib
+        fontconfig
         freetype
-        SDL2
-        SDL2_image
-        SDL2_ttf
-        SDL2_mixer
+        icu
+        libx11 libxext libxcursor libxrandr libxi libice libsm
         libGL
         zlib
         glib
+        SDL2 SDL2_image SDL2_ttf SDL2_mixer
       ];
     };   
   };

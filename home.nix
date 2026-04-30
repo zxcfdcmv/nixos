@@ -13,6 +13,7 @@
     ./modules/hm/qutebrowser.nix
     ./modules/hm/email.nix
     ./modules/hm/mint.nix
+    ./modules/hm/fireaxe.nix
   ];
 
   home = {

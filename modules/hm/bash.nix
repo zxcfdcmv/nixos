@@ -17,8 +17,6 @@
       kubectl = "sudo -E kubectl";
 
       # my-delete = "sudo nix-collect-garbage -d && nix-store --optimise";
-      my-switch-bak = "cd ${userSettings.dotfilesDir} && git add . && nix flake update && sudo nice -n 19 ionice -c 3 nixos-rebuild switch --flake .#${userSettings.hostName}";
-      my-switch = "cd ${userSettings.dotfilesDir} && git add . && nh os switch --update";
       my-clean = "nh clean all";
     };
   };

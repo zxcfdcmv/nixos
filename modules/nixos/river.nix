@@ -150,7 +150,7 @@ in {
         anchor = "top-right";
         width = 350;
         height = 150;
-        margin = "10,10";
+        margin = "25,5,0,5";
         padding = "10";
     
         default-timeout = 5000;
