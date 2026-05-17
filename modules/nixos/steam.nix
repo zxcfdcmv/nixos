@@ -53,7 +53,10 @@
               "-noaafonts"
               "-noforcemspd"
               "-high"
-              "-heapsize" "1572864"
+              # "-heapsize" "1572864"
+              # "-heapsize" "2096999"
+              "-heapsize" "9000000"
+              "-highpriority"
             ];
           };
         };

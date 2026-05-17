@@ -7,7 +7,7 @@
   "ColorTheme": "Default",
   "MainWindowWidth": 960.0,
   "MainWindowHeight": 1055.0,
-  "IsMainWindowMaximized": false,
+  "IsMainWindowMaximized": true,
   "GamePath": "/home/zxcfdcmv/.local/share/Steam/steamapps/common/Left 4 Dead 2",
   "IgnoreHalfLife2FilesForVpkAddonConflicts": true,
   "IsAutoUpdateWorkshopItem": true,

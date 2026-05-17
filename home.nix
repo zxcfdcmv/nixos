@@ -116,8 +116,8 @@
     };
   };
 
-  xdg.configFile."Kvantum/kvantum.kvconfig".source = lib.mkForce (pkgs.writeText "kvantum.kvconfig" ''
-    [General]
-    theme=Base16Kvantum
-  '');
+  # xdg.configFile."Kvantum/kvantum.kvconfig".source = lib.mkForce (pkgs.writeText "kvantum.kvconfig" ''
+  #   [General]
+  #   theme=Base16Kvantum
+  # '');
 }
