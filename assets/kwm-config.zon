@@ -97,6 +97,10 @@
                     .bottom = "[{{D}}_]",
                 },
                 .scroller = "[==]",
+                .centered_master = .{
+                    .horizontal = "=[]=",
+                    .vertical = "=[V]="
+                },
                 .float = "><>",
             },
 
@@ -157,6 +161,8 @@
         }
     },
 
+    .single_tagset = false,
+
     .sloppy_focus = false,
 
     // .none
@@ -183,6 +189,7 @@
         .monocle = .top,
         .deck = .stack_top,
         .scroller = .below_focused,
+        .centered_master = .top,
         .float = .top,
     },
 
@@ -205,6 +212,7 @@
     // .monocle
     // .deck
     // .scroller
+    // .centered_master
     // .float
     // 默认布局
     .default_layout = .scroller,
@@ -233,6 +241,8 @@
             .gap = 9,
         },
         .deck = .{
+            .nmaster = 1,
+            .mfact = 0.55,
             .inner_gap = 12,
             .outer_gap = 9,
 
@@ -246,6 +256,16 @@
             .mfact = 0.5,
             .inner_gap = 0,
             .outer_gap = 2,
+        },
+        .centered_master = .{
+            .nmaster = 1,
+            .mfact = 0.55,
+            .inner_gap = 12,
+            .outer_gap = 9,
+
+            // .horizontal
+            // .vertical
+            .direction = .horizontal,
         },
     },
 
@@ -786,6 +806,18 @@
             //         },
             //     },
             // },
+            // .{
+            //     .keysym = "u",
+            //     .modifiers = .{ .mod4 = true },
+            //     .event = .{
+            //         .click = .{
+            //             .pressed = .{
+            //                 .switch_layout = .{ .layout = .centered_master },
+            //             },
+            //         },
+            //     },
+            // },            
+             
             // 快速回跳标签
             .{
                 .keysym = "Tab",
@@ -1015,6 +1047,15 @@
             //     .event = .{
             //         .click = .{
             //             .pressed = .toggle_grid_direction,
+            //         },
+            //     },
+            // },
+            // .{
+            //     .keysym = "u",
+            //     .modifiers = .{ .mod4 = true, .shift = true },
+            //     .event = .{
+            //         .click = .{
+            //             .pressed = .toggle_centered_master_direction,
             //         },
             //     },
             // },

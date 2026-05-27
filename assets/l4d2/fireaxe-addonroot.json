@@ -2406,7 +2406,7 @@
       "Id": "0c76bf7c-e9f9-428e-8807-458ffe50fb58",
       "IsEnabled": true,
       "Name": "Car Alarms(glow glass)",
-      "Priority": 0,
+      "Priority": 20,
       "CreationTime": "2026-05-06T08:11:30.7186926+08:00",
       "Tags": [
         "Mutations",
@@ -2447,7 +2447,7 @@
       "Id": "0b6d5652-185f-49fb-82b4-a927d45e5339",
       "IsEnabled": true,
       "Name": "Small fire (Fire effect)",
-      "Priority": 0,
+      "Priority": 20,
       "CreationTime": "2026-05-06T08:14:26.6438188+08:00",
       "Tags": [
         "Items",
@@ -2830,25 +2830,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3261399602,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "8c58e8ca-b36d-4179-8a88-ab3b0d98a24d",
-      "IsEnabled": false,
-      "Name": "Low-Poly Weapons and Items (FPS Models) - Reupload",
-      "Priority": 0,
-      "CreationTime": "2026-05-06T10:17:30.463677+08:00",
-      "Tags": [
-        "Models",
-        "Textures"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 3261401951,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -2969,26 +2950,6 @@
       "Priority": 0,
       "CreationTime": "2026-05-06T10:23:58.2806841+08:00",
       "Tags": [
-        "Other"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2967506584,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "37ad1d92-5e7d-4888-ae5a-cad2311db211",
-      "IsEnabled": false,
-      "Name": "石头发光Tank Rock bright",
-      "Priority": 0,
-      "CreationTime": "2026-05-07T08:57:01.9687351+08:00",
-      "Tags": [
-        "Tank",
-        "Miscellaneous",
         "Other"
       ],
       "DependentAddonIds": [],
@@ -3612,25 +3573,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 1714794353,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "5c899171-5292-4fda-8c92-08752e4ccc54",
-      "IsEnabled": false,
-      "Name": "CSGO - Knife Pack",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T17:43:42.650139+08:00",
-      "Tags": [
-        "Weapons",
-        "Sounds"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 3020518619,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -3687,28 +3629,6 @@
         "Weapons",
         "Textures",
         "Shotgun"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3110393588,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "b58ca294-2bfa-45a4-b869-d411d70451a6",
-      "IsEnabled": false,
-      "Name": "COD MW-RE AK47 Tactical KmoMM_ Theme",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T18:12:17.7656355+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Rifle"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
@@ -3775,28 +3695,6 @@
         "Weapons",
         "Textures",
         "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3033760726,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "34259d17-69ce-4d16-89cf-2c3e4c4a6738",
-      "IsEnabled": false,
-      "Name": "MW22 MK2 KmoMM_ 主题(替换15连)# MW22 LOCKWOOD MK2 KmoMM_ Theme (Huntingrifle)",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T18:17:50.7903529+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Sniper"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
@@ -4018,7 +3916,7 @@
       "RequestApplyTagsFromWorkshop": false,
       "ConflictIgnoringFiles": [],
       "Id": "87af4d37-9ba3-4c71-8469-cf10b44e9bf8",
-      "IsEnabled": false,
+      "IsEnabled": true,
       "Name": "[蔚蓝档案] M1加兰德 (黑色正义）替换15连木狙 [Blue Archive] M1 Garand (Justice Black) Peplaces Hunting Rifle",
       "Priority": 0,
       "CreationTime": "2026-05-12T21:32:09.9503576+08:00",

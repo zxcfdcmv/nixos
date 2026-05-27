@@ -14,6 +14,7 @@
     ./modules/hm/email.nix
     ./modules/hm/mint.nix
     ./modules/hm/fireaxe.nix
+    ./modules/hm/sublime.nix
   ];
 
   home = {

@@ -1,0 +1,15 @@
+{
+    "ignored_packages":
+    [
+        "Vintage",
+    ],
+    "font_size": 12,
+    "color_scheme": "gruvbox (Dark) (Hard) NDC.sublime-color-scheme",
+    "theme": "gruvbox.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "word_wrap": true,
+    "hardware_acceleration": "opengl",
+    "tree_animation_enabled": false,
+    "animation_enabled": false,
+    "save_on_focus_lost": true,
+}
