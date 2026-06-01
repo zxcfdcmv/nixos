@@ -3,6 +3,15 @@
     home = {
         packages = with pkgs; [
             sublime4
+            # (pkgs.symlinkJoin {
+            #     name = "sublime4";
+            #     paths = [ pkgs.sublime4 ];
+            #     buildInputs = [ pkgs.makeWrapper ];
+            #     postBuild = ''
+            #         wrapProgram $out/bin/sublime_text \
+            #         --prefix PATH: "${lib.makeBinPath [ pkgs.sublime-merge ]}"
+            #     '';
+            # })
             sublime-merge
         ];
     };

@@ -1,0 +1,96 @@
+(defcfg
+    danger-enable-cmd yes
+    process-unmapped-keys no
+)
+
+(defsrc
+    mwu      ;; 滚轮上 = 喷推
+    mfwd     ;; 鼠标侧前键 = 自动速砍
+    mbck     ;; 鼠标侧后键 = 速砍推
+    spc      ;; 空格 = 短按高跳/长按连跳
+)
+
+(defalias
+    ;; 喷推: +attack; wait 10; +attack2; wait 10; -attack2; -attack
+    ;; Kanata: 左键按下→等330ms→右键按下→等330ms→右键松开→左键松开
+    l4d2-shoveshot (macro
+        mlft    ;; 按下左键（需要后续松开）
+        40     ;; wait 10
+        mrgt    ;; 按下右键
+        10     ;; wait 10
+        mrgt    ;; 再次 mrgt = 松开（kanata 中同一键第二次是释放）
+        mlft    ;; 再次 mlft = 松开左键
+    )
+
+    ;; 自动速砍: 需要模拟按住循环
+    ;; 原逻辑: +attack; wait 15; -attack; slot1; wait 10; slot2; wait 64; 循环
+    ;; 注意：kanata 的 macro-repeat-release-cancel 会循环整个宏
+    ;; 这里把整个循环周期设为一个迭代
+    l4d2-automelee (macro-repeat-release-cancel
+        mlft        ;; 按下左键（攻击）
+        40         ;; wait 15，砍出去的时间
+        mlft        ;; 松开左键
+        q           ;; slot1（切主武器，假设 q 是 slot1）
+        40         ;; wait 10
+        e           ;; slot2（切近战，假设 e 是 slot2）
+        500        ;; wait 64，冷却/循环间隔
+    )
+ ;; 速砍推: +attack; wait 15; -attack; slot1; +attack2; wait 10; -attack2; slot2
+    l4d2-shove-melee (macro
+        mlft        ;; 按下左键
+        30         ;; wait 15
+        mlft        ;; 松开左键
+        q           ;; slot1
+        mrgt        ;; 按下右键（推）
+        30         ;; wait 10
+        mrgt        ;; 松开右键
+        e           ;; slot2
+    )
+    ;; bhop_long (macro
+    ;;     (press lsft)
+    ;;     spc
+    ;;     5
+    ;;     rpt-any
+    ;;     5
+    ;;     (release lsft)
+    ;; )
+    ;; bhop_long (multi
+    ;;     lsft
+    ;;     (macro-repeat-release-cancel
+    ;;         spc
+    ;;         5
+    ;;     )
+    ;; )
+
+    bhop_long (macro-repeat-release-cancel
+        spc
+        50
+    )
+
+    ;; bhop_up (macro
+    ;;     spc
+    ;;     1
+    ;;     release
+    ;;     spc
+    ;;     1
+    ;;     spc
+    ;; )
+    bhop_up (macro
+        spc
+        lsft
+    )
+
+    spc_alias (tap-hold
+        100
+        100
+        @bhop_up
+        @bhop_long
+    )
+)
+
+(deflayer default
+    @l4d2-shoveshot
+    @l4d2-automelee
+    @l4d2-shove-melee
+    @spc_alias
+)

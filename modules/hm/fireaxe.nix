@@ -26,6 +26,8 @@ in {
   home.packages = [ fireaxe ];
 
   home.file = {
+    ".local/share/fireaxe/ExportedAssets".source = "${fireaxe}/lib/fireaxe/ExportedAssets";
+
     ".local/share/fireaxe/FireAxe/Settings.json".source = 
       config.lib.file.mkOutOfStoreSymlink "${configRoot}/fireaxe-settings.json";
 

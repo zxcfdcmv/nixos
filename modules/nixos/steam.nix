@@ -1,4 +1,8 @@
 { config, lib, pkgs, userSettings, ... }:
+
+let
+  kanataL4d2Config = "${userSettings.dotfilesDir}/assets/kanata/l4d2.kbd";
+in
 {
   programs = {
     steam = {
@@ -44,20 +48,30 @@
         left-4-dead-2 = {
           id = 550;
           launchOptions = {
+            env = {
+              "STEAM_COMPAT_RUNTIME_SDL2" = "1";
+              "__GL_SHADER_DISK_CACHE" = "1";
+              "__GL_SHADER_DISK_CACHE_SKIP_CLEANUP" = "1";
+            };
             args = [
+              "-vulkan"
               "-language" "schinese"
               "+cc_lang" "schinese"
               "-lv"
               "-novid"
               "-nojoy"
               "-noaafonts"
-              "-noforcemspd"
               "-high"
-              # "-heapsize" "1572864"
-              # "-heapsize" "2096999"
-              "-heapsize" "9000000"
-              "-highpriority"
+              "-heapsize" "1572864"
             ];
+            # wrappers = [
+            #   (pkgs.writeShellScript "l4d2-kanata-wrapper" ''
+            #     ${pkgs.kanata}/bin/kanata ${kanataL4d2Config} &
+            #     KANATA_PID=$!
+            #     "$@"
+            #     kill "$KANATA_PID"
+            #   '')
+            # ];
           };
         };
       };

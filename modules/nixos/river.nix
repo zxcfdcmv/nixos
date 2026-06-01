@@ -136,6 +136,22 @@ in {
     '';
   };
 
+  # programs.ly = {
+  #   enable = true;
+  #   settings = {
+  #     animation = "none";           # 先关掉动画，避免渲染问题
+  #     blank_password = false;
+  #     clear_password = true;
+  #     clock = "%A, %d %B %Y %H:%M:%S";
+  #     # 直接写 river 的启动命令
+  #     default_session = "${pkgs.river}/bin/river -c ${riverInitScript}";
+  #     # 或者让 ly 记住上次会话（但因为你只有一个，无所谓）
+  #     remember_last_session = true;
+  #     # 隐藏未选中的会话列表，更干净
+  #     hide_borders = false;
+  #   };
+  # };
+
   home-manager.users.${userSettings.username} = { pkgs, config, ...}: {
     home.packages = with pkgs; [
       swaybg

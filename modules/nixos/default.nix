@@ -83,6 +83,7 @@
       _GL_VRR_ALLOWED = "0";
       EDITOR = "hx";
       VISUAL = "hx";
+      GTK_CSD = "0";
     };
     systemPackages = with pkgs; [
       helix

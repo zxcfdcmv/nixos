@@ -6,6 +6,9 @@
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
     '';
+    initExtra = ''
+      export LC_MESSAGES="en_US.UTF-8"
+    '';
     shellAliases = {
       rg   = "rg --hidden --smart-case";
       cat  = "bat -pp";
@@ -17,7 +20,8 @@
       kubectl = "sudo -E kubectl";
 
       # my-delete = "sudo nix-collect-garbage -d && nix-store --optimise";
-      my-clean = "nh clean all";
+      my-clean = "nh clean all && nh os boot";
+      kanata = "sudo -E kanata -c";
     };
   };
 }

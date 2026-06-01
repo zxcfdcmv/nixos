@@ -59,22 +59,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2999546921,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "c221b9b6-d475-4aa6-9246-4170cd3a23a7",
-      "IsEnabled": true,
-      "Name": "Barbara voice replace Louis (AI Chinese Voice)",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:10:40.5487248+08:00",
-      "Tags": [],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 3427518659,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -149,44 +133,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3000540150,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "d4c9facf-817b-40ec-bc43-0109cb1c4c49",
-      "IsEnabled": true,
-      "Name": "RaidenEi voice replace Nick (AI Chinese Voice)",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:11:59.7643203+08:00",
-      "Tags": [
-        "Sounds",
-        "Nick"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3265092318,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "b1ff7da4-2307-496e-9759-7609f754f530",
-      "IsEnabled": true,
-      "Name": "DOAXVV Sayuri - Makeup Costa Bill",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:12:10.4957+08:00",
-      "Tags": [
-        "Survivors",
-        "Bill"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 3443374407,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -249,7 +195,7 @@
       "RequestApplyTagsFromWorkshop": false,
       "ConflictIgnoringFiles": [],
       "Id": "7701b8e9-2de7-4a2f-975d-f0b14c8cc346",
-      "IsEnabled": true,
+      "IsEnabled": false,
       "Name": "连跳MOD",
       "Priority": 0,
       "CreationTime": "2026-04-28T15:12:56.8486647+08:00",
@@ -279,41 +225,6 @@
         "Single Player",
         "Realism",
         "Co-op"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3004056256,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "c21de82e-a970-4221-9a23-467f92c2a43e",
-      "IsEnabled": true,
-      "Name": "Yoimiya voice replace Coach (AI Chinese Voice)",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:13:14.5171744+08:00",
-      "Tags": [],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3275737688,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "7e4367e5-8785-4c33-adb0-15ffac0f6bb9",
-      "IsEnabled": true,
-      "Name": "DOAXVV Amy - Reincarnation Wisdom Bill",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:13:22.5512391+08:00",
-      "Tags": [
-        "Survivors",
-        "Bill"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
@@ -438,68 +349,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3276267181,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "1101109d-d242-42b0-8aff-ca79c55f0d31",
-      "IsEnabled": true,
-      "Name": "DOAXVV Misaki - Makeup Mare Coach",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:14:32.086574+08:00",
-      "Tags": [
-        "Survivors",
-        "Coach"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3456063415,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "5c604f06-5d95-4341-af23-75838527da4e",
-      "IsEnabled": true,
-      "Name": "Doaxvv_Amy艾米Shiden_Seisou_alter（Rochelle;罗谢尔",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:14:41.0547369+08:00",
-      "Tags": [
-        "UI",
-        "Survivors",
-        "Rochelle",
-        "Single Player",
-        "Models",
-        "Co-op",
-        "Textures"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3624854857,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "93a274b6-f8b5-4771-9342-c84b2db9ecaf",
-      "IsEnabled": true,
-      "Name": "DOAXVV Nyotengu - Nocturne Desire Louis",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:14:49.5551017+08:00",
-      "Tags": [
-        "Survivors",
-        "Louis"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 469986973,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -584,24 +433,6 @@
         "Rochelle",
         "Francis",
         "Louis"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3279522316,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "f9647240-1791-41ea-b2ed-643ebd2f04bc",
-      "IsEnabled": true,
-      "Name": "Double Jump",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:15:35.0457134+08:00",
-      "Tags": [
-        "Scripts"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
@@ -1143,45 +974,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3354846717,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "9f83d9d3-6e94-49bf-8ad1-8985440d858e",
-      "IsEnabled": true,
-      "Name": "Kokomi voice replace Francis (AI Chinese Voice)",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:25:50.8407457+08:00",
-      "Tags": [
-        "Survivors",
-        "Sounds",
-        "Francis"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3554209957,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "d2a78b8c-6575-42dc-8a70-73db2b3c93f4",
-      "IsEnabled": true,
-      "Name": "DOAXVV Koharu - Nocturne Chaleur Ellis",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:25:57.7419055+08:00",
-      "Tags": [
-        "Survivors",
-        "Ellis"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 3636175261,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -1559,25 +1351,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2985546682,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "af96ed27-7b72-41b9-9147-4494d4a33d0f",
-      "IsEnabled": true,
-      "Name": "Shenhe voice replace Rochelle (AI Chinese Voice)",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:29:12.9301683+08:00",
-      "Tags": [
-        "Sounds",
-        "Rochelle"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 3226661388,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -1599,28 +1372,6 @@
         "Realism Versus",
         "Co-op",
         "Other"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3399418522,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "0831cb22-71a6-4bec-8bca-8989058180e5",
-      "IsEnabled": true,
-      "Name": "DOAXVV Elise伊莉丝 (Reincarnation Chevalier) Nick",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:29:26.021216+08:00",
-      "Tags": [
-        "UI",
-        "Survivors",
-        "Nick",
-        "Models",
-        "Textures"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
@@ -1683,25 +1434,6 @@
         "Miscellaneous",
         "Scripts",
         "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2985556598,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "2f7a5628-1168-440a-98e7-561997c27507",
-      "IsEnabled": true,
-      "Name": "Lumine voice replace Ellis (AI Chinese Voice)",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:31:55.6826764+08:00",
-      "Tags": [
-        "Sounds",
-        "Ellis"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
@@ -1827,25 +1559,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2988268949,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "7e0153b0-2799-407c-860e-9c8d55e2c74e",
-      "IsEnabled": true,
-      "Name": "Elysia voice replace Zoey (AI Chinese Voice)",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:34:38.7141405+08:00",
-      "Tags": [
-        "Sounds",
-        "Zoey"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 3233665119,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -1859,30 +1572,6 @@
       "Tags": [
         "Scripts",
         "Survivors"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3422766775,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "211b7440-4667-4e7f-bcb7-feb4dc83e8ba",
-      "IsEnabled": true,
-      "Name": "Doaxvv Honoka穗香 (Zoey;佐伊)",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:34:52.3941151+08:00",
-      "Tags": [
-        "UI",
-        "Survivors",
-        "Zoey",
-        "Single Player",
-        "Models",
-        "Co-op",
-        "Textures"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
@@ -1962,44 +1651,6 @@
         "Survivors",
         "Coach",
         "Models"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2988756108,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "eab182c3-29ca-4901-8e76-cff6f81f6843",
-      "IsEnabled": true,
-      "Name": "Kamisato Ayaka voice replace Bill (AI Chinese Voice)",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:35:26.0363626+08:00",
-      "Tags": [
-        "Sounds",
-        "Bill"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3262856434,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "61774b36-cb0b-4e65-9b91-1bea96401af8",
-      "IsEnabled": true,
-      "Name": "DOAXVV Yukino - Reincarnation Rasha Francis",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:35:32.2199303+08:00",
-      "Tags": [
-        "Survivors",
-        "Francis"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
@@ -2398,27 +2049,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2894717420,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "0c76bf7c-e9f9-428e-8807-458ffe50fb58",
-      "IsEnabled": true,
-      "Name": "Car Alarms(glow glass)",
-      "Priority": 20,
-      "CreationTime": "2026-05-06T08:11:30.7186926+08:00",
-      "Tags": [
-        "Mutations",
-        "Miscellaneous",
-        "Single Player",
-        "Textures"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 2895994942,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -2479,27 +2109,6 @@
         "Realism",
         "Realism Versus",
         "Co-op",
-        "Textures",
-        "Other"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3502391330,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "3ed3d292-f140-4466-b3b3-ee0a02a27fde",
-      "IsEnabled": true,
-      "Name": "Laser [perspective glow]",
-      "Priority": 0,
-      "CreationTime": "2026-05-06T08:15:43.6934298+08:00",
-      "Tags": [
-        "Items",
-        "Models",
         "Textures",
         "Other"
       ],
@@ -2666,31 +2275,6 @@
         "UI",
         "Items",
         "Single Player"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3237108836,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "753b5cd6-b2a7-4094-9c6e-b582c429851a",
-      "IsEnabled": true,
-      "Name": "(RNG) Glowsticks on Ammo Piles",
-      "Priority": 0,
-      "CreationTime": "2026-05-06T08:47:43.4876387+08:00",
-      "Tags": [
-        "Campaigns",
-        "Miscellaneous",
-        "Items",
-        "Realism",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Other"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
@@ -2976,25 +2560,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3479269246,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "2c9537c7-370f-4e45-99fb-9fa4834ca78b",
-      "IsEnabled": true,
-      "Name": "Glowing Special Infected",
-      "Priority": 10,
-      "CreationTime": "2026-05-07T09:04:16.2038019+08:00",
-      "Tags": [
-        "Special Infected",
-        "Textures"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 1989245341,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -3038,7 +2603,7 @@
       "RequestApplyTagsFromWorkshop": false,
       "ConflictIgnoringFiles": [],
       "Id": "876dec64-54bf-4063-9d53-a4b6fd4df09d",
-      "IsEnabled": true,
+      "IsEnabled": false,
       "Name": "Scripts - Simple Plus Esc Menu",
       "Priority": 0,
       "CreationTime": "2026-05-07T15:50:55.7710542+08:00",
@@ -3122,99 +2687,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2592434906,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "ef9453d0-b3fd-4086-bb10-9e58488a853a",
-      "IsEnabled": true,
-      "Name": "Common Infected Glow",
-      "Priority": 0,
-      "CreationTime": "2026-05-08T22:13:45.0828901+08:00",
-      "Tags": [
-        "Common Infected"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 700120471,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "aa5ab43b-83d8-4e99-8ac6-1ad2122f2903",
-      "IsEnabled": true,
-      "Name": "Lighting difibrillator",
-      "Priority": 0,
-      "CreationTime": "2026-05-08T22:17:48.425135+08:00",
-      "Tags": [
-        "Items",
-        "Defibrillator"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 848423537,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "0e761ee4-9ef6-4d9c-8ed0-7f20953996c7",
-      "IsEnabled": true,
-      "Name": "Lighting MedKit",
-      "Priority": 1,
-      "CreationTime": "2026-05-08T22:18:26.8886417+08:00",
-      "Tags": [
-        "Items",
-        "Medkit"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 637354442,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "75ec5b51-f716-4fcb-bd7f-61f4e8a61388",
-      "IsEnabled": true,
-      "Name": "Glowing Pink Cans HD",
-      "Priority": 0,
-      "CreationTime": "2026-05-08T22:21:02.8924752+08:00",
-      "Tags": [
-        "Items",
-        "Other"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 1089140091,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "839d2bbf-6331-47e5-a118-a5b90ed7e8bd",
-      "IsEnabled": true,
-      "Name": "plexiglass doors",
-      "Priority": 10,
-      "CreationTime": "2026-05-08T22:21:44.0088694+08:00",
-      "Tags": [
-        "Textures"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 445521228,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -3226,25 +2698,6 @@
       "Priority": 0,
       "CreationTime": "2026-05-08T22:25:25.9085032+08:00",
       "Tags": [
-        "Miscellaneous"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2214675717,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "ac324d7e-88f5-48d8-9ecb-773fc3a2a4d2",
-      "IsEnabled": true,
-      "Name": "夜光金舌Smoker（Glowing Gold Tongue）",
-      "Priority": 0,
-      "CreationTime": "2026-05-10T09:37:07.534858+08:00",
-      "Tags": [
-        "Smoker",
         "Miscellaneous"
       ],
       "DependentAddonIds": [],
@@ -3312,26 +2765,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2278831182,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "4129c816-3609-4028-b588-d7d1d49b49f3",
-      "IsEnabled": true,
-      "Name": "Tank Rock Hint",
-      "Priority": 0,
-      "CreationTime": "2026-05-10T10:00:17.6594164+08:00",
-      "Tags": [
-        "Tank",
-        "Miscellaneous",
-        "Other"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 2074131230,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -3344,90 +2777,6 @@
       "CreationTime": "2026-05-10T10:07:18.994274+08:00",
       "Tags": [
         "Textures"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2456589007,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "49a0da5f-c7ba-4b2c-ae06-545d5d99bfbd",
-      "IsEnabled": true,
-      "Name": "Definitive Glowing Colored Items",
-      "Priority": 10,
-      "CreationTime": "2026-05-10T10:23:34.5161912+08:00",
-      "Tags": [
-        "Items",
-        "Textures",
-        "Throwable",
-        "Adrenaline",
-        "Defibrillator",
-        "Medkit",
-        "Pills",
-        "Other"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2458405134,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "029fdc72-dc20-4217-8e81-1f239ea69569",
-      "IsEnabled": true,
-      "Name": "Fire Gas - Yellow TLS FIX",
-      "Priority": 0,
-      "CreationTime": "2026-05-10T11:21:04.5619832+08:00",
-      "Tags": [
-        "Miscellaneous",
-        "Items",
-        "Textures",
-        "Other"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 1232866285,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "8ae2db13-bf30-4b90-899f-8bc147b23477",
-      "IsEnabled": true,
-      "Name": "Oxygen Tank - Green",
-      "Priority": 0,
-      "CreationTime": "2026-05-10T11:21:42.1246862+08:00",
-      "Tags": [
-        "Miscellaneous",
-        "Items"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 1232894838,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "d7a24c2a-017c-4fb6-93d3-c7e0b62beb47",
-      "IsEnabled": true,
-      "Name": "Propane Tank - White",
-      "Priority": 0,
-      "CreationTime": "2026-05-10T11:22:13.0466352+08:00",
-      "Tags": [
-        "Miscellaneous",
-        "Items"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
@@ -3456,561 +2805,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3324490071,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "ea185f0f-6fe8-4dbb-894c-08d6481afd87",
-      "IsEnabled": true,
-      "Name": "印花集磁暴斩替换板球拍",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T15:39:13.801378+08:00",
-      "Tags": [
-        "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3018887885,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "e15e2c8c-74a5-40a9-a6ce-9f5c6f142d3a",
-      "IsEnabled": true,
-      "Name": "印花集MW22 LOCKWOOD MK2",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T15:43:24.3541834+08:00",
-      "Tags": [
-        "UI",
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Shotgun"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3155014352,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "731316ca-8074-48b5-9357-77396456d94f",
-      "IsEnabled": true,
-      "Name": "[Destiny2] 印花集挽歌（珠光+动态）替换电锯",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T15:56:17.4836986+08:00",
-      "Tags": [],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2929840099,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "0e4088ab-9d8d-4d43-af7e-d8023d251c80",
-      "IsEnabled": true,
-      "Name": "CSGO MP9 Printstream Theme",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T16:44:38.8977383+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "SMG"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 1348185564,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "cbafc02a-41b3-4e0d-afcf-8a85b221ab88",
-      "IsEnabled": true,
-      "Name": "Desert Eagle Kumicho Dragon  (CSGO animations)",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T16:53:29.6750113+08:00",
-      "Tags": [
-        "Weapons",
-        "Sounds"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2680156276,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "afee37ec-a36a-440d-9065-f59624fded46",
-      "IsEnabled": true,
-      "Name": "[Melee] Knife = Butterfly Knife (w Butterfly Deploy Sound) - axe_break",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T16:56:12.3696413+08:00",
-      "Tags": [
-        "Sounds",
-        "Weapons",
-        "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3020518619,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "0d4f0dfb-ef7f-4c12-93f8-80e7f9130e17",
-      "IsEnabled": true,
-      "Name": "Chrome Shotgun Printstream Theme (Glow)",
-      "Priority": 10,
-      "CreationTime": "2026-05-12T17:58:16.4641846+08:00",
-      "Tags": [
-        "Weapons",
-        "Textures",
-        "Shotgun"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2993364654,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "8346bfba-18fd-4366-97b4-222c46e23b4c",
-      "IsEnabled": true,
-      "Name": "HQ MAC-10 KmoMM_ Theme",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T17:59:16.4370184+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "SMG"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3020518865,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "dfdc836c-84b8-499f-b7ad-e6378a1f0947",
-      "IsEnabled": true,
-      "Name": "Pump Shotgun Printstream Theme (Glow)",
-      "Priority": 10,
-      "CreationTime": "2026-05-12T18:03:03.6364157+08:00",
-      "Tags": [
-        "Weapons",
-        "Textures",
-        "Shotgun"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2942607592,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "1ed3e216-27af-4f13-a505-3973c9e26b10",
-      "IsEnabled": true,
-      "Name": "CODMW Glock 21 KmoMM_ Theme",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T18:13:02.7691948+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Pistol"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3116282503,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "aaf71708-7029-4929-ace4-27cda4f4b727",
-      "IsEnabled": true,
-      "Name": "COD MWIII Rival-9 KmoMM_ Theme",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T18:13:33.9643195+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "SMG"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3240832357,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "1feb2141-3e90-4fac-9634-9347603618f8",
-      "IsEnabled": true,
-      "Name": "MW2019 Katana - Printstream Theme (Glow)",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T18:15:40.3208545+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2932401231,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "3076bd91-f037-4549-af20-d4632cb940c1",
-      "IsEnabled": true,
-      "Name": "Apex Legends - C.A.R. SMG Printstream",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T18:20:34.4846415+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "SMG"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2813746203,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "0fc443fd-b83b-42d0-9c0d-a7804a2ef247",
-      "IsEnabled": true,
-      "Name": "SLR Rifleworks AR-15 KmoMM_ Theme",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T18:21:31.9443565+08:00",
-      "Tags": [
-        "Weapons",
-        "Textures",
-        "Rifle"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3432940135,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "6991be12-f938-4361-86ed-3c446fb8d21f",
-      "IsEnabled": true,
-      "Name": "AK-74M (AK-47)",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T19:03:58.6464302+08:00",
-      "Tags": [
-        "UI",
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Rifle"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3503244209,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "56653457-6949-4ea5-8acf-fa4856a2b675",
-      "IsEnabled": true,
-      "Name": "DeltaForceHawk Ops M14-EBR (SG552)",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T19:09:57.8473482+08:00",
-      "Tags": [
-        "UI",
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Rifle"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3654927096,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "3ec6b139-0050-48cb-8ece-1eceffdd1a11",
-      "IsEnabled": true,
-      "Name": "Colt M4 Carbine Cinnamon Roll (Desert Rifle)",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T20:19:16.185862+08:00",
-      "Tags": [
-        "Sounds",
-        "Weapons",
-        "Rifle"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3029181790,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "afbbb7c2-a441-4b2b-bc40-8300fa93d1a1",
-      "IsEnabled": true,
-      "Name": "[SSJJ2]MK14EBR ASOUL (Sniper_Military)",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T20:29:02.3349828+08:00",
-      "Tags": [],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2278404700,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "1d606d16-029b-4856-bed0-a37ef3a6ae66",
-      "IsEnabled": true,
-      "Name": "Titanfall 2 - R-201 Carbine",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T20:51:21.3196106+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Rifle"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2803203976,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "243577fc-0171-45c9-82c1-13881df438f5",
-      "IsEnabled": true,
-      "Name": "Titanfall2 R201 Dark Matter Animated Skin",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T20:51:30.1225287+08:00",
-      "Tags": [
-        "Weapons",
-        "Rifle"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2687046933,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "e7cfcff3-9d91-41a9-9ade-d9da28aa77bc",
-      "IsEnabled": true,
-      "Name": "[Destiny2] Dead Man's Tale",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T21:17:13.2345299+08:00",
-      "Tags": [
-        "Models",
-        "Weapons",
-        "Rifle",
-        "Sniper"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3248246147,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "395429c0-af37-41e7-a675-be80d5ba9a81",
-      "IsEnabled": true,
-      "Name": "Impalement [Scout]",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T21:22:22.4711695+08:00",
-      "Tags": [
-        "UI",
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Sniper"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3236694044,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "87af4d37-9ba3-4c71-8469-cf10b44e9bf8",
-      "IsEnabled": true,
-      "Name": "[蔚蓝档案] M1加兰德 (黑色正义）替换15连木狙 [Blue Archive] M1 Garand (Justice Black) Peplaces Hunting Rifle",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T21:32:09.9503576+08:00",
-      "Tags": [
-        "Versus",
-        "Survival",
-        "Campaigns",
-        "UI",
-        "Survivors",
-        "Sounds",
-        "Items",
-        "Single Player",
-        "Scavenge",
-        "Models",
-        "Weapons",
-        "Co-op",
-        "Sniper",
-        "Adrenaline",
-        "Other"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3652100725,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "361e0b5f-9373-4ee4-b64e-1b8d7d902572",
-      "IsEnabled": true,
-      "Name": "MPS AA-12 (M1014)",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T21:47:21.8770107+08:00",
-      "Tags": [
-        "UI",
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Shotgun"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3234049257,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "49a0b3a4-a30f-4379-ad10-8ed99463f010",
-      "IsEnabled": true,
-      "Name": "Throwing Knife replaces awp  Apex Legends",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T21:51:50.7726126+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Sniper"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3218166755,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "46fd858d-b14b-4e4a-b7fd-5ef44132b7d9",
-      "IsEnabled": true,
-      "Name": "Paracelsus Replace Shovel",
-      "Priority": 0,
-      "CreationTime": "2026-05-12T21:54:46.5960196+08:00",
-      "Tags": [
-        "Miscellaneous",
-        "Items",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Melee",
-        "Other"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 2949667423,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -4028,28 +2822,6 @@
         "Pistol",
         "Shotgun",
         "Sniper"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3438152569,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "08b5e9de-32ad-43c6-b525-c15eac3a62f1",
-      "IsEnabled": true,
-      "Name": "CODMW2023 - Torque35 Inovy Fire (Grenade Launcher)",
-      "Priority": 0,
-      "CreationTime": "2026-05-13T09:20:14.9267766+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Grenade Launcher"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
@@ -4095,195 +2867,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3535105625,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "a4054754-4bc4-4618-8880-cd7389fdc59c",
-      "IsEnabled": true,
-      "Name": "Delta Force 三角洲行动：ThieveSea 黑海",
-      "Priority": 0,
-      "CreationTime": "2026-05-13T09:25:50.3957449+08:00",
-      "Tags": [
-        "Models",
-        "Weapons",
-        "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 840256946,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "bd70396f-f59b-42c6-81de-f1e750854331",
-      "IsEnabled": true,
-      "Name": "Lucille",
-      "Priority": 0,
-      "CreationTime": "2026-05-13T09:26:54.5813073+08:00",
-      "Tags": [
-        "Weapons",
-        "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3460335065,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "beb927f9-95cd-4cb1-a3e6-2d2e7aa95b0b",
-      "IsEnabled": true,
-      "Name": "Dead Island 2 Heavy Metal",
-      "Priority": 0,
-      "CreationTime": "2026-05-13T09:32:22.1132084+08:00",
-      "Tags": [
-        "Melee",
-        "Textures",
-        "Models",
-        "UI",
-        "Weapons"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3248284255,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "85530584-567b-4701-a2da-da3c2ee24936",
-      "IsEnabled": true,
-      "Name": "[Apex]Biwon Blade(Crypto Heirloom)",
-      "Priority": 0,
-      "CreationTime": "2026-05-13T09:33:50.6434728+08:00",
-      "Tags": [
-        "Models",
-        "Weapons",
-        "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3540031891,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "332112dd-3137-474f-a93c-bf44f1e113ef",
-      "IsEnabled": true,
-      "Name": "北极星替换撬棍",
-      "Priority": 0,
-      "CreationTime": "2026-05-13T09:35:19.4591311+08:00",
-      "Tags": [
-        "Weapons",
-        "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3448186382,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "1cf7f178-3b7c-4a84-8da1-cb15c5cd4661",
-      "IsEnabled": true,
-      "Name": "【COD20】短矛替换草叉",
-      "Priority": 0,
-      "CreationTime": "2026-05-13T09:36:13.3739658+08:00",
-      "Tags": [
-        "Survival",
-        "UI",
-        "Realism",
-        "Weapons",
-        "Co-op",
-        "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3438801227,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "3133f208-67f8-454c-8966-6b88302e4935",
-      "IsEnabled": true,
-      "Name": "【Mita Miside】瞌睡米塔主题 COD21双截棍 替换警棍",
-      "Priority": 0,
-      "CreationTime": "2026-05-13T09:37:12.3422659+08:00",
-      "Tags": [
-        "Survival",
-        "UI",
-        "Realism",
-        "Weapons",
-        "Co-op",
-        "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3550357050,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "5fe3aa3a-fd82-4bfd-a759-abc94cb0e8a1",
-      "IsEnabled": true,
-      "Name": "Tom & Jerry - Tom Frying Pan (Model - Frying Pan)",
-      "Priority": 0,
-      "CreationTime": "2026-05-13T09:56:40.4693493+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Textures",
-        "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3348823743,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "4c09f5d2-1909-4e6b-9a3c-e6ee56b61580",
-      "IsEnabled": true,
-      "Name": "【幻塔Tower of Fantasy】灰狐Gray Fox-阿格蕾娅Aglaya主题罗芭传家宝(砍刀machete)",
-      "Priority": 0,
-      "CreationTime": "2026-05-13T09:57:32.5966577+08:00",
-      "Tags": [
-        "Sounds",
-        "Models",
-        "Weapons",
-        "Textures",
-        "Melee"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 3416778088,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -4302,41 +2885,1629 @@
       "CustomImagePath": null
     },
     {
+      "$type": "FireAxe.AddonGroupSave, FireAxe.Core",
+      "Children": [
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3265092318,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "b1ff7da4-2307-496e-9759-7609f754f530",
+          "IsEnabled": true,
+          "Name": "DOAXVV Sayuri - Makeup Costa Bill",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:12:10.4957+08:00",
+          "Tags": [
+            "Survivors",
+            "Bill"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3275737688,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "7e4367e5-8785-4c33-adb0-15ffac0f6bb9",
+          "IsEnabled": true,
+          "Name": "DOAXVV Amy - Reincarnation Wisdom Bill",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:13:22.5512391+08:00",
+          "Tags": [
+            "Survivors",
+            "Bill"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3276267181,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "1101109d-d242-42b0-8aff-ca79c55f0d31",
+          "IsEnabled": true,
+          "Name": "DOAXVV Misaki - Makeup Mare Coach",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:14:32.086574+08:00",
+          "Tags": [
+            "Survivors",
+            "Coach"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3456063415,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "5c604f06-5d95-4341-af23-75838527da4e",
+          "IsEnabled": true,
+          "Name": "Doaxvv_Amy艾米Shiden_Seisou_alter（Rochelle;罗谢尔",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:14:41.0547369+08:00",
+          "Tags": [
+            "UI",
+            "Survivors",
+            "Rochelle",
+            "Single Player",
+            "Models",
+            "Co-op",
+            "Textures"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3624854857,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "93a274b6-f8b5-4771-9342-c84b2db9ecaf",
+          "IsEnabled": true,
+          "Name": "DOAXVV Nyotengu - Nocturne Desire Louis",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:14:49.5551017+08:00",
+          "Tags": [
+            "Survivors",
+            "Louis"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3554209957,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "d2a78b8c-6575-42dc-8a70-73db2b3c93f4",
+          "IsEnabled": true,
+          "Name": "DOAXVV Koharu - Nocturne Chaleur Ellis",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:25:57.7419055+08:00",
+          "Tags": [
+            "Survivors",
+            "Ellis"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3399418522,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "0831cb22-71a6-4bec-8bca-8989058180e5",
+          "IsEnabled": true,
+          "Name": "DOAXVV Elise伊莉丝 (Reincarnation Chevalier) Nick",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:29:26.021216+08:00",
+          "Tags": [
+            "UI",
+            "Survivors",
+            "Nick",
+            "Models",
+            "Textures"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3422766775,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "211b7440-4667-4e7f-bcb7-feb4dc83e8ba",
+          "IsEnabled": true,
+          "Name": "Doaxvv Honoka穗香 (Zoey;佐伊)",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:34:52.3941151+08:00",
+          "Tags": [
+            "UI",
+            "Survivors",
+            "Zoey",
+            "Single Player",
+            "Models",
+            "Co-op",
+            "Textures"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3262856434,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "61774b36-cb0b-4e65-9b91-1bea96401af8",
+          "IsEnabled": true,
+          "Name": "DOAXVV Yukino - Reincarnation Rasha Francis",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:35:32.2199303+08:00",
+          "Tags": [
+            "Survivors",
+            "Francis"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        }
+      ],
+      "EnableStrategy": "None",
+      "Id": "66b6cda1-0b75-44fc-b13c-e7aa66333e20",
+      "IsEnabled": true,
+      "Name": "DOAXVV",
+      "Priority": 0,
+      "CreationTime": "2026-05-30T12:33:33.13956+08:00",
+      "Tags": [],
+      "DependentAddonIds": [],
+      "CustomImagePath": null
+    },
+    {
+      "$type": "FireAxe.AddonGroupSave, FireAxe.Core",
+      "Children": [
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3000540150,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "d4c9facf-817b-40ec-bc43-0109cb1c4c49",
+          "IsEnabled": true,
+          "Name": "RaidenEi voice replace Nick (AI Chinese Voice)",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:11:59.7643203+08:00",
+          "Tags": [
+            "Sounds",
+            "Nick"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2999546921,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "c221b9b6-d475-4aa6-9246-4170cd3a23a7",
+          "IsEnabled": true,
+          "Name": "Barbara voice replace Louis (AI Chinese Voice)",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:10:40.5487248+08:00",
+          "Tags": [],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3004056256,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "c21de82e-a970-4221-9a23-467f92c2a43e",
+          "IsEnabled": true,
+          "Name": "Yoimiya voice replace Coach (AI Chinese Voice)",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:13:14.5171744+08:00",
+          "Tags": [],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3354846717,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "9f83d9d3-6e94-49bf-8ad1-8985440d858e",
+          "IsEnabled": true,
+          "Name": "Kokomi voice replace Francis (AI Chinese Voice)",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:25:50.8407457+08:00",
+          "Tags": [
+            "Survivors",
+            "Sounds",
+            "Francis"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2985546682,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "af96ed27-7b72-41b9-9147-4494d4a33d0f",
+          "IsEnabled": true,
+          "Name": "Shenhe voice replace Rochelle (AI Chinese Voice)",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:29:12.9301683+08:00",
+          "Tags": [
+            "Sounds",
+            "Rochelle"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2985556598,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "2f7a5628-1168-440a-98e7-561997c27507",
+          "IsEnabled": true,
+          "Name": "Lumine voice replace Ellis (AI Chinese Voice)",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:31:55.6826764+08:00",
+          "Tags": [
+            "Sounds",
+            "Ellis"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2988268949,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "7e0153b0-2799-407c-860e-9c8d55e2c74e",
+          "IsEnabled": true,
+          "Name": "Elysia voice replace Zoey (AI Chinese Voice)",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:34:38.7141405+08:00",
+          "Tags": [
+            "Sounds",
+            "Zoey"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2988756108,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "eab182c3-29ca-4901-8e76-cff6f81f6843",
+          "IsEnabled": true,
+          "Name": "Kamisato Ayaka voice replace Bill (AI Chinese Voice)",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:35:26.0363626+08:00",
+          "Tags": [
+            "Sounds",
+            "Bill"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2852588003,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "e0d31562-372c-44f3-9c95-4f916e3fef2d",
+          "IsEnabled": true,
+          "Name": "Battlefield 1 Headshot Sound Effect",
+          "Priority": 0,
+          "CreationTime": "2026-05-30T12:32:53.7139598+08:00",
+          "Tags": [
+            "Sounds"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        }
+      ],
+      "EnableStrategy": "None",
+      "Id": "abe7634c-0d7d-4eab-869e-9a5e1564651a",
+      "IsEnabled": true,
+      "Name": "Sounds1",
+      "Priority": 0,
+      "CreationTime": "2026-05-30T13:00:24.110919+08:00",
+      "Tags": [],
+      "DependentAddonIds": [],
+      "CustomImagePath": null
+    },
+    {
+      "$type": "FireAxe.AddonGroupSave, FireAxe.Core",
+      "Children": [
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3018887885,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "e15e2c8c-74a5-40a9-a6ce-9f5c6f142d3a",
+          "IsEnabled": true,
+          "Name": "印花集MW22 LOCKWOOD MK2",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T15:43:24.3541834+08:00",
+          "Tags": [
+            "UI",
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Shotgun"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2929840099,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "0e4088ab-9d8d-4d43-af7e-d8023d251c80",
+          "IsEnabled": true,
+          "Name": "CSGO MP9 Printstream Theme",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T16:44:38.8977383+08:00",
+          "Tags": [
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "SMG"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 1348185564,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "cbafc02a-41b3-4e0d-afcf-8a85b221ab88",
+          "IsEnabled": false,
+          "Name": "Desert Eagle Kumicho Dragon  (CSGO animations)",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T16:53:29.6750113+08:00",
+          "Tags": [
+            "Weapons",
+            "Sounds"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3020518619,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "0d4f0dfb-ef7f-4c12-93f8-80e7f9130e17",
+          "IsEnabled": true,
+          "Name": "Chrome Shotgun Printstream Theme (Glow)",
+          "Priority": 10,
+          "CreationTime": "2026-05-12T17:58:16.4641846+08:00",
+          "Tags": [
+            "Weapons",
+            "Textures",
+            "Shotgun"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2993364654,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "8346bfba-18fd-4366-97b4-222c46e23b4c",
+          "IsEnabled": true,
+          "Name": "HQ MAC-10 KmoMM_ Theme",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T17:59:16.4370184+08:00",
+          "Tags": [
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "SMG"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3020518865,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "dfdc836c-84b8-499f-b7ad-e6378a1f0947",
+          "IsEnabled": true,
+          "Name": "Pump Shotgun Printstream Theme (Glow)",
+          "Priority": 10,
+          "CreationTime": "2026-05-12T18:03:03.6364157+08:00",
+          "Tags": [
+            "Weapons",
+            "Textures",
+            "Shotgun"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2942607592,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "1ed3e216-27af-4f13-a505-3973c9e26b10",
+          "IsEnabled": false,
+          "Name": "CODMW Glock 21 KmoMM_ Theme",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T18:13:02.7691948+08:00",
+          "Tags": [
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "Pistol"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3116282503,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "aaf71708-7029-4929-ace4-27cda4f4b727",
+          "IsEnabled": true,
+          "Name": "COD MWIII Rival-9 KmoMM_ Theme",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T18:13:33.9643195+08:00",
+          "Tags": [
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "SMG"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2932401231,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "3076bd91-f037-4549-af20-d4632cb940c1",
+          "IsEnabled": true,
+          "Name": "Apex Legends - C.A.R. SMG Printstream",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T18:20:34.4846415+08:00",
+          "Tags": [
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "SMG"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2813746203,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "0fc443fd-b83b-42d0-9c0d-a7804a2ef247",
+          "IsEnabled": true,
+          "Name": "SLR Rifleworks AR-15 KmoMM_ Theme",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T18:21:31.9443565+08:00",
+          "Tags": [
+            "Weapons",
+            "Textures",
+            "Rifle"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3432940135,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "6991be12-f938-4361-86ed-3c446fb8d21f",
+          "IsEnabled": true,
+          "Name": "AK-74M (AK-47)",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T19:03:58.6464302+08:00",
+          "Tags": [
+            "UI",
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "Rifle"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3503244209,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "56653457-6949-4ea5-8acf-fa4856a2b675",
+          "IsEnabled": true,
+          "Name": "DeltaForceHawk Ops M14-EBR (SG552)",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T19:09:57.8473482+08:00",
+          "Tags": [
+            "UI",
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "Rifle"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3654927096,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "3ec6b139-0050-48cb-8ece-1eceffdd1a11",
+          "IsEnabled": false,
+          "Name": "Colt M4 Carbine Cinnamon Roll (Desert Rifle)",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T20:19:16.185862+08:00",
+          "Tags": [
+            "Sounds",
+            "Weapons",
+            "Rifle"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3029181790,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "afbbb7c2-a441-4b2b-bc40-8300fa93d1a1",
+          "IsEnabled": true,
+          "Name": "[SSJJ2]MK14EBR ASOUL (Sniper_Military)",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T20:29:02.3349828+08:00",
+          "Tags": [],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2278404700,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "1d606d16-029b-4856-bed0-a37ef3a6ae66",
+          "IsEnabled": true,
+          "Name": "Titanfall 2 - R-201 Carbine",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T20:51:21.3196106+08:00",
+          "Tags": [
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "Rifle"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2803203976,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "243577fc-0171-45c9-82c1-13881df438f5",
+          "IsEnabled": true,
+          "Name": "Titanfall2 R201 Dark Matter Animated Skin",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T20:51:30.1225287+08:00",
+          "Tags": [
+            "Weapons",
+            "Rifle"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2687046933,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "e7cfcff3-9d91-41a9-9ade-d9da28aa77bc",
+          "IsEnabled": true,
+          "Name": "[Destiny2] Dead Man's Tale",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T21:17:13.2345299+08:00",
+          "Tags": [
+            "Models",
+            "Weapons",
+            "Rifle",
+            "Sniper"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3236694044,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "87af4d37-9ba3-4c71-8469-cf10b44e9bf8",
+          "IsEnabled": true,
+          "Name": "[蔚蓝档案] M1加兰德 (黑色正义）替换15连木狙 [Blue Archive] M1 Garand (Justice Black) Peplaces Hunting Rifle",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T21:32:09.9503576+08:00",
+          "Tags": [
+            "Versus",
+            "Survival",
+            "Campaigns",
+            "UI",
+            "Survivors",
+            "Sounds",
+            "Items",
+            "Single Player",
+            "Scavenge",
+            "Models",
+            "Weapons",
+            "Co-op",
+            "Sniper",
+            "Adrenaline",
+            "Other"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3652100725,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "361e0b5f-9373-4ee4-b64e-1b8d7d902572",
+          "IsEnabled": true,
+          "Name": "MPS AA-12 (M1014)",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T21:47:21.8770107+08:00",
+          "Tags": [
+            "UI",
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "Shotgun"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3438152569,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "08b5e9de-32ad-43c6-b525-c15eac3a62f1",
+          "IsEnabled": true,
+          "Name": "CODMW2023 - Torque35 Inovy Fire (Grenade Launcher)",
+          "Priority": 0,
+          "CreationTime": "2026-05-13T09:20:14.9267766+08:00",
+          "Tags": [
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "Grenade Launcher"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3248246147,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "395429c0-af37-41e7-a675-be80d5ba9a81",
+          "IsEnabled": true,
+          "Name": "Impalement [Scout]",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T21:22:22.4711695+08:00",
+          "Tags": [
+            "UI",
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "Sniper"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3501694942,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "e3fd94f2-3ff5-407f-a87e-a7bba1e0d5e5",
+          "IsEnabled": true,
+          "Name": "Refined M60",
+          "Priority": 0,
+          "CreationTime": "2026-05-13T10:03:01.9920774+08:00",
+          "Tags": [
+            "M60"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3234049257,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "49a0b3a4-a30f-4379-ad10-8ed99463f010",
+          "IsEnabled": true,
+          "Name": "Throwing Knife replaces awp  Apex Legends",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T21:51:50.7726126+08:00",
+          "Tags": [
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "Sniper"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2998302251,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "1685b868-1582-407c-a851-ab82fded3709",
+          "IsEnabled": true,
+          "Name": "[APEX]Nemesis The Cleaner",
+          "Priority": 0,
+          "CreationTime": "2026-05-31T08:59:55.6472005+08:00",
+          "Tags": [
+            "Weapons",
+            "Rifle"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3547441271,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "58daad75-4a28-477d-85c4-59d4ff645c90",
+          "IsEnabled": true,
+          "Name": "Singularity Sheriff from Valorant",
+          "Priority": 0,
+          "CreationTime": "2026-05-31T09:29:23.5908387+08:00",
+          "Tags": [
+            "Models",
+            "Weapons",
+            "Textures",
+            "Pistol"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3639721712,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "3b64e18f-4a9a-4a05-bd1c-df9cdec73a80",
+          "IsEnabled": true,
+          "Name": "Ebony & Ivory [Revisited]",
+          "Priority": 0,
+          "CreationTime": "2026-05-31T09:35:29.7338472+08:00",
+          "Tags": [
+            "Weapons",
+            "Pistol"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        }
+      ],
+      "EnableStrategy": "None",
+      "Id": "1499d2cf-4a07-4bcf-90d3-dc42c35c918a",
+      "IsEnabled": true,
+      "Name": "Weapons1",
+      "Priority": 0,
+      "CreationTime": "2026-05-30T13:04:05.3509857+08:00",
+      "Tags": [],
+      "DependentAddonIds": [],
+      "CustomImagePath": null
+    },
+    {
+      "$type": "FireAxe.AddonGroupSave, FireAxe.Core",
+      "Children": [
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3324490071,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "ea185f0f-6fe8-4dbb-894c-08d6481afd87",
+          "IsEnabled": true,
+          "Name": "印花集磁暴斩替换板球拍",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T15:39:13.801378+08:00",
+          "Tags": [
+            "Melee"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3155014352,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "731316ca-8074-48b5-9357-77396456d94f",
+          "IsEnabled": true,
+          "Name": "[Destiny2] 印花集挽歌（珠光+动态）替换电锯",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T15:56:17.4836986+08:00",
+          "Tags": [],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2680156276,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "afee37ec-a36a-440d-9065-f59624fded46",
+          "IsEnabled": false,
+          "Name": "[Melee] Knife = Butterfly Knife (w Butterfly Deploy Sound) - axe_break",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T16:56:12.3696413+08:00",
+          "Tags": [
+            "Sounds",
+            "Weapons",
+            "Melee"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3240832357,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "1feb2141-3e90-4fac-9634-9347603618f8",
+          "IsEnabled": true,
+          "Name": "MW2019 Katana - Printstream Theme (Glow)",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T18:15:40.3208545+08:00",
+          "Tags": [
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "Melee"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3218166755,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "46fd858d-b14b-4e4a-b7fd-5ef44132b7d9",
+          "IsEnabled": true,
+          "Name": "Paracelsus Replace Shovel",
+          "Priority": 0,
+          "CreationTime": "2026-05-12T21:54:46.5960196+08:00",
+          "Tags": [
+            "Miscellaneous",
+            "Items",
+            "Models",
+            "Weapons",
+            "Textures",
+            "Melee",
+            "Other"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 840256946,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "bd70396f-f59b-42c6-81de-f1e750854331",
+          "IsEnabled": true,
+          "Name": "Lucille",
+          "Priority": 0,
+          "CreationTime": "2026-05-13T09:26:54.5813073+08:00",
+          "Tags": [
+            "Weapons",
+            "Melee"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3460335065,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "beb927f9-95cd-4cb1-a3e6-2d2e7aa95b0b",
+          "IsEnabled": true,
+          "Name": "Dead Island 2 Heavy Metal",
+          "Priority": 0,
+          "CreationTime": "2026-05-13T09:32:22.1132084+08:00",
+          "Tags": [
+            "Melee",
+            "Textures",
+            "Models",
+            "UI",
+            "Weapons"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3248284255,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "85530584-567b-4701-a2da-da3c2ee24936",
+          "IsEnabled": true,
+          "Name": "[Apex]Biwon Blade(Crypto Heirloom)",
+          "Priority": 0,
+          "CreationTime": "2026-05-13T09:33:50.6434728+08:00",
+          "Tags": [
+            "Models",
+            "Weapons",
+            "Melee"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3540031891,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "332112dd-3137-474f-a93c-bf44f1e113ef",
+          "IsEnabled": true,
+          "Name": "北极星替换撬棍",
+          "Priority": 0,
+          "CreationTime": "2026-05-13T09:35:19.4591311+08:00",
+          "Tags": [
+            "Weapons",
+            "Melee"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3348823743,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "4c09f5d2-1909-4e6b-9a3c-e6ee56b61580",
+          "IsEnabled": true,
+          "Name": "【幻塔Tower of Fantasy】灰狐Gray Fox-阿格蕾娅Aglaya主题罗芭传家宝(砍刀machete)",
+          "Priority": 0,
+          "CreationTime": "2026-05-13T09:57:32.5966577+08:00",
+          "Tags": [
+            "Sounds",
+            "Models",
+            "Weapons",
+            "Textures",
+            "Melee"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2834554968,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "6c7dc2eb-dcbe-4bce-96e0-982f31f521f0",
+          "IsEnabled": true,
+          "Name": "Apex Legends - Dead Man's Curve  Fire axe",
+          "Priority": 0,
+          "CreationTime": "2026-05-31T08:55:59.3406149+08:00",
+          "Tags": [
+            "Models",
+            "Weapons",
+            "Melee"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2985684304,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "ecae012a-225c-4a75-b902-d6b001294c51",
+          "IsEnabled": true,
+          "Name": "[Apex]Showstoppers(Seer Heirloom)",
+          "Priority": 0,
+          "CreationTime": "2026-05-31T08:57:53.6704054+08:00",
+          "Tags": [
+            "Models",
+            "Weapons",
+            "Melee"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2976583784,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "e67edf0e-7684-442a-9eab-cdf6e18f4841",
+          "IsEnabled": true,
+          "Name": "[Apex]suzaku(Valkyrie Heirloom)",
+          "Priority": 0,
+          "CreationTime": "2026-05-31T09:01:16.2454894+08:00",
+          "Tags": [
+            "Models",
+            "Weapons",
+            "Melee"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2980494135,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "f1b77ff7-929b-450e-94fd-e77ee2151960",
+          "IsEnabled": true,
+          "Name": "[Apex]kunai(Wraith heirloom)",
+          "Priority": 0,
+          "CreationTime": "2026-05-31T09:03:46.2918027+08:00",
+          "Tags": [
+            "Models",
+            "Weapons",
+            "Melee"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2244297074,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "ada8a35a-4db4-4625-96eb-5298fbb040e6",
+          "IsEnabled": true,
+          "Name": "Apex Legends - Shock Sticks",
+          "Priority": 0,
+          "CreationTime": "2026-05-31T09:27:47.2987327+08:00",
+          "Tags": [
+            "Models",
+            "Textures",
+            "Melee"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        }
+      ],
+      "EnableStrategy": "None",
+      "Id": "a3e5aac8-043e-4c7a-9408-36147118b000",
+      "IsEnabled": true,
+      "Name": "melee1",
+      "Priority": 0,
+      "CreationTime": "2026-05-30T13:06:02.453375+08:00",
+      "Tags": [],
+      "DependentAddonIds": [],
+      "CustomImagePath": null
+    },
+    {
+      "$type": "FireAxe.AddonGroupSave, FireAxe.Core",
+      "Children": [
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2894717420,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "0c76bf7c-e9f9-428e-8807-458ffe50fb58",
+          "IsEnabled": true,
+          "Name": "Car Alarms(glow glass)",
+          "Priority": 20,
+          "CreationTime": "2026-05-06T08:11:30.7186926+08:00",
+          "Tags": [
+            "Mutations",
+            "Miscellaneous",
+            "Single Player",
+            "Textures"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3502391330,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "3ed3d292-f140-4466-b3b3-ee0a02a27fde",
+          "IsEnabled": true,
+          "Name": "Laser [perspective glow]",
+          "Priority": 0,
+          "CreationTime": "2026-05-06T08:15:43.6934298+08:00",
+          "Tags": [
+            "Items",
+            "Models",
+            "Textures",
+            "Other"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3237108836,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "753b5cd6-b2a7-4094-9c6e-b582c429851a",
+          "IsEnabled": true,
+          "Name": "(RNG) Glowsticks on Ammo Piles",
+          "Priority": 0,
+          "CreationTime": "2026-05-06T08:47:43.4876387+08:00",
+          "Tags": [
+            "Campaigns",
+            "Miscellaneous",
+            "Items",
+            "Realism",
+            "Models",
+            "Weapons",
+            "Textures",
+            "Other"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3479269246,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "2c9537c7-370f-4e45-99fb-9fa4834ca78b",
+          "IsEnabled": true,
+          "Name": "Glowing Special Infected",
+          "Priority": 10,
+          "CreationTime": "2026-05-07T09:04:16.2038019+08:00",
+          "Tags": [
+            "Special Infected",
+            "Textures"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2592434906,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "ef9453d0-b3fd-4086-bb10-9e58488a853a",
+          "IsEnabled": true,
+          "Name": "Common Infected Glow",
+          "Priority": 0,
+          "CreationTime": "2026-05-08T22:13:45.0828901+08:00",
+          "Tags": [
+            "Common Infected"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 637354442,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "75ec5b51-f716-4fcb-bd7f-61f4e8a61388",
+          "IsEnabled": true,
+          "Name": "Glowing Pink Cans HD",
+          "Priority": 0,
+          "CreationTime": "2026-05-08T22:21:02.8924752+08:00",
+          "Tags": [
+            "Items",
+            "Other"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2214675717,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "ac324d7e-88f5-48d8-9ecb-773fc3a2a4d2",
+          "IsEnabled": true,
+          "Name": "夜光金舌Smoker（Glowing Gold Tongue）",
+          "Priority": 0,
+          "CreationTime": "2026-05-10T09:37:07.534858+08:00",
+          "Tags": [
+            "Smoker",
+            "Miscellaneous"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2456589007,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "49a0da5f-c7ba-4b2c-ae06-545d5d99bfbd",
+          "IsEnabled": true,
+          "Name": "Definitive Glowing Colored Items",
+          "Priority": 10,
+          "CreationTime": "2026-05-10T10:23:34.5161912+08:00",
+          "Tags": [
+            "Items",
+            "Textures",
+            "Throwable",
+            "Adrenaline",
+            "Defibrillator",
+            "Medkit",
+            "Pills",
+            "Other"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2458405134,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "029fdc72-dc20-4217-8e81-1f239ea69569",
+          "IsEnabled": true,
+          "Name": "Fire Gas - Yellow TLS FIX",
+          "Priority": 0,
+          "CreationTime": "2026-05-10T11:21:04.5619832+08:00",
+          "Tags": [
+            "Miscellaneous",
+            "Items",
+            "Textures",
+            "Other"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 1232866285,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "8ae2db13-bf30-4b90-899f-8bc147b23477",
+          "IsEnabled": true,
+          "Name": "Oxygen Tank - Green",
+          "Priority": 0,
+          "CreationTime": "2026-05-10T11:21:42.1246862+08:00",
+          "Tags": [
+            "Miscellaneous",
+            "Items"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 1232894838,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "d7a24c2a-017c-4fb6-93d3-c7e0b62beb47",
+          "IsEnabled": true,
+          "Name": "Propane Tank - White",
+          "Priority": 0,
+          "CreationTime": "2026-05-10T11:22:13.0466352+08:00",
+          "Tags": [
+            "Miscellaneous",
+            "Items"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 700120471,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "aa5ab43b-83d8-4e99-8ac6-1ad2122f2903",
+          "IsEnabled": true,
+          "Name": "Lighting difibrillator",
+          "Priority": 0,
+          "CreationTime": "2026-05-08T22:17:48.425135+08:00",
+          "Tags": [
+            "Items",
+            "Defibrillator"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 848423537,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "0e761ee4-9ef6-4d9c-8ed0-7f20953996c7",
+          "IsEnabled": true,
+          "Name": "Lighting MedKit",
+          "Priority": 1,
+          "CreationTime": "2026-05-08T22:18:26.8886417+08:00",
+          "Tags": [
+            "Items",
+            "Medkit"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 1089140091,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "839d2bbf-6331-47e5-a118-a5b90ed7e8bd",
+          "IsEnabled": true,
+          "Name": "plexiglass doors",
+          "Priority": 10,
+          "CreationTime": "2026-05-08T22:21:44.0088694+08:00",
+          "Tags": [
+            "Textures"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2278831182,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "4129c816-3609-4028-b588-d7d1d49b49f3",
+          "IsEnabled": true,
+          "Name": "Tank Rock Hint",
+          "Priority": 0,
+          "CreationTime": "2026-05-10T10:00:17.6594164+08:00",
+          "Tags": [
+            "Tank",
+            "Miscellaneous",
+            "Other"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        }
+      ],
+      "EnableStrategy": "None",
+      "Id": "23c2e35e-14b1-4a7b-a1c3-b48f3d951307",
+      "IsEnabled": true,
+      "Name": "Glow",
+      "Priority": 0,
+      "CreationTime": "2026-05-30T13:08:13.0733112+08:00",
+      "Tags": [],
+      "DependentAddonIds": [],
+      "CustomImagePath": null
+    },
+    {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3363851773,
+      "PublishedFileId": 1673602889,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
       "RequestApplyTagsFromWorkshop": false,
       "ConflictIgnoringFiles": [],
-      "Id": "d4fc0cc2-4b07-4e1b-b119-674e618f638b",
+      "Id": "ec4c1c37-ddb1-4848-8623-6a4e9eddf78b",
       "IsEnabled": true,
-      "Name": "Dead Island 2 Nightstick [RNG]",
-      "Priority": 0,
-      "CreationTime": "2026-05-13T10:02:14.9690036+08:00",
+      "Name": "★ Sport Gloves  Vice",
+      "Priority": 20,
+      "CreationTime": "2026-05-31T09:46:46.9416775+08:00",
       "Tags": [
-        "Melee",
-        "Textures",
-        "Models",
-        "UI",
-        "Weapons"
+        "Survivors",
+        "Bill",
+        "Coach",
+        "Zoey",
+        "Ellis",
+        "Nick",
+        "Rochelle",
+        "Francis",
+        "Louis"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 3501694942,
+      "PublishedFileId": 3298975358,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
       "RequestApplyTagsFromWorkshop": false,
       "ConflictIgnoringFiles": [],
-      "Id": "e3fd94f2-3ff5-407f-a87e-a7bba1e0d5e5",
+      "Id": "484d5caa-3a42-4590-beac-985cf3bbb514",
       "IsEnabled": true,
-      "Name": "Refined M60",
+      "Name": "Night vision system (white filter version)",
       "Priority": 0,
-      "CreationTime": "2026-05-13T10:03:01.9920774+08:00",
+      "CreationTime": "2026-05-31T09:52:29.252974+08:00",
       "Tags": [
-        "M60"
+        "Survival",
+        "Miscellaneous",
+        "UI",
+        "Scripts",
+        "Single Player",
+        "Realism",
+        "Textures",
+        "Other"
       ],
       "DependentAddonIds": [],
       "CustomImagePath": null
