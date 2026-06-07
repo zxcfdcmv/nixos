@@ -1,8 +1,4 @@
 { config, lib, pkgs, userSettings, ... }:
-
-let
-  kanataL4d2Config = "${userSettings.dotfilesDir}/assets/kanata/l4d2.kbd";
-in
 {
   programs = {
     steam = {
@@ -60,18 +56,13 @@ in
               "-lv"
               "-novid"
               "-nojoy"
-              "-noaafonts"
+              "-useallavailablecores"
+              # "-noaafonts"
               "-high"
-              "-heapsize" "1572864"
+              "-noipx"
+              "-nohltv"
+              # "-heapsize" "1572864"
             ];
-            # wrappers = [
-            #   (pkgs.writeShellScript "l4d2-kanata-wrapper" ''
-            #     ${pkgs.kanata}/bin/kanata ${kanataL4d2Config} &
-            #     KANATA_PID=$!
-            #     "$@"
-            #     kill "$KANATA_PID"
-            #   '')
-            # ];
           };
         };
       };

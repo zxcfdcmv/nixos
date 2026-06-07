@@ -1,0 +1,31 @@
+(defcfg
+    danger-enable-cmd yes
+    process-unmapped-keys yes
+)
+
+(defsrc
+    spc      ;; 空格 = 短按高跳/长按连跳
+)
+
+(defalias
+    bhop_long (macro-repeat-release-cancel
+        spc
+        50
+    )
+
+    bhop_up (macro
+        spc
+        lsft
+    )
+
+    spc_alias (tap-hold-press
+        50
+        50
+        @bhop_up
+        @bhop_long
+    )
+)
+
+(deflayer default
+    @spc_alias
+)

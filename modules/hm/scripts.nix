@@ -91,7 +91,7 @@ in
     (writeShellScriptBin "my-switch" ''
       cd ${userSettings.dotfilesDir}
       git add .
-      nh os switch --update
+      nh os switch . --update
     '') 
 
     (writeShellScriptBin "my-switch-bak" ''
@@ -100,6 +100,16 @@ in
       nix flake update
       sudo nice -n 19 ionice -c 3 nixos-rebuild switch --flake .#${userSettings.hostName}
     '') 
+
+    (writeShellScriptBin "kanata-l4d2" ''
+      cd ${userSettings.dotfilesDir}
+      sudo -E ${pkgs.kanata}/bin/kanata -c assets/kanata/l4d2/l4d2-mouse.kbd &
+      PID_MOUSE=$!
+      sudo -E ${pkgs.kanata}/bin/kanata -c assets/kanata/l4d2/l4d2-bhop.kbd &
+      PID_BHOP=$!
+      trap 'kill $PID_MOUSE $PID_BHOP 2>/dev/null' EXIT
+      wait
+    '')
   ])
   ++ builtins.map mkDesktop customCommands;  
 }

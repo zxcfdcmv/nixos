@@ -118,39 +118,19 @@ let
   '';
 in {
   # --- 系统级配置 ---
-  environment.systemPackages = [
-    pkgs.river
-    kwm
-  ];
-
-  services.greetd = {
-    enable = true;
-    settings.default_session.command = ''
-      ${pkgs.tuigreet}/bin/tuigreet \
-        --cmd "${pkgs.river}/bin/river -c ${riverInitScript}" \
-        --theme "dark" \
-        --greet-align center \
-        --time \
-        --time-format "%A, %d %B %Y %H:%M:%S" \
-        --remember \
+  environment = {
+    systemPackages = [
+      pkgs.river
+      kwm
+    ];
+    loginShellInit = ''
+      if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+        exec ${pkgs.river}/bin/river -c ${riverInitScript}
+      fi
     '';
   };
 
-  # programs.ly = {
-  #   enable = true;
-  #   settings = {
-  #     animation = "none";           # 先关掉动画，避免渲染问题
-  #     blank_password = false;
-  #     clear_password = true;
-  #     clock = "%A, %d %B %Y %H:%M:%S";
-  #     # 直接写 river 的启动命令
-  #     default_session = "${pkgs.river}/bin/river -c ${riverInitScript}";
-  #     # 或者让 ly 记住上次会话（但因为你只有一个，无所谓）
-  #     remember_last_session = true;
-  #     # 隐藏未选中的会话列表，更干净
-  #     hide_borders = false;
-  #   };
-  # };
+  services.getty.autologinUser = "${userSettings.username}";
 
   home-manager.users.${userSettings.username} = { pkgs, config, ...}: {
     home.packages = with pkgs; [

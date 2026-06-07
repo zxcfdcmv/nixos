@@ -1,0 +1,35 @@
+(defcfg
+    danger-enable-cmd yes
+    process-unmapped-keys yes
+)
+
+(defsrc
+    mwu      ;; 滚轮上 = 喷推
+    mfwd     ;; 鼠标侧前键 = 自动速砍
+    mbck     ;; 鼠标侧后键 = 速砍推
+)
+
+(defalias
+    l4d2-shoveshot (macro
+        mlft 40 mrgt 10 mrgt mlft
+    )
+
+    l4d2-automelee (macro-repeat-release-cancel
+        mlft 40 mlft
+        q 40
+        e 500
+    )
+
+    l4d2-shove-melee (macro
+        mlft 30 mlft
+        q
+        mrgt 30 mrgt
+        e
+    )
+)
+
+(deflayer default
+    @l4d2-shoveshot
+    @l4d2-automelee
+    @l4d2-shove-melee
+)

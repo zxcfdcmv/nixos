@@ -1,6 +1,6 @@
 (defcfg
     danger-enable-cmd yes
-    process-unmapped-keys no
+    process-unmapped-keys yes
 )
 
 (defsrc
@@ -46,43 +46,20 @@
         mrgt        ;; 松开右键
         e           ;; slot2
     )
-    ;; bhop_long (macro
-    ;;     (press lsft)
-    ;;     spc
-    ;;     5
-    ;;     rpt-any
-    ;;     5
-    ;;     (release lsft)
-    ;; )
-    ;; bhop_long (multi
-    ;;     lsft
-    ;;     (macro-repeat-release-cancel
-    ;;         spc
-    ;;         5
-    ;;     )
-    ;; )
 
     bhop_long (macro-repeat-release-cancel
         spc
         50
     )
 
-    ;; bhop_up (macro
-    ;;     spc
-    ;;     1
-    ;;     release
-    ;;     spc
-    ;;     1
-    ;;     spc
-    ;; )
     bhop_up (macro
         spc
         lsft
     )
 
-    spc_alias (tap-hold
-        100
-        100
+    spc_alias (tap-hold-press
+        50
+        50
         @bhop_up
         @bhop_long
     )

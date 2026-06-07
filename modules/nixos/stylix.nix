@@ -46,5 +46,6 @@
     };    
 
     autoEnable = true;
+    targets.kmscon.enable = false;
   };
 }
