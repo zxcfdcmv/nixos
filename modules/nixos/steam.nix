@@ -47,7 +47,6 @@
             env = {
               "STEAM_COMPAT_RUNTIME_SDL2" = "1";
               "__GL_SHADER_DISK_CACHE" = "1";
-              "__GL_SHADER_DISK_CACHE_SKIP_CLEANUP" = "1";
             };
             args = [
               "-vulkan"
@@ -61,6 +60,7 @@
               "-high"
               "-noipx"
               "-nohltv"
+              "-freq" "144"
               # "-heapsize" "1572864"
             ];
           };

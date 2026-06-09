@@ -4,25 +4,28 @@
 )
 
 (defsrc
-    spc      ;; 空格 = 短按高跳/长按连跳
+    spc
 )
 
 (defalias
-    bhop_long (macro-repeat-release-cancel
-        spc
-        50
+    ;; 1. 短按：单跳 + 蹲（高跳宏）
+    bhop_up (macro spc 10 lsft)
+
+    ;; 2. 核心连跳蹲宏：交替触发，防止引擎判定“死蹲”
+    ;; 机制：先给一个极短的蹲(15ms)，然后立刻切回空格跳(15ms)，再松开(15ms)
+    ;; 这样在服务器看来，你是在高频“闪蹲”+“疯狂打空格”，既能保持蹲姿判定，又绝对不会触发减速惩罚！
+    bhop_duck_loop (macro-repeat-release-cancel
+        spc 30         ;; 触发跳，持续 15ms
+        lsft 20        ;; 触发蹲，持续 15ms
+        70             ;; 空白帧，给服务器接收“松开”信号的时间
     )
 
-    bhop_up (macro
-        spc
-        lsft
-    )
-
+    ;; 3. 核心分流
     spc_alias (tap-hold-press
-        50
-        50
+        50            ;; 短按判定时间 (ms)
+        50            ;; 长按判定时间 (ms)
         @bhop_up
-        @bhop_long
+        @bhop_duck_loop
     )
 )
 
