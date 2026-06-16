@@ -25,7 +25,7 @@ let
     version = "master";
     src = pkgs.fetchzip {
       url = "${userSettings.githubProxy}/https://github.com/kewuaa/kwm/archive/refs/heads/master.zip";
-      sha256 = "sha256-iksILrstc8KOWceyjv264nW8RFWTKGO3ZkTTejeMS4o=";
+      sha256 = "sha256-h88kpS02Z+22JfbpiuSv3P0sAZQlZ7+3V1rRSTGB5Zk=";
       stripRoot = true;
     };
 

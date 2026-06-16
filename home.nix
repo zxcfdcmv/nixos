@@ -43,7 +43,7 @@
       p7zip unzip unrar poppler imagemagick ffmpegthumbnailer
       xwayland-satellite
       wl-clipboard-rs
-      nh nvd nix-output-monitor
+      nvd nix-output-monitor
       openssl
       glow
 

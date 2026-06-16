@@ -20,7 +20,7 @@
       kubectl = "sudo -E kubectl";
 
       # my-delete = "sudo nix-collect-garbage -d && nix-store --optimise";
-      my-clean = "nh clean all && nh os boot";
+      my-clean = "cd ${userSettings.dotfilesDir} && nh clean all && nh os boot .";
       kanata = "sudo -E kanata -c";
     };
   };

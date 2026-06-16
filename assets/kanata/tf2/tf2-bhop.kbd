@@ -1,0 +1,19 @@
+(defcfg
+    danger-enable-cmd yes
+    process-unmapped-keys yes
+)
+
+(defsrc
+    spc
+)
+
+(defalias
+    bhop_loop (macro-repeat-release-cancel
+        spc 30
+    )
+
+)
+
+(deflayer default
+	@bhop_loop
+)

@@ -9,12 +9,12 @@
       ./modules/nixos/river.nix
       # ./modules/nixos/sunshine.nix
       ./modules/nixos/proxy.nix
-      # ./modules/nixos/kanata.nix
       ./modules/nixos/tailscale.nix
       ./modules/nixos/stylix.nix
       ./modules/nixos/steam.nix
       ./modules/nixos/flatpak.nix
       ./modules/nixos/k3s.nix
+      ./modules/nixos/nh.nix
     ];
 
   nixpkgs = {
@@ -84,11 +84,11 @@
       sandbox = false;
       extra-sandbox-paths = [ "/etc/resolv.conf" ];
     };
-    gc = {
-      automatic    = true;
-      dates        = "weekly";
-      options      = "--delete-older-than 7d";
-    };
+    # gc = {
+    #   automatic    = true;
+    #   dates        = "weekly";
+    #   options      = "--delete-older-than 7d";
+    # };
   };
 
   security = {
