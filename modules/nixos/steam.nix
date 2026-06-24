@@ -1,9 +1,7 @@
 { config, lib, pkgs, userSettings, ... }:
 
 let
-  rayshudVersion = "2026.0111";
-
-  flattf2rgl = pkgs.fetchurl {
+ flattf2rgl = pkgs.fetchurl {
     url = "${userSettings.githubProxy}/https://github.com/palmtopangie/FlatTF2RGL/releases/download/v3/flattf2rgl.vpk";
     sha256 = "sha256-hLSYA1dypUpZmDTU+6mGYvU2CeISxftrLS1DDO2ZN+M=";
   };
@@ -25,11 +23,19 @@ let
     stripRoot = false;
   };
 
-  rayshud = pkgs.fetchzip {
-    url = "${userSettings.githubProxy}/https://github.com/raysfire/rayshud/releases/download/${rayshudVersion}/rayshud.zip";
-    sha256 = "sha256-3U1/4TZmd0DgrVXcQ1lvX5zko+SYrb+sj5XrKHG9+hk=";
+  lighthud = pkgs.fetchzip {
+    url = "${userSettings.githubProxy}/https://github.com/Hypnootize/lighthud/archive/refs/heads/main.zip";
+    sha256 = "sha256-JN0qlnroV6HgHyxzKCXXnWan3+JK78qqYfFSCEh25lA=";
     stripRoot = true;
   };
+
+  # rayshudVersion = "2026.0111";
+  # rayshud = pkgs.fetchzip {
+  #   url = "${userSettings.githubProxy}/https://github.com/raysfire/rayshud/releases/download/${rayshudVersion}/rayshud.zip";
+  #   sha256 = "sha256-3U1/4TZmd0DgrVXcQ1lvX5zko+SYrb+sj5XrKHG9+hk=";
+  #   stripRoot = true;
+  # };
+
 
   tf2Assets = ../../assets/tf2/tf;
   
@@ -119,6 +125,7 @@ in
               "STEAM_COMPAT_RUNTIME_SDL2" = "1";
               "__GL_SHADER_DISK_CACHE" = "1";
               "__GL_SHADER_DISK_CACHE_SKIP_CLEANUP" = "1";
+              "__GL_THREADED_OPTIMIZATIONS" = "1";
             };
             args = [
               "-vulkan"
@@ -133,7 +140,6 @@ in
               "-console"
               "-noipx"
               "-nohltv"
-              "-freq" "144"
             ];
           };
         };
@@ -146,6 +152,7 @@ in
             env = {
               "__GL_SHADER_DISK_CACHE" = "1";
               "__GL_SHADER_DISK_CACHE_SKIP_CLEANUP" = "1";
+              "__GL_THREADED_OPTIMIZATIONS" = "1";
             };
             args = [
               "-vulkan"
@@ -154,11 +161,11 @@ in
               "-nosteamcontroller"
               "-nohltv"
               "-noipx"
-              "-high"
               "-console"
               "-particles" "1"
               "-nocustomtools"
-              "-freq" "144"
+              "-softparticlesdefaultoff"
+              "-noprewarm"
             ];
           };
         };
@@ -171,7 +178,8 @@ in
       ".local/share/Steam/steamapps/common/Left 4 Dead 2/left4dead2/ems/lxc/inspect_weapon/settings.txt".source = ../../assets/l4d2/inspect_settings.txt;
 
       # tf2
-      ".local/share/Steam/steamapps/common/Team Fortress 2/tf/custom/rayshud".source = rayshud;
+      # ".local/share/Steam/steamapps/common/Team Fortress 2/tf/custom/rayshud".source = rayshud;
+      ".local/share/Steam/steamapps/common/Team Fortress 2/tf/custom/lighthud".source = lighthud;
       ".local/share/Steam/steamapps/common/Team Fortress 2/tf/custom/flattf2rgl.vpk".source = flattf2rgl;
       ".local/share/Steam/steamapps/common/Team Fortress 2/tf/custom/[Lowvis] 64x TransparentFlamethrower.vpk".source = "${lowvisFlamethrower}/[Lowvis] 64x TransparentFlamethrower.vpk";
       ".local/share/Steam/steamapps/common/Team Fortress 2/tf/custom/oldschool_pack".source = oldschoolPack;

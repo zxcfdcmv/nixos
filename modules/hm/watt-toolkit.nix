@@ -1,50 +1,89 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs, config, userSettings, ... }:
 
-pkgs.stdenv.mkDerivation rec {
-  pname = "watt-toolkit";
-  version = "3.1.0"; # 请根据 GitHub Release 自行更改最新版本
+let
+  watt-version = "3.1.0";
 
-  src = pkgs.fetchurl {
-    url = "https://github.com{version}/Steam++_v${version}_linux_x64.tgz";
-    # 首次构建如果 hash 报错，请将下面的 hash 替换为报错信息里提示的正确的 hash
-    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; 
+  watt-src = pkgs.fetchurl {
+    url = "${userSettings.githubProxy}/https://github.com/BeyondDimension/SteamTools/releases/download/${watt-version}/Steam++_v${watt-version}_linux_x64.tgz";
+    hash = "sha256-+5m81PpqxkkihwD5CIGf4ZoWzCmoZq1D0oc+UEpBeD8=";
   };
 
-  # 声明运行时需要的依赖
-  nativeBuildInputs = with pkgs; [
-    autoPatchelfHook
-    makeWrapper
-  ];
+  nss-bin = "${pkgs.nss}/bin";
 
-  buildInputs = with pkgs; [
-    stdenv.cc.cc.lib
-    fontconfig
-    xorg.libX11
-    xorg.libICE
-    xorg.libSM
-    glib
-    openssl
-    zlib
-  ];
+  watt-toolkit = pkgs.stdenv.mkDerivation {
+    pname = "watt-toolkit";
+    version = watt-version;
 
-  # 解压并将其放置到 Nix Store 指定目录
-  sourceRoot = ".";
+    src = watt-src;
 
-  installPhase = ''
-    mkdir -p $out/bin
-    mkdir -p $out/share/watt-toolkit
-    
-    cp -r * $out/share/watt-toolkit/
-    
-    # 创建可执行文件软链接，并包装环境变量
-    makeWrapper $out/share/watt-toolkit/WattToolkit $out/bin/watt-toolkit \
-      --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath buildInputs}"
-  '';
+    nativeBuildInputs = with pkgs; [
+      makeWrapper
+    ];
 
-  meta = {
-    description = "开源跨平台的多功能 Steam 游戏工具箱";
-    homepage = "https://steampp.net/";
-    license = pkgs.lib.licenses.gpl3;
-    platforms = [ "x86_64-linux" ];
+    sourceRoot = ".";
+
+    installPhase = ''
+      mkdir -p $out/bin
+      mkdir -p $out/share/watt-toolkit
+
+      cp -r * $out/share/watt-toolkit/
+
+      chmod +x $out/share/watt-toolkit/Steam++.sh
+
+      cat > $out/bin/watt-toolkit-launcher <<'EOF'
+      #!/usr/bin/env bash
+      set -e
+
+      NIX_SHARE="@out@/share/watt-toolkit"
+      USER_SHARE="$HOME/.local/share/watt-toolkit"
+      VERSION_FILE="$USER_SHARE/.nix-version"
+
+      if [[ ! -f "$VERSION_FILE" ]] || [[ "$(cat "$VERSION_FILE")" != "@version@" ]]; then
+        rm -rf "$USER_SHARE"
+        mkdir -p "$USER_SHARE"
+        cp -r "$NIX_SHARE/"* "$USER_SHARE/"
+        echo "@version@" > "$VERSION_FILE"
+      fi
+
+      rm -f "$USER_SHARE/Steam++"
+
+      # patch environment_check.sh，使用绝对路径调用 certutil
+      if [[ -f "$USER_SHARE/script/environment_check.sh" ]]; then
+        sed -i 's|command -v certutil|command -v ${nss-bin}/certutil|g' "$USER_SHARE/script/environment_check.sh"
+        sed -i 's|certutil -d|${nss-bin}/certutil -d|g' "$USER_SHARE/script/environment_check.sh"
+      fi
+
+      # 预初始化 nssdb，避免脚本调用
+      if [[ ! -d "$HOME/.pki/nssdb" ]]; then
+        mkdir -p "$HOME/.pki/nssdb"
+        chmod 700 "$HOME/.pki/nssdb"
+        ${nss-bin}/certutil -d "$HOME/.pki/nssdb" -N --empty-password 2>/dev/null || true
+      fi
+
+      cd "$USER_SHARE"
+      exec ${pkgs.steam-run}/bin/steam-run "$USER_SHARE/Steam++.sh" "$@"
+      EOF
+
+      substituteInPlace $out/bin/watt-toolkit-launcher \
+        --replace '@out@' "$out" \
+        --replace '@version@' "${watt-version}"
+
+      chmod +x $out/bin/watt-toolkit-launcher
+
+      makeWrapper $out/bin/watt-toolkit-launcher $out/bin/watt-toolkit \
+        --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath (with pkgs; [ libice libsm libx11 libxcb libxkbcommon libxcursor libxi libxrandr libxext libxfixes libxcomposite libxdamage libxinerama libxrender fontconfig freetype glib openssl zlib icu mesa libglvnd stdenv.cc.cc.lib ])}"
+    '';
+
+    meta = {
+      description = "开源跨平台的多功能 Steam 游戏工具箱";
+      homepage = "https://steampp.net/";
+      license = pkgs.lib.licenses.gpl3;
+      platforms = [ "x86_64-linux" ];
+    };
+  };
+
+in {
+  home = {
+    packages = [ watt-toolkit ];
   };
 }

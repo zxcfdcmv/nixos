@@ -1,43 +1,31 @@
-# zxcfdcmv's nixos dotfiles
-登录管理器: greetd+tuigreet
-合成器: river
-窗口管理器: kwm
+# NixOS Flake 配置
 
-# 一键安装
-1.  Live ISO 启动 → 分区挂载到 `/mnt`
-2.  `sudo nixos-generate-config --root /mnt`
-3.  `sudo git clone https://github.com/YOUR_NAME/my-nixos-config /mnt/etc/nixos`
-4.  核对 `/mnt/etc/nixos/hardware-configuration.nix` 中的 UUID、内核参数
-5.  `sudo nixos-install --flake /mnt/etc/nixos#hostname`
-6.  重启进入系统
+&gt; 个人 NixOS 桌面环境的声明式配置，支持多主机复用与模块化维护。
 
-# 配置上传至github(重头开始)
-1. 移动配置至普通用户目录, 并配置权限
-> 如果使用了`flakes`, 则修改后无需关注`/etc/nixos`目录, 就可以在任何地方重建系统，没有了权限问题, 命令如下(其中最后的字段为`配置所在位置`以及`hostname`):
-> `sudo nixos-rebuild switch --flake ~/nixos#nixos`
-  ```bash
-    sudo mkdir -p ~/nixos/
-    sudo mv /etc/nixos/* ~/nixos
-    sudo chown -R $USER:users ~/nixos
-  ```
+## 技术栈
 
-1. 初始化git仓库, 并添加配置文件
-  ```bash
-    cd ~/nixos
-    git init
-    git add .
-    git commit -m "init NixOS configuration"
-  ```
-1. 创建一个新的github空仓库, 无需初始化`README`和`.gitignore`
-1. 添加公钥到github
-  ```
-    ssh-keygen -t ed25519 -C "your_email@example.com"
-    cat ~/.ssh/id_ed25519.pub
-  ```
-  然后打开 GitHub → Settings → SSH and GPG keys → New SSH key → 粘贴进去
-1. 将本地仓库推送到github
-  ```bash
-    git remote add origin git@github.com:username/nixos.git
-    git branch -M main
-    git push origin main
-  ```
+| 层级 | 技术选型 |
+|------|---------|
+| 系统管理 | Nix Flakes + Home Manager |
+| 显示协议 | Wayland |
+| 合成器 | river (Wayland compositor) |
+| 窗口管理 | kwm |
+| linux内核 | CachyOS |
+| 代理工具 | dae |
+| 邮箱客户端 | rbw + aerc |
+
+## 设计特点
+
+- **模块化架构**：系统配置按功能拆分（硬件、网络、桌面环境、用户配置），通过 `imports` 组合复用
+- **声明式管理**：完整系统状态版本化，环境重建可 100% 复现
+- **Wayland 原生**：从登录管理器到合成器全链路 Wayland，无 X11 依赖
+- **Steam配置**: 使用nix工具声明式配置Steam
+- **Nix化多个mod管理器**: Nix化 drg的`mint` + l4d2的`fireaxe`
+- **邮箱客户端**: 使用rbw+aerc，换环境也可直接查看邮件
+
+## 快速开始
+
+```bash
+# 日常更新
+sudo nixos-rebuild switch --flake .#nixos
+```

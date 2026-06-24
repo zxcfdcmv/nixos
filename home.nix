@@ -15,6 +15,8 @@
     ./modules/hm/mint.nix
     ./modules/hm/fireaxe.nix
     ./modules/hm/sublime.nix
+    ./modules/hm/mpv.nix
+    # ./modules/hm/watt-toolkit.nix
   ];
 
   home = {
@@ -115,6 +117,26 @@
         show_cpu_freq = true;
         show_coretemp = true;
       };
+    };
+  };
+
+  gtk = {
+    enable = true;
+
+    gtk3.extraConfig = {
+      gtk-enable-animations = false;
+      gtk-xft-antialias = 1;
+      gtk-xft-hinting = 1;
+      gtk-xft-hintstyle = "hintslight";
+      gtk-xft-rgba = "rgb";
+    };
+
+    gtk4.extraConfig = {
+      gtk-enable-animations = false;
+      gtk-xft-antialias = 1;
+      gtk-xft-hinting = 1;
+      gtk-xft-hintstyle = "hintslight";
+      gtk-xft-rgba = "rgb";
     };
   };
 }

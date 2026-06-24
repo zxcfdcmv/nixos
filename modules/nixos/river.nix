@@ -130,7 +130,7 @@ in {
     '';
   };
 
-  services.getty.autologinUser = "${userSettings.username}";
+  # services.getty.autologinUser = "${userSettings.username}";
 
   home-manager.users.${userSettings.username} = { pkgs, config, ...}: {
     home.packages = with pkgs; [

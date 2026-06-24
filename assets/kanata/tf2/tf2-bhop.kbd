@@ -11,7 +11,6 @@
     bhop_loop (macro-repeat-release-cancel
         spc 30
     )
-
 )
 
 (deflayer default
