@@ -6,7 +6,7 @@
     extraFlags = toString [
       "--disable traefik"
       "--disable servicelb"
-      "--system-default-registry registry.cn-hangzhou.aliyuncs.com"
+      # "--system-default-registry registry.cn-hangzhou.aliyuncs.com"
     ];
   };
 
@@ -16,10 +16,6 @@
       docker.io:
         endpoint:
           - "https://docker.m.daocloud.io"
-          - "https://docker.linkedbus.com"
-          - "https://dockerpull.org"
-          - "https://registry.cn-hangzhou.aliyuncs.com"
-          - "https://docker.mirrors.sjtug.sjtu.edu.cn"
       quay.io:
         endpoint:
           - "https://quay.m.daocloud.io"

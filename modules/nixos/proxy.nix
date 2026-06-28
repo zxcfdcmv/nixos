@@ -4,7 +4,7 @@
     enable = true;
     config = ''
       global {
-        lan_interface: auto
+        lan_interface: eno1, wlp4s0, cni0, flannel.1
         wan_interface: auto
         log_level: warn
         dial_mode: ip

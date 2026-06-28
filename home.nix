@@ -14,9 +14,8 @@
     ./modules/hm/email.nix
     ./modules/hm/mint.nix
     ./modules/hm/fireaxe.nix
-    ./modules/hm/sublime.nix
+    # ./modules/hm/sublime.nix
     ./modules/hm/mpv.nix
-    # ./modules/hm/watt-toolkit.nix
   ];
 
   home = {
