@@ -47,7 +47,9 @@
       nvd nix-output-monitor
       openssl
       glow
-
+      # x11
+      dmenu hsetroot
+      st
       # 应用
       microsoft-edge
       (prismlauncher.override {
@@ -59,6 +61,7 @@
       ayugram-desktop
       piliplus
       kanata
+      wemeet
     ];
   };
 

@@ -7,6 +7,7 @@
       ./modules/nixos/amd_nvidia.nix
       ./modules/nixos/default.nix
       ./modules/nixos/river.nix
+      ./modules/nixos/vxwm.nix
       # ./modules/nixos/sunshine.nix
       ./modules/nixos/proxy.nix
       ./modules/nixos/tailscale.nix
