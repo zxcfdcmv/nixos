@@ -16,6 +16,7 @@
     ./modules/hm/fireaxe.nix
     # ./modules/hm/sublime.nix
     ./modules/hm/mpv.nix
+    ./modules/hm/anki.nix
   ];
 
   home = {
