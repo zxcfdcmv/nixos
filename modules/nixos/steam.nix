@@ -166,6 +166,10 @@ in
               "__GL_THREADED_OPTIMIZATIONS" = "1";
             };
             args = [
+              "-windowed"
+              "-w" "800"
+              "-h" "600"
+              "-noborder"
               "-vulkan"
               "-language" "schinese"
               "+cc_lang" "schinese"
@@ -193,6 +197,10 @@ in
               "__GL_THREADED_OPTIMIZATIONS" = "1";
             };
             args = [
+              "-windowed"
+              "-w" "800"
+              "-h" "600"
+              "-noborder"
               "-vulkan"
               "-novid"
               "-nojoy"

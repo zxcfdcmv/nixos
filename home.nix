@@ -3,7 +3,7 @@
   imports = [
     ./modules/hm/bash.nix
     ./modules/hm/scripts.nix
-    ./modules/hm/foot.nix
+    ./modules/hm/terminal.nix
     ./modules/hm/fuzzel.nix
     ./modules/hm/input.nix              # 框架
     ./modules/hm/input-xiaohe.nix       # 输入方案
@@ -48,8 +48,8 @@
       openssl
       glow
       # x11
-      dmenu hsetroot
-      st
+      dmenu hsetroot xclip xcursor-themes
+
       # 应用
       microsoft-edge
       (prismlauncher.override {

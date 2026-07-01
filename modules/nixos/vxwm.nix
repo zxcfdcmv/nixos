@@ -35,8 +35,11 @@ in
     xinit
   ];
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
+  services.xserver = {
+    enable = true;    
+    dpi = 96;
+    displayManager.startx.enable = true;
+  };
 
   environment.loginShellInit = ''
     if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty2" ]; then

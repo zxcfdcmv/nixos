@@ -1,4 +1,19 @@
 { config, pkgs, lib, ... }:
+
+let
+  st-snazzy-custom = pkgs.st-snazzy.overrideAttrs (oldAttrs: {
+    postPatch = (oldAttrs.postPatch or "") + ''
+      # 改字体
+      sed -i 's|static char \*font = ".*"|static char *font = "Maple Mono NF CN:size=14:antialias=true:autohint=true"|' config.def.h
+      
+      # 改透明
+      sed -i 's|float alpha = 1.0;|float alpha = 0.8;|' config.def.h
+      
+      # 改内边距
+      sed -i 's|static int borderpx = .*|static int borderpx = 5;|' config.def.h
+    '';
+  });
+in
 {
   programs.foot = {
     enable = true;
@@ -28,4 +43,6 @@
     };
   };
   # xdg.configFile."foot/foot.ini".force = true;
+  
+  home.packages = with pkgs; [ st-snazzy-custom ];
 }

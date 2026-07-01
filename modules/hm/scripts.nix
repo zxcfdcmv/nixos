@@ -4,8 +4,10 @@ let
     "toggle-fcitx"
     "toggle-dae"
     "toggle-kanata"
-    "cs2-cn"
-    "cs2-global"
+    "game-cs2-cn"
+    "game-cs2-global"
+    "game-low"
+    "game-high"
     "cdda"
   ];
 
@@ -81,12 +83,21 @@ in
       exec nix-shell ~/nixos/modules/project/rust-cli.nix
     '') 
   
-    (writeShellScriptBin "cs2-cn" ''
+    (writeShellScriptBin "game-cs2-cn" ''
       steam -applaunch 730 -novid -perfectworld +exec autoexec.cfg
     '') 
-    (writeShellScriptBin "cs2-global" ''
+    (writeShellScriptBin "game-cs2-global" ''
       steam -applaunch 730 -novid +exec autoexec.cfg
     '') 
+
+    # x11
+    (writeShellScriptBin "game-low" ''
+      ${pkgs.linuxPackages.nvidia_x11.settings}/bin/nvidia-settings --assign CurrentMetaMode="DP-2: 1920x1080 @800x600 +0+0 {ViewPortIn=800x600, ViewPortOut=1920x1080+0+0, ResamplingMethod=Bilinear}"
+    '')
+
+    (writeShellScriptBin "game-high" ''
+      ${pkgs.linuxPackages.nvidia_x11.settings}/bin/nvidia-settings --assign CurrentMetaMode="DP-2: 1920x1080 @1920x1080 +0+0 {ViewPortIn=1920x1080, ViewPortOut=1920x1080+0+0}"
+    '')
 
     (writeShellScriptBin "my-switch" ''
       cd ${userSettings.dotfilesDir}

@@ -76,6 +76,8 @@ static const char *occupiedtags[] = { "1+", "2+", "3+", "4+", "5+", "6+", "7+", 
 
 static const char *const autostart[] = {
 	"sh", "-c", "hsetroot -fill /home/zxcfdcmv/nixos/assets/pictures/lu.jpg",
+	"fcitx5 -d",
+	"mako",
 	NULL /* must end with NULL */
 };
 #endif
