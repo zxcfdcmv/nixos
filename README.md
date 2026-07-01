@@ -6,15 +6,15 @@
 
 | 层级 | 工具选型 |
 |------|---------|
+| linux内核 | CachyOS |
 | 系统管理 | Nix Flakes + Home Manager |
 | 显示协议 | Wayland + x11 |
 | 合成器 | river (Wayland compositor) |
-| 窗口管理 | kwm (Wayland) |
-| 窗口管理 | vxwm (x11) |
-| linux内核 | CachyOS |
+| 窗口管理 | kwm (Wayland) / vxwm (x11) |
 | 代理工具 | dae |
 | 邮箱客户端 | rbw + aerc |
-| 编辑 | helix |
+| 编辑 | helix / Zed |
+| 输入法 | fcitx5 (小鹤音形) |
 
 ## 特点
 
