@@ -7,8 +7,8 @@ static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 0;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "@font@:size=10" };
+static const char dmenufont[]       = "@font@:size=10";
 #define COORDINATES_STYLE "[x%d y%d]" /* The style of coordinates displayed in bar, do not remove %d. */
 
 static MAYBE_CONST char normbgcolor[]           = "#222222";
@@ -75,9 +75,9 @@ static const char *occupiedtags[] = { "1+", "2+", "3+", "4+", "5+", "6+", "7+", 
 /* vxwm will execute this on startup (can be skipped with -ignoreautostart vxwm flag). */
 
 static const char *const autostart[] = {
-	"sh", "-c", "hsetroot -fill /home/zxcfdcmv/nixos/assets/pictures/lu.jpg",
+	"sh", "-c", "@hsetroot@ -fill @stylix_image@",
+	"@xdg_gtk@",
 	"fcitx5 -d",
-	"mako",
 	NULL /* must end with NULL */
 };
 #endif
@@ -125,7 +125,13 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+// static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+
+static const char *dmenucmd[] = { 
+  "sh", "-c", 
+  "compgen -c | sort -u | dmenu --fn 'Maple Mono NF CN:14' --nb '#222222' --nf '#bbbbbb' --sb '#005577' --sf '#eeeeee' | ${SHELL:-/bin/sh}", 
+  NULL 
+};
 
 static const char *termcmd[]  = { "st", NULL };
 

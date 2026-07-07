@@ -4,7 +4,7 @@
     enable = true;
     config = ''
       global {
-        lan_interface: eno1, wlp4s0, cni0, flannel.1
+        lan_interface: auto
         wan_interface: auto
         log_level: warn
         dial_mode: ip
@@ -17,6 +17,7 @@
         "${userSettings.githubProxy}/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt"
         # 'https://gh-proxy.com/raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt'
         # 'https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/nodev2ray.txt'
+        # "${userSettings.githubProxy}/https://raw.githubusercontent.com/snakem982/proxypool/main/source/v2ray-2.txt"
       }
 
       dns {

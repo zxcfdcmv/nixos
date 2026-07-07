@@ -9,7 +9,7 @@
     ./modules/hm/input-xiaohe.nix       # 输入方案
     ./modules/hm/zed-editor.nix
     ./modules/hm/proxy.nix
-    ./modules/hm/games.nix
+    ./modules/games/cdda.nix
     ./modules/hm/qutebrowser.nix
     ./modules/hm/email.nix
     ./modules/hm/mint.nix
@@ -49,7 +49,8 @@
       openssl
       glow
       # x11
-      dmenu hsetroot xclip xcursor-themes
+      dmenu-rs-enable-plugins
+      hsetroot xclip xcursor-themes
 
       # 应用
       microsoft-edge

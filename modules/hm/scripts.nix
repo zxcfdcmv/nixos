@@ -3,7 +3,6 @@ let
   customCommands = [
     "toggle-fcitx"
     "toggle-dae"
-    "toggle-kanata"
     "game-cs2-cn"
     "game-cs2-global"
     "game-low"
@@ -71,9 +70,6 @@ in
 
     # toggle-dae - 系统服务
     (mkSystemToggleService "toggle-dae" "dae")
-
-    # toggle-kanata - 系统服务
-    (mkSystemToggleService "toggle-kanata" "kanata-default")
 
     (writeShellScriptBin "rust-project-gui" ''
       exec nix-shell ~/nixos/modules/project/rust-gui.nix
