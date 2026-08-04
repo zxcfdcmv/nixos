@@ -1,0 +1,47 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  ;; 这里只列出涉及的两个键，实际使用时请保留你完整的 defsrc
+  w c
+)
+
+;; 定义虚拟键，用于在 macro 中精确控制 press / release
+(defvirtualkeys
+  vw   w      ;; 虚拟 w
+  vsft lsft   ;; 虚拟 Shift
+  vctl lctl   ;; 虚拟 Ctrl
+)
+
+(defalias
+  c-macro (switch
+    ;; Case 1: w 物理按下时，只执行 Shift+Ctrl
+    ((input real w))
+      (macro
+        (on-press press-vkey vsft)    ;; Shift down
+        10                             ;; 等待 1ms
+        (on-press tap-vkey vctl)      ;; Ctrl down + up（点按）
+        (on-press release-vkey vsft)  ;; Shift up
+      )
+      break
+
+    ;; Case 2: w 没物理按下时，先模拟 w，再执行 Shift+Ctrl，最后释放 w
+    ()
+      (macro
+        (on-press press-vkey vw)      ;; w down
+        (on-press press-vkey vsft)    ;; Shift down
+        10                             ;; 等待 1ms
+        (on-press tap-vkey vctl)      ;; Ctrl down + up（点按）
+        (on-press release-vkey vsft)  ;; Shift up
+        (on-press release-vkey vw)    ;; w up
+      )
+      break
+  )
+)
+
+(deflayer base
+  ;; 注意：这里顺序要和 defsrc 对应
+  ;; w 保持原样，c 映射到上面的 alias
+  w @c-macro
+)

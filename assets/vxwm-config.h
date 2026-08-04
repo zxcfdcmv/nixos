@@ -77,7 +77,9 @@ static const char *occupiedtags[] = { "1+", "2+", "3+", "4+", "5+", "6+", "7+", 
 static const char *const autostart[] = {
 	"sh", "-c", "@hsetroot@ -fill @stylix_image@",
 	"@xdg_gtk@",
+	"@xdg_wlr@",
 	"fcitx5 -d",
+	"@dunst@",
 	NULL /* must end with NULL */
 };
 #endif

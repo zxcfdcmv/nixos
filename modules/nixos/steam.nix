@@ -1,4 +1,12 @@
 { config, lib, pkgs, userSettings, ... }:
+
+let
+  witchfire = pkgs.fetchzip {
+    url = "https://github.com/zxcfdcmv/nixos/releases/download/re4/witchfire.zip";
+    sha256 = "sha256-PFzk9O5AZyGfLLIY8wpiXJ0iqLwz0KWndHt61FM+y6s=";
+    stripRoot = false;
+  };
+in
 {
   programs = {
     steam = {
@@ -26,7 +34,7 @@
 
     programs.steam.config = {
       enable = true;
-      closeSteam = true;
+      onSteamRunning = "close";
       defaultCompatTool = "GE-Proton";
       apps = {
         deep-rock-galactic = {
@@ -85,6 +93,11 @@
       # l4d2
       ".local/share/Steam/steamapps/common/Left 4 Dead 2/left4dead2/cfg/autoexec.cfg".source = ../../assets/l4d2/autoexec.cfg;
       ".local/share/Steam/steamapps/common/Left 4 Dead 2/left4dead2/ems/lxc/inspect_weapon/settings.txt".source = ../../assets/l4d2/inspect_settings.txt;
+
+      ".local/share/Steam/steamapps/common/Witchfire/Witchfire/Content/Paks/" = {
+        source = "${witchfire}";
+        recursive = true;
+      };
     };
   };
 }

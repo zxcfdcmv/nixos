@@ -4,7 +4,7 @@ let
   drg-version = "0.2.10";
 
   drg-src = pkgs.fetchurl {
-    url = "${userSettings.githubProxy}/https://github.com/trumank/mint/releases/download/v${drg-version}/drg_mod_integration-x86_64-unknown-linux-gnu.tar.xz";
+    url = "https://github.com/trumank/mint/releases/download/v${drg-version}/drg_mod_integration-x86_64-unknown-linux-gnu.tar.xz";
     sha256 = "sha256-Ukpa/tvFUXZNvRPUo6CPwQiIt/yWLREdvAu1S8b/eyw=";
   };
 
@@ -43,6 +43,7 @@ in {
     packages = [ drg ];    
     file.".config/drg-mod-integration/mod_data.json" = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/${userSettings.username}/nixos/assets/drg-mod-config.json";
+      force = true;
     };
   };
 }

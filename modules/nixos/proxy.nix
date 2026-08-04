@@ -14,10 +14,10 @@
 
       subscription {
         # 'https://proxy.v2gh.com/https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub'
-        "${userSettings.githubProxy}/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt"
+        # "${userSettings.githubProxy}/https://raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt"
         # 'https://gh-proxy.com/raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt'
         # 'https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/nodev2ray.txt'
-        # "${userSettings.githubProxy}/https://raw.githubusercontent.com/snakem982/proxypool/main/source/v2ray-2.txt"
+        "${userSettings.githubProxy}/https://raw.githubusercontent.com/snakem982/proxypool/main/source/v2ray-2.txt"
       }
 
       dns {

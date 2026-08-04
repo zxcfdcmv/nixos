@@ -15,7 +15,7 @@ let
 
   reframework_mod = pkgs.fetchzip {
     url = "https://github.com/zxcfdcmv/nixos/releases/download/re4/reframework_mod.zip";
-    sha256 = "sha256-qvaf/8oagf0lv9R5/+uDbKWsqvb5QDnIS4YgL3ixBw0=";
+    sha256 = "sha256-pQu+fErz/BcyPdkYIPzs9pS02YUBKZflqMV+OLzMU00=";
     stripRoot = false;
   };
 
@@ -60,6 +60,12 @@ let
     stripRoot = false;
   };
 
+  realistic_fire = pkgs.fetchzip {
+    url = "https://github.com/zxcfdcmv/nixos/releases/download/re4/realistic_fire.zip";
+    sha256 = "sha256-LEyCncaGdw4isSXa2+e8UM77SSQuR/WFMBVtYgtYkGc=";
+    stripRoot = false;
+  };
+
   gameDir = ".local/share/Steam/steamapps/common/RESIDENT EVIL 4  BIOHAZARD RE4";
 in
 {
@@ -89,6 +95,8 @@ in
 
     "${gameDir}/re_chunk_000.pak.patch_015.pak".source = "${rifles_ada_jiggle}/re_chunk_000.pak.patch_015.pak";
     "${gameDir}/re_chunk_000.pak.patch_016.pak".source = "${rifles_ada_jiggle}/re_chunk_000.pak.patch_016.pak";
+
+    "${gameDir}/re_chunk_000.pak.patch_017.pak".source = "${realistic_fire}/re_chunk_000.pak.patch_017.pak";
 
     "${gameDir}/reframework" = {
       source = "${reframework_mod}/reframework";

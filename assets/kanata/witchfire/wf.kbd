@@ -1,0 +1,44 @@
+(defcfg
+    danger-enable-cmd yes
+    process-unmapped-keys yes
+)
+
+(defsrc
+    mwu
+    w
+    c
+)
+
+(defalias
+    ;; r_hong_mouse (macro
+    ;;     mlft
+    ;;     r 839
+    ;;     r
+    ;; )
+
+    ;; r_hong (macro
+    ;;     r 650
+    ;;     r
+    ;; )
+
+    r_hong_mouse (macro
+        mlft
+        r 300
+        r
+    )
+    w_hong (macro
+        lsft
+        w
+    )
+    c_hong (macro
+        lsft 600
+        w 700
+        p
+    )
+)
+
+(deflayer default
+    @r_hong_mouse
+    @w_hong
+    @c_hong
+)

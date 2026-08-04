@@ -117,6 +117,16 @@ in
       trap 'kill $PID_MOUSE $PID_BHOP 2>/dev/null' EXIT
       wait
     '')
+
+    (writeShellScriptBin "kanata-wf" ''
+      cd ${userSettings.dotfilesDir}
+      sudo -E ${pkgs.kanata}/bin/kanata -c assets/kanata/witchfire/wf.kbd &
+      PID_MOUSE=$!
+      sudo -E ${pkgs.kanata}/bin/kanata -c assets/kanata/witchfire/wf-hong.kbd &
+      PID_BHOP=$!
+      trap 'kill $PID_MOUSE $PID_BHOP 2>/dev/null' EXIT
+      wait
+    '')
   ])
   ++ builtins.map mkDesktop customCommands;  
 }

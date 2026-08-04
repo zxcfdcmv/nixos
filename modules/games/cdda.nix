@@ -39,7 +39,7 @@ let
     PIXEL_MINIMAP_SCALE_TO_FIT = "true";
   };  
 
-  cdda-url = "${userSettings.githubProxy}/https://github.com/CleverRaven/Cataclysm-DDA/releases/download/cdda-experimental-${cdda-version}/cdda-linux-with-graphics-and-sounds-x64-${cdda-version}.tar.gz";
+  cdda-url = "https://github.com/CleverRaven/Cataclysm-DDA/releases/download/cdda-experimental-${cdda-version}/cdda-linux-with-graphics-and-sounds-x64-${cdda-version}.tar.gz";
 
   cdda-bin = pkgs.stdenv.mkDerivation {
     pname = "cataclysm-dda-experimental";

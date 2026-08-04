@@ -25,12 +25,12 @@ let
     version = "master";
     src = pkgs.fetchzip {
       url = "${userSettings.githubProxy}/https://github.com/kewuaa/kwm/archive/refs/heads/master.zip";
-      sha256 = "sha256-h88kpS02Z+22JfbpiuSv3P0sAZQlZ7+3V1rRSTGB5Zk=";
+      sha256 = "sha256-reisfg1LDth2dp38w+gLVRCGiqvgu/w/P71L3ULex0c=";
       stripRoot = true;
     };
 
     nativeBuildInputs = [
-      pkgs.zig_0_16
+      pkgs.zig
       pkgs.pkg-config
       pkgs.wayland-scanner
       pkgs.makeWrapper
@@ -46,6 +46,16 @@ let
 
     postPatch = ''
       cp ${finalKwmConfig} config.zon
+
+      mkdir -p zig-pkg
+      depsDir=${pkgs.callPackage ../../assets/deps.nix {}}
+      for dep in "$depsDir"/*; do
+        name=$(basename "$dep")
+        ln -s "$dep" "zig-pkg/$name"
+      done
+
+      echo "=== zig-pkg contents ==="
+      ls -la zig-pkg/
     '';
 
     buildPhase = ''
@@ -113,7 +123,6 @@ let
     done
   '';
   riverInitScript = pkgs.writeShellScript "river-init" ''
-    # 把我们自己写的脚本管道给 kwm
     exec ${kwmBarScript}/bin/kwm-status |${kwm}/bin/kwm
   '';
 in {
@@ -135,9 +144,6 @@ in {
   home-manager.users.${userSettings.username} = { pkgs, config, ...}: {
     home.packages = with pkgs; [
       swaybg
-      pulsemixer
-      bluetuith
-      brightnessctl
     ];
 
     services.mako = {

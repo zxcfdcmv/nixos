@@ -17,6 +17,7 @@
       pulse.enable = true;
     };
     upower.enable = true;
+    gnome.gnome-keyring.enable = true;
   };
 
   systemd.services.rfkill-unblock-bluetooth = {
@@ -68,8 +69,18 @@
         zlib
         glib
         SDL2 SDL2_image SDL2_ttf SDL2_mixer
+        gtk3
+        webkitgtk_4_1
+        libsoup_3
+        cairo
+        pango
+        gdk-pixbuf
+        harfbuzz
+        libappindicator-gtk3
+        openssl
+        dbus
       ];
-    };   
+    };
     droidcam.enable = true;
   };
 
@@ -172,5 +183,8 @@
   fonts.packages = with pkgs; [
     maple-mono.NF-CN
     noto-fonts-color-emoji
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    corefonts
   ];
 }

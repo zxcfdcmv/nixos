@@ -13,13 +13,11 @@
       rg   = "rg --hidden --smart-case";
       cat  = "bat -pp";
       ls   = "eza --group-directories-first --git";
-      ll   = "eza --group-directories-first --git --long --icons";
-      l    = "eza --group-directories-first --git --long --icons";
+      ll   = "eza --group-directories-first --git --long --icons=auto";
+      l    = "eza --group-directories-first --git --long --icons=auto";
       du   = "dust";
 
       kubectl = "sudo -E kubectl";
-
-      # my-delete = "sudo nix-collect-garbage -d && nix-store --optimise";
       my-clean = "cd ${userSettings.dotfilesDir} && nh clean all && nh os boot .";
       kanata = "sudo -E kanata -c";
     };

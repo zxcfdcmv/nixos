@@ -14,9 +14,8 @@
     ./modules/hm/email.nix
     ./modules/hm/mint.nix
     ./modules/hm/fireaxe.nix
-    # ./modules/hm/sublime.nix
     ./modules/hm/mpv.nix
-    ./modules/hm/anki.nix
+    # ./modules/hm/crosshair.nix
   ];
 
   home = {
@@ -26,6 +25,7 @@
 
     # 指针主题
     pointerCursor = {
+      enable = true;
       gtk.enable = true;
       x11.enable = true;
       name = "Bibata-Modern-Ice";
@@ -48,9 +48,14 @@
       nvd nix-output-monitor
       openssl
       glow
+      pulsemixer
+      bluetuith
+      brightnessctl
+
       # x11
       dmenu-rs-enable-plugins
       hsetroot xclip xcursor-themes
+      xdotool
 
       # 应用
       microsoft-edge
@@ -64,6 +69,10 @@
       piliplus
       kanata
       wemeet
+      bilibili-tui
+      onlyoffice-desktopeditors
+      libreoffice-qt
+      # anki
     ];
   };
 
@@ -143,4 +152,6 @@
       gtk-xft-rgba = "rgb";
     };
   };
+
+  services.gnome-keyring.enable = true;
 }

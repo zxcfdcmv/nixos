@@ -2,7 +2,9 @@
 let
   vxwmConfig = pkgs.replaceVars ../../assets/vxwm-config.h {
     xdg_gtk = "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk";
+    xdg_wlr = "${pkgs.xdg-desktop-portal-wlr}/libexec/xdg-desktop-portal-wlr";
     hsetroot = "${pkgs.hsetroot}/bin/hsetroot";
+    dunst = "${pkgs.dunst}/bin/dunst";
     stylix_image = "${config.stylix.image}";
     font = "Maple Mono NF CN";
   };
@@ -13,7 +15,7 @@ let
 
     src = pkgs.fetchzip {
       url = "${userSettings.githubProxy}/https://github.com/wh1tepearll/vxwm/archive/refs/heads/master.zip";
-      sha256 = "sha256-W6BS8V34wCsNj2S9eg+c2YQZ80PX0MDmVZDQkSF68mA=";
+      sha256 = "sha256-YUDkr2J4tR59Nx9MdO28NkvE5xlDUAZ5Pnmd23nwcHE=";
     };
 
     # 修复上游 zoom/swapmaster 编译错误

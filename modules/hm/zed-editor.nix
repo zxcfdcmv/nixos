@@ -4,9 +4,9 @@
     enable = true;
     userSettings = {
       # ui_font_family = "Maple Mono NF CN";
-      # ui_font_size = 16;
+      ui_font_size = lib.mkForce 16;
       # buffer_font_family = "Maple Mono NF CN";
-      # buffer_font_size = 16;
+      buffer_font_size = lib.mkForce 16;
       # theme = {
       #   mode = "system";
       #   dark = "one Dark";
@@ -25,5 +25,6 @@
         metrics = false;
       };
     };
+    mutableUserSettings = true;
   };
 }

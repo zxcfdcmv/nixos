@@ -2274,7 +2274,7 @@
           "Id": "0bac6cf0-9b76-403a-8e65-7206598892fd",
           "IsEnabled": true,
           "Name": "Optimized Particles",
-          "Priority": 0,
+          "Priority": -10,
           "CreationTime": "2026-06-21T13:11:58.9458937+08:00",
           "Tags": [
             "Miscellaneous"
@@ -2430,27 +2430,6 @@
             "Miscellaneous",
             "Scripts",
             "Single Player"
-          ],
-          "DependentAddonIds": [],
-          "CustomImagePath": null
-        },
-        {
-          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-          "PublishedFileId": 2980569036,
-          "IsAutoUpdate": null,
-          "RequestAutoSetName": false,
-          "RequestApplyTagsFromWorkshop": false,
-          "ConflictIgnoringFiles": [],
-          "Id": "7f62d77d-62ab-40c3-94d2-6f628595edcd",
-          "IsEnabled": true,
-          "Name": "Blue Heaven Long Version",
-          "Priority": 0,
-          "CreationTime": "2026-06-20T22:11:26.7238323+08:00",
-          "Tags": [
-            "Campaigns",
-            "Co-op",
-            "Grenade Launcher",
-            "M60"
           ],
           "DependentAddonIds": [],
           "CustomImagePath": null
