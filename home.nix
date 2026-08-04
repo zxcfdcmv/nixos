@@ -15,7 +15,7 @@
     ./modules/hm/mint.nix
     ./modules/hm/fireaxe.nix
     ./modules/hm/mpv.nix
-    # ./modules/hm/crosshair.nix
+    ./modules/hm/crosshair.nix
   ];
 
   home = {

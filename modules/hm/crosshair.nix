@@ -1,34 +1,26 @@
-{ pkgs, userSettings, ... }:
+{ pkgs, userSettings, lib, ... }:
 
 let
-  gocrosshair = pkgs.stdenv.mkDerivation rec {
+  gocrosshair = pkgs.buildGoModule rec {
     pname = "gocrosshair";
     version = "main";
 
     src = pkgs.fetchurl {
-      url = "${userSettings.githubProxy}/github.com/MatheusLasserre/gocrosshair/archive/refs/heads/main.zip";
-      sha256 = "sha256-m7nOrlRh1tfkJYOf7UtMff60cX3I/g/fdexE3qqJeZc=";
+      url = "${userSettings.githubProxy}/github.com/MatheusLasserre/gocrosshair/archive/refs/heads/main.tar.gz";
+      sha256 = "sha256-/L3TGJ4NXSSbkguBHEjDVQfME8KsFcReWjuIDuc/I3M=";
     };
 
-    nativeBuildInputs = [ pkgs.unzip pkgs.go ];
+    sourceRoot = "gocrosshair-main";
 
-    unpackPhase = ''
-      unzip $src
-      cd gocrosshair-main
-    '';
+    vendorHash = "sha256-4NiPgMjnancKpKsHAAKlSz0eUJTeDPjMm/8G2ryfDrY=";
 
-    buildPhase = ''
-      export HOME=$TMPDIR
-      export CGO_ENABLED=0
-      go build -ldflags="-s -w" -trimpath -o gocrosshair .
-    '';
+    ldflags = [ "-s" "-w" ];
+    env.CGO_ENABLED = "0";
 
-    installPhase = ''
-      mkdir -p $out/bin
-      cp gocrosshair $out/bin/
-    '';
+    env.GOPROXY = "https://goproxy.cn,direct";
+    env.GOSUMDB = "off";
 
-    meta = with pkgs.lib; {
+    meta = with lib; {
       description = "Lightweight crosshair overlay for X11";
       homepage = "https://github.com/MatheusLasserre/gocrosshair";
       license = licenses.mit;
