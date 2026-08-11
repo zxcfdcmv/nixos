@@ -115,34 +115,32 @@ in
     apps = {
       team-fortress-2 = {
         id = 440;
-        launchOptions = {
-          wrappers = [
-            (lib.getExe' pkgs.gamemode "gamemoderun")
-          ];
-          env = {
-            "__GL_SHADER_DISK_CACHE" = "1";
-            "__GL_SHADER_DISK_CACHE_SKIP_CLEANUP" = "1";
-            "__GL_THREADED_OPTIMIZATIONS" = "1";
-          };
-          args = [
-            "-windowed"
-            "-w" "800"
-            "-h" "600"
-            "-noborder"
-            "-vulkan"
-            "-novid"
-            "-nojoy"
-            "-nosteamcontroller"
-            "-nohltv"
-            "-noipx"
-            "-console"
-            "-particles" "1"
-            "-nocustomtools"
-            "-softparticlesdefaultoff"
-            "-noprewarm"
-            "+exec" "preloader.cfg"
-          ];
+        wrappers = [
+          (lib.getExe' pkgs.gamemode "gamemoderun")
+        ];
+        env = {
+          "__GL_SHADER_DISK_CACHE" = "1";
+          "__GL_SHADER_DISK_CACHE_SKIP_CLEANUP" = "1";
+          "__GL_THREADED_OPTIMIZATIONS" = "1";
         };
+        args = [
+          "-windowed"
+          "-w" "800"
+          "-h" "600"
+          "-noborder"
+          "-vulkan"
+          "-novid"
+          "-nojoy"
+          "-nosteamcontroller"
+          "-nohltv"
+          "-noipx"
+          "-console"
+          "-particles" "1"
+          "-nocustomtools"
+          "-softparticlesdefaultoff"
+          "-noprewarm"
+          "+exec" "preloader.cfg"
+        ];
       };
     };
   };

@@ -12,7 +12,8 @@
     ./modules/games/cdda.nix
     ./modules/hm/qutebrowser.nix
     ./modules/hm/email.nix
-    ./modules/hm/mint.nix
+    # ./modules/hm/mint.nix
+    ./modules/hm/mint_notag.nix
     ./modules/hm/fireaxe.nix
     ./modules/hm/mpv.nix
     ./modules/hm/crosshair.nix
@@ -68,11 +69,11 @@
       ayugram-desktop
       piliplus
       kanata
-      wemeet
+      # wemeet
       bilibili-tui
       onlyoffice-desktopeditors
       libreoffice-qt
-      # anki
+      anki
     ];
   };
 

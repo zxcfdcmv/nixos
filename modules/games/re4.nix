@@ -71,11 +71,9 @@ in
 {
   programs.steam.config.apps.resident-evil-4-remake = {
     id = 2050650;
-    launchOptions = {
-      args = [
-        "WINEDLLOVERRIDES=\"dinput8.dll=n,b\""
-      ];
-    };
+    args = [
+      "WINEDLLOVERRIDES=\"dinput8.dll=n,b\""
+    ];
   };
   home.file = {
     "${gameDir}/dinput8.dll".source = "${reframework}/dinput8.dll";

@@ -9,7 +9,8 @@
       ./modules/nixos/river.nix
       ./modules/nixos/vxwm.nix
       # ./modules/nixos/sunshine.nix
-      ./modules/nixos/proxy.nix
+      # ./modules/nixos/proxy.nix
+      ./modules/nixos/dae.nix
       ./modules/nixos/tailscale.nix
       ./modules/nixos/stylix.nix
       ./modules/nixos/steam.nix
@@ -21,9 +22,9 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = [
-        "openssl-1.1.1w"
-      ];      
+      # permittedInsecurePackages = [
+      #   "openssl-1.1.1w"
+      # ];      
     };
   };
 

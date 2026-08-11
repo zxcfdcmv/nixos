@@ -39,52 +39,46 @@ in
       apps = {
         deep-rock-galactic = {
           id = 548430;
-          launchOptions = {
-            args = [
-              "-disablemodding"
-            ];
-          };
+          args = [
+            "-disablemodding"
+          ];
         };
         project-zomboid = {
           id = 108600;
-          launchOptions = {
-            args = [
-              "-Xms6G"
-              "-Xmx6G"
-            ];
-          };
+          args = [
+            "-Xms6G"
+            "-Xmx6G"
+          ];
         };
         left-4-dead-2 = {
           id = 550;
-          launchOptions = {
-            wrappers = [
-              (lib.getExe' pkgs.gamemode "gamemoderun")
-            ];
-            env = {
-              "STEAM_COMPAT_RUNTIME_SDL2" = "1";
-              "__GL_SHADER_DISK_CACHE" = "1";
-              "__GL_SHADER_DISK_CACHE_SKIP_CLEANUP" = "1";
-              "__GL_THREADED_OPTIMIZATIONS" = "1";
-            };
-            args = [
-              "-windowed"
-              "-w" "800"
-              "-h" "600"
-              "-noborder"
-              "-vulkan"
-              "-language" "schinese"
-              "+cc_lang" "schinese"
-              "-lv"
-              "-novid"
-              "-nojoy"
-              "-useallavailablecores"
-              "-noaafonts"
-              "-high"
-              "-console"
-              "-noipx"
-              "-nohltv"
-            ];
+          wrappers = [
+            (lib.getExe' pkgs.gamemode "gamemoderun")
+          ];
+          env = {
+            "STEAM_COMPAT_RUNTIME_SDL2" = "1";
+            "__GL_SHADER_DISK_CACHE" = "1";
+            "__GL_SHADER_DISK_CACHE_SKIP_CLEANUP" = "1";
+            "__GL_THREADED_OPTIMIZATIONS" = "1";
           };
+          args = [
+            "-windowed"
+            "-w" "800"
+            "-h" "600"
+            "-noborder"
+            "-vulkan"
+            "-language" "schinese"
+            "+cc_lang" "schinese"
+            "-lv"
+            "-novid"
+            "-nojoy"
+            "-useallavailablecores"
+            "-noaafonts"
+            "-high"
+            "-console"
+            "-noipx"
+            "-nohltv"
+          ];
         };
       };
     };
