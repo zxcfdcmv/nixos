@@ -127,6 +127,18 @@ in
       trap 'kill $PID_MOUSE $PID_BHOP 2>/dev/null' EXIT
       wait
     '')
+
+    (writeShellScriptBin "toggle-copyq" ''
+      VISIBLE=$(xdotool search --onlyvisible --class "copyq" 2>/dev/null | head -1)
+
+      if [ -n "$VISIBLE" ]; then
+          xdotool windowunmap "$VISIBLE"
+      else
+          copyq toggle 2>/dev/null
+          copyq toggle 2>/dev/null
+          copyq show
+      fi
+    '')
   ])
   ++ builtins.map mkDesktop customCommands;  
 }

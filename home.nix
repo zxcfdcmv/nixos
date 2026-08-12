@@ -10,9 +10,8 @@
     ./modules/hm/zed-editor.nix
     ./modules/hm/proxy.nix
     ./modules/games/cdda.nix
-    ./modules/hm/qutebrowser.nix
+    # ./modules/hm/qutebrowser.nix
     ./modules/hm/email.nix
-    # ./modules/hm/mint.nix
     ./modules/hm/mint_notag.nix
     ./modules/hm/fireaxe.nix
     ./modules/hm/mpv.nix
@@ -42,16 +41,26 @@
     
     packages = with pkgs; [
       # 基础
+      ## 命令行工具
       ripgrep bat eza fd dust
       p7zip unzip unrar poppler imagemagick ffmpegthumbnailer
       xwayland-satellite
       wl-clipboard-rs
       nvd nix-output-monitor
       openssl
+      ## md查看器
       glow
+      # 系统工具
+      ## 音量
       pulsemixer
+      ## 蓝牙
       bluetuith
+      ## 亮度
       brightnessctl
+      ## 网络 nmtui
+
+      ## 对比工具
+      diffoscope icdiff
 
       # x11
       dmenu-rs-enable-plugins
@@ -68,12 +77,18 @@
       heroic
       ayugram-desktop
       piliplus
+      ## 键盘映射
       kanata
       # wemeet
-      bilibili-tui
-      onlyoffice-desktopeditors
-      libreoffice-qt
+      # bilibili-tui
+      ## office
+      wpsoffice-cn
       anki
+
+      ## 截图
+      ksnip
+      ## 剪切板
+      copyq
     ];
   };
 
@@ -154,5 +169,7 @@
     };
   };
 
-  services.gnome-keyring.enable = true;
+  services = {
+    gnome-keyring.enable = true;   
+  };
 }

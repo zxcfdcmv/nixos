@@ -10,6 +10,8 @@ let
     footserver = "${pkgs.foot}/bin/foot";
     footclient = "${pkgs.foot}/bin/footclient";
     mako = "${pkgs.mako}/bin/mako";
+
+    xdg_desktop = "${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal";
     xdg_wlr = "${pkgs.xdg-desktop-portal-wlr}/libexec/xdg-desktop-portal-wlr";
     xdg_gtk = "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk";
     
@@ -25,7 +27,7 @@ let
     version = "master";
     src = pkgs.fetchzip {
       url = "${userSettings.githubProxy}/https://github.com/kewuaa/kwm/archive/refs/heads/master.zip";
-      sha256 = "sha256-reisfg1LDth2dp38w+gLVRCGiqvgu/w/P71L3ULex0c=";
+      sha256 = "sha256-aSnprpvbUSjOgQXvGWM46+f2prPujEqKgmkd9YfuJ0M=";
       stripRoot = true;
     };
 

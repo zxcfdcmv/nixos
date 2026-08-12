@@ -9,6 +9,7 @@
     .working_directory = .home,
 
     .startup_cmds = .{
+        .{ "@xdg_desktop@" },
         .{ "@xdg_wlr@" },
         .{ "@xdg_gtk@" },
         .{ "@swaybg@", "-i", "@stylix_image@", "-m", "fill" },

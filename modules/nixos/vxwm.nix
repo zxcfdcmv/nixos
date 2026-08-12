@@ -1,6 +1,7 @@
 { config, pkgs, userSettings, ... }:
 let
   vxwmConfig = pkgs.replaceVars ../../assets/vxwm-config.h {
+    xdg_desktop = "${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal";
     xdg_gtk = "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk";
     xdg_wlr = "${pkgs.xdg-desktop-portal-wlr}/libexec/xdg-desktop-portal-wlr";
     hsetroot = "${pkgs.hsetroot}/bin/hsetroot";
@@ -15,7 +16,7 @@ let
 
     src = pkgs.fetchzip {
       url = "${userSettings.githubProxy}/https://github.com/wh1tepearll/vxwm/archive/refs/heads/master.zip";
-      sha256 = "sha256-YUDkr2J4tR59Nx9MdO28NkvE5xlDUAZ5Pnmd23nwcHE=";
+      sha256 = "sha256-W7BYpvU1oBfHN3QzZDvDhWVEQ4w/1hKRFdiDzpqfhJ8=";
     };
 
     # 修复上游 zoom/swapmaster 编译错误
@@ -74,6 +75,11 @@ in
           # 点击行为
           mouse_left_click = "close_current";
           mouse_right_click = "close_all";
+        };
+        copyq-crash = {
+          appname = "CopyQ";
+          body = "*进程已崩溃*";
+          skip_display = true;
         };
       };
     };

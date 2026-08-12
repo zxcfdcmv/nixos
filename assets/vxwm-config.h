@@ -76,10 +76,12 @@ static const char *occupiedtags[] = { "1+", "2+", "3+", "4+", "5+", "6+", "7+", 
 
 static const char *const autostart[] = {
 	"sh", "-c", "@hsetroot@ -fill @stylix_image@",
+	"@xdg_desktop@",
 	"@xdg_gtk@",
 	"@xdg_wlr@",
 	"fcitx5 -d",
 	"@dunst@",
+	"copyq",
 	NULL /* must end with NULL */
 };
 #endif
@@ -137,6 +139,9 @@ static const char *dmenucmd[] = {
 
 static const char *termcmd[]  = { "st", NULL };
 
+static const char *copyqtogglecmd[] = { "toggle-copyq", NULL };
+static const char *ksnipcmd[] = { "ksnip", "-r", NULL };
+
 #if ZOOM
 static const char *zoomin[] = { "vcompmgr", "-Z", "+0.15", NULL }; // zoom in
 static const char *zoomout[] = { "vcompmgr", "-Z", "-0.15", NULL }; // zoom out
@@ -145,6 +150,11 @@ static const char *zoomreset[] = { "vcompmgr", "-Z", "1", NULL }; // set zoom to
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+
+  { ControlMask|ALTERNATE_MODKEY, XK_x,      spawn,          {.v = ksnipcmd } },      /* Ctrl+Alt+x = ksnip */
+
+	{ ControlMask,                  XK_grave,  spawn,          {.v = copyqtogglecmd } }, /* Ctrl+` = toggle copyq */
+
   { ALTERNATE_MODKEY,             XK_space,  spawn,          {.v = dmenucmd } },      /* Alt+Space = dmenu */
   { MODKEY,                       XK_t,      spawn,          {.v = termcmd } },      /* Super+t = 终端 */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
