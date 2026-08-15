@@ -4,7 +4,7 @@ let
   fireaxe-version = "0.7.3";
 
   fireaxe-src = pkgs.fetchurl {
-    url = "${userSettings.githubProxy}/github.com/ktxiaok/FireAxe/releases/download/${fireaxe-version}/FireAxe-${fireaxe-version}-linux-x64.zip";
+    url = "https://github.com/ktxiaok/FireAxe/releases/download/${fireaxe-version}/FireAxe-${fireaxe-version}-linux-x64.zip";
     hash = "sha256-5cWnvAPX1+CG761cHokSwN7gywGhcT2OY5n5VIY2Lyk=";
   };
 

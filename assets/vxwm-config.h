@@ -24,7 +24,7 @@ static MAYBE_CONST char *colors[][3] = {
 };
 
 #define CENTER_NEW_FLOATING_WINDOWS 1 // so, basically, it does what it says. (make 0 to turn off)
-#define NEW_FLOATING_WINDOWS_APPEAR_UNDER_CURSOR 0 // so, basically, it does what it says. (make 0 to turn off) 
+#define NEW_FLOATING_WINDOWS_APPEAR_UNDER_CURSOR 0 // so, basically, it does what it says. (make 0 to turn off)
 
 #if GAPS
 static const unsigned int gappx = 5;
@@ -35,7 +35,7 @@ static const int user_bh = 0;
 #endif
 
 #if BAR_PADDING
-static const int top_vertpad = 0;          /* top vertical padding of bar */ 
+static const int top_vertpad = 0;          /* top vertical padding of bar */
 static const int bottom_vertpad = 0;       /* bottom vertical padding of bar */
 static const int left_sidepad = 0;         /* left horizontal padding of bar */
 static const int right_sidepad = 0;        /* right horizontal padding of bar */
@@ -82,6 +82,7 @@ static const char *const autostart[] = {
 	"fcitx5 -d",
 	"@dunst@",
 	"copyq",
+	"snipaste",
 	NULL /* must end with NULL */
 };
 #endif
@@ -131,16 +132,19 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 // static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 
-static const char *dmenucmd[] = { 
-  "sh", "-c", 
-  "compgen -c | sort -u | dmenu --fn 'Maple Mono NF CN:14' --nb '#222222' --nf '#bbbbbb' --sb '#005577' --sf '#eeeeee' | ${SHELL:-/bin/sh}", 
-  NULL 
+static const char *dmenucmd[] = {
+  "sh", "-c",
+  "compgen -c | sort -u | dmenu --fn 'Maple Mono NF CN:14' --nb '#222222' --nf '#bbbbbb' --sb '#005577' --sf '#eeeeee' | ${SHELL:-/bin/sh}",
+  NULL
 };
 
 static const char *termcmd[]  = { "st", NULL };
 
 static const char *copyqtogglecmd[] = { "toggle-copyq", NULL };
-static const char *ksnipcmd[] = { "ksnip", "-r", NULL };
+// static const char *ksnipcmd[] = { "ksnip", "-r", NULL };
+
+static const char *cowyoupcmd[] = { "cowyo-up", NULL };
+static const char *cowyodowncmd[] = { "cowyo-down", NULL };
 
 #if ZOOM
 static const char *zoomin[] = { "vcompmgr", "-Z", "+0.15", NULL }; // zoom in
@@ -151,7 +155,9 @@ static const char *zoomreset[] = { "vcompmgr", "-Z", "1", NULL }; // set zoom to
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 
-  { ControlMask|ALTERNATE_MODKEY, XK_x,      spawn,          {.v = ksnipcmd } },      /* Ctrl+Alt+x = ksnip */
+  // { ControlMask|ALTERNATE_MODKEY, XK_x,      spawn,          {.v = ksnipcmd } },      /* Ctrl+Alt+x = ksnip */
+  { ControlMask|ALTERNATE_MODKEY, XK_c,      spawn,          {.v = cowyoupcmd } },      /* Ctrl+Alt+c = cowyo-up */
+  { ControlMask|ALTERNATE_MODKEY, XK_v,      spawn,          {.v = cowyodowncmd } },      /* Ctrl+Alt+v = cowyo-down */
 
 	{ ControlMask,                  XK_grave,  spawn,          {.v = copyqtogglecmd } }, /* Ctrl+` = toggle copyq */
 
@@ -239,10 +245,10 @@ static const Key keys[] = {
 static const Button buttons[] = {
 	/* click                event mask      button          function        argument */
 #if INFINITE_TAGS
-  { ClkRootWin,           MODKEY|ShiftMask,         Button1,        movecanvasmouse,     {.f = 1.5 } }, 
+  { ClkRootWin,           MODKEY|ShiftMask,         Button1,        movecanvasmouse,     {.f = 1.5 } },
   { ClkClientWin,         MODKEY|ShiftMask,         Button1,        movecanvasmouse,     {.f = 1.5 } },
   { ClkRootWin,           0,                        Button1,        movecanvasmouse,     {.f = 1.5 } },
-  /* .f = 1 is moving multiplier, for example if set to 0.5, canvas will move 2 times slower, if set to 2, canvas will move 2 times faster. 
+  /* .f = 1 is moving multiplier, for example if set to 0.5, canvas will move 2 times slower, if set to 2, canvas will move 2 times faster.
      If you want inverted canvas move then set the value to a negative value. */
 #endif
 #if ZOOM

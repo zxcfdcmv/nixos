@@ -23,7 +23,7 @@ let
   reframework = pkgs.runCommand "reframework-re4" {
     nativeBuildInputs = [ pkgs.unzip ];
     src = pkgs.fetchurl {
-      url = "${userSettings.githubProxy}/https://github.com/zxcfdcmv/nixos/releases/download/re4/REFramework-12-Nightly01215-1770463547.zip";
+      url = "https://github.com/zxcfdcmv/nixos/releases/download/re4/REFramework-12-Nightly01215-1770463547.zip";
       sha256 = "sha256-H7WpEIzN7gdWn4W31V/upK4ZKXhs/45+GvpCdIcG77I=";
     };
   } ''

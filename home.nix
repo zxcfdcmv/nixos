@@ -38,7 +38,7 @@
       # nh需要
       NH_FLAKE = "${userSettings.dotfilesDir}";
     };
-    
+
     packages = with pkgs; [
       # 基础
       ## 命令行工具
@@ -47,6 +47,7 @@
       xwayland-satellite
       wl-clipboard-rs
       nvd nix-output-monitor
+      nil nixd
       openssl
       ## md查看器
       glow
@@ -60,7 +61,8 @@
       ## 网络 nmtui
 
       ## 对比工具
-      diffoscope icdiff
+      # diffoscope icdiff
+      kdiff3
 
       # x11
       dmenu-rs-enable-plugins
@@ -73,7 +75,7 @@
         jdks = [ zulu21 zulu25 ];
       })
       teamspeak6-client
-      localsend
+      localsend croc
       heroic
       ayugram-desktop
       piliplus
@@ -86,10 +88,16 @@
       anki
 
       ## 截图
-      ksnip
+      # ksnip
+      snipaste
       ## 剪切板
-      copyq
+      copyq gnupg
     ];
+
+    file.".snipaste/config.ini" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfilesDir}/assets/snipaste.ini";
+      force = true;
+    };
   };
 
   programs = {
@@ -170,6 +178,6 @@
   };
 
   services = {
-    gnome-keyring.enable = true;   
+    gnome-keyring.enable = true;
   };
 }

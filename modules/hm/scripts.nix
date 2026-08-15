@@ -8,6 +8,7 @@ let
     "game-low"
     "game-high"
     "cdda"
+    "zed_nixos"
   ];
 
   mkDesktop = cmd: pkgs.makeDesktopItem {
@@ -138,6 +139,24 @@ in
           copyq toggle 2>/dev/null
           copyq show
       fi
+    '')
+
+    (writeShellScriptBin "zed_nixos" ''
+      zeditor -n ${userSettings.dotfilesDir}
+    '')
+
+    (writeShellScriptBin "cowyo-up" ''
+      TEXT=$(copyq clipboard)
+      [ -z "$TEXT" ] && exit 1
+
+      echo -n "$TEXT" | curl -s --data-binary @- https://cowyo.com/${userSettings.username}
+    '')
+
+    (writeShellScriptBin "cowyo-down" ''
+      TEXT=$(curl -s https://cowyo.com/${userSettings.username})
+      [ -z "$TEXT" ] && exit 1
+      copyq copy "$TEXT"
+      copyq add "$TEXT"
     '')
   ])
   ++ builtins.map mkDesktop customCommands;  

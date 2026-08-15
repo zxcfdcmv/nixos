@@ -8,8 +8,7 @@
       ./modules/nixos/default.nix
       ./modules/nixos/river.nix
       ./modules/nixos/vxwm.nix
-      # ./modules/nixos/sunshine.nix
-      # ./modules/nixos/proxy.nix
+      ./modules/nixos/sunshine.nix
       ./modules/nixos/dae.nix
       ./modules/nixos/tailscale.nix
       ./modules/nixos/stylix.nix
