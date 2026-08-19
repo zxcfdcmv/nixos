@@ -44,7 +44,7 @@ EOF
 chmod +x ~/.shortcuts/croc-send
 
 # 3. 创建接收脚本（Widget 用）
-cat > ~/.shortcuts/croc-recv << 'EOF'
+cat > ~/.shortcuts/tasks/croc-recv << 'EOF'
 #!/data/data/com.termux/files/usr/bin/bash
 export CROC_SECRET=zxcfdcmv
 mkdir -p /storage/emulated/0/Download/croc

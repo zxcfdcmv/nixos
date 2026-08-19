@@ -16,6 +16,7 @@
     ./modules/hm/fireaxe.nix
     ./modules/hm/mpv.nix
     ./modules/hm/crosshair.nix
+    ./modules/hm/gh.nix
   ];
 
   home = {

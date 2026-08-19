@@ -20,9 +20,6 @@
       kubectl = "sudo -E kubectl";
       my-clean = "cd ${userSettings.dotfilesDir} && nh clean all && nh os boot .";
       kanata = "sudo -E kanata -c";
-
-      croc-s = "CROC_SECRET=${userSettings.username} croc send";
-      croc-r = "CROC_SECRET=${userSettings.username} croc --yes --overwrite --out /home/${userSettings.username}/Downloads/";
     };
   };
 }

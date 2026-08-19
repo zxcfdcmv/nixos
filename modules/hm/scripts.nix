@@ -158,6 +158,23 @@ in
       copyq copy "$TEXT"
       copyq add "$TEXT"
     '')
+
+    (writeShellScriptBin "croc-send" ''
+      export CROC_SECRET=${userSettings.username}
+
+      # FILE=$(find ~/{Downloads,Documents,Pictures} -maxdepth 3 -type f 2>/dev/null | fzf --prompt="选择文件 > ")
+      FILE=$(fd --type f --max-depth 3 . ~/Downloads ~/Documents ~/Pictures 2>/dev/null | fzf --prompt="选择文件 > ")
+
+      if [ -n "$FILE" ]; then
+          croc send "$FILE"
+      fi
+    '')
+
+    (writeShellScriptBin "croc-recv" ''
+      export CROC_SECRET=${userSettings.username}
+      mkdir -p ~/Downloads/croc
+      croc --yes --overwrite --out ~/Downloads/croc
+    '')
   ])
   ++ builtins.map mkDesktop customCommands;  
 }

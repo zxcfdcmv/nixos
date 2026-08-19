@@ -8,7 +8,10 @@ global {
 }
 
 subscription {
-  'https://gh-proxy.org/raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt'
+  'https://d.zrfme.com/vless-base64'
+  # 'https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt'
+  # 'https://gh-proxy.org/https://raw.githubusercontent.com/free-nodes/v2rayfree/main/sub'
+  # 'https://gh-proxy.org/raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt'
   # 'https://gh-proxy.org/raw.githubusercontent.com/snakem982/proxypool/main/source/v2ray-2.txt'
 }
 
@@ -32,12 +35,13 @@ dns {
 
 group {
   proxy {
-    # policy: min_moving_avg
-    policy: fixed(0)
+    policy: min_moving_avg
   }
 }
 
 routing {
+  pname(dae) -> must_direct
+
   pname(NetworkManager, systemd, dhclient) -> direct
   domain(geosite:cn) -> direct
   domain(keyword:gh-proxy) -> direct
