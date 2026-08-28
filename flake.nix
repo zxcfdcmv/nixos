@@ -24,6 +24,11 @@
       url = "git+https://gh-proxy.org/github.com/different-name/steam-config-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    obsidian-extensions = {
+      url = "git+https://gh-proxy.org/github.com/karaolidis/nix-obsidian-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
@@ -48,10 +53,11 @@
       ${userSettings.hostName} = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit (inputs) stylix nix-flatpak nix-cachyos-kernel;
+          inherit (inputs) stylix nix-flatpak nix-cachyos-kernel obsidian-extensions;
           inherit userSettings;
         };
         modules = [
+          { nixpkgs.overlays = [ inputs.obsidian-extensions.overlays.default ]; }
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {

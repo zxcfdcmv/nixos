@@ -17,6 +17,7 @@
     ./modules/hm/mpv.nix
     ./modules/hm/crosshair.nix
     ./modules/hm/gh.nix
+    ./modules/hm/obsidian.nix
   ];
 
   home = {

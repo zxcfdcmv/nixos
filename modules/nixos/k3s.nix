@@ -4,9 +4,9 @@
     enable = true;
     role = "server";
     extraFlags = toString [
-      "--disable traefik"
-      "--disable servicelb"
-      # "--system-default-registry registry.cn-hangzhou.aliyuncs.com"
+      "--disable" "traefik"
+      "--disable" "servicelb"
+      "--system-default-registry" "registry.cn-hangzhou.aliyuncs.com"
     ];
   };
 
@@ -16,27 +16,41 @@
       docker.io:
         endpoint:
           - "https://docker.m.daocloud.io"
+          - "https://docker.io"
       quay.io:
         endpoint:
           - "https://quay.m.daocloud.io"
+          - "https://quay.io"
       registry.k8s.io:
         endpoint:
           - "https://k8s.m.daocloud.io"
+          - "https://registry.k8s.io"
       gcr.io:
         endpoint:
           - "https://gcr.m.daocloud.io"
-      k8s.gcr.io:
-        endpoint:
-          - "https://k8s-gcr.m.daocloud.io"
+          - "https://gcr.io"
       ghcr.io:
         endpoint:
           - "https://ghcr.m.daocloud.io"
+          - "https://ghcr.io"
   '';
 
   # 防火墙配置
-  networking.firewall = {
-    allowedTCPPorts = [ 6443 2379 2380 10250 10251 10252 2376 ];
-    allowedUDPPorts = [ 8472 51820 51821 ];
+  networking = {
+    hosts = {
+      "127.0.0.10" = [
+        "jenkins.local"
+        "argocd.local"
+        "harbor.local"
+        "nginx.local"
+        "prometheus.local"
+        "grafana.local"
+      ];     
+    };
+    firewall = {
+      allowedTCPPorts = [ 6443 2379 2380 10250 10251 10252 2376 ];
+      allowedUDPPorts = [ 8472 51820 51821 ];
+    };
   };
 
   systemd.tmpfiles.rules = [

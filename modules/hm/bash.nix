@@ -15,6 +15,7 @@
       ls   = "eza --group-directories-first --git";
       ll   = "eza --group-directories-first --git --long --icons=auto";
       l    = "eza --group-directories-first --git --long --icons=auto";
+      tree = "eza --group-directories-first --git --icons=auto -T";
       du   = "dust";
 
       kubectl = "sudo -E kubectl";

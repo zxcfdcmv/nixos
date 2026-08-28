@@ -2,7 +2,7 @@
 let
   flypy-src = pkgs.fetchzip {
     url = "${userSettings.githubProxy}/https://github.com/cubercsl/rime-flypy/archive/refs/heads/master.tar.gz";
-    sha256 = "sha256-Lw54pNXUzsVv9OFp7c5Bf+pCCA0DWTslSTrN/raX9CM=";
+    sha256 = "sha256-93LIHP1Ho/Jo2OOS0Dkmu+IFOJcUAFVxiKs3e5BxEK8=";
   };
 
   cleanedFlypySrc = pkgs.lib.cleanSourceWith {

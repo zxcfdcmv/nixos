@@ -69,8 +69,8 @@ let
   gameDir = ".local/share/Steam/steamapps/common/RESIDENT EVIL 4  BIOHAZARD RE4";
 in
 {
-  programs.steam.config.apps.resident-evil-4-remake = {
-    id = 2050650;
+  programs.steam.config.apps."2050650" = {
+    name = "resident-evil-4-remake";
     args = [
       "WINEDLLOVERRIDES=\"dinput8.dll=n,b\""
     ];

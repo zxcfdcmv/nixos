@@ -37,21 +37,21 @@ in
       onSteamRunning = "close";
       defaultCompatTool = "GE-Proton";
       apps = {
-        deep-rock-galactic = {
-          id = 548430;
+        "548430" = {
+          name = "deep-rock-galactic";
           args = [
             "-disablemodding"
           ];
         };
-        project-zomboid = {
-          id = 108600;
+        "108600" = {
+          name = "project-zomboid";
           args = [
             "-Xms6G"
             "-Xmx6G"
           ];
         };
-        left-4-dead-2 = {
-          id = 550;
+        "550" = {
+          name = "left-4-dead-2";
           wrappers = [
             (lib.getExe' pkgs.gamemode "gamemoderun")
           ];

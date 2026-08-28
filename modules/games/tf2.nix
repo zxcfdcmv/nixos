@@ -113,8 +113,8 @@ in
 {
   programs.steam.config = {
     apps = {
-      team-fortress-2 = {
-        id = 440;
+      "440" = {
+        name = "team-fortress-2";
         wrappers = [
           (lib.getExe' pkgs.gamemode "gamemoderun")
         ];
