@@ -1,3 +1,4 @@
+# modules/nixos/amd_nvidia.nix
 { config, lib, pkgs, ... }:
 {
   boot.kernelParams = [

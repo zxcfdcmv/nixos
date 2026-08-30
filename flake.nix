@@ -1,3 +1,4 @@
+# flake.nix
 {
   description = "NixOS configuration";
   inputs = {
@@ -29,6 +30,14 @@
       url = "git+https://gh-proxy.org/github.com/karaolidis/nix-obsidian-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    driftwm = {
+      url = "git+https://gh-proxy.org/github.com/malbiruk/driftwm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    mark-shot = {
+      url = "git+https://gh-proxy.org/github.com/jswysnemc/mark-shot";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
@@ -53,7 +62,7 @@
       ${userSettings.hostName} = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit (inputs) stylix nix-flatpak nix-cachyos-kernel obsidian-extensions;
+          inherit (inputs) stylix nix-flatpak nix-cachyos-kernel obsidian-extensions driftwm;
           inherit userSettings;
         };
         modules = [
@@ -71,7 +80,7 @@
                 ];
               };
               extraSpecialArgs = {
-                inherit (inputs) steam-config-nix;
+                inherit (inputs) steam-config-nix mark-shot;
                 inherit userSettings;
               };
             };

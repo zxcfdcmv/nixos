@@ -28,6 +28,7 @@ in
 
         pad = "5x5 center";
         selection-target = "both";
+        initial-window-size-chars = "80x24";
       };
       mouse = { hide-when-typing = "yes";
       };

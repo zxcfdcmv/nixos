@@ -1,4 +1,5 @@
-{ config, pkgs, lib, userSettings, ... }:
+# home.nix
+{ config, pkgs, lib, userSettings, mark-shot, ... }:
 {
   imports = [
     ./modules/hm/bash.nix
@@ -91,7 +92,8 @@
 
       ## 截图
       # ksnip
-      snipaste
+      snipaste # x11
+      mark-shot.packages.${pkgs.stdenv.hostPlatform.system}.default # wayland
       ## 剪切板
       copyq gnupg
     ];

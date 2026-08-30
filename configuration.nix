@@ -6,7 +6,7 @@
       ./modules/nixos/optimize.nix
       ./modules/nixos/amd_nvidia.nix
       ./modules/nixos/default.nix
-      ./modules/nixos/river.nix
+      ./modules/nixos/driftwm.nix
       ./modules/nixos/vxwm.nix
       ./modules/nixos/sunshine.nix
       ./modules/nixos/dae.nix

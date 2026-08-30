@@ -43,6 +43,10 @@ routing {
   pname(dae) -> must_direct
 
   pname(NetworkManager, systemd, dhclient) -> direct
+
+  domain(getcroc.com) -> direct
+  domain(cowyo.com) -> direct
+
   domain(geosite:cn) -> direct
   domain(keyword:gh-proxy) -> direct
   domain(keyword:steamstatic) -> direct

@@ -98,7 +98,7 @@
       EDITOR = "hx";
       VISUAL = "hx";
       GTK_CSD = "0";
-      GTK_IM_MODULE = "fcitx";
+      # GTK_IM_MODULE = "fcitx";
       QT_IM_MODULE = "fcitx";
       XMODIFIERS = "@im=fcitx";
       SDL_IM_MODULE = "fcitx";

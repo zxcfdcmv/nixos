@@ -1,3 +1,4 @@
+# modules/hm/scripts.nix
 { config, pkgs, userSettings, ... }:
 let
   customCommands = [
@@ -174,6 +175,37 @@ in
       export CROC_SECRET=${userSettings.username}
       mkdir -p ~/Downloads/croc
       croc --yes --overwrite --out ~/Downloads/croc
+    '')
+
+    (pkgs.writeShellScriptBin "gitp" ''
+      #!/bin/bash
+      # 显式指定需要的依赖路径，防止 NixOS 找不到命令
+      GIT="${pkgs.git}/bin/git"
+      DATE="${pkgs.coreutils}/bin/date"
+
+      # 1. 检查是否有未追踪或修改的文件
+      if [ -z "$($GIT status --porcelain)" ]; then
+          echo "✨ 没有发现任何修改，无需推送！"
+          exit 0
+      fi
+
+      # 2. 获取当前时间戳
+      current_time=$($DATE "+%Y-%m-%d %H:%M:%S")
+
+      # 3. 判断自定义 commit 信息
+      if [ -z "$1" ]; then
+          commit_msg="Auto-sync: ''${current_time}" # 注意：Nix 字符串里 $ 符号前如果是双单引号表示转义
+      else
+          commit_msg="$1"
+      fi
+
+      # 4. 执行一键三连
+      echo "🚀 开始自动推送..."
+      $GIT add .
+      $GIT commit -m "''${commit_msg}"
+      $GIT push
+
+      echo "🎉 推送成功！提交信息: [''${commit_msg}]"
     '')
   ])
   ++ builtins.map mkDesktop customCommands;  
