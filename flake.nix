@@ -38,6 +38,10 @@
       url = "git+https://gh-proxy.org/github.com/jswysnemc/mark-shot";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helium = {
+      url = "git+https://gh-proxy.org/github.com/oxcl/nix-flake-helium-browser";     
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
@@ -62,7 +66,7 @@
       ${userSettings.hostName} = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit (inputs) stylix nix-flatpak nix-cachyos-kernel obsidian-extensions driftwm;
+          inherit (inputs) stylix nix-flatpak nix-cachyos-kernel obsidian-extensions driftwm helium;
           inherit userSettings;
         };
         modules = [

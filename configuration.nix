@@ -16,6 +16,7 @@
       ./modules/nixos/flatpak.nix
       ./modules/nixos/k3s.nix
       ./modules/nixos/nh.nix
+      ./modules/nixos/edge.nix
     ];
 
   nixpkgs = {

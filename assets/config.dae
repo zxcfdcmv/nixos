@@ -46,6 +46,7 @@ routing {
 
   domain(getcroc.com) -> direct
   domain(cowyo.com) -> direct
+  domain(cn.bing.com) -> direct
 
   domain(geosite:cn) -> direct
   domain(keyword:gh-proxy) -> direct

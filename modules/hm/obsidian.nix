@@ -10,13 +10,15 @@
         alwaysUpdateLinks = true;
         # spellcheck = true;
         tabSize = 2;
+        useTab = false;
         # defaultViewMode = "source"; # 编辑模式
         defaultViewMode = "preview"; # 阅读模式
         livePreview = false; # 源码模式
       };
       appearance.theme = "system";
       themes = with pkgs.obsidianThemes; [
-        obsidian-gruvbox
+        # obsidian-gruvbox
+        minimal
       ];
       communityPlugins = with pkgs.obsidianPlugins; [
         {
@@ -27,6 +29,8 @@
             commitMessage = "vault backup: {{date}}";
           };
         }
+        dataview
+        dataview-serializer
         notepix
         # {
         #   pkg = notepix;
