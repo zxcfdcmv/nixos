@@ -14,7 +14,7 @@ let
     xdg_gtk = "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk";
   };
 
-  driftwmPkg = driftwm.packages.${pkgs.system}.default;
+  driftwmPkg = driftwm.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
   environment.systemPackages = [ driftwmPkg ];
   
