@@ -1,3 +1,4 @@
+# modules/nixos/stylix.nix
 { pkgs, stylix, ... }:
 {
   imports = [

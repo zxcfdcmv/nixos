@@ -177,35 +177,80 @@ in
       croc --yes --overwrite --out ~/Downloads/croc
     '')
 
-    (pkgs.writeShellScriptBin "gitp" ''
+    (writeShellScriptBin "gitp" ''
       #!/bin/bash
-      # 显式指定需要的依赖路径，防止 NixOS 找不到命令
       GIT="${pkgs.git}/bin/git"
       DATE="${pkgs.coreutils}/bin/date"
 
-      # 1. 检查是否有未追踪或修改的文件
-      if [ -z "$($GIT status --porcelain)" ]; then
-          echo "✨ 没有发现任何修改，无需推送！"
+      # 1. 检查工作区是否有未提交的修改
+      HAS_CHANGES=false
+      if [ -n "$($GIT status --porcelain)" ]; then
+          HAS_CHANGES=true
+      fi
+
+      # 2. 检查本地是否有尚未推送到远程的 Commit
+      # (获取当前分支和远程追踪分支的差异，如果有输出，说明有未 push 的提交)
+      HAS_UNPUSHED=false
+      if $GIT rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then
+          if [ -n "$($GIT log @{u}..HEAD --oneline)" ]; then
+              HAS_UNPUSHED=true
+          fi
+      else
+          # 如果根本没有建立远程追踪分支，且工作区是干净的，就认为有需要推送（或让 git push 报错提示）
+          if [ "$HAS_CHANGES" = "false" ]; then
+              HAS_UNPUSHED=true
+          fi
+      fi
+
+      # 3. 如果既没有新修改，也没有未推送的 commit，才真正拦截
+      if [ "$HAS_CHANGES" = "false" ] && [ "$HAS_UNPUSHED" = "false" ]; then
+          echo "✨ 没有发现任何新修改或未推送的提交，无需操作！"
           exit 0
       fi
 
-      # 2. 获取当前时间戳
-      current_time=$($DATE "+%Y-%m-%d %H:%M:%S")
+      # 4. 只有在有新修改时，才进行 add 和 commit
+      if [ "$HAS_CHANGES" = "true" ]; then
+          current_time=$($DATE "+%Y-%m-%d %H:%M:%S")
+          if [ -z "$1" ]; then
+              commit_msg="Auto-sync: ''${current_time}"
+          else
+              commit_msg="$1"
+          fi
 
-      # 3. 判断自定义 commit 信息
-      if [ -z "$1" ]; then
-          commit_msg="Auto-sync: ''${current_time}" # 注意：Nix 字符串里 $ 符号前如果是双单引号表示转义
-      else
-          commit_msg="$1"
+          echo "📝 发现新修改，正在提交..."
+          $GIT add .
+          if ! $GIT commit -m "''${commit_msg}"; then
+              echo "❌ Commit 失败！"
+              exit 1
+          fi
       fi
 
-      # 4. 执行一键三连
+      # 5. 执行推送，并检查推送结果
       echo "🚀 开始自动推送..."
-      $GIT add .
-      $GIT commit -m "''${commit_msg}"
-      $GIT push
+      if $GIT push; then
+          echo "🎉 推送成功！"
+      else
+          echo "❌ 推送失败！请检查网络或执行 git pull 解决冲突。"
+          exit 1
+      fi
+    '')
 
-      echo "🎉 推送成功！提交信息: [''${commit_msg}]"
+    (writeShellScriptBin "play_with_mpv" ''
+      ${pkgs.wtype}/bin/wtype -k ctrl -k alt -k shift
+
+      ${pkgs.wtype}/bin/wtype -M ctrl -k l -m ctrl
+      sleep 0.1
+
+      ${pkgs.wtype}/bin/wtype -M ctrl -k c -m ctrl
+      sleep 0.15
+
+      ${pkgs.wtype}/bin/wtype -M ctrl -k w -m ctrl
+
+      URL=$(${pkgs.wl-clipboard}/bin/wl-paste)
+
+      if [[ "$URL" == http* ]]; then
+         mpv --force-window=yes --terminal=no "$URL" &
+      fi
     '')
   ])
   ++ builtins.map mkDesktop customCommands;  

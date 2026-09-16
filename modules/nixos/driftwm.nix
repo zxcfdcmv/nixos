@@ -2,8 +2,8 @@
 { config, pkgs, userSettings, driftwm, ... }:
 
 let
-  finalDriftConfig = pkgs.replaceVars ../../assets/config/driftwm-config.toml {
-    wallpaper = "${userSettings.dotfilesDir}/assets/config/driftwm-boho_dawn.glsl";
+  finalDriftConfig = pkgs.replaceVars ../../assets/config/driftwm/driftwm-config.toml {
+    wallpaper = "${userSettings.dotfilesDir}/assets/config/driftwm/driftwm-boho_dawn.glsl";
     footserver = "${pkgs.foot}/bin/foot";
     footclient = "${pkgs.foot}/bin/footclient";
     mako = "${pkgs.mako}/bin/mako";

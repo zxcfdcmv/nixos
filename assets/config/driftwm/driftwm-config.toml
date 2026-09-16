@@ -136,8 +136,8 @@ autostart = [
 # options = ""               # XKB options (e.g., "grp:win_space_toggle" for Super+Space layout switch)
                              #   grp:alt_shift_toggle/grp:ctrl_shift_toggle break those chord bindings — use a tap binding (see [keybindings]) instead
 # model = ""                 # XKB model (e.g., "pc105")
-repeat_rate = 45           # keys/sec
-# repeat_delay = 200         # ms before repeat starts
+repeat_rate = 35           # keys/sec
+repeat_delay = 300         # ms before repeat starts
 # layout_independent = true  # match bindings by physical key position across layouts
 # num_lock = true            # num lock state on startup
 # caps_lock = false          # caps lock state on startup
@@ -421,8 +421,10 @@ cache_shader = true
 # #
 # # Directions: up, down, left, right, up-left, up-right, down-left, down-right
 "ctrl+alt+x" = "spawn mark-shot"
+"ctrl+alt+a" = "spawn mark-shot --fullscreen"
 "ctrl+alt+c" = "spawn cowyo-up"
 "ctrl+alt+v" = "spawn cowyo-down"
+"ctrl+alt+d" = "spawn play_with_mpv"
 "ctrl+grave" = "spawn copyq show"
 "mod+return" = "none"   # $TERMINAL, else first of: foot, alacritty, ptyxis, kitty, wezterm, gnome-terminal, konsole
 "mod+t" = "exec @footclient@" 

@@ -15,6 +15,7 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      wireplumber.enable = true;
     };
     upower.enable = true;
     gnome.gnome-keyring.enable = true;

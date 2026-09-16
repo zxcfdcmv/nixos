@@ -1,6 +1,7 @@
+# modules/nixos/dae.nix
 { config, lib, pkgs, userSettings, ... }:
 let
-  liveConfig = "${userSettings.dotfilesDir}/assets/config.dae";
+  liveConfig = "${userSettings.dotfilesDir}/assets/config/dae/config.dae";
 in
 {
   services.dae = {

@@ -98,6 +98,7 @@
       enable = true;
       wheelNeedsPassword = false;
     };
+    rtkit.enable = true;
   };
 
   system.stateVersion = "25.11";

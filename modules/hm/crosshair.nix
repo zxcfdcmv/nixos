@@ -26,7 +26,43 @@ let
       license = licenses.mit;
     };
   };
+
+  wayland-crosshair = pkgs.stdenv.mkDerivation rec {
+    pname = "wayland-crosshair";
+    version = "master";
+
+    src = pkgs.fetchurl {
+      url = "https://github.com/Divvv/wayland-crosshair/archive/refs/heads/master.zip";
+      sha256 = "sha256-ZghgGY5vSnjxr9StQxn/VqPOaEnHn9AONHSmyXt+gdk="; 
+    };
+
+    nativeBuildInputs = [ pkgs.pkg-config pkgs.unzip ];
+
+    buildInputs = [ 
+      pkgs.wayland 
+      pkgs.wayland-protocols 
+      pkgs.libxkbcommon 
+      pkgs.cairo 
+      pkgs.gtk3 
+      pkgs.gtk-layer-shell 
+      pkgs.wlsunset
+    ];
+
+    buildPhase = ''
+      make CFLAGS="$(pkg-config --cflags gtk+-3.0 gtk-layer-shell-0) -O2" \
+           LIBS="$(pkg-config --libs gtk+-3.0 gtk-layer-shell-0)"
+    '';
+
+    # 规范安装路径，并将 crosshair 改名为 wayland-crosshair
+    installPhase = ''
+      mkdir -p $out/bin
+      cp crosshair $out/bin/wayland-crosshair
+    '';
+  };
 in
 {
-  home.packages = [ gocrosshair ];
+  home.packages = [
+    gocrosshair
+    wayland-crosshair
+  ];
 }

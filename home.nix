@@ -46,7 +46,7 @@
       # 基础
       ## 命令行工具
       ripgrep bat eza fd dust
-      p7zip unzip unrar poppler imagemagick ffmpegthumbnailer
+      p7zip unzip unrar jq poppler imagemagick ffmpegthumbnailer
       xwayland-satellite
       wl-clipboard-rs
       nvd nix-output-monitor
@@ -85,7 +85,7 @@
       ## 键盘映射
       kanata
       # wemeet
-      # bilibili-tui
+      bilibili-tui
       ## office
       wpsoffice-cn
       anki

@@ -1,3 +1,4 @@
+# modules/hm/obsidian.nix
 { config, pkgs, lib, userSettings, ... }:
 {
   programs.obsidian = {
@@ -21,6 +22,8 @@
         minimal
       ];
       communityPlugins = with pkgs.obsidianPlugins; [
+      # 查看有哪些插件
+      # nix eval --json github:karaolidis/nix-obsidian-extensions#legacyPackages.x86_64-linux.obsidianPlugins --apply builtins.attrNames | jq -r '.[]' &> ~/obsidian_plugins.txt
         {
           pkg = obsidian-git;
           settings = {
@@ -32,40 +35,6 @@
         dataview
         dataview-serializer
         notepix
-        # {
-        #   pkg = notepix;
-        #   settings = {
-        #     githubUsername = "${userSettings.username}";
-        #     repositoryName = "notes";
-        #     repositoryVisibility = "Public";  # 或 "Private"
-        #     branchName = "images";
-        #     folderPath = "assets/";
-        #     deleteLocalFile = true;
-        #     enableEncryption = true;
-        #   };
-        # }
-        lazy-plugins
-        {
-          pkg = omnisearch;
-          settings = {
-            highlightMatches = true;
-            ignoreDiacritics = true;
-            showExcerpt = true;
-            maxResults = 50;
-    
-            PDFIndexing = true;
-            imagesIndexing = false;
-            canvasIndexing = true;
-    
-            saveIndexToCache = true;
-            refreshInterval = 30;
-    
-            HTTPserver = {
-              enabled = false;
-              port = 51361;
-            };
-          };
-        }
       ];
     }; 
   };

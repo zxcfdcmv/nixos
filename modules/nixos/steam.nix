@@ -80,6 +80,21 @@ in
             "-nohltv"
           ];
         };
+        "730" = {
+          name = "Counter-Strike 2";
+          wrappers = [
+            (lib.getExe' pkgs.gamemode "gamemoderun")
+          ];
+          args = [
+            "-novid"
+            "-nojoy"
+            "-console"
+            "-high"
+            "+fps_max" "400"
+            "+engine_low_latency_sleep_after_client_tick" "true"
+            "+exec" "autoexec.cfg"
+          ];
+        };
       };
     };
 
@@ -92,6 +107,9 @@ in
         source = "${witchfire}";
         recursive = true;
       };
+
+      # cs2
+      ".local/share/Steam/steamapps/common/Counter-Strike Global Offensive/game/csgo/cfg/autoexec.cfg".source = ../../assets/games/cs2/autoexec.cfg;
     };
   };
 }

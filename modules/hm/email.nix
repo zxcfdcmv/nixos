@@ -1,3 +1,4 @@
+# modules/hm/email.nix
 { config, pkgs, userSettings, ... }:
 
 let
