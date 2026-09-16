@@ -83,6 +83,11 @@ async function fetchHandler(e) {
     const req = e.request
     const urlStr = req.url
     const urlObj = new URL(urlStr)
+
+    if (urlObj.pathname === '/' || urlObj.pathname === '') {
+        return makeRes('🚀 Your Private GitHub Proxy on Cloudflare Pages is Running Successfully!\n\nPlease append GitHub URL to use.', 200, { 'content-type': 'text/plain;charset=UTF-8' })
+    }
+
     let path = urlObj.searchParams.get('q')
     if (path) {
         return Response.redirect('https://' + urlObj.host + PREFIX + path, 301)
