@@ -138,8 +138,8 @@ autostart = [
 # options = ""               # XKB options (e.g., "grp:win_space_toggle" for Super+Space layout switch)
                              #   grp:alt_shift_toggle/grp:ctrl_shift_toggle break those chord bindings — use a tap binding (see [keybindings]) instead
 # model = ""                 # XKB model (e.g., "pc105")
-repeat_rate = 35           # keys/sec
-repeat_delay = 300         # ms before repeat starts
+repeat_rate = 30           # keys/sec
+repeat_delay = 500         # ms before repeat starts
 # layout_independent = true  # match bindings by physical key position across layouts
 # num_lock = true            # num lock state on startup
 # caps_lock = false          # caps lock state on startup
