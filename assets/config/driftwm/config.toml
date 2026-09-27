@@ -75,12 +75,14 @@ window_placement = "auto"
 # # Commands to run at startup (after WAYLAND_DISPLAY is set).
 # # Each entry is passed to sh -c, so full shell syntax works (pipes, &&, env vars).
 autostart = [
+  "@bg_rotator@",
   "@xdg_desktop@",
   "@xdg_wlr@",
   "@xdg_gtk@",
   "@footserver@ --server",
   "fcitx5 -d",
   "copyq",
+  "gopeed",
   # "@mako@",
 ]
 # #
@@ -360,7 +362,7 @@ cache_shader = true
 # # output frame. Slow-moving shaders look identical well below the refresh
 # # rate; between ticks the compositor reuses the composited result instead of
 # # re-evaluating the shader, so this directly scales the background's GPU cost.
-# animate_fps = 0
+animate_fps = 60
 
 [bindings]
 # # Opt out of built-in default bindings by category, for a clean slate.
@@ -425,6 +427,7 @@ cache_shader = true
 "ctrl+alt+c" = "spawn cowyo-up"
 "ctrl+alt+v" = "spawn cowyo-down"
 "ctrl+alt+d" = "spawn play_with_mpv"
+"alt+grave" = "spawn toggle-gopeed"
 "ctrl+grave" = "spawn copyq show"
 "mod+return" = "none"   # $TERMINAL, else first of: foot, alacritty, ptyxis, kitty, wezterm, gnome-terminal, konsole
 "mod+t" = "exec @footclient@" 
@@ -472,6 +475,7 @@ cache_shader = true
 # "mod+alt+right" = "send-to-output right"
 # "mod+l" = "spawn swaylock -f -c 000000 -kl"
 "mod+shift+q" = "quit"
+"mod+shift+r" = "reload-config"
 # "XF86MonBrightnessUp" = "spawn brightnessctl set +5%"
 # "XF86MonBrightnessDown" = "spawn brightnessctl set 5%-"
 # "XF86AudioPlay" = "spawn playerctl play-pause"
@@ -982,3 +986,11 @@ decoration_fit_snapped = true
 # widget = true
 # pinned_to_screen = true
 # position = [0, 200] 
+ 
+[[window_rules]]
+app_id = "steam_app_730"
+title = "Counter-Strike 2"
+pass_keys = true      # 核心：命令 driftwm 彻底放行所有按键鼠标事件，不作任何干预
+pass_mouse = true
+fullscreen = true     # 让 WM 知道这是全屏，挂起所有的画布拖拽手势
+opacity = 1.0

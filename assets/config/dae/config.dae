@@ -3,7 +3,7 @@ global {
   lan_interface: auto
   wan_interface: auto
   log_level: warn
-  dial_mode: ip
+  dial_mode: domain+
   check_interval: 30s
   allow_insecure: true
 }
@@ -14,9 +14,6 @@ subscription {
   # 'https://gh-proxy.org/https://raw.githubusercontent.com/free-nodes/v2rayfree/main/sub'
   # 'https://gh-proxy.org/raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt'
   # 'https://gh-proxy.org/raw.githubusercontent.com/snakem982/proxypool/main/source/v2ray-2.txt'
-
-  # all: 'https://gh-proxy.org/github.com/zxcfdcmv/notes/releases/download/latest/all_nodes.txt'
-  # g443: 'https://gh-proxy.org/github.com/zxcfdcmv/notes/releases/download/latest/clean_443_nodes.txt'
 }
 
 dns {
@@ -39,26 +36,19 @@ dns {
 
 group {
   proxy {
-    # filter: subtag(all)
     policy: min_moving_avg
   }
-
-  # google_proxy {
-  #   filter: subtag(g443)
-  #   policy: min_moving_avg
-  # }
 }
 
 routing {
-  pname(dae) -> must_direct
+  pname(dae, cloudflare-warp) -> must_direct
 
   pname(NetworkManager, systemd, dhclient) -> direct
-
-  # domain(geosite:google) -> google_proxy
 
   domain(getcroc.com) -> direct
   domain(cowyo.com) -> direct
   domain(cn.bing.com) -> direct
+  domain(pages.dev) -> direct
 
   domain(geosite:cn) -> direct
   domain(keyword:gh-proxy) -> direct
@@ -67,7 +57,7 @@ routing {
   dip(geoip:cn) -> direct
 
   domain(keyword:steamcommunity,steampowered) -> proxy
-  domain(geosite:telegram,geosite:github) -> proxy
+  domain(geosite:telegram,geosite:google,geosite:github) -> proxy
 
   fallback: proxy
 }

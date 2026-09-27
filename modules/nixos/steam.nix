@@ -85,12 +85,17 @@ in
           wrappers = [
             (lib.getExe' pkgs.gamemode "gamemoderun")
           ];
+          env = {
+            "SDL_VIDEO_DRIVER" = "wayland";
+          };
           args = [
             "-novid"
             "-nojoy"
             "-console"
             "-high"
-            "+fps_max" "400"
+            "-vulkan"
+            "-vblank_mode" "0"
+            "+fps_max" "300"
             "+engine_low_latency_sleep_after_client_tick" "true"
             "+exec" "autoexec.cfg"
           ];
@@ -110,6 +115,9 @@ in
 
       # cs2
       ".local/share/Steam/steamapps/common/Counter-Strike Global Offensive/game/csgo/cfg/autoexec.cfg".source = ../../assets/games/cs2/autoexec.cfg;
+      ".local/share/Steam/steamapps/common/Counter-Strike Global Offensive/game/csgo/cfg/practicemode.cfg".source = ../../assets/games/cs2/practicemode.cfg;
+      ".local/share/Steam/steamapps/common/Counter-Strike Global Offensive/game/csgo/cfg/practicemode_off.cfg".source = ../../assets/games/cs2/practicemode_off.cfg;
+      ".local/share/Steam/steamapps/common/Counter-Strike Global Offensive/game/csgo/cfg/jumpthrow.cfg".source = ../../assets/games/cs2/jumpthrow.cfg;
     };
   };
 }

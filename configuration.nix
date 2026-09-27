@@ -9,11 +9,11 @@
       ./modules/nixos/driftwm.nix
       ./modules/nixos/vxwm.nix
       ./modules/nixos/sunshine.nix
-      ./modules/nixos/dae.nix
-      ./modules/nixos/tailscale.nix
+      ./modules/nixos/proxy.nix
+      # ./modules/nixos/tailscale.nix
       ./modules/nixos/stylix.nix
       ./modules/nixos/steam.nix
-      ./modules/nixos/flatpak.nix
+      # ./modules/nixos/flatpak.nix
       ./modules/nixos/k3s.nix
       ./modules/nixos/nh.nix
       ./modules/nixos/edge.nix

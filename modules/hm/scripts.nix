@@ -4,6 +4,7 @@ let
   customCommands = [
     "toggle-fcitx"
     "toggle-dae"
+    "toggle-warp"
     "game-cs2-cn"
     "game-cs2-global"
     "game-low"
@@ -73,6 +74,9 @@ in
     # toggle-dae - 系统服务
     (mkSystemToggleService "toggle-dae" "dae")
 
+    # toggle-warp - 系统服务
+    (mkSystemToggleService "toggle-warp" "cloudflare-warp")
+
     (writeShellScriptBin "rust-project-gui" ''
       exec nix-shell ~/nixos/modules/project/rust-gui.nix
     '') 
@@ -98,6 +102,12 @@ in
     '')
 
     (writeShellScriptBin "my-switch" ''
+      cd ${userSettings.dotfilesDir}
+      git add .
+      nh os switch .
+    '') 
+
+    (writeShellScriptBin "my-switch-up" ''
       cd ${userSettings.dotfilesDir}
       git add .
       nh os switch . --update
@@ -142,6 +152,14 @@ in
       fi
     '')
 
+    (writeShellScriptBin "toggle-gopeed" ''
+      if driftwm msg state | rg -q '#[0-9]+ gopeed'; then
+          driftwm msg close gopeed
+      else
+          gopeed
+      fi
+    '')
+
     (writeShellScriptBin "zed_nixos" ''
       zeditor -n ${userSettings.dotfilesDir}
     '')
@@ -157,6 +175,20 @@ in
       TEXT=$(curl -s https://cowyo.com/${userSettings.username})
       [ -z "$TEXT" ] && exit 1
       copyq copy "$TEXT"
+      copyq add "$TEXT"
+    '')
+
+    (writeShellScriptBin "my-copy" ''
+      TEXT=$(copyq clipboard)
+      [ -n "$TEXT" ] && echo -n "$TEXT" | curl -s --data-binary @- https://paste-6bw.pages.dev/${userSettings.username}
+    '')
+
+    (writeShellScriptBin "my-paste" ''
+      TEXT=$(curl -s -f https://paste-6bw.pages.dev/${userSettings.username})
+      [ -z "$TEXT" ] && exit 0
+
+      copyq copy "$TEXT"
+      copyq copy text/plain "$TEXT" && copyq select 0
       copyq add "$TEXT"
     '')
 

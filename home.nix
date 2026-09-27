@@ -96,6 +96,7 @@
       mark-shot.packages.${pkgs.stdenv.hostPlatform.system}.default # wayland
       ## 剪切板
       copyq gnupg
+      gopeed
     ];
 
     file.".snipaste/config.ini" = {
