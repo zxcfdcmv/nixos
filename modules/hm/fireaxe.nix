@@ -20,7 +20,7 @@ let
       --run 'cd "$HOME/.local/share/fireaxe"'
   '';
 
-  configRoot = "/home/${userSettings.username}/nixos/assets/l4d2";
+  configRoot = "/home/${userSettings.username}/nixos/assets/games/l4d2";
 
 in {
   home.packages = [ fireaxe ];

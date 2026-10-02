@@ -46,8 +46,7 @@ in
         "108600" = {
           name = "project-zomboid";
           args = [
-            "-Xms6G"
-            "-Xmx6G"
+            "-javaagent:ZombieBuddy.jar" "--"
           ];
         };
         "550" = {
@@ -105,8 +104,8 @@ in
 
     home.file = {
       # l4d2
-      ".local/share/Steam/steamapps/common/Left 4 Dead 2/left4dead2/cfg/autoexec.cfg".source = ../../assets/l4d2/autoexec.cfg;
-      ".local/share/Steam/steamapps/common/Left 4 Dead 2/left4dead2/ems/lxc/inspect_weapon/settings.txt".source = ../../assets/l4d2/inspect_settings.txt;
+      ".local/share/Steam/steamapps/common/Left 4 Dead 2/left4dead2/cfg/autoexec.cfg".source = ../../assets/games/l4d2/autoexec.cfg;
+      ".local/share/Steam/steamapps/common/Left 4 Dead 2/left4dead2/ems/lxc/inspect_weapon/settings.txt".source = ../../assets/games/l4d2/inspect_settings.txt;
 
       ".local/share/Steam/steamapps/common/Witchfire/Witchfire/Content/Paks/" = {
         source = "${witchfire}";

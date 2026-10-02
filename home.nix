@@ -3,7 +3,6 @@
 {
   imports = [
     ./modules/hm/bash.nix
-    ./modules/hm/scripts.nix
     ./modules/hm/terminal.nix
     ./modules/hm/fuzzel.nix
     ./modules/hm/input.nix              # 框架
@@ -19,6 +18,11 @@
     ./modules/hm/crosshair.nix
     ./modules/hm/gh.nix
     ./modules/hm/obsidian.nix
+
+    # scripts
+    ./modules/scripts/scripts.nix
+    ./modules/scripts/sts.nix
+    ./modules/scripts/jts.nix
   ];
 
   home = {

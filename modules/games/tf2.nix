@@ -75,7 +75,7 @@ let
   # };
 
 
-  tf2Assets = ../../assets/tf2/tf;
+  tf2Assets = ../../assets/games/tf2/tf;
   
   # 递归读取目录（同上）
   recursiveFiles = dir:

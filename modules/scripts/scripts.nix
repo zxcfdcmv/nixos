@@ -1,4 +1,4 @@
-# modules/hm/scripts.nix
+# modules/scripts/scripts.nix
 { config, pkgs, userSettings, ... }:
 let
   customCommands = [
