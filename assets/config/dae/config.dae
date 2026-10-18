@@ -61,6 +61,7 @@ routing {
   domain(cowyo.com) -> direct
   domain(cn.bing.com) -> direct
   domain(pages.dev) -> direct
+  domain(suffix:wha1e.dpdns.org) -> direct
 
   domain(geosite:cn) -> direct
   domain(keyword:gh-proxy) -> direct

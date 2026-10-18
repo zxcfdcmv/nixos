@@ -1,5 +1,5 @@
 # home.nix
-{ config, pkgs, lib, userSettings, mark-shot, ... }:
+{ config, pkgs, lib, userSettings, mark-shot, harbor, ... }:
 {
   imports = [
     ./modules/hm/bash.nix
@@ -18,6 +18,7 @@
     ./modules/hm/crosshair.nix
     ./modules/hm/gh.nix
     ./modules/hm/obsidian.nix
+    ./modules/hm/pure_live.nix
 
     # scripts
     ./modules/scripts/scripts.nix
@@ -56,6 +57,7 @@
       nvd nix-output-monitor
       nil nixd
       openssl
+      xdg-user-dirs
       ## md查看器
       glow
       # 系统工具
@@ -89,18 +91,19 @@
       ## 键盘映射
       kanata
       # wemeet
-      bilibili-tui
       ## office
-      wpsoffice-cn
+      onlyoffice-desktopeditors
       anki
 
       ## 截图
       # ksnip
       snipaste # x11
       mark-shot.packages.${pkgs.stdenv.hostPlatform.system}.default # wayland
+      harbor.packages.${pkgs.stdenv.hostPlatform.system}.default
       ## 剪切板
       copyq gnupg
       gopeed
+      stremio-linux-shell ffmpeg
     ];
 
     file.".snipaste/config.ini" = {
@@ -188,5 +191,19 @@
 
   services = {
     gnome-keyring.enable = true;
+  };
+
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+    setSessionVariables = true;
+    desktop = null;
+    documents = "${config.home.homeDirectory}/Documents";
+    download = "${config.home.homeDirectory}/Downloads";
+    music = "${config.home.homeDirectory}/Music";
+    pictures = "${config.home.homeDirectory}/Pictures";
+    videos = "${config.home.homeDirectory}/Videos";
+    publicShare = null;
+    templates = null;
   };
 }

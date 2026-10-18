@@ -38,6 +38,10 @@
       url = "git+https://gh-9pj.pages.dev/github.com/jswysnemc/mark-shot?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    harbor = {
+      url = "git+https://gh-9pj.pages.dev/github.com/axioncs/harbor-flake?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";      
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:
@@ -81,7 +85,7 @@
                 ];
               };
               extraSpecialArgs = {
-                inherit (inputs) steam-config-nix mark-shot;
+                inherit (inputs) steam-config-nix mark-shot harbor;
                 inherit userSettings;
               };
             };

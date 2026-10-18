@@ -121,5 +121,7 @@
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     corefonts
+    vista-fonts
+    vista-fonts-chs
   ];
 }

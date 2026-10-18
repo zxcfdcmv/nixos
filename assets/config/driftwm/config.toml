@@ -453,6 +453,7 @@ animate_fps = 60
 "mod+ctrl+x" = "pan-viewport down"
 "mod+ctrl+a" = "pan-viewport left"
 "mod+ctrl+s" = "pan-viewport right"
+"alt+tab" = "none"
 "mod+tab" = "cycle-windows forward"
 "mod+shift+tab" = "cycle-windows backward"
 # "mod+equal" = "zoom-in"
@@ -544,9 +545,11 @@ decoration_fit_snapped = true
 # # wheel-up/wheel-down triggers: `exec <cmd>`, close-window, toggle-fullscreen, etc.
 
 [mouse.on-window]
-# "alt+left" = "move-window"
+"mod+shift+left" = "move-window"
+"alt+left" = "none"
 # "alt+shift+left" = "move-snapped-windows"
-# "alt+right" = "resize-window"
+"mod+right" = "resize-window"
+"alt+right" = "none"
 # "alt+shift+right" = "resize-window-snapped"
 # "alt+middle" = "fit-window"
 # "alt+shift+middle" = "fit-window-snapped"
@@ -994,3 +997,7 @@ pass_keys = true      # 核心：命令 driftwm 彻底放行所有按键鼠标�
 pass_mouse = true
 fullscreen = true     # 让 WM 知道这是全屏，挂起所有的画布拖拽手势
 opacity = 1.0
+
+# [[window_rules]]
+# app_id = "wpsoffice"
+# pinned_to_screen = true

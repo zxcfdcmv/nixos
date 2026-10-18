@@ -45,6 +45,12 @@ in
         };
         "108600" = {
           name = "project-zomboid";
+          env = {
+            "ENABLE_VULKAN_OPENGL_INTEROP" = "1";
+            "__GL_VARY_REFRESH_RATE" = "0";
+            "__NV_PRIME_RENDER_OFFLOAD" = "1";
+            "__GLX_VENDOR_LIBRARY_NAME" = "nvidia";
+          };
           args = [
             "-javaagent:ZombieBuddy.jar" "--"
           ];
