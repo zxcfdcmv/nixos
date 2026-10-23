@@ -104,6 +104,8 @@
       copyq gnupg
       gopeed
       stremio-linux-shell ffmpeg
+
+      rclone
     ];
 
     file.".snipaste/config.ini" = {

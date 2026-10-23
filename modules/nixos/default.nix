@@ -83,7 +83,7 @@
         dbus
       ];
     };
-    droidcam.enable = true;
+    # droidcam.enable = true;
   };
 
   environment = {

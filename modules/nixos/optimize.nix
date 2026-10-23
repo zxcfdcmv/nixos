@@ -2,8 +2,9 @@
 {
   nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
 
-  # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore;
+
   services = {
     # ananicy = {
     #   enable = true;
