@@ -109,7 +109,7 @@ autostart = [
 # # .desktop entry are saved as you go and come back as suspended windows on
 # # the next launch (nothing auto-launches). Per-window overridable
 # # via a `restore_windows` window rule. See docs/session.md.
-# restore_windows = false
+restore_windows = false
 
 # # Restore each output's camera position and zoom from the saved session on
 # # the next launch; without it a fresh start centers every output.
@@ -430,7 +430,7 @@ animate_fps = 60
 "alt+grave" = "spawn toggle-gopeed"
 "ctrl+grave" = "spawn copyq show"
 "mod+return" = "none"   # $TERMINAL, else first of: foot, alacritty, ptyxis, kitty, wezterm, gnome-terminal, konsole
-"mod+t" = "exec @footclient@" 
+"mod+t" = "exec @footclient@"
 "mod+d" = "focus-center"        # $LAUNCHER, else first of: fuzzel, wofi, rofi, bemenu-run, wmenu-run, tofi-drun, mew-run
 "alt+space" = "exec @fuzzel@"
 # "mod+q" = "close-window"
@@ -982,15 +982,15 @@ decoration_fit_snapped = true
 # pinned_to_screen = true
 # # 选填：你可以调整它的初始位置，默认不写是居中。
 # # 如果想让它稍微偏下一点，可以像示例一样设置偏移量，例如 [X轴偏移, Y轴偏移]
-# position = [0, 200] 
+# position = [0, 200]
 
 # [[window_rules]]
 # # 保险起见，加一条小写的 app_id 兼容规则
 # app_id = "copyq"
 # widget = true
 # pinned_to_screen = true
-# position = [0, 200] 
- 
+# position = [0, 200]
+
 [[window_rules]]
 app_id = "steam_app_730"
 title = "Counter-Strike 2"

@@ -5,6 +5,7 @@ let
     "toggle-fcitx"
     "toggle-dae"
     "toggle-warp"
+    "toggle-docker"
     "game-cs2-cn"
     "game-cs2-global"
     "game-low"
@@ -76,6 +77,9 @@ in
 
     # toggle-warp - 系统服务
     (mkSystemToggleService "toggle-warp" "cloudflare-warp")
+
+    # toggle-docker
+    (mkSystemToggleService "toggle-docker" "docker")
 
     (writeShellScriptBin "rust-project-gui" ''
       exec nix-shell ~/nixos/modules/project/rust-gui.nix
@@ -283,6 +287,13 @@ in
       if [[ "$URL" == http* ]]; then
          mpv --force-window=yes --terminal=no "$URL" &
       fi
+    '')
+
+    (writeShellScriptBin "zed-ai" ''
+      export CF_GATEWAY_API_KEY="$(rbw get cloudflare-aig)"
+      export OPENCODE_API_KEY="$(rbw get ai-opencode)"
+      export OPENROUTER_API_KEY="$(rbw get cloudflare-aig)" 
+      exec ${pkgs.zed-editor}/bin/zeditor "$@"
     '')
   ])
   ++ builtins.map mkDesktop customCommands;  

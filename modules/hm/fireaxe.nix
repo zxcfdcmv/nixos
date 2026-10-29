@@ -31,6 +31,9 @@ in {
     ".local/share/fireaxe/FireAxe/Settings.json".source = 
       config.lib.file.mkOutOfStoreSymlink "${configRoot}/fireaxe-settings.json";
 
+    "Documents/FireAxe/Settings.json".source = 
+      config.lib.file.mkOutOfStoreSymlink "${configRoot}/fireaxe-settings.json";
+
     ".local/share/fireaxe/.addonroot".source = 
       config.lib.file.mkOutOfStoreSymlink "${configRoot}/fireaxe-addonroot.json";
   };

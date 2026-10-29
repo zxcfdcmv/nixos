@@ -201,25 +201,6 @@
     },
     {
       "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
-      "PublishedFileId": 2582265366,
-      "IsAutoUpdate": null,
-      "RequestAutoSetName": false,
-      "RequestApplyTagsFromWorkshop": false,
-      "ConflictIgnoringFiles": [],
-      "Id": "80c0075c-161f-49cb-9660-a6d1d8aac996",
-      "IsEnabled": true,
-      "Name": "[Improved] Headshot Feedback Effect",
-      "Priority": 0,
-      "CreationTime": "2026-04-28T15:15:06.2724644+08:00",
-      "Tags": [
-        "Scripts",
-        "Sounds"
-      ],
-      "DependentAddonIds": [],
-      "CustomImagePath": null
-    },
-    {
-      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
       "PublishedFileId": 3042532130,
       "IsAutoUpdate": null,
       "RequestAutoSetName": false,
@@ -1025,7 +1006,7 @@
       "ConflictIgnoringFiles": [],
       "Id": "f2bc9b60-13e7-487a-a378-1ddfe6a0e1c5",
       "IsEnabled": true,
-      "Name": "FPS BOOSTER + 30FPS -  Without Losing Graphic Quality(2)",
+      "Name": "FPS BOOSTER + 30FPS -  Without Losing Graphic Quality",
       "Priority": 0,
       "CreationTime": "2026-04-28T18:35:19.8734415+08:00",
       "Tags": [
@@ -2612,6 +2593,73 @@
           ],
           "DependentAddonIds": [],
           "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 3419872601,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "5f09b532-35e2-4b6c-a9e3-544342505a8a",
+          "IsEnabled": true,
+          "Name": "Minecraft XP Kill Sound",
+          "Priority": 0,
+          "CreationTime": "2026-10-23T19:19:22.8659061+08:00",
+          "Tags": [
+            "Charger",
+            "Hunter",
+            "Jockey",
+            "Smoker",
+            "Spitter",
+            "Tank",
+            "Witch",
+            "Boomer",
+            "Miscellaneous",
+            "UI",
+            "Sounds",
+            "Special Infected",
+            "Other"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2582265366,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "80c0075c-161f-49cb-9660-a6d1d8aac996",
+          "IsEnabled": true,
+          "Name": "[Improved] Headshot Feedback Effect",
+          "Priority": 0,
+          "CreationTime": "2026-04-28T15:15:06.2724644+08:00",
+          "Tags": [
+            "Scripts",
+            "Sounds"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
+        },
+        {
+          "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+          "PublishedFileId": 2852588003,
+          "IsAutoUpdate": null,
+          "RequestAutoSetName": false,
+          "RequestApplyTagsFromWorkshop": false,
+          "ConflictIgnoringFiles": [],
+          "Id": "3df35965-817b-4475-b060-9924cb9e72bf",
+          "IsEnabled": true,
+          "Name": "Battlefield 1 Headshot Sound Effect",
+          "Priority": 0,
+          "CreationTime": "2026-10-25T10:30:19.5614699+08:00",
+          "Tags": [
+            "Sounds"
+          ],
+          "DependentAddonIds": [],
+          "CustomImagePath": null
         }
       ],
       "EnableStrategy": "None",
@@ -2621,6 +2669,25 @@
       "Priority": 0,
       "CreationTime": "2026-06-20T14:35:33.945569+08:00",
       "Tags": [],
+      "DependentAddonIds": [],
+      "CustomImagePath": null
+    },
+    {
+      "$type": "FireAxe.WorkshopVpkAddonSave, FireAxe.Core",
+      "PublishedFileId": 3464814645,
+      "IsAutoUpdate": null,
+      "RequestAutoSetName": false,
+      "RequestApplyTagsFromWorkshop": false,
+      "ConflictIgnoringFiles": [],
+      "Id": "5abf5ce7-4f81-4581-a1ed-5f2733cb4fd6",
+      "IsEnabled": true,
+      "Name": "Yellow-Green Hitmarker (Auto-Shrink Version)",
+      "Priority": 40,
+      "CreationTime": "2026-10-25T10:31:14.6716404+08:00",
+      "Tags": [
+        "Miscellaneous",
+        "Textures"
+      ],
       "DependentAddonIds": [],
       "CustomImagePath": null
     }

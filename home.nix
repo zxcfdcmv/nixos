@@ -1,5 +1,5 @@
 # home.nix
-{ config, pkgs, lib, userSettings, mark-shot, harbor, ... }:
+{ config, pkgs, lib, userSettings, mark-shot, harbor, purple, ... }:
 {
   imports = [
     ./modules/hm/bash.nix
@@ -106,6 +106,11 @@
       stremio-linux-shell ffmpeg
 
       rclone
+
+      dbeaver-bin
+      jetbrains.idea
+      purple.packages.${pkgs.stdenv.hostPlatform.system}.default
+      opencode
     ];
 
     file.".snipaste/config.ini" = {

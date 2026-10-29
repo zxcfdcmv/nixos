@@ -4,11 +4,11 @@
 let
   pure-live = pkgs.stdenv.mkDerivation rec {
     pname = "pure-live";
-    version = "3.1.17-4106";
+    version = "3.1.19-4108";
 
     src = pkgs.fetchurl {
-      url = "https://github.com/liuchuancong/pure_live/releases/download/v3.1.17/PureLive-3.1.17-4106-linux-x64.tar.gz";
-      hash = "sha256-YHLp/CCtOcPzL5nbx6/tAu7OOx1PrrL2A6a91irojtg=";
+      url = "https://github.com/liuchuancong/pure_live/releases/download/v3.1.19/PureLive-3.1.19-4108-linux-x64.tar.gz";
+      hash = "sha256-i2S28YaS9Sh6i7iprGj7eYqfODcooKEo9TiSyuzpdPk=";
     };
 
     nativeBuildInputs = with pkgs; [

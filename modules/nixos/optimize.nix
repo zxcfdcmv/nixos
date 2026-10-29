@@ -48,7 +48,7 @@
       freeSwapThreshold = 5;
       extraArgs = [
         "-g"
-        "--avoid" "^(vxwm|river|kwm|pipewire|Xwayland|systemd)$"
+        "--avoid" "^(vxwm|river|kwm|driftwm|pipewire|Xwayland|systemd)$"
         "--prefer" "^(electron|chrome|firefox|edge|nix-build|cc1plus|nh|rustc)$"
       ];
     };

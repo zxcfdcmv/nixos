@@ -86,11 +86,16 @@
     # droidcam.enable = true;
   };
 
+  virtualisation.docker = {
+    enable = true;
+    enableOnBoot = false;
+  };
+
   environment = {
     sessionVariables = {
       WLR_NO_HARDWARE_CURSORS= "1";
       GDK_BACKEND = "wayland,x11";
-      QT_QPA_PLATFORM = "xcb";
+      QT_QPA_PLATFORM = "wayland,xcb";
       __GL_MaxFramesAllowed = "1";
       NIXOS_OZONE_WL = "1";
       __GL_SYNC_TO_VBLANK = "0";
@@ -112,7 +117,7 @@
 
   users.users.${userSettings.username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "input" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "input" "docker"];
   };
 
   fonts.packages = with pkgs; [

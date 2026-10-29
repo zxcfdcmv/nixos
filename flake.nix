@@ -40,7 +40,11 @@
     };
     harbor = {
       url = "git+https://gh-9pj.pages.dev/github.com/axioncs/harbor-flake?shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";      
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    purple = {
+      url = "git+https://gh-9pj.pages.dev/github.com/erickochen/purple?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs"; # 官方建议，避免引入第二份 nixpkgs
     };
   };
 
@@ -58,6 +62,8 @@
       email = "zxcfdcmv@foxmail.com";
       hostName = "nixos";
       dotfilesDir = "/home/zxcfdcmv/nixos";
+      account_id = "4d1d805f3220db22010d364de7ae8343";
+      gateway = "ai-router";
       inherit (proxySettings) githubProxy;
     };
     system = "x86_64-linux";
@@ -85,7 +91,7 @@
                 ];
               };
               extraSpecialArgs = {
-                inherit (inputs) steam-config-nix mark-shot harbor;
+                inherit (inputs) steam-config-nix mark-shot harbor purple;
                 inherit userSettings;
               };
             };
