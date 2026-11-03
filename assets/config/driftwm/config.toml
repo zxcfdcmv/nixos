@@ -79,10 +79,11 @@ autostart = [
   "@xdg_desktop@",
   "@xdg_wlr@",
   "@xdg_gtk@",
-  "@footserver@ --server",
+  "@foot@ --server",
   "fcitx5 -d",
   "copyq",
   "gopeed",
+  "@foot@ -e rbw unlock",
   # "@mako@",
 ]
 # #

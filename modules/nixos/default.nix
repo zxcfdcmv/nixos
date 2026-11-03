@@ -120,13 +120,37 @@
     extraGroups = [ "wheel" "networkmanager" "video" "input" "docker"];
   };
 
-  fonts.packages = with pkgs; [
-    maple-mono.NF-CN
-    noto-fonts-color-emoji
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
-    corefonts
-    vista-fonts
-    vista-fonts-chs
-  ];
+  fonts = {
+    fontDir.enable = true; 
+    fontconfig = {
+      enable = true;
+      includeUserConf = true;
+      antialias = true;
+      hinting.enable = true;
+      hinting.style = "slight";
+      subpixel.rgba = "rgb";
+      subpixel.lcdfilter = "default";
+      localConf = ''
+        <match target="pattern">
+          <test qual="any" name="family"><string>emoji</string></test>
+          <edit name="family" mode="assign" binding="same"><string>Noto Color Emoji</string></edit>
+        </match>
+      '';
+      defaultFonts = {
+        sansSerif = [ "Noto Sans CJK SC" "Source Han Sans SC" ];
+        serif = [ "Noto Serif CJK SC" "Source Han Serif SC" ];
+        monospace = [ "Maple Mono NF CN" "Noto Sans Mono CJK SC" ];
+      };
+    };
+
+    packages = with pkgs; [
+      maple-mono.NF-CN
+      noto-fonts-color-emoji
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      corefonts
+      vista-fonts
+      vista-fonts-chs
+    ];
+  };
 }

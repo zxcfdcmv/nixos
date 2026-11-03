@@ -7,7 +7,7 @@ let
     wallpaper = "/run/user/1000/driftwm/main.glsl";
     bg_rotator = "${bgRotator}";
 
-    footserver = "${pkgs.foot}/bin/foot";
+    foot = "${pkgs.foot}/bin/foot";
     footclient = "${pkgs.foot}/bin/footclient";
     mako = "${pkgs.mako}/bin/mako";
     fuzzel = "${pkgs.fuzzel}/bin/fuzzel";

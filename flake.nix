@@ -44,7 +44,33 @@
     };
     purple = {
       url = "git+https://gh-9pj.pages.dev/github.com/erickochen/purple?shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs"; # 官方建议，避免引入第二份 nixpkgs
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    agent-skills = {
+      url = "git+https://gh.wha1e.dpdns.org/github.com/Kyure-A/agent-skills-nix?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    anthropic-skills = {
+      url = "git+https://gh.wha1e.dpdns.org/github.com/anthropics/skills?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false;
+    };
+    find-skills = {
+      url = "git+https://gh.wha1e.dpdns.org/github.com/vercel-labs/skills?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false;
+    };
+    mattpocock-skills = {
+      url = "git+https://gh.wha1e.dpdns.org/github.com/mattpocock/skills?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false;
+    };
+    agent-browser = {
+      url = "git+https://gh.wha1e.dpdns.org/github.com/vercel-labs/agent-browser?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false;
     };
   };
 
@@ -73,6 +99,7 @@
       ${userSettings.hostName} = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
+          inherit inputs;
           inherit (inputs) stylix nix-flatpak nix-cachyos-kernel obsidian-extensions driftwm;
           inherit userSettings;
         };
@@ -91,6 +118,7 @@
                 ];
               };
               extraSpecialArgs = {
+                inherit inputs;
                 inherit (inputs) steam-config-nix mark-shot harbor purple;
                 inherit userSettings;
               };

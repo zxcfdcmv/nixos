@@ -25,6 +25,10 @@
       # permittedInsecurePackages = [
       #   "openssl-1.1.1w"
       # ];      
+
+      problems.handlers = {
+        "gtk+".broken = "warn";
+      };
     };
   };
 

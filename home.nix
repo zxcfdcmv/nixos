@@ -7,7 +7,7 @@
     ./modules/hm/fuzzel.nix
     ./modules/hm/input.nix              # 框架
     ./modules/hm/input-xiaohe.nix       # 输入方案
-    ./modules/hm/zed-editor.nix
+    ./modules/hm/ai.nix
     ./modules/hm/proxy.nix
     ./modules/games/cdda.nix
     # ./modules/hm/qutebrowser.nix
@@ -90,7 +90,7 @@
       piliplus
       ## 键盘映射
       kanata
-      # wemeet
+      wemeet
       ## office
       onlyoffice-desktopeditors
       anki
@@ -110,12 +110,31 @@
       dbeaver-bin
       jetbrains.idea
       purple.packages.${pkgs.stdenv.hostPlatform.system}.default
-      opencode
     ];
 
-    file.".snipaste/config.ini" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfilesDir}/assets/snipaste.ini";
-      force = true;
+    file = {
+      ".snipaste/config.ini" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${userSettings.dotfilesDir}/assets/snipaste.ini";
+        force = true;
+      };
+    };
+
+    activation = {
+      copyFontsForOnlyoffice = lib.hm.dag.entryAfter ["writeBoundary"] ''
+        TARGET_DIR="$HOME/.local/share/fonts/onlyoffice-real"
+        mkdir -p "$TARGET_DIR"
+        chmod -R u+w "$TARGET_DIR" 2>/dev/null || true
+        [ -n "$TARGET_DIR" ] && rm -rf "$TARGET_DIR"/*
+    
+        cp -L ${pkgs.vista-fonts-chs}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
+        cp -L ${pkgs.maple-mono.NF-CN}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
+        cp -L ${pkgs.corefonts}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
+        cp -L ${pkgs.vista-fonts}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
+        cp -L ${pkgs.noto-fonts-color-emoji}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
+
+        find -L ${pkgs.noto-fonts-cjk-sans}/share/fonts/ -type f \( -name "*.ttf" -o -name "*.ttc" -o -name "*.otf" \) -exec cp -f {} "$TARGET_DIR/" \; 2>/dev/null || true
+        find -L ${pkgs.noto-fonts-cjk-serif}/share/fonts/ -type f \( -name "*.ttf" -o -name "*.ttc" -o -name "*.otf" \) -exec cp -f {} "$TARGET_DIR/" \; 2>/dev/null || true
+      '';
     };
   };
 
@@ -200,17 +219,19 @@
     gnome-keyring.enable = true;
   };
 
-  xdg.userDirs = {
-    enable = true;
-    createDirectories = true;
-    setSessionVariables = true;
-    desktop = null;
-    documents = "${config.home.homeDirectory}/Documents";
-    download = "${config.home.homeDirectory}/Downloads";
-    music = "${config.home.homeDirectory}/Music";
-    pictures = "${config.home.homeDirectory}/Pictures";
-    videos = "${config.home.homeDirectory}/Videos";
-    publicShare = null;
-    templates = null;
+  xdg = {
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      setSessionVariables = true;
+      desktop = null;
+      documents = "${config.home.homeDirectory}/Documents";
+      download = "${config.home.homeDirectory}/Downloads";
+      music = "${config.home.homeDirectory}/Music";
+      pictures = "${config.home.homeDirectory}/Pictures";
+      videos = "${config.home.homeDirectory}/Videos";
+      publicShare = null;
+      templates = null;
+    };
   };
 }

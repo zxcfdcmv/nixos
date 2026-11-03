@@ -9,7 +9,8 @@ in
     enable = true;
     settings = {
       email = "${userSettings.username}@outlook.com";
-      pinentry = pkgs.pinentry-tty;
+      pinentry = pkgs.pinentry-curses;
+      lock_timeout = 86400;
     };
   };
 
