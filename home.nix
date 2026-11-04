@@ -1,5 +1,5 @@
 # home.nix
-{ config, pkgs, lib, userSettings, mark-shot, harbor, purple, ... }:
+{ config, pkgs, lib, userSettings, mark-shot, purple, ... }:
 {
   imports = [
     ./modules/hm/bash.nix
@@ -99,7 +99,6 @@
       # ksnip
       snipaste # x11
       mark-shot.packages.${pkgs.stdenv.hostPlatform.system}.default # wayland
-      harbor.packages.${pkgs.stdenv.hostPlatform.system}.default
       ## 剪切板
       copyq gnupg
       gopeed
@@ -108,8 +107,10 @@
       rclone
 
       dbeaver-bin
-      jetbrains.idea
-      purple.packages.${pkgs.stdenv.hostPlatform.system}.default
+      # jetbrains.idea
+      # purple.packages.${pkgs.stdenv.hostPlatform.system}.default
+
+      deepseek-harness
     ];
 
     file = {

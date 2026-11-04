@@ -7,10 +7,6 @@
       url = "git+https://gh-9pj.pages.dev/github.com/nix-community/home-manager/?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # noctalia = {
-    #   url = "git+https://gh-proxy.org/github.com/noctalia-dev/noctalia-shell/?shallow=1";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
     stylix = {
       url = "git+https://gh-9pj.pages.dev/github.com/danth/stylix/?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,10 +32,6 @@
     };
     mark-shot = {
       url = "git+https://gh-9pj.pages.dev/github.com/jswysnemc/mark-shot?shallow=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    harbor = {
-      url = "git+https://gh-9pj.pages.dev/github.com/axioncs/harbor-flake?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     purple = {
@@ -104,7 +96,11 @@
           inherit userSettings;
         };
         modules = [
-          { nixpkgs.overlays = [ inputs.obsidian-extensions.overlays.default ]; }
+          {
+            nixpkgs.overlays = [
+              inputs.obsidian-extensions.overlays.default
+            ];
+          }
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
@@ -119,7 +115,7 @@
               };
               extraSpecialArgs = {
                 inherit inputs;
-                inherit (inputs) steam-config-nix mark-shot harbor purple;
+                inherit (inputs) steam-config-nix mark-shot purple;
                 inherit userSettings;
               };
             };

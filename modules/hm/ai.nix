@@ -257,6 +257,36 @@
                   display_name = "Google Diffusiongemma 26b a4b(Nvidia)";
                   max_tokens = 1048576;
                 }
+                {
+                  name = "custom-sen/sensenova-6.8-flash";
+                  display_name = "Sensenova 6.8 flash";
+                  max_tokens = 1048576;
+                }
+                {
+                  name = "custom-sen/sensenova-6.8-flash-lite";
+                  display_name = "Sensenova 6.8 flash lite";
+                  max_tokens = 1048576;
+                }
+                {
+                  name = "custom-sen/deepseek-v4-flash";
+                  display_name = "deepseek v4 flash(sensenova)";
+                  max_tokens = 1048576;
+                }
+                {
+                  name = "custom-sen/deepseek-flash";
+                  display_name = "deepseek v4.1 flash(sensenova)";
+                  max_tokens = 1048576;
+                }
+                {
+                  name = "custom-sen/glm-5.2";
+                  display_name = "GLM 5.2(sensenova)";
+                  max_tokens = 1048576;
+                }
+                {
+                  name = "custom-sen/kimi-k3";
+                  display_name = "Kimi k3(sensenova)";
+                  max_tokens = 1048576;
+                }
               ];
             };
           };
@@ -266,7 +296,7 @@
               {
                 name = "openrouter/free";
                 display_name = "OpenRouter Free Router";
-                max_tokens = 131072;
+                max_tokens = 1048576;
               }
             ];
           };
