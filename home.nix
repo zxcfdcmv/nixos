@@ -1,5 +1,5 @@
 # home.nix
-{ config, pkgs, lib, userSettings, mark-shot, purple, ... }:
+{ config, pkgs, lib, inputs, userSettings, mark-shot, purple, ... }:
 {
   imports = [
     ./modules/hm/bash.nix
@@ -8,6 +8,7 @@
     ./modules/hm/input.nix              # 框架
     ./modules/hm/input-xiaohe.nix       # 输入方案
     ./modules/hm/ai.nix
+    ./modules/hm/dsh.nix
     ./modules/hm/proxy.nix
     ./modules/games/cdda.nix
     # ./modules/hm/qutebrowser.nix
@@ -109,8 +110,6 @@
       dbeaver-bin
       # jetbrains.idea
       # purple.packages.${pkgs.stdenv.hostPlatform.system}.default
-
-      deepseek-harness
     ];
 
     file = {

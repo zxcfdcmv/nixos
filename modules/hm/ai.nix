@@ -1,4 +1,13 @@
 { config, pkgs, lib, inputs, userSettings, ... }:
+let
+  # Obscura 不支持 proxy bypass：只要 NO_PROXY / no_proxy /
+  # AGENT_BROWSER_PROXY_BYPASS 存在（哪怕是空值）就会拒绝启动。
+  # 在包装器里先 unset，再 exec agent-browser。
+  agentBrowserObscura = pkgs.writeShellScript "agent-browser-obscura" ''
+    unset NO_PROXY no_proxy AGENT_BROWSER_PROXY_BYPASS
+    exec ${lib.getExe pkgs.agent-browser} "$@"
+  '';
+in
 {
   imports = [ inputs.agent-skills.homeManagerModules.default ];
 
@@ -9,6 +18,8 @@
     nodejs
     opencode
     obscura
+    # mcp-ripgrep（npm）运行时需要 PATH 里有 rg
+    ripgrep
   ];
 
   programs = {
@@ -16,28 +27,28 @@
       enable = true;
       sources = {
         anthropic = {
-          input = "anthropic-skills"; 
-          subdir = "skills"; 
+          input = "anthropic-skills";
+          subdir = "skills";
         };
         find-skills = {
-          input = "find-skills"; 
-          subdir = "skills"; 
+          input = "find-skills";
+          subdir = "skills";
         };
         agent-browser = {
-          input = "agent-browser"; 
-          subdir = "skills"; 
+          input = "agent-browser";
+          subdir = "skills";
         };
         mattpocock-productivity = {
-          input = "mattpocock-skills"; 
-          subdir = "skills/productivity"; 
+          input = "mattpocock-skills";
+          subdir = "skills/productivity";
         };
         mattpocock-engineering = {
-          input = "mattpocock-skills"; 
-          subdir = "skills/engineering"; 
+          input = "mattpocock-skills";
+          subdir = "skills/engineering";
         };
       };
       skills.enable = [
-        # anthropic 
+        # anthropic
         "docx"
         "pdf"
         "xlsx"
@@ -62,7 +73,7 @@
         "writing-for-agents"
         "triage"
       ];
-      targets.agents.enable = true; 
+      targets.agents.enable = true;
     };
 
     zed-editor = {
@@ -313,18 +324,10 @@
           args = [ "docforge-mcp" ];
         };
 
-        deepseek-visionary = {
-          command = lib.getExe' pkgs.nodejs "npx";
-          args = [
-            "-y"
-            "@xlight-oss/visionary-server"
-            "mcp-stdio"
-          ];
-        };
-
+        # PyPI 上没有 mcp-server-ripgrep；改用 npm 的 mcp-ripgrep。
         ripgrep = {
-          command = lib.getExe' pkgs.uv "uvx";
-          args = [ "mcp-server-ripgrep" ];
+          command = lib.getExe' pkgs.nodejs "npx";
+          args = [ "-y" "mcp-ripgrep" ];
         };
 
         # playwright = {
@@ -332,29 +335,36 @@
         #   args = [ "--caps" "vision" ];
         # };
 
+        # agent-browser mcp 只接受 --tools / --config，不认 --engine、
+        # --executable-path、--headless；引擎和可执行文件走环境变量，
+        # 默认就是 headless（要显示窗口才用 --headed / AGENT_BROWSER_HEADED）。
         agent-browser-fast = {
-          command = lib.getExe pkgs.agent-browser;
-          args = [ 
-            "mcp" 
-            "--engine" "obscura"
-            "--executable-path" "${lib.getExe pkgs.obscura}"
-            "--headless"
-          ];
+          # command 的类型是 nullOr str，这里必须把 derivation 转成 store 路径字符串
+          command = "${agentBrowserObscura}";
+          args = [ "mcp" ];
+          env = {
+            AGENT_BROWSER_ENGINE = "obscura";
+            AGENT_BROWSER_EXECUTABLE_PATH = lib.getExe pkgs.obscura;
+          };
         };
 
         agent-browser-vision = {
           command = lib.getExe pkgs.agent-browser;
-          args = [ 
-            "mcp" 
-            "--engine" "chrome"
-            "--executable-path" "${lib.getExe pkgs.microsoft-edge}"
-            "--headless"
-          ];
+          args = [ "mcp" ];
+          env = {
+            AGENT_BROWSER_ENGINE = "chrome";
+            AGENT_BROWSER_EXECUTABLE_PATH = lib.getExe pkgs.microsoft-edge;
+          };
         };
 
+        # 不指定 MEMORY_FILE_PATH 时，server-memory 会把知识图谱写进
+        # npx 缓存目录里的 node_modules，清缓存/升级就会丢数据。
         memory = {
           command = lib.getExe' pkgs.nodejs "npx";
           args = [ "-y" "@modelcontextprotocol/server-memory" ];
+          env = {
+            MEMORY_FILE_PATH = "${config.home.homeDirectory}/.local/share/zed/memory.jsonl";
+          };
         };
 
         git = {
@@ -362,11 +372,19 @@
           args = [ "mcp-server-git" ];
         };
 
+        # npm 上从来没有 @modelcontextprotocol/server-docker（E404）；
+        # 改用 PyPI 的 mcp-server-docker（ckreiling），通过 Docker socket
+        # 管理容器/镜像/卷。
         docker = {
-          command = lib.getExe' pkgs.nodejs "npx";
-          args = [ "-y" "@modelcontextprotocol/server-docker" ];
+          command = lib.getExe' pkgs.uv "uvx";
+          args = [ "mcp-server-docker" ];
         };
       };
+    };
+
+    opencode = {
+      enable = true;
+      enableMcpIntegration = true;
     };
   };
 }

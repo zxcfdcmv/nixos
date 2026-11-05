@@ -43,6 +43,10 @@
       url = "git+https://gh.wha1e.dpdns.org/github.com/Kyure-A/agent-skills-nix?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    deepseek-harness = {
+      url = "git+https://gh.wha1e.dpdns.org/github.com/Moraxyc/deepseek-harness.nix?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     anthropic-skills = {
       url = "git+https://gh.wha1e.dpdns.org/github.com/anthropics/skills?shallow=1";
@@ -99,6 +103,18 @@
           {
             nixpkgs.overlays = [
               inputs.obsidian-extensions.overlays.default
+              inputs.deepseek-harness.overlays.default
+              # opencode 2.2.5 的 node_modules 是固定输出派生（FOD）。
+              # 当前 nixpkgs 只写了 Darwin 的 hash，Linux 上实际产物不同，
+              # 构建到最后会以 hash mismatch 失败。上游 c399e1b 已按平台拆分
+              # 修复；等 nixpkgs 跟上后可以删掉这段。
+              (final: prev: {
+                opencode = prev.opencode.overrideAttrs (old: {
+                  node_modules = old.node_modules.overrideAttrs (_: {
+                    outputHash = "sha256-prx9dX7kUvs/E3zopkaPk5LXh3xJAy5sZeum/W8L7cA=";
+                  });
+                });
+              })
             ];
           }
           ./configuration.nix
