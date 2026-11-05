@@ -66,6 +66,13 @@ let
     { id = "iceman-contributor-free"; name = "Iceman Contributor Free"; contextWindow = 262144; }
   ];
 
+  # Obscura 不支持 proxy bypass：只要 NO_PROXY / no_proxy /
+  # AGENT_BROWSER_PROXY_BYPASS 存在（哪怕是空值）就会拒绝启动。
+  agentBrowserObscura = pkgs.writeShellScript "agent-browser-obscura" ''
+    unset NO_PROXY no_proxy AGENT_BROWSER_PROXY_BYPASS
+    exec ${lib.getExe pkgs.agent-browser} "$@"
+  '';
+
   # dsh 的 profile patch 是 YAML。用原始 YAML 是为了保留注释和
   # 方便以后再加 !!js 表达式（密钥不要写进 Nix store）。
   mcpPatch = ''
@@ -85,16 +92,22 @@ let
 
         # agent-browser 的 mcp 子命令只接受 --tools；引擎/可执行文件/无头
         # 模式要通过 AGENT_BROWSER_* 环境变量给。
+        # 每个 MCP server 用独立 session，避免 dsh 和 Zed/OpenCode 共用
+        # 同一个 agent-browser daemon；共用时一个客户端会把 daemon 占住，
+        # 另一个就报 "Resource temporarily unavailable"。
         - id: mcp-agent-browser-fast
           name: '@deepseek-ai/dsh-mcp-client'
           config:
             serverName: agent-browser-fast
             transport: stdio
-            command: ${lib.getExe pkgs.agent-browser}
+            command: ${agentBrowserObscura}
             args: ['mcp']
+            # 浏览器冷启动/首次启动可能超过默认 60s
+            toolCallTimeoutMs: 180000
             env:
               AGENT_BROWSER_ENGINE: obscura
               AGENT_BROWSER_EXECUTABLE_PATH: ${lib.getExe pkgs.obscura}
+              AGENT_BROWSER_SESSION: dsh-fast
 
         - id: mcp-agent-browser-vision
           name: '@deepseek-ai/dsh-mcp-client'
@@ -103,9 +116,11 @@ let
             transport: stdio
             command: ${lib.getExe pkgs.agent-browser}
             args: ['mcp']
+            toolCallTimeoutMs: 180000
             env:
               AGENT_BROWSER_ENGINE: chrome
               AGENT_BROWSER_EXECUTABLE_PATH: ${lib.getExe pkgs.microsoft-edge}
+              AGENT_BROWSER_SESSION: dsh-vision
 
         - id: mcp-git
           name: '@deepseek-ai/dsh-mcp-client'

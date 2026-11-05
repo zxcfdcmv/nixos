@@ -58,7 +58,7 @@
     PictureInPictureOverlayEnabled = false;
     QRCodeGeneratorEnabled = false;
     ReadAloudEnabled = false;
-    RemoteDebuggingAllowed = false;
+    RemoteDebuggingAllowed = true;
     ShowAcrobatSubscriptionButton = false;
     PinBrowserEssentialsToolbarButton = false;
     UserFeedbackAllowed = false;
