@@ -34,6 +34,21 @@
         welcome_screen.settings.showOnStartup = false;
       };
       open_last_workspace = true;
+      
+      keybindings = [
+        # 切换orchestrator面板
+        {
+          key = "b";
+          modifiers = [ "alt" ];
+          action = "orchestrator_dock_toggle";
+        }
+        # run agent
+        {
+          key = "a";
+          modifiers = [ "alt" ];
+          action = "orchestrator_run_agent";
+        }
+      ];
     };
 
     # 想让它当默认编辑器就打开：
