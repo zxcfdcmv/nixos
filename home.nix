@@ -107,7 +107,6 @@
       rclone
 
       dbeaver-bin
-      # jetbrains.idea
       # purple.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 

@@ -435,7 +435,8 @@ animate_fps = 60
 "mod+d" = "focus-center"        # $LAUNCHER, else first of: fuzzel, wofi, rofi, bemenu-run, wmenu-run, tofi-drun, mew-run
 "alt+space" = "exec @fuzzel@"
 # "mod+q" = "close-window"
-"mod+r" = "toggle-cursor-pan"     # toggle cursor edge-pan (see [navigation.edge_pan])
+# "mod+r" = "toggle-cursor-pan"     # toggle cursor edge-pan (see [navigation.edge_pan])
+"mod+r" = "spawn fresh-ai"
 "mod+shift+f" = "toggle-fullscreen"
 "mod+f" = "fit-window"
 "mod+m" = "none"
@@ -1000,6 +1001,6 @@ pass_mouse = true
 fullscreen = true     # 让 WM 知道这是全屏，挂起所有的画布拖拽手势
 opacity = 1.0
 
-# [[window_rules]]
-# app_id = "wpsoffice"
-# pinned_to_screen = true
+[[window_rules]]
+app_id = "fresh-ai"
+size = [1920, 1080]
