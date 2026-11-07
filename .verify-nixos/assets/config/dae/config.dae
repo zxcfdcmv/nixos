@@ -1,0 +1,75 @@
+# assets/config/dae/config.dae
+global {
+  lan_interface: auto
+  wan_interface: auto
+  log_level: warn
+  dial_mode: domain+
+  allow_insecure: true
+
+  check_interval: 30s
+  check_tolerance: 50ms
+
+  tcp_check_url: 'http://cp.cloudflare.com,1.1.1.1,2606:4700:4700::1111'
+  tcp_check_http_method: HEAD
+  udp_check_dns: 'dns.google:53,8.8.8.8,2001:4860:4860::8888'
+
+  disable_waiting_network: false
+}
+
+subscription {
+  # 'https://d.zrfme.com/vless-base64'
+  sub1: 'https-file://d.zrfme.com/vless-base64'
+  # 'https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt'
+  # 'https://gh-proxy.org/https://raw.githubusercontent.com/free-nodes/v2rayfree/main/sub'
+  # 'https://gh-proxy.org/raw.githubusercontent.com/free18/v2ray/refs/heads/main/v.txt'
+  # 'https://gh-proxy.org/raw.githubusercontent.com/snakem982/proxypool/main/source/v2ray-2.txt'
+}
+
+dns {
+  upstream {
+    alidns: 'udp://223.5.5.5:53'
+    googledns: 'tcp+udp://8.8.8.8:53'
+  }
+  routing {
+    request {
+      qname(geosite:cn) -> alidns
+      qname(geosite:google,geosite:telegram,geosite:github) -> googledns
+      fallback: alidns
+    }
+    response {
+      upstream(alidns) && !ip(geoip:cn) -> googledns
+      fallback: accept
+    }
+  }
+}
+
+group {
+  proxy {
+    policy: min_moving_avg
+  }
+}
+
+routing {
+  pname(dae, cloudflare-warp) -> must_direct
+
+  pname(NetworkManager, systemd, dhclient) -> direct
+
+  dip(224.0.0.0/3, 'ff00::/8') -> direct
+  dip(geoip:private) -> direct
+
+  domain(getcroc.com) -> direct
+  domain(cowyo.com) -> direct
+  domain(cn.bing.com) -> direct
+  domain(pages.dev) -> direct
+  domain(suffix:wha1e.dpdns.org) -> direct
+
+  domain(geosite:cn) -> direct
+  domain(keyword:gh-proxy) -> direct
+  domain(keyword:steamstatic) -> direct
+  dip(geoip:cn) -> direct
+
+  domain(keyword:steamcommunity,steampowered) -> proxy
+  domain(geosite:telegram,geosite:google,geosite:github) -> proxy
+
+  fallback: proxy
+}

@@ -1,0 +1,6 @@
+[core]
+	bare = true
+	repositoryformatversion = 0
+	filemode = true
+[remote "origin"]
+	url = https://gh.wha1e.dpdns.org/github.com/vercel-labs/skills

@@ -44,9 +44,11 @@
       desktop = 0.8;       # 桌面背景/面板
       terminal = 0.8;      # 终端
       popups = 0.8;        # 弹窗、工具提示
-    };    
+    };
 
     autoEnable = true;
-    targets.kmscon.enable = false;
+    targets = {
+      kmscon.enable = false;
+    };
   };
 }

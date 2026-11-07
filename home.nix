@@ -7,8 +7,9 @@
     ./modules/hm/fuzzel.nix
     ./modules/hm/input.nix              # 框架
     ./modules/hm/input-xiaohe.nix       # 输入方案
-    ./modules/hm/ai.nix
-    ./modules/hm/dsh.nix
+    ./modules/ai/ai.nix
+    ./modules/ai/opencode.nix
+    ./modules/ai/dsh.nix
     ./modules/hm/proxy.nix
     ./modules/games/cdda.nix
     # ./modules/hm/qutebrowser.nix
@@ -20,6 +21,7 @@
     ./modules/hm/gh.nix
     ./modules/hm/obsidian.nix
     ./modules/hm/pure_live.nix
+    ./modules/hm/fresh-editor.nix
 
     # scripts
     ./modules/scripts/scripts.nix
@@ -32,7 +34,6 @@
     username = userSettings.username;
     homeDirectory = "/home/${userSettings.username}";
 
-    # 指针主题
     pointerCursor = {
       enable = true;
       gtk.enable = true;
@@ -44,7 +45,6 @@
     sessionVariables = {
       XCURSOR_SIZE = "24";
       XCURSOR_THEME = "Bibata-Modern-Ice";
-      # nh需要
       NH_FLAKE = "${userSettings.dotfilesDir}";
     };
 
@@ -70,7 +70,7 @@
       brightnessctl
       ## 网络 nmtui
 
-      ## 对比工具
+      # 对比工具
       # diffoscope icdiff
       kdiff3
 
@@ -93,7 +93,6 @@
       kanata
       wemeet
       ## office
-      onlyoffice-desktopeditors
       anki
 
       ## 截图
@@ -125,7 +124,7 @@
         mkdir -p "$TARGET_DIR"
         chmod -R u+w "$TARGET_DIR" 2>/dev/null || true
         [ -n "$TARGET_DIR" ] && rm -rf "$TARGET_DIR"/*
-    
+
         cp -L ${pkgs.vista-fonts-chs}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
         cp -L ${pkgs.maple-mono.NF-CN}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
         cp -L ${pkgs.corefonts}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
@@ -191,6 +190,15 @@
         proc_gradient = true;
         show_cpu_freq = true;
         show_coretemp = true;
+      };
+    };
+    onlyoffice = {
+      enable = true;
+      settings = {
+        UITheme = "theme-system";
+        editorWindowMode = false;
+        ignoreMsgAboutOpenTabs = true;
+        titlebar = "custom";
       };
     };
   };

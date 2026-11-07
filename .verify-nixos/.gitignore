@@ -1,0 +1,6 @@
+result*
+*.log
+*.tmp
+.envrc
+flake.lock
+assets/config/dae/persist.d/

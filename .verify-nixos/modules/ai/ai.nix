@@ -16,11 +16,21 @@ in
     agent-browser
     uv
     nodejs
+    bun
     opencode
     obscura
     # mcp-ripgrep（npm）运行时需要 PATH 里有 rg
     ripgrep
   ];
+
+  # agent-browser CLI 默认用 Edge；MCP server 里的 AGENT_BROWSER_ENGINE
+  # 会覆盖这里（fast 用 obscura，vision 用 chrome+Edge）。
+  home.sessionVariables = {
+    AGENT_BROWSER_ENGINE = "chrome";
+    AGENT_BROWSER_EXECUTABLE_PATH = lib.getExe pkgs.microsoft-edge;
+    # dsh-our-free-model 的 OpenCode 免费车道需要本地 Bun。
+    OUR_FREE_MODEL_BUN = "${pkgs.bun}/bin/bun";
+  };
 
   programs = {
     agent-skills = {
@@ -367,18 +377,6 @@ in
           };
         };
 
-        git = {
-          command = lib.getExe' pkgs.uv "uvx";
-          args = [ "mcp-server-git" ];
-        };
-
-        # npm 上从来没有 @modelcontextprotocol/server-docker（E404）；
-        # 改用 PyPI 的 mcp-server-docker（ckreiling），通过 Docker socket
-        # 管理容器/镜像/卷。
-        docker = {
-          command = lib.getExe' pkgs.uv "uvx";
-          args = [ "mcp-server-docker" ];
-        };
       };
     };
 

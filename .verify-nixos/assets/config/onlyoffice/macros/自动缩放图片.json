@@ -1,0 +1,21 @@
+{
+  "guid": "auto-resize-images",
+  "name": "自动缩放图片",
+  "version": "1.0.0",
+  "author": "你的名字或团队",
+  "description": "粘贴图片后自动缩放到 1000x600（可通过快捷键覆盖）",
+  "rules": {
+    "config": {
+      "hotkey": {
+        "modifier": "Ctrl+Shift",
+        "key": "R"
+      }
+    }
+  },
+  "scripts": {
+    "clipboard": "auto-resize-images.js"
+  },
+  "platforms": ["win32", "linux", "darwin"],
+  "api-version": "1.2",
+  "icon": "path/to/icon.png"
+}
