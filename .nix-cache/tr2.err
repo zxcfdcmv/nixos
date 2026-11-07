@@ -1,9 +1,0 @@
-error:
-       … while calling the 'getFlake' builtin
-         at «string»:1:9:
-            1| let f = builtins.getFlake "path:/home/zxcfdcmv/nixos/.verify-nixos"; in f.nixosConfigurations.nixos.config.system.build.toplevel.drvPath
-             |         ^
-
-       … while fetching the input 'path:/home/zxcfdcmv/nixos/.verify-nixos'
-
-       error: executing SQLite statement 'pragma synchronous = off': unable to open database file, unable to open database file (in '/home/zxcfdcmv/.cache/nix/fetcher-cache-v4.sqlite')

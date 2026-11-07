@@ -2,5 +2,7 @@ result*
 *.log
 *.tmp
 .envrc
+.nix-cache
+.verify-nixos
 flake.lock
 assets/config/dae/persist.d/

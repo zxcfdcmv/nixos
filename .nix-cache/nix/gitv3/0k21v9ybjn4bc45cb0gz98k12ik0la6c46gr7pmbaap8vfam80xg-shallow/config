@@ -1,6 +1,0 @@
-[core]
-	bare = true
-	repositoryformatversion = 0
-	filemode = true
-[remote "origin"]
-	url = https://gh-9pj.pages.dev/github.com/malbiruk/driftwm
