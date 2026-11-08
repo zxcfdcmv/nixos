@@ -9,7 +9,7 @@
     ./modules/hm/input-xiaohe.nix       # 输入方案
     ./modules/ai/ai.nix
     ./modules/ai/opencode.nix
-    ./modules/ai/dsh.nix
+#     ./modules/ai/dsh.nix
     ./modules/hm/proxy.nix
     ./modules/games/cdda.nix
     # ./modules/hm/qutebrowser.nix

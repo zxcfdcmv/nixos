@@ -22,7 +22,7 @@
       "demuxer-max-bytes" = "150MiB";   # 限制前向缓存大小，防止疯狂占内存
       "ytdl-format" = "bestvideo[height<=1080]+bestaudio/best"; # 限制解析最高 1080P，1080P DASH 流握手最快
       # script-opts = "thumbfast-network=yes"; # 进度条缩略图
-      "script-opts" = "biliass_options=--fontsize 48 --alpha 0.5 --duration-marquee 5";
+      "script-opts" = "biliass_options=--fontsize 24 --alpha 0.5 --duration-marquee 6 --duration-still 5 --display-region-ratio 0.5";
     };
   };
 }
