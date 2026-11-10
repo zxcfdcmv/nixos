@@ -3,10 +3,10 @@ let
   # Obscura 不支持 proxy bypass：只要 NO_PROXY / no_proxy /
   # AGENT_BROWSER_PROXY_BYPASS 存在（哪怕是空值）就会拒绝启动。
   # 在包装器里先 unset，再 exec agent-browser。
-  agentBrowserObscura = pkgs.writeShellScript "agent-browser-obscura" ''
-    unset NO_PROXY no_proxy AGENT_BROWSER_PROXY_BYPASS
-    exec ${lib.getExe pkgs.agent-browser} "$@"
-  '';
+  # agentBrowserObscura = pkgs.writeShellScript "agent-browser-obscura" ''
+  #   unset NO_PROXY no_proxy AGENT_BROWSER_PROXY_BYPASS
+  #   exec ${lib.getExe pkgs.agent-browser} "$@"
+  # '';
 in
 {
   imports = [ inputs.agent-skills.homeManagerModules.default ];
@@ -17,7 +17,7 @@ in
     uv
     nodejs
     bun
-    obscura
+    # obscura
     # mcp-ripgrep（npm）运行时需要 PATH 里有 rg
     ripgrep
   ];
@@ -347,15 +347,15 @@ in
         # agent-browser mcp 只接受 --tools / --config，不认 --engine、
         # --executable-path、--headless；引擎和可执行文件走环境变量，
         # 默认就是 headless（要显示窗口才用 --headed / AGENT_BROWSER_HEADED）。
-        agent-browser-fast = {
-          # command 的类型是 nullOr str，这里必须把 derivation 转成 store 路径字符串
-          command = "${agentBrowserObscura}";
-          args = [ "mcp" ];
-          env = {
-            AGENT_BROWSER_ENGINE = "obscura";
-            AGENT_BROWSER_EXECUTABLE_PATH = lib.getExe pkgs.obscura;
-          };
-        };
+        # agent-browser-fast = {
+        #   # command 的类型是 nullOr str，这里必须把 derivation 转成 store 路径字符串
+        #   command = "${agentBrowserObscura}";
+        #   args = [ "mcp" ];
+        #   env = {
+        #     AGENT_BROWSER_ENGINE = "obscura";
+        #     AGENT_BROWSER_EXECUTABLE_PATH = lib.getExe pkgs.obscura;
+        #   };
+        # };
 
         agent-browser-vision = {
           command = lib.getExe pkgs.agent-browser;

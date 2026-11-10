@@ -21,7 +21,8 @@
     ./modules/hm/gh.nix
     ./modules/hm/obsidian.nix
     ./modules/hm/pure_live.nix
-    ./modules/hm/fresh-editor.nix
+    # ./modules/hm/fresh-editor.nix
+    ./modules/hm/herdr.nix
 
     # scripts
     ./modules/scripts/scripts.nix
@@ -85,15 +86,16 @@
         jdks = [ zulu21 zulu25 ];
       })
       teamspeak6-client
-      localsend croc
+      # localsend
+      croc
       heroic
-      ayugram-desktop
+      # ayugram-desktop
       piliplus
       ## 键盘映射
       kanata
-      wemeet
+      # wemeet
       ## office
-      anki
+      # anki
 
       ## 截图
       # ksnip
@@ -102,7 +104,7 @@
       ## 剪切板
       copyq gnupg
       gopeed
-      stremio-linux-shell ffmpeg
+      # stremio-linux-shell ffmpeg
 
       rclone
 

@@ -436,7 +436,7 @@ animate_fps = 60
 "alt+space" = "exec @fuzzel@"
 # "mod+q" = "close-window"
 # "mod+r" = "toggle-cursor-pan"     # toggle cursor edge-pan (see [navigation.edge_pan])
-"mod+r" = "spawn fresh-ai"
+"mod+r" = "spawn herdr-ai"
 "mod+shift+f" = "toggle-fullscreen"
 "mod+f" = "fit-window"
 "mod+m" = "none"
@@ -1002,5 +1002,5 @@ fullscreen = true     # 让 WM 知道这是全屏，挂起所有的画布拖拽�
 opacity = 1.0
 
 [[window_rules]]
-app_id = "fresh-ai"
+app_id = "herdr-ai"
 size = [1920, 1080]

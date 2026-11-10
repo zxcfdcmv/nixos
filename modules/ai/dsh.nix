@@ -97,10 +97,10 @@ let
 
   # Obscura 不支持 proxy bypass：只要 NO_PROXY / no_proxy /
   # AGENT_BROWSER_PROXY_BYPASS 存在（哪怕是空值）就会拒绝启动。
-  agentBrowserObscura = pkgs.writeShellScript "agent-browser-obscura" ''
-    unset NO_PROXY no_proxy AGENT_BROWSER_PROXY_BYPASS
-    exec ${lib.getExe pkgs.agent-browser} "$@"
-  '';
+  # agentBrowserObscura = pkgs.writeShellScript "agent-browser-obscura" ''
+  #   unset NO_PROXY no_proxy AGENT_BROWSER_PROXY_BYPASS
+  #   exec ${lib.getExe pkgs.agent-browser} "$@"
+  # '';
 
   # dsh 的 profile patch 是 YAML。
   #
@@ -400,18 +400,18 @@ let
                     AGENT_BROWSER_ENGINE: chrome
                     AGENT_BROWSER_EXECUTABLE_PATH: ${lib.getExe pkgs.microsoft-edge}
                     AGENT_BROWSER_SESSION: dsh-vision
-              - id: mcp-agent-browser-fast
-                name: '@deepseek-ai/dsh-mcp-client'
-                config:
-                  serverName: agent-browser-fast
-                  transport: stdio
-                  command: ${agentBrowserObscura}
-                  args: ['mcp']
-                  toolCallTimeoutMs: 180000
-                  env:
-                    AGENT_BROWSER_ENGINE: obscura
-                    AGENT_BROWSER_EXECUTABLE_PATH: ${lib.getExe pkgs.obscura}
-                    AGENT_BROWSER_SESSION: dsh-fast
+              # - id: mcp-agent-browser-fast
+              #   name: '@deepseek-ai/dsh-mcp-client'
+              #   config:
+              #     serverName: agent-browser-fast
+              #     transport: stdio
+              #     command: ${agentBrowserObscura}
+              #     args: ['mcp']
+              #     toolCallTimeoutMs: 180000
+              #     env:
+              #       AGENT_BROWSER_ENGINE: obscura
+              #       AGENT_BROWSER_EXECUTABLE_PATH: ${lib.getExe pkgs.obscura}
+              #       AGENT_BROWSER_SESSION: dsh-fast
         - id: preset-full
           name: '@deepseek-ai/dsh-agent-preset'
           inject: [biliBasicCompactionPolicy]
@@ -548,18 +548,18 @@ let
                     AGENT_BROWSER_ENGINE: chrome
                     AGENT_BROWSER_EXECUTABLE_PATH: ${lib.getExe pkgs.microsoft-edge}
                     AGENT_BROWSER_SESSION: dsh-vision
-              - id: mcp-agent-browser-fast
-                name: '@deepseek-ai/dsh-mcp-client'
-                config:
-                  serverName: agent-browser-fast
-                  transport: stdio
-                  command: ${agentBrowserObscura}
-                  args: ['mcp']
-                  toolCallTimeoutMs: 180000
-                  env:
-                    AGENT_BROWSER_ENGINE: obscura
-                    AGENT_BROWSER_EXECUTABLE_PATH: ${lib.getExe pkgs.obscura}
-                    AGENT_BROWSER_SESSION: dsh-fast
+              # - id: mcp-agent-browser-fast
+              #   name: '@deepseek-ai/dsh-mcp-client'
+              #   config:
+              #     serverName: agent-browser-fast
+              #     transport: stdio
+              #     command: ${agentBrowserObscura}
+              #     args: ['mcp']
+              #     toolCallTimeoutMs: 180000
+              #     env:
+              #       AGENT_BROWSER_ENGINE: obscura
+              #       AGENT_BROWSER_EXECUTABLE_PATH: ${lib.getExe pkgs.obscura}
+              #       AGENT_BROWSER_SESSION: dsh-fast
               - id: mcp-docforge
                 name: '@deepseek-ai/dsh-mcp-client'
                 config:

@@ -84,6 +84,11 @@
       ];
     };
     # droidcam.enable = true;
+
+    localsend = {
+      enable = true;
+      openFirewall = true;
+    };
   };
 
   virtualisation.docker = {
