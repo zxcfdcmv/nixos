@@ -79,11 +79,13 @@ autostart = [
   "@xdg_desktop@",
   "@xdg_wlr@",
   "@xdg_gtk@",
+  "@xdg_hyprland@",
   "@foot@ --server",
   "fcitx5 -d",
   "copyq",
   "gopeed",
   "@foot@ -e rbw unlock",
+  "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",
   # "@mako@",
 ]
 # #
@@ -1003,4 +1005,8 @@ opacity = 1.0
 
 [[window_rules]]
 app_id = "herdr-ai"
+size = [1920, 1080]
+
+[[window_rules]]
+app_id = "ONLYOFFICE"
 size = [1920, 1080]

@@ -9,6 +9,4 @@
     trustedInterfaces = [ "tailscale0" ];
     allowedUDPPorts = [ config.services.tailscale.port ];
   };
-
-  systemd.services.tailscaled.wantedBy = lib.mkForce [ ];
 }

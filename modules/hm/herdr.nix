@@ -14,6 +14,7 @@
         prompt_new_tab_name = false;
         toast.clipboard.enabled = false;
         sound.enabled = false;
+        sidebar_width = 20;
       };
     };   
   };

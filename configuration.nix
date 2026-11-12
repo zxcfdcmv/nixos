@@ -10,7 +10,7 @@
       ./modules/nixos/vxwm.nix
       # ./modules/nixos/sunshine.nix
       ./modules/nixos/proxy.nix
-      # ./modules/nixos/tailscale.nix
+      ./modules/nixos/tailscale.nix
       ./modules/nixos/stylix.nix
       ./modules/nixos/steam.nix
       # ./modules/nixos/flatpak.nix

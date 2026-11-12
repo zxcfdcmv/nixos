@@ -71,6 +71,24 @@ let
     };
   };
 
+  # OpenCode 2 的模型声明格式：能力/推理写在 capabilities 里，
+  # reasoning.effort 会自动生成对应的 #variant（low/high/max 等）。
+  # 旧版的 reasoning/modalities/对象形式 variants 在 v2 里是非法字段，
+  # 会导致整个 provider 被判定为 malformed 而跳过。
+  mkSub2apiModel = { name, context, output, input ? [ "text" ], effort ? null }:
+    {
+      inherit name;
+      limit = { inherit context output; };
+      capabilities = {
+        tools = true;
+        inherit input;
+        output = [ "text" ];
+        reasoning = { supported = true; } // lib.optionalAttrs (effort != null) {
+          inherit effort;
+        };
+      };
+    };
+
   # OpenCode 2 的模型请求由后台 service 执行，CLI 里 export 的变量到不了
   # service。这里在密钥或 home-manager 配置层变化时同步进 service 并重启，
   # 和 dsh-ai 的注入方式一致。
@@ -83,6 +101,11 @@ let
     if [ -n "$gatewayKey" ]; then
       export CF_GATEWAY_API_KEY="$gatewayKey"
       export OPENROUTER_API_KEY="$gatewayKey"
+    fi
+
+    sub2apiKey="$(${lib.getExe pkgs.rbw} get sub2api 2>/dev/null || true)"
+    if [ -n "$sub2apiKey" ]; then
+      export SUB2API_API_KEY="$sub2apiKey"
     fi
 
     restart=0
@@ -99,6 +122,7 @@ let
 
     syncServiceEnv CF_GATEWAY_API_KEY "''${CF_GATEWAY_API_KEY:-}"
     syncServiceEnv OPENROUTER_API_KEY "''${OPENROUTER_API_KEY:-}"
+    syncServiceEnv SUB2API_API_KEY "''${SUB2API_API_KEY:-}"
     syncServiceEnv OPENCODE_CONFIG "''${OPENCODE_CONFIG:-}"
     syncServiceEnv OPENCODE_CLI_CONFIG_CONTENT "''${OPENCODE_CLI_CONFIG_CONTENT:-}"
 
@@ -122,6 +146,9 @@ let
   };
 in
 {
+
+  home.packages = with pkgs; [ snip ];
+
   # opencode 本体由 programs.opencode 安装，ai.nix 里不要再重复列一遍。
   programs.opencode = {
     enable = true;
@@ -129,12 +156,27 @@ in
     enableMcpIntegration = true;
     mutableSettings = true;
 
-    cli.theme = {
-      name = "system";
-      mode = "system";
+    cli = {
+      theme = {
+        name = "system";
+        mode = "system";
+      };
+      plugins = [
+        "@madsoftwaredev/opencode-sidebar-resize"
+      ];
     };
 
     settings = {
+      plugin = [
+        "oc-go-multi-auth"
+        "@tarquinen/opencode-dcp"
+        "opencode-snip"
+        "opencode-footprints"
+        "@bojackduy/opencode-telescope"
+      ];
+      instructions = [
+        "https://raw.githubusercontent.com/JRedeker/opencode-shell-strategy/trunk/shell_strategy.md"
+      ];
       providers = {
         cf_gateway = {
           name = "Cloudflare AI Gateway";
@@ -164,6 +206,89 @@ in
             apiKey = "{env:OPENROUTER_API_KEY}";
           };
           models = openrouterModelSet;
+        };
+
+        # 方案 B：非官方订阅专线（sub2api），独立于 Cloudflare AI Gateway。
+        # API Key 从 rbw 条目 "sub2api" 读取并注入为 SUB2API_API_KEY。
+        sub2api = {
+          name = "sub2api";
+          env = [ "SUB2API_API_KEY" ];
+          package = "@opencode/ai/providers/openai-compatible";
+          # 中转站后面的模型以 DeepSeek/GLM 一类为主，统一按 max_tokens 发送。
+          compatibility = {
+            maxTokensField = "max_tokens";
+          };
+          settings = {
+            baseURL = "https://sub2api.tail09f287.ts.net/v1";
+            apiKey = "{env:SUB2API_API_KEY}";
+          };
+          models = {
+            "deepseek-v4.1-flash" = mkSub2apiModel {
+              name = "DeepSeek V4.1 Flash";
+              context = 1000000;
+              output = 384000;
+              input = [ "text" "image" ];
+              effort = [ "low" "high" "max" ];
+            };
+            "glm-5.3-flash" = mkSub2apiModel {
+              name = "GLM-5.3-Flash";
+              context = 1000000;
+              output = 131072;
+              input = [ "text" "image" "video" "pdf" ];
+              effort = [ "low" "high" "max" ];
+            };
+            "glm-5.3" = mkSub2apiModel {
+              name = "GLM-5.3";
+              context = 1000000;
+              output = 131072;
+              effort = [ "low" "high" "max" ];
+            };
+            "kimi-k3" = mkSub2apiModel {
+              name = "Kimi K3";
+              context = 1048576;
+              output = 131072;
+              input = [ "text" "image" "video" ];
+              effort = [ "max" ];
+            };
+            "kimi-k2.7-code" = mkSub2apiModel {
+              name = "Kimi K2.7 Code";
+              context = 262144;
+              output = 262144;
+              input = [ "text" "image" "video" ];
+            };
+            "minimax-m3" = mkSub2apiModel {
+              name = "MiniMax-M3";
+              context = 1000000;
+              output = 131072;
+              input = [ "text" "image" "video" ];
+            };
+            "qwen3.8-max" = mkSub2apiModel {
+              name = "Qwen3.8 Max";
+              context = 1000000;
+              output = 131072;
+              input = [ "text" "image" "video" ];
+              effort = [ "low" "medium" "xhigh" ];
+            };
+            "qwen3.8-flash" = mkSub2apiModel {
+              name = "Qwen3.8 Flash";
+              context = 1000000;
+              output = 131072;
+              input = [ "text" "image" "video" ];
+              effort = [ "low" "medium" "xhigh" ];
+            };
+            "mimo-v2.6-pro" = mkSub2apiModel {
+              name = "MiMo-V2.6-Pro";
+              context = 1048576;
+              output = 131072;
+              input = [ "text" "image" "audio" "video" ];
+            };
+            "mimo-v2.6-flash" = mkSub2apiModel {
+              name = "MiMo-V2.6-Flash";
+              context = 1048576;
+              output = 131072;
+              input = [ "text" "image" "audio" "video" ];
+            };
+          };
         };
       };
     };

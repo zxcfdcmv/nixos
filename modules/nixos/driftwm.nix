@@ -15,6 +15,7 @@ let
     xdg_desktop = "${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal";
     xdg_wlr = "${pkgs.xdg-desktop-portal-wlr}/libexec/xdg-desktop-portal-wlr";
     xdg_gtk = "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk";
+    xdg_hyprland = "${pkgs.xdg-desktop-portal-hyprland}/libexec/xdg-desktop-portal-hyprland";
   };
 
   driftBgInit = pkgs.writeShellScript "driftwm-bg-init" ''

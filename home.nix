@@ -93,7 +93,7 @@
       piliplus
       ## 键盘映射
       kanata
-      # wemeet
+      wemeet
       ## office
       # anki
 
