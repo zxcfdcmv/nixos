@@ -3,6 +3,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./modules/disko.nix
       ./modules/nixos/optimize.nix
       ./modules/nixos/amd_nvidia.nix
       ./modules/nixos/default.nix

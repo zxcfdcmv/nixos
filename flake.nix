@@ -17,6 +17,10 @@
     nix-cachyos-kernel = {
       url = "git+https://gh-9pj.pages.dev/github.com/xddxdd/nix-cachyos-kernel.git?ref=release&shallow=1";
     };
+    disko = {
+      url = "git+https://gh-9pj.pages.dev/github.com/nix-community/disko?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     steam-config-nix = {
       url = "git+https://gh-9pj.pages.dev/github.com/different-name/steam-config-nix?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -107,6 +111,7 @@
             ];
           }
           ./configuration.nix
+          inputs.disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
             home-manager = {
