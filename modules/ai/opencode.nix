@@ -124,6 +124,15 @@ let
     syncServiceEnv OPENROUTER_API_KEY "''${OPENROUTER_API_KEY:-}"
     syncServiceEnv SUB2API_API_KEY "''${SUB2API_API_KEY:-}"
     syncServiceEnv OPENCODE_CONFIG "''${OPENCODE_CONFIG:-}"
+
+    # 和 OPENCODE_CONFIG 同理：CLI 层直接读 home-manager 生成的文件，不依赖
+    # hm-session-vars.sh 是否生效（从 Zed、快捷方式、旧 shell 里启动时经常没有，
+    # 结果就是插件列表一直停在服务里那份旧值）。
+    cliLayer="${config.xdg.configHome}/opencode/home-manager-cli.json"
+    if [ -z "''${OPENCODE_CLI_CONFIG_CONTENT:-}" ] && [ -r "$cliLayer" ]; then
+      OPENCODE_CLI_CONFIG_CONTENT="$(cat "$cliLayer")"
+      export OPENCODE_CLI_CONFIG_CONTENT
+    fi
     syncServiceEnv OPENCODE_CLI_CONFIG_CONTENT "''${OPENCODE_CLI_CONFIG_CONTENT:-}"
 
     if [ "$restart" = 1 ]; then
@@ -163,6 +172,16 @@ in
       };
       plugins = [
         "@madsoftwaredev/opencode-sidebar-resize"
+        {
+          package = "@cardinal4/opencode-fold-diffs";
+          options = {
+            min_lines = 0;
+            lines = 0;
+            bash = true;
+            bash_lines = 1;
+            stats = false;
+          };
+        }
       ];
     };
 

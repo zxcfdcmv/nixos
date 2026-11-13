@@ -9,13 +9,8 @@ let
 
     foot = "${pkgs.foot}/bin/foot";
     footclient = "${pkgs.foot}/bin/footclient";
-    mako = "${pkgs.mako}/bin/mako";
+    # mako = "${pkgs.mako}/bin/mako";
     fuzzel = "${pkgs.fuzzel}/bin/fuzzel";
-
-    xdg_desktop = "${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal";
-    xdg_wlr = "${pkgs.xdg-desktop-portal-wlr}/libexec/xdg-desktop-portal-wlr";
-    xdg_gtk = "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk";
-    xdg_hyprland = "${pkgs.xdg-desktop-portal-hyprland}/libexec/xdg-desktop-portal-hyprland";
   };
 
   driftBgInit = pkgs.writeShellScript "driftwm-bg-init" ''
@@ -50,10 +45,15 @@ let
 in {
   environment.systemPackages = [ driftwmPkg ];
   
+  # 走 driftwm 官方的 systemd 会话入口：driftwm 作为 user service 运行
+  # (driftwm.service, Type=notify)，由它拉起 graphical-session.target，
+  # 并在启动时把 WAYLAND_DISPLAY / XDG_CURRENT_DESKTOP 等导入 systemd --user 和
+  # D-Bus 激活环境。于是 portal、mako 等全部交给 systemd/D-Bus 管理，
+  # compositor 退出时也会通过 driftwm-shutdown.target 一起 teardown。
   environment.loginShellInit = ''
     if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
       ${driftBgInit}
-      exec ${driftwmPkg}/bin/driftwm
+      exec ${driftwmPkg}/bin/driftwm-session
     fi
   '';
 

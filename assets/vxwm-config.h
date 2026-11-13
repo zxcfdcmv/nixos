@@ -78,7 +78,6 @@ static const char *const autostart[] = {
 	"sh", "-c", "@hsetroot@ -fill @stylix_image@",
 	"@xdg_desktop@",
 	"@xdg_gtk@",
-	"@xdg_wlr@",
 	"fcitx5 -d",
 	"@dunst@",
 	"copyq",

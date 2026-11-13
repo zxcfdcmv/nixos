@@ -32,20 +32,37 @@
     };
   };
 
+  # portal 前端 (xdg-desktop-portal) 和 backend 都是 D-Bus 按需激活的 systemd
+  # user unit，不需要也不应该放进 compositor 的 autostart：
+  #   - 手动启动的实例不受 systemd 管理（没有 Restart、不随会话 teardown）
+  #   - graphical-session.target 起来后，D-Bus 激活会自动带起它们
+  # wlr.enable 会自己把 xdg-desktop-portal-wlr 加进 extraPortals，并生成配置 + drop-in。
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gtk
-    ];
+    # 选屏 chooser 必须写死绝对路径。portal 现在是 systemd user service，
+    # PATH 里只有 grim/slurp 那一小撮（没有 fuzzel），于是默认 chooser 链
+    # 第一个命中的是 slurp；slurp 的全屏十字准星遮罩在 driftwm 的画布上抓不到
+    # 指针，用户选不中，最后 xdg-desktop-portal-wlr 只能报 "no output found"，
+    # 腾讯会议那边就表现为屏幕列表空的、对面一直转圈。
+    # 以前 portal 是 driftwm 的子进程、PATH 里有 fuzzel，所以一路 fallback
+    # 到 fuzzel 的文本列表才正常。
+    wlr.settings.screencast = {
+      chooser_type = "dmenu";
+      chooser_cmd = "${pkgs.fuzzel}/bin/fuzzel --dmenu --prompt='选择要共享的屏幕' --lines=10";
+    };
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     config = {
-      river = {
-        default = [ "wlr" "gtk" ];
-      };
-      common = {
-        default = [ "wlr" "gtk" ];
+      # XDG_CURRENT_DESKTOP 未设置时的兜底。
+      common.default = [ "wlr" "gtk" ];
+      # driftwm 启动时会设置 XDG_CURRENT_DESKTOP=driftwm：
+      # 截图/录屏走 wlroots 实现，文件选择、打印等走 gtk，
+      # Secret 交给 gnome-keyring（gtk portal 不实现 Secret）。
+      driftwm = {
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+        "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
       };
     };
   };

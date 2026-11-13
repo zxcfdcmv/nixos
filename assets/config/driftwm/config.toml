@@ -76,17 +76,15 @@ window_placement = "auto"
 # # Each entry is passed to sh -c, so full shell syntax works (pipes, &&, env vars).
 autostart = [
   "@bg_rotator@",
-  "@xdg_desktop@",
-  "@xdg_wlr@",
-  "@xdg_gtk@",
-  "@xdg_hyprland@",
   "@foot@ --server",
   "fcitx5 -d",
   "copyq",
   "gopeed",
   "@foot@ -e rbw unlock",
-  "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",
-  # "@mako@",
+  # mako 由 home-manager 的 systemd user service 随 graphical-session.target 启动。
+  # xdg-desktop-portal / -wlr / -gtk 由 D-Bus 按需激活，
+  # WAYLAND_DISPLAY 等环境变量由 driftwm 自己导入 systemd/D-Bus，
+  # 都不需要写在这里。
 ]
 # #
 # # Running driftwm as a systemd session (via driftwm-session / a display manager)

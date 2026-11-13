@@ -3,7 +3,6 @@ let
   vxwmConfig = pkgs.replaceVars ../../assets/vxwm-config.h {
     xdg_desktop = "${pkgs.xdg-desktop-portal}/libexec/xdg-desktop-portal";
     xdg_gtk = "${pkgs.xdg-desktop-portal-gtk}/libexec/xdg-desktop-portal-gtk";
-    xdg_wlr = "${pkgs.xdg-desktop-portal-wlr}/libexec/xdg-desktop-portal-wlr";
     hsetroot = "${pkgs.hsetroot}/bin/hsetroot";
     dunst = "${pkgs.dunst}/bin/dunst";
     stylix_image = "${config.stylix.image}";
