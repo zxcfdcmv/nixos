@@ -12,6 +12,7 @@
 #     ./modules/ai/dsh.nix
     ./modules/hm/proxy.nix
     ./modules/games/cdda.nix
+    ./modules/hm/amethyst.nix          # 巫师3 mod 管理器
     # ./modules/hm/qutebrowser.nix
     ./modules/hm/email.nix
     ./modules/hm/mint_notag.nix
@@ -21,6 +22,7 @@
     ./modules/hm/gh.nix
     ./modules/hm/obsidian.nix
     ./modules/hm/pure_live.nix
+    ./modules/hm/onlyoffice.nix
     # ./modules/hm/fresh-editor.nix
     ./modules/hm/herdr.nix
 
@@ -28,6 +30,7 @@
     ./modules/scripts/scripts.nix
     ./modules/scripts/sts.nix
     ./modules/scripts/jts.nix
+    ./modules/scripts/k9.nix
   ];
 
   home = {
@@ -118,24 +121,6 @@
         force = true;
       };
     };
-
-    activation = {
-      copyFontsForOnlyoffice = lib.hm.dag.entryAfter ["writeBoundary"] ''
-        TARGET_DIR="$HOME/.local/share/fonts/onlyoffice-real"
-        mkdir -p "$TARGET_DIR"
-        chmod -R u+w "$TARGET_DIR" 2>/dev/null || true
-        [ -n "$TARGET_DIR" ] && rm -rf "$TARGET_DIR"/*
-
-        cp -L ${pkgs.vista-fonts-chs}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
-        cp -L ${pkgs.maple-mono.NF-CN}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
-        cp -L ${pkgs.corefonts}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
-        cp -L ${pkgs.vista-fonts}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
-        cp -L ${pkgs.noto-fonts-color-emoji}/share/fonts/truetype/* "$TARGET_DIR/" 2>/dev/null || true
-
-        find -L ${pkgs.noto-fonts-cjk-sans}/share/fonts/ -type f \( -name "*.ttf" -o -name "*.ttc" -o -name "*.otf" \) -exec cp -f {} "$TARGET_DIR/" \; 2>/dev/null || true
-        find -L ${pkgs.noto-fonts-cjk-serif}/share/fonts/ -type f \( -name "*.ttf" -o -name "*.ttc" -o -name "*.otf" \) -exec cp -f {} "$TARGET_DIR/" \; 2>/dev/null || true
-      '';
-    };
   };
 
   programs = {
@@ -191,15 +176,6 @@
         proc_gradient = true;
         show_cpu_freq = true;
         show_coretemp = true;
-      };
-    };
-    onlyoffice = {
-      enable = true;
-      settings = {
-        UITheme = "theme-system";
-        editorWindowMode = false;
-        ignoreMsgAboutOpenTabs = true;
-        titlebar = "custom";
       };
     };
   };

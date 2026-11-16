@@ -118,7 +118,8 @@
     sessionVariables = {
       WLR_NO_HARDWARE_CURSORS= "1";
       GDK_BACKEND = "wayland,x11";
-      QT_QPA_PLATFORM = "wayland,xcb";
+      # Qt6 的 platform fallback 列表用分号分隔，逗号会被当成插件名
+      QT_QPA_PLATFORM = "wayland;xcb";
       __GL_MaxFramesAllowed = "1";
       NIXOS_OZONE_WL = "1";
       __GL_SYNC_TO_VBLANK = "0";

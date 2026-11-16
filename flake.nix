@@ -26,6 +26,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Linux 原生 mod 管理器（巫师3 等），上游自带 flake
+    amethyst = {
+      url = "git+https://gh-9pj.pages.dev/github.com/ChrisDKN/Amethyst-Mod-Manager?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     obsidian-extensions = {
       url = "git+https://gh-9pj.pages.dev/github.com/karaolidis/nix-obsidian-extensions?shallow=1";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -18,6 +18,7 @@
       ./modules/nixos/k3s.nix
       ./modules/nixos/nh.nix
       ./modules/nixos/edge.nix
+      ./modules/nixos/todesk.nix
     ];
 
   nixpkgs = {

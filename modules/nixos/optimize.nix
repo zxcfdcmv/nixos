@@ -2,7 +2,10 @@
 {
   nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # TODO: 7.3.4 内核在 BH workqueue (bh_worker) 有回归，开机 ~1.5s 直接 panic。
+  # 等 7.3.5+ 修复后改回 pkgs.linuxPackages_zen。
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
   # boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore;
 
   services = {
