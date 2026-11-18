@@ -105,16 +105,39 @@ in
       ${pkgs.linuxPackages.nvidia_x11.settings}/bin/nvidia-settings --assign CurrentMetaMode="DP-2: 1920x1080 @1920x1080 +0+0 {ViewPortIn=1920x1080, ViewPortOut=1920x1080+0+0}"
     '')
 
+    # 只让"配置"生效：软件版本严格跟随 git 里已提交的 flake.lock
+    # 用法：改完 configuration.nix / home.nix / modules/* 后直接跑
     (writeShellScriptBin "my-switch" ''
+      set -euo pipefail
       cd ${userSettings.dotfilesDir}
-      git add .
-      nh os switch .
-    '') 
 
+      # 1) 工作区里的 flake.lock 改动一律不生效，回退到 HEAD 里的版本
+      if ! git diff --quiet -- flake.lock; then
+        echo "⚠️  flake.lock 有未提交的版本改动，已回退到 HEAD（不升级软件）"
+        echo "    想保留这些升级：git add flake.lock && git commit -m 'lock: 升级 inputs'"
+        git checkout -- flake.lock
+      fi
+
+      # 2) nix 只看得见 git 已跟踪的文件，新增 .nix 文件必须 add
+      git add -A
+
+      # 3) --no-update-lock-file：构建期间绝不写锁，兜底防止悄悄升级
+      nh os switch . --no-update-lock-file
+    '')
+
+    # 升级系统：刷新所有 flake input，并把它记为新的版本基线
     (writeShellScriptBin "my-switch-up" ''
+      set -euo pipefail
       cd ${userSettings.dotfilesDir}
       git add .
       nh os switch . --update
+
+      # 升级成功后把新 flake.lock 提交为基线，my-switch 之后就会锁定在这一版
+      if ! git diff --quiet -- flake.lock || ! git diff --cached --quiet -- flake.lock; then
+        git add flake.lock
+        git commit -m "lock: 升级 inputs $(date +%F-%H%M)" -- flake.lock
+        echo "✅ 新 flake.lock 已提交，作为当前版本基线"
+      fi
     '') 
 
     (writeShellScriptBin "my-switch-bak" ''
@@ -123,6 +146,7 @@ in
       nix flake update
       sudo nice -n 19 ionice -c 3 nixos-rebuild switch --flake .#${userSettings.hostName}
     '') 
+
 
     (writeShellScriptBin "kanata-l4d2" ''
       cd ${userSettings.dotfilesDir}

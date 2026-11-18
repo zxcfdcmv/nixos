@@ -1,5 +1,12 @@
 # home.nix
 { config, pkgs, lib, inputs, userSettings, mark-shot, purple, ... }:
+let
+  # mark-shot 上游 packaging/nix/dependencies.nix 漏了 oniguruma（新版 onig_sys 需要），
+  # 这里补上，否则 nixpkgs 一升级就报 "system library `oniguruma` not found"
+  markShot = mark-shot.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs (old: {
+    buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.oniguruma ];
+  });
+in
 {
   imports = [
     ./modules/hm/bash.nix
@@ -103,7 +110,7 @@
       ## 截图
       # ksnip
       snipaste # x11
-      mark-shot.packages.${pkgs.stdenv.hostPlatform.system}.default # wayland
+      markShot # wayland（oniguruma 已在 let 中补上）
       ## 剪切板
       copyq gnupg
       gopeed
