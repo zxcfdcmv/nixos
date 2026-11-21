@@ -6,3 +6,5 @@ result*
 .verify-nixos
 flake.lock
 assets/config/dae/persist.d/
+# MINT 的 mod.io OAuth token，不能提交
+assets/games/drg/mint-notag/config.json

@@ -6,6 +6,111 @@
       "mods": [
         {
           "spec": {
+            "url": "https://mod.io/g/drg/m/always-sprint#6488376"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/flat-ores1#6520428"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/basically-no-autocannon-recoil#6208634"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/automatic-explosive-chemical-rounds#6334837"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/enemy-wave-indicator#6367789"
+          },
+          "required": true,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/heat-crosshair#6437540"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/random-weapon-inspect#6462086"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/fov-sensitivity-fix#6467719"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/target-outlines#6468779"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/r-you-ready-quick-r-in-chat#6467581"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/display-events-extended#6471975"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/low-poly-enemies-updated#6477428"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/ultra-performance#6476415"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/squad-vitals-resources-hud1#6488331"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/can-look-away-while-holding-e#6502363"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
             "url": "https://mod.io/g/drg/m/consumables-and-collectibles-on-terrain-scanner#4704425"
           },
           "required": false,
@@ -492,7 +597,7 @@
             "url": "https://mod.io/g/drg/m/alternate-player-ui-pd2#4315675"
           },
           "required": false,
-          "enabled": true
+          "enabled": false
         },
         {
           "spec": {
@@ -630,13 +735,6 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/shredder-swarm-watcher#4459175"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/no-walk-only-sprint#4051264"
           },
           "required": false,
           "enabled": true
@@ -784,13 +882,6 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/cave-leech-loudencer#3451090"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/weapon-heat-crosshair#1634437"
           },
           "required": false,
           "enabled": true

@@ -45,10 +45,18 @@ let
 in {
   home = {
     packages = [ mint-notag ];
-    
-    file.".config/drg-mod-integration/mod_data.json" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/${userSettings.username}/nixos/assets/games/drg/mint-notag.json";
-      force = true;
+
+    file = {
+      # 链整个目录而不是单个文件：MINT 保存时用「临时文件 + rename」，
+      # 单文件软链会被覆盖成普通文件，之后仓库就收不到更新了。
+      # config.json 里有 mod.io OAuth token，已在 .gitignore 中排除。
+      ".config/drg-mod-integration".source =
+        config.lib.file.mkOutOfStoreSymlink "/home/${userSettings.username}/nixos/assets/games/drg/mint-notag";
+
+      # Combined Presets 装备预设。链整个目录：mod 存档会先写临时文件再改名，
+      # 单文件软链会被覆盖成普通文件。
+      ".local/share/Steam/steamapps/common/Deep Rock Galactic/FSD/Saved/SaveGames/Mods/EquipmentPresets".source =
+        config.lib.file.mkOutOfStoreSymlink "/home/${userSettings.username}/nixos/assets/games/drg/presets/EquipmentPresets";
     };
   };
 }
