@@ -6,10 +6,10 @@
       "mods": [
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/doom-positioned-weapons#2157552"
+            "url": "https://mod.io/g/drg/m/weapons-in-space-rig#1533287"
           },
           "required": false,
-          "enabled": true
+          "enabled": false
         },
         {
           "spec": {
@@ -44,7 +44,7 @@
             "url": "https://mod.io/g/drg/m/automatic-explosive-chemical-rounds#6334837"
           },
           "required": false,
-          "enabled": true
+          "enabled": false
         },
         {
           "spec": {
@@ -646,7 +646,7 @@
             "url": "https://mod.io/g/drg/m/lok-1-smtos-by-stark12#4375643"
           },
           "required": false,
-          "enabled": false
+          "enabled": true
         },
         {
           "spec": {

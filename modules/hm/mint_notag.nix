@@ -57,6 +57,9 @@ in {
       # 单文件软链会被覆盖成普通文件。
       ".local/share/Steam/steamapps/common/Deep Rock Galactic/FSD/Saved/SaveGames/Mods/EquipmentPresets".source =
         config.lib.file.mkOutOfStoreSymlink "/home/${userSettings.username}/nixos/assets/games/drg/presets/EquipmentPresets";
+
+      ".local/share/Steam/steamapps/common/Deep Rock Galactic/FSD/Saved/SaveGames/Mods/CustomizeWeaponFOV".source =
+        config.lib.file.mkOutOfStoreSymlink "/home/${userSettings.username}/nixos/assets/games/drg/presets/CustomizeWeaponFOV";
     };
   };
 }
