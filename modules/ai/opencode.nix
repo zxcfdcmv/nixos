@@ -158,6 +158,29 @@ in
 
   home.packages = with pkgs; [ snip ];
 
+  # OpenCode 全局指令，由 ~/.config/opencode/AGENTS.md 自动加载。
+  xdg.configFile."opencode/AGENTS.md".text = ''
+    # 文档处理
+    - docx / xlsx / pptx 的读取、修改、转换：优先用 docforge 的 MCP 工具。
+    - PDF / HTML / EPUB → Markdown：用 markitdown。
+    - Markdown → docx / pptx：用 pandoc；不用转 PDF，我自己转。
+
+    # 系统边界
+    - 不要运行 nixos-rebuild；改完把命令告诉我。
+    - 不要手工编辑 flake.lock；用 nix flake lock。
+    - 本地缺工具时用临时环境：
+      nix-shell -p <包名> --run '<命令>'
+      必须带 --run，不能进入交互 shell。
+    - 禁止 pip / npm / nix-env / nix profile 安装任何东西；遇到只有 pip/npm
+      才有的包，停下来告诉我包名和用途，由我决定是否加进 Nix 配置。
+    - nix-shell / nix eval / nix build 需要联网拉依赖时，若 60 秒内没有明显
+      进展或下载极慢，直接终止并报告，不要反复重试；预计很慢的操作先问我。
+
+    # shell
+    - 非交互：不用 vim / less / man，不用交互式 git；git 用 --no-pager 和 -m。
+    - 需要 root 时用 sudo -n，失败就停下报告。
+  '';
+
   # opencode 本体由 programs.opencode 安装，ai.nix 里不要再重复列一遍。
   programs.opencode = {
     enable = true;
@@ -192,9 +215,6 @@ in
         "opencode-snip"
         "opencode-footprints"
         "@bojackduy/opencode-telescope"
-      ];
-      instructions = [
-        "https://raw.githubusercontent.com/JRedeker/opencode-shell-strategy/trunk/shell_strategy.md"
       ];
       providers = {
         cf_gateway = {
