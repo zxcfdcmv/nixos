@@ -17,6 +17,10 @@ in
     uv
     nodejs
     bun
+    # 任意文档 → Markdown（读取 PDF/Office/EPUB 等）
+    markitdown
+    # Markdown ↔ docx/pptx/pdf 转换
+    pandoc
     # obscura
     # mcp-ripgrep（npm）运行时需要 PATH 里有 rg
     ripgrep
@@ -30,6 +34,15 @@ in
     # dsh-our-free-model 的 OpenCode 免费车道需要本地 Bun。
     OUR_FREE_MODEL_BUN = "${pkgs.bun}/bin/bun";
   };
+
+  # uv/uvx 默认从 files.pythonhosted.org 下载 wheel，这个 CDN 在国内经常
+  # 只有几 KB/s 甚至连接超时。固定清华镜像后 docforge MCP 首次解析/下载
+  # 也能在几秒内完成。
+  xdg.configFile."uv/uv.toml".text = ''
+    [[index]]
+    url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+    default = true
+  '';
 
   programs = {
     agent-skills = {
@@ -93,6 +106,7 @@ in
         "sql"
         "html"
         "toml"
+        "go"
       ];
       userSettings = {
         # ui_font_family = "Maple Mono NF CN";
@@ -112,6 +126,25 @@ in
         };
         autosave = "on_focus_change";
         load_direnv = "shell_hook";
+        # Go：用 nixpkgs 里的 gopls，别让扩展自己下载一份
+        lsp = {
+          gopls = {
+            binary.path = "${pkgs.gopls}/bin/gopls";
+            initialization_options = {
+              usePlaceholders = true;
+              completeUnimported = true;
+              # staticcheck 已经由 golangci-lint 跑，gopls 这边开诊断即可
+              staticcheck = true;
+            };
+          };
+        };
+        languages = {
+          Go = {
+            format_on_save = "on";
+            formatter = "language_server";
+            hard_tabs = true;
+          };
+        };
         telemetry = {
           diagnostics = false;
           metrics = false;

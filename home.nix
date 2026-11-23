@@ -11,6 +11,7 @@ in
   imports = [
     ./modules/hm/bash.nix
     ./modules/hm/terminal.nix
+    ./modules/hm/go.nix
     ./modules/hm/fuzzel.nix
     ./modules/hm/input.nix              # 框架
     ./modules/hm/input-xiaohe.nix       # 输入方案
