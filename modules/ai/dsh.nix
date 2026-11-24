@@ -10,41 +10,17 @@
 { config, pkgs, lib, inputs, userSettings, ... }:
 
 let
-  # zed 里的 max_tokens 是上下文窗口，这里对应 dsh 的 contextWindow。
-  # 需要视觉的模型显式声明 input；不写则按文本模型处理。
-  cfModels = [
-    { id = "google-ai-studio/gemini-3.8-flash"; name = "Gemini 3.8 Flash"; contextWindow = 1048576; input = [ "text" "image" ]; }
-    { id = "google-ai-studio/gemini-3.5-flash"; name = "Gemini 3.5 Flash"; contextWindow = 1048576; input = [ "text" "image" ]; }
-    { id = "google-ai-studio/gemini-3.5-flash-lite"; name = "Gemini 3.5 Flash-Lite"; contextWindow = 1048576; input = [ "text" "image" ]; }
-    { id = "google-ai-studio/gemini-3.6-flash"; name = "Gemini 3.6 Flash"; contextWindow = 1048576; input = [ "text" "image" ]; }
-    { id = "google-ai-studio/gemini-3.1-flash-lite"; name = "Gemini 3.1 Flash-Lite"; contextWindow = 1048576; input = [ "text" "image" ]; }
-
-    { id = "custom-glm/glm-4-flash-250414"; name = "GLM 4 Flash(glm)"; contextWindow = 131072; }
-    { id = "custom-glm/glm-4.5-flash"; name = "GLM 4.5 Flash(glm)"; contextWindow = 131072; }
-    { id = "custom-glm/glm-4.7-flash"; name = "GLM 4.7 Flash(glm)"; contextWindow = 200000; }
-    { id = "custom-glm/glm-5.3"; name = "GLM-5.3 pro(glm)"; contextWindow = 131072; }
-
-    { id = "custom-nov/glm-4.7-flash"; name = "GLM 4.7 Flash(nov)"; contextWindow = 200000; }
-    { id = "custom-nov/glm-4.6v-flash"; name = "GLM 4.6v Flash(nov)"; contextWindow = 128000; input = [ "text" "image" ]; }
-    { id = "custom-nov/glm-4.1v-thinking-flash"; name = "GLM 4.1v thinking Flash(nov)"; contextWindow = 128000; input = [ "text" "image" ]; }
-
-    { id = "custom-nv/z-ai/glm-5.3-flash"; name = "GLM 5.3 Flash(Nvidia)"; contextWindow = 1048576; }
-    { id = "custom-nv/deepseek-ai/deepseek-v4.1-flash"; name = "DeepSeek 4.1 Flash(Nvidia)"; contextWindow = 1048576; }
-    { id = "custom-nv/minimaxai/minimax-m3.1-flash"; name = "MiniMax m3.1 Flash(Nvidia)"; contextWindow = 1048576; }
-    { id = "custom-nv/openai/gpt-oss-20b"; name = "GPT OSS 20b(Nvidia)"; contextWindow = 1048576; }
-    { id = "custom-nv/nvidia/nemotron-3-ultra-550b-a55b"; name = "Nemotron 3 Ultra 550b a55b(Nvidia)"; contextWindow = 1048576; }
-    { id = "custom-nv/nvidia/nemotron-3-super-120b-a12b"; name = "Nemotron 3 Super 120b a12b(Nvidia)"; contextWindow = 1048576; }
-    { id = "custom-nv/google/gemma-4-31b-it"; name = "Google Gemma 4 31b it(Nvidia)"; contextWindow = 1048576; }
-    { id = "custom-nv/meta/llama-3.2-90b-vision-instruct"; name = "llama 3.2 90b(Nvidia)"; contextWindow = 1048576; input = [ "text" "image" ]; }
-    { id = "custom-nv/google/diffusiongemma-26b-a4b-it"; name = "Google Diffusiongemma 26b a4b(Nvidia)"; contextWindow = 1048576; }
-
-    { id = "custom-sen/sensenova-6.8-flash"; name = "Sensenova 6.8 flash"; contextWindow = 1048576; }
-    { id = "custom-sen/sensenova-6.8-flash-lite"; name = "Sensenova 6.8 flash lite"; contextWindow = 1048576; }
-    { id = "custom-sen/deepseek-v4-flash"; name = "deepseek v4 flash(sensenova)"; contextWindow = 1048576; }
-    { id = "custom-sen/deepseek-flash"; name = "deepseek v4.1 flash(sensenova)"; contextWindow = 1048576; }
-    { id = "custom-sen/glm-5.2"; name = "GLM 5.2(sensenova)"; contextWindow = 1048576; }
-    { id = "custom-sen/kimi-k3"; name = "Kimi k3(sensenova)"; contextWindow = 1048576; }
-  ];
+  # 模型 / 动态路由的单一事实来源，和 ai.nix、opencode.nix 共用。
+  cf = import ./cf-models.nix { inherit lib; };
+  # zed 里的 max_tokens 是上下文窗口，这里对应 dsh 的 contextWindow；
+  # 需要视觉的模型显式声明 input。
+  cfModels = map
+    (model: {
+      id = model.id;
+      name = model.name;
+      contextWindow = model.context;
+    } // lib.optionalAttrs model.vision { input = [ "text" "image" ]; })
+    cf.models;
 
   cfGatewayBase = "https://gateway.ai.cloudflare.com/v1/${userSettings.account_id}/${userSettings.gateway}";
 
@@ -405,7 +381,7 @@ let
               #   config:
               #     serverName: agent-browser-fast
               #     transport: stdio
-              #     command: ${agentBrowserObscura}
+              #     command: ''${agentBrowserObscura}
               #     args: ['mcp']
               #     toolCallTimeoutMs: 180000
               #     env:
@@ -553,7 +529,7 @@ let
               #   config:
               #     serverName: agent-browser-fast
               #     transport: stdio
-              #     command: ${agentBrowserObscura}
+              #     command: ''${agentBrowserObscura}
               #     args: ['mcp']
               #     toolCallTimeoutMs: 180000
               #     env:

@@ -6,6 +6,8 @@
 { config, pkgs, lib, userSettings, ... }:
 
 let
+  # 模型 / 动态路由的单一事实来源，和 ai.nix、dsh.nix 共用。
+  cf = import ./cf-models.nix { inherit lib; };
   gatewayBase = "https://gateway.ai.cloudflare.com/v1/${userSettings.account_id}/${userSettings.gateway}";
 
   # Zed 的 max_tokens 是上下文窗口，这里对应 OpenCode 的 limit.context。
@@ -24,40 +26,7 @@ let
       };
     };
 
-  # 需要视觉的模型显式声明；其余按纯文本模型处理。
-  cfModels = [
-    { id = "google-ai-studio/gemini-3.8-flash"; name = "Gemini 3.8 Flash"; context = 1048576; vision = true; }
-    { id = "google-ai-studio/gemini-3.5-flash"; name = "Gemini 3.5 Flash"; context = 1048576; vision = true; }
-    { id = "google-ai-studio/gemini-3.5-flash-lite"; name = "Gemini 3.5 Flash-Lite"; context = 1048576; vision = true; }
-    { id = "google-ai-studio/gemini-3.6-flash"; name = "Gemini 3.6 Flash"; context = 1048576; vision = true; }
-    { id = "google-ai-studio/gemini-3.1-flash-lite"; name = "Gemini 3.1 Flash-Lite"; context = 1048576; vision = true; }
-
-    { id = "custom-glm/glm-4-flash-250414"; name = "GLM 4 Flash(glm)"; context = 131072; }
-    { id = "custom-glm/glm-4.5-flash"; name = "GLM 4.5 Flash(glm)"; context = 131072; }
-    { id = "custom-glm/glm-4.7-flash"; name = "GLM 4.7 Flash(glm)"; context = 200000; }
-    { id = "custom-glm/glm-5.3"; name = "GLM-5.3 pro(glm)"; context = 131072; }
-
-    { id = "custom-nov/glm-4.7-flash"; name = "GLM 4.7 Flash(nov)"; context = 200000; }
-    { id = "custom-nov/glm-4.6v-flash"; name = "GLM 4.6v Flash(nov)"; context = 128000; vision = true; }
-    { id = "custom-nov/glm-4.1v-thinking-flash"; name = "GLM 4.1v thinking Flash(nov)"; context = 128000; vision = true; }
-
-    { id = "custom-nv/z-ai/glm-5.3-flash"; name = "GLM 5.3 Flash(Nvidia)"; context = 1048576; }
-    { id = "custom-nv/deepseek-ai/deepseek-v4.1-flash"; name = "DeepSeek 4.1 Flash(Nvidia)"; context = 1048576; }
-    { id = "custom-nv/minimaxai/minimax-m3.1-flash"; name = "MiniMax m3.1 Flash(Nvidia)"; context = 1048576; }
-    { id = "custom-nv/openai/gpt-oss-20b"; name = "GPT OSS 20b(Nvidia)"; context = 1048576; }
-    { id = "custom-nv/nvidia/nemotron-3-ultra-550b-a55b"; name = "Nemotron 3 Ultra 550b a55b(Nvidia)"; context = 1048576; }
-    { id = "custom-nv/nvidia/nemotron-3-super-120b-a12b"; name = "Nemotron 3 Super 120b a12b(Nvidia)"; context = 1048576; }
-    { id = "custom-nv/google/gemma-4-31b-it"; name = "Google Gemma 4 31b it(Nvidia)"; context = 1048576; }
-    { id = "custom-nv/meta/llama-3.2-90b-vision-instruct"; name = "llama 3.2 90b(Nvidia)"; context = 1048576; vision = true; }
-    { id = "custom-nv/google/diffusiongemma-26b-a4b-it"; name = "Google Diffusiongemma 26b a4b(Nvidia)"; context = 1048576; }
-
-    { id = "custom-sen/sensenova-6.8-flash"; name = "Sensenova 6.8 flash"; context = 1048576; }
-    { id = "custom-sen/sensenova-6.8-flash-lite"; name = "Sensenova 6.8 flash lite"; context = 1048576; }
-    { id = "custom-sen/deepseek-v4-flash"; name = "deepseek v4 flash(sensenova)"; context = 1048576; }
-    { id = "custom-sen/deepseek-flash"; name = "deepseek v4.1 flash(sensenova)"; context = 1048576; }
-    { id = "custom-sen/glm-5.2"; name = "GLM 5.2(sensenova)"; context = 1048576; }
-    { id = "custom-sen/kimi-k3"; name = "Kimi k3(sensenova)"; context = 1048576; }
-  ];
+  cfModels = cf.models;
 
   cfModelSet = builtins.listToAttrs (map (model: {
     name = model.id;
@@ -66,7 +35,7 @@ let
 
   openrouterModelSet = {
     # 选择器是 openrouter/free，发给网关的模型名仍是 openrouter/free。
-    free = (mkModel { name = "OpenRouter Free Router"; context = 1048576; }) // {
+    free = (mkModel { name = "OpenRouter Free Router"; context = 131072; }) // {
       modelID = "openrouter/free";
     };
   };

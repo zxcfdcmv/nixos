@@ -1,5 +1,16 @@
 { config, pkgs, lib, inputs, userSettings, ... }:
 let
+  # CF AI Gateway 的模型 / 动态路由定义（ai.nix、opencode.nix、dsh.nix 共用）。
+  cf = import ./cf-models.nix { inherit lib; };
+  cfFavoriteModels =
+    map (model: { provider = "cf_gateway"; model = model.id; }) cf.models
+    ++ [ { provider = "openrouter"; model = "openrouter/free"; } ];
+  cfAvailableModels = map (model: {
+    name = model.id;
+    display_name = model.name;
+    max_tokens = model.context;
+  }) cf.models;
+
   # Obscura 不支持 proxy bypass：只要 NO_PROXY / no_proxy /
   # AGENT_BROWSER_PROXY_BYPASS 存在（哪怕是空值）就会拒绝启动。
   # 在包装器里先 unset，再 exec agent-browser。
@@ -157,190 +168,13 @@ in
           };
         };
         agent = {
-          favorite_models = [
-            {
-              provider = "openrouter";
-              model = "openrouter/free";
-            }
-            {
-              provider = "cf_gateway";
-              model = "google-ai-studio/gemini-3.8-flash";
-            }
-            {
-              provider = "cf_gateway";
-              model = "custom-glm/glm-4.7-flash";
-            }
-            {
-              provider = "cf_gateway";
-              model = "custom-nov/glm-4.7-flash";
-            }
-            {
-              provider = "cf_gateway";
-              model = "custom-nv/z-ai/glm-5.3-flash";
-            }
-            {
-              provider = "cf_gateway";
-              model = "custom-nv/deepseek-ai/deepseek-v4.1-flash";
-            }
-            {
-              provider = "cf_gateway";
-              model = "custom-nv/openai/gpt-oss-20b";
-            }
-            {
-              provider = "cf_gateway";
-              model = "custom-nv/nvidia/nemotron-3-ultra-550b-a55b";
-            }
-            {
-              provider = "cf_gateway";
-              model = "custom-nv/google/gemma-4-31b-it";
-            }
-            {
-              provider = "cf_gateway";
-              model = "custom-nv/minimaxai/minimax-m3.1-flash";
-            }
-          ];
+          favorite_models = cfFavoriteModels;
         };
         language_models = {
           openai_compatible = {
             cf_gateway = {
               api_url = "https://gateway.ai.cloudflare.com/v1/${userSettings.account_id}/${userSettings.gateway}/compat";
-              available_models = [
-                {
-                  name = "google-ai-studio/gemini-3.8-flash";
-                  display_name = "Gemini 3.8 Flash";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "google-ai-studio/gemini-3.5-flash";
-                  display_name = "Gemini 3.5 Flash";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "google-ai-studio/gemini-3.5-flash-lite";
-                  display_name = "Gemini 3.5 Flash-Lite";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "google-ai-studio/gemini-3.6-flash";
-                  display_name = "Gemini 3.6 Flash";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "google-ai-studio/gemini-3.1-flash-lite";
-                  display_name = "Gemini 3.1 Flash-Lite";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-glm/glm-4-flash-250414";
-                  display_name = "GLM 4 Flash(glm)";
-                  max_tokens = 131072;
-                }
-                {
-                  name = "custom-glm/glm-4.5-flash";
-                  display_name = "GLM 4.5 Flash(glm)";
-                  max_tokens = 131072;
-                }
-                {
-                  name = "custom-glm/glm-4.7-flash";
-                  display_name = "GLM 4.7 Flash(glm)";
-                  max_tokens = 200000;
-                }
-                {
-                  name = "custom-glm/glm-5.3";
-                  display_name = "GLM-5.3 pro(glm)";
-                  max_tokens = 131072;
-                }
-                {
-                  name = "custom-nov/glm-4.7-flash";
-                  display_name = "GLM 4.7 Flash(nov)";
-                  max_tokens = 200000;
-                }
-                {
-                  name = "custom-nov/glm-4.6v-flash";
-                  display_name = "GLM 4.6v Flash(nov)";
-                  max_tokens = 128000;
-                }
-                {
-                  name = "custom-nov/glm-4.1v-thinking-flash";
-                  display_name = "GLM 4.1v thinking Flash(nov)";
-                  max_tokens = 128000;
-                }
-                {
-                  name = "custom-nv/z-ai/glm-5.3-flash";
-                  display_name = "GLM 5.3 Flash(Nvidia)";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-nv/deepseek-ai/deepseek-v4.1-flash";
-                  display_name = "DeepSeek 4.1 Flash(Nvidia)";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-nv/minimaxai/minimax-m3.1-flash";
-                  display_name = "MiniMax m3.1 Flash(Nvidia)";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-nv/openai/gpt-oss-20b";
-                  display_name = "GPT OSS 20b(Nvidia)";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-nv/nvidia/nemotron-3-ultra-550b-a55b";
-                  display_name = "Nemotron 3 ltra 550b a55b(Nvidia)";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-nv/nvidia/nemotron-3-super-120b-a12b";
-                  display_name = "Nemotron 3 super 120b a12b(Nvidia)";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-nv/google/gemma-4-31b-it";
-                  display_name = "Google Gemma 4 31b it(Nvidia)";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-nv/meta/llama-3.2-90b-vision-instruct";
-                  display_name = "llama 3.2 90b(Nvidia)";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-nv/google/diffusiongemma-26b-a4b-it";
-                  display_name = "Google Diffusiongemma 26b a4b(Nvidia)";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-sen/sensenova-6.8-flash";
-                  display_name = "Sensenova 6.8 flash";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-sen/sensenova-6.8-flash-lite";
-                  display_name = "Sensenova 6.8 flash lite";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-sen/deepseek-v4-flash";
-                  display_name = "deepseek v4 flash(sensenova)";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-sen/deepseek-flash";
-                  display_name = "deepseek v4.1 flash(sensenova)";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-sen/glm-5.2";
-                  display_name = "GLM 5.2(sensenova)";
-                  max_tokens = 1048576;
-                }
-                {
-                  name = "custom-sen/kimi-k3";
-                  display_name = "Kimi k3(sensenova)";
-                  max_tokens = 1048576;
-                }
-              ];
+              available_models = cfAvailableModels;
             };
           };
           open_router = {
@@ -349,7 +183,7 @@ in
               {
                 name = "openrouter/free";
                 display_name = "OpenRouter Free Router";
-                max_tokens = 1048576;
+                max_tokens = 131072;
               }
             ];
           };
@@ -370,6 +204,17 @@ in
         ripgrep = {
           command = lib.getExe' pkgs.nodejs "npx";
           args = [ "-y" "mcp-ripgrep" ];
+        };
+
+        # 公共远程 MCP（Streamable HTTP），都无需认证。注意 home-manager 的
+        # toOpencodeShape 会丢掉自由字段（如 oauth = false），这里写了也不生效；
+        # 实测两者直接 connected，不会强行走 OAuth。
+        context7 = {
+          url = "https://mcp.context7.com/mcp";
+        };
+
+        deepwiki = {
+          url = "https://mcp.deepwiki.com/mcp";
         };
 
         # playwright = {
