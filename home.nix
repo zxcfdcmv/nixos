@@ -34,6 +34,7 @@ in
     ./modules/hm/onlyoffice.nix
     # ./modules/hm/fresh-editor.nix
     ./modules/hm/herdr.nix
+    ./modules/hm/aria2.nix
 
     # scripts
     ./modules/scripts/scripts.nix
@@ -115,7 +116,6 @@ in
       markShot # wayland（oniguruma 已在 let 中补上）
       ## 剪切板
       copyq gnupg
-      gopeed
       # stremio-linux-shell ffmpeg
 
       rclone

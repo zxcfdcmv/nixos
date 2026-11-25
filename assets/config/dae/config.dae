@@ -57,8 +57,8 @@ routing {
   dip(224.0.0.0/3, 'ff00::/8') -> direct
   dip(geoip:private) -> direct
 
-  domain(getcroc.com) -> direct
-  domain(cowyo.com) -> direct
+  pname(croc) -> direct
+  pname(cowyo) -> direct
   domain(cn.bing.com) -> direct
   domain(pages.dev) -> direct
   domain(suffix:wha1e.dpdns.org) -> direct

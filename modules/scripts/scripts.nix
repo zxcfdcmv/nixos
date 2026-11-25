@@ -180,14 +180,6 @@ in
       fi
     '')
 
-    (writeShellScriptBin "toggle-gopeed" ''
-      if driftwm msg state | rg -q '#[0-9]+ gopeed'; then
-          driftwm msg close gopeed
-      else
-          gopeed
-      fi
-    '')
-
     (writeShellScriptBin "zed_nixos" ''
       zeditor -n ${userSettings.dotfilesDir}
     '')

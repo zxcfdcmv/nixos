@@ -79,7 +79,6 @@ autostart = [
   "@foot@ --server",
   "fcitx5 -d",
   "copyq",
-  "gopeed",
   "@foot@ -e rbw unlock",
   # mako 由 home-manager 的 systemd user service 随 graphical-session.target 启动。
   # xdg-desktop-portal / -wlr / -gtk 由 D-Bus 按需激活，
@@ -428,7 +427,6 @@ animate_fps = 60
 "ctrl+alt+c" = "spawn cowyo-up"
 "ctrl+alt+v" = "spawn cowyo-down"
 "ctrl+alt+d" = "spawn play_with_mpv"
-"alt+grave" = "spawn toggle-gopeed"
 "ctrl+grave" = "spawn copyq show"
 "mod+return" = "none"   # $TERMINAL, else first of: foot, alacritty, ptyxis, kitty, wezterm, gnome-terminal, konsole
 "mod+t" = "exec @footclient@"
