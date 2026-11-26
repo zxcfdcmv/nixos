@@ -148,6 +148,14 @@ in
     # shell
     - 非交互：不用 vim / less / man，不用交互式 git；git 用 --no-pager 和 -m。
     - 需要 root 时用 sudo -n，失败就停下报告。
+
+    # 文档与注释
+    - 文档是手册，不是过程记录。
+    - 注释写「为什么」：不显然的约束、外部系统的坑、这个值为什么必须是它。
+    - 配置注释一行说清原因就停；备选方案、比较、推荐理由属于回答或 commit message。
+    - 文档面向使用者：只写操作、行为、限制。设计取舍留在回答里。
+    - 只改需求涉及的段落，不顺手重写或补写文档。
+    - 交付前逐句核对：新增的每句话要么对应代码行为，要么对应一条使用约束；对不上的删掉。
   '';
 
   # opencode 本体由 programs.opencode 安装，ai.nix 里不要再重复列一遍。
@@ -162,6 +170,11 @@ in
         name = "system";
         mode = "system";
       };
+      session = {
+        # 2.3.0 起原生默认就是 low（整段工具调用收成一行）；
+        # 显式写出来，避免以后升级改动默认值。
+        verbosity = "low";
+      };
       plugins = [
         "@madsoftwaredev/opencode-sidebar-resize"
         {
@@ -171,6 +184,7 @@ in
             lines = 0;
             bash = true;
             bash_lines = 1;
+            bash_output = true;
             stats = false;
           };
         }
@@ -179,7 +193,6 @@ in
 
     settings = {
       plugin = [
-        "oc-go-multi-auth"
         "@tarquinen/opencode-dcp"
         "opencode-snip"
         "opencode-footprints"
