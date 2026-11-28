@@ -78,6 +78,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
       flake = false;
     };
+
+    # 只为 programs.omp 这个 HM 模块；包仍用 nixpkgs 的 omp，
+    # 上游默认包要从源码编 Bun/Rust。
+    omp = {
+      url = "git+https://gh-9pj.pages.dev/github.com/can1357/oh-my-pi?shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }:

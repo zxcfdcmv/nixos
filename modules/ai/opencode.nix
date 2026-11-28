@@ -264,8 +264,8 @@ in
               output = 131072;
               effort = [ "low" "high" "max" ];
             };
-            "kimi-k3" = mkSub2apiModel {
-              name = "Kimi K3";
+            "kimi-k3.1-pro" = mkSub2apiModel {
+              name = "Kimi K3.1 Pro";
               context = 1048576;
               output = 131072;
               input = [ "text" "image" "video" ];
@@ -277,14 +277,14 @@ in
               output = 262144;
               input = [ "text" "image" "video" ];
             };
-            "minimax-m3" = mkSub2apiModel {
-              name = "MiniMax-M3";
+            "minimax-m3.1-flash" = mkSub2apiModel {
+              name = "MiniMax-M3.1 Flash";
               context = 1000000;
               output = 131072;
               input = [ "text" "image" "video" ];
             };
-            "qwen3.8-max" = mkSub2apiModel {
-              name = "Qwen3.8 Max";
+            "qwen4-max" = mkSub2apiModel {
+              name = "Qwen4 Max";
               context = 1000000;
               output = 131072;
               input = [ "text" "image" "video" ];

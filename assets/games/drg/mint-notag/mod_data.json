@@ -6,6 +6,48 @@
       "mods": [
         {
           "spec": {
+            "url": "https://mod.io/g/drg/m/heartstone-fight-tracker#6533290"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/caretaker-fight-tracker#6535226"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/improved-flares#6379325"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/ammo-indicator#4252331"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/auto-recall-sentry#3796501"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
+            "url": "https://mod.io/g/drg/m/adjustable-flashlight#6384874"
+          },
+          "required": false,
+          "enabled": true
+        },
+        {
+          "spec": {
             "url": "https://mod.io/g/drg/m/weapons-in-space-rig#1533287"
           },
           "required": false,
@@ -608,13 +650,6 @@
         },
         {
           "spec": {
-            "url": "https://mod.io/g/drg/m/alternate-player-ui-pd2#4315675"
-          },
-          "required": false,
-          "enabled": false
-        },
-        {
-          "spec": {
             "url": "https://mod.io/g/drg/m/blight-one-wireframe-camo#3851820"
           },
           "required": false,
@@ -660,7 +695,7 @@
             "url": "https://mod.io/g/drg/m/auto-build-sentry#4056516"
           },
           "required": false,
-          "enabled": false
+          "enabled": true
         },
         {
           "spec": {
@@ -973,13 +1008,6 @@
         {
           "spec": {
             "url": "https://mod.io/g/drg/m/plasma-charger-helper#3820806"
-          },
-          "required": false,
-          "enabled": true
-        },
-        {
-          "spec": {
-            "url": "https://mod.io/g/drg/m/flashlight-40m#2459595"
           },
           "required": false,
           "enabled": true
